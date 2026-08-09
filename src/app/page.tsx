@@ -1,10 +1,17 @@
-export default function Home() {
+import { Hero } from './components/Hero';
+import { SearchStrip } from './components/SearchStrip';
+import { SolutionsAndProducts } from './components/SolutionsAndProducts';
+import { CredibilityAndCTA } from './components/CredibilityAndCTA';
+import { ResourcesAndInsights } from './components/ResourcesAndInsights';
+
+export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center">
-      <h1 className="text-4xl font-bold">HXHD</h1>
-      <p className="mt-4 text-lg text-gray-500">
-        Industrial &amp; Specialty Chemical Manufacturer
-      </p>
-    </main>
+    <>
+      <Hero />
+      <SearchStrip />
+      <SolutionsAndProducts />
+      <CredibilityAndCTA />
+      <ResourcesAndInsights />
+    </>
   );
 }
