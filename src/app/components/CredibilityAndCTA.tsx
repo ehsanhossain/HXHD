@@ -6,17 +6,18 @@ import { ArrowRight, Factory, ShieldCheck } from 'lucide-react';
 import { PRODUCTS, CATEGORIES } from '@/data/products';
 import { Reveal, Stagger, StaggerItem } from '@/components/motion/Reveal';
 import { Counter } from '@/components/motion/Counter';
-import { useT } from '@/i18n/LanguageProvider';
+import { useI18n } from '@/i18n/LanguageProvider';
 
-const STATS = [
-  { to: 26, suffix: '', label: 'Years since founding', note: 'Established 2000' },
-  { to: PRODUCTS.length, suffix: '', label: 'Products in catalogue', note: 'Full range' },
-  { to: CATEGORIES.length, suffix: '', label: 'Product categories', note: 'Across the portfolio' },
-  { to: 2, suffix: '', label: 'Production bases', note: 'China + Bangladesh' },
-];
 
 export function CredibilityAndCTA() {
-  const t = useT();
+  const { t, c } = useI18n();
+
+  const STATS = [
+    { to: 26, label: c.home.statYears, note: c.home.statYearsNote },
+    { to: PRODUCTS.length, label: c.home.statProducts, note: c.home.statProductsNote },
+    { to: CATEGORIES.length, label: c.home.statCategories, note: c.home.statCategoriesNote },
+    { to: 2, label: c.home.statBases, note: c.home.statBasesNote },
+  ];
 
   return (
     <>
@@ -36,11 +37,7 @@ export function CredibilityAndCTA() {
               <h2 className="text-step-3 mb-6">{t('sec.companyTitle')}</h2>
               <div className="w-20 h-[6px] bg-[var(--brand-red)] mb-8" />
               <p className="text-step-1 text-white/70 leading-relaxed font-light mb-10 max-w-2xl">
-                For more than 20 years, HXHD has delivered stable, scalable chemical
-                solutions for coatings, waterproofing, adhesives and infrastructure.
-                With independent R&amp;D and multi-base manufacturing, we support
-                customers who demand consistency, customisation and long-term supply
-                reliability.
+                {c.home.companyBody}
               </p>
             </Reveal>
 
@@ -64,11 +61,11 @@ export function CredibilityAndCTA() {
             <Reveal delay={0.1}>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/contact" className="btn btn-primary cut-br group">
-                  About HXHD
+                  {c.home.aboutBtn}
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
                 <Link href="/contact" className="btn btn-on-dark">
-                  Manufacturing &amp; Quality
+                  {c.home.qualityBtn}
                 </Link>
               </div>
             </Reveal>
@@ -101,10 +98,10 @@ export function CredibilityAndCTA() {
 
               <div className="flex gap-6 mt-8 ml-1">
                 <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.1em] text-white/55">
-                  <Factory className="w-4 h-4 text-[var(--brand-teal)]" /> Own facility
+                  <Factory className="w-4 h-4 text-[var(--brand-teal)]" /> {c.home.ownFacility}
                 </span>
                 <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.1em] text-white/55">
-                  <ShieldCheck className="w-4 h-4 text-[var(--brand-teal)]" /> QC tested
+                  <ShieldCheck className="w-4 h-4 text-[var(--brand-teal)]" /> {c.home.qcTested}
                 </span>
               </div>
             </div>
@@ -122,22 +119,21 @@ export function CredibilityAndCTA() {
         <div className="shell relative py-14 flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
           <div>
             <h2 className="text-step-2 text-white mb-2">
-              Looking for the right formulation outcome?
+              {c.home.ctaTitle}
             </h2>
             <p className="text-white/80 text-step-0">
-              Talk to HXHD&rsquo;s technical team about your performance targets,
-              substrates and process conditions.
+              {c.home.ctaBody}
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 shrink-0">
             <Link href="/contact" className="btn btn-primary cut-br whitespace-nowrap">
-              Technical Consultation
+              {c.home.ctaPrimary}
             </Link>
             <Link
               href="/contact"
               className="btn bg-white text-[var(--brand-teal-dark)] hover:bg-[var(--ink)] hover:text-white whitespace-nowrap"
             >
-              Request a Sample
+              {c.home.ctaSecondary}
             </Link>
           </div>
         </div>

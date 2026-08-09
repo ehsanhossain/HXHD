@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 import { PRODUCTS } from '@/data/products';
 import { Reveal, Stagger, StaggerItem } from '@/components/motion/Reveal';
-import { useT } from '@/i18n/LanguageProvider';
+import { useI18n } from '@/i18n/LanguageProvider';
 
 const APPLICATIONS = [
   { title: 'Cement-Based Waterproof Coatings', icon: Droplets, desc: 'Single & two-component', cat: 'waterproof-emulsion' },
@@ -26,7 +26,7 @@ const popularProducts = [...PRODUCTS]
   .slice(0, 5);
 
 export function SolutionsAndProducts() {
-  const t = useT();
+  const { t, c, categoryName } = useI18n();
 
   return (
     <>
@@ -64,10 +64,10 @@ export function SolutionsAndProducts() {
                   </span>
 
                   <h3 className="text-step-1 font-bold mb-2 leading-tight transition-colors group-hover:text-white">
-                    {app.title}
+                    {c.applications[idx].title}
                   </h3>
                   <p className="text-sm text-[var(--steel)] mb-6 flex-grow transition-colors group-hover:text-white/55">
-                    {app.desc}
+                    {c.applications[idx].desc}
                   </p>
 
                   <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-[var(--brand-red)] transition-colors group-hover:text-white">
@@ -143,7 +143,7 @@ export function SolutionsAndProducts() {
                       {prod.name}
                     </h3>
                     <p className="text-xs text-[var(--steel)] mb-5 line-clamp-1">
-                      {prod.category}
+                      {categoryName(prod.categorySlug, prod.category)}
                     </p>
                     <span className="mt-auto inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.1em] text-[var(--brand-teal)] transition-colors group-hover:text-[var(--brand-red)]">
                       {t('cta.viewProduct')}

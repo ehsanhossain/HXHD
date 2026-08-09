@@ -14,16 +14,6 @@ export const metadata: Metadata = {
 export default function ProductsPage() {
   return (
     <div className="bg-white">
-      {/* Breadcrumb */}
-      <div className="bg-white text-slate-500 text-xs py-2 px-6">
-        <div className="max-w-screen-2xl mx-auto">
-          <Link href="/" className="hover:underline">
-            Home
-          </Link>{' '}
-          / <span className="font-bold text-slate-800">Products</span>
-        </div>
-      </div>
-
       <Suspense
         fallback={
           <div className="max-w-screen-2xl mx-auto px-6 py-32 text-center text-slate-400">

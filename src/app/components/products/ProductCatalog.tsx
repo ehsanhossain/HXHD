@@ -7,10 +7,12 @@ import { ProductFilterSidebar } from './ProductFilterSidebar';
 import { ProductGrid } from './ProductGrid';
 import { Pagination } from './Pagination';
 import { ProductSearchHeader } from './ProductSearchHeader';
+import { useI18n } from '@/i18n/LanguageProvider';
 
 const PAGE_SIZE = 9;
 
 export function ProductCatalog() {
+  const { t } = useI18n();
   const searchParams = useSearchParams();
   const categoryParam = searchParams.get('category');
   const queryParam = searchParams.get('q') ?? '';
@@ -92,17 +94,15 @@ export function ProductCatalog() {
           <div className="flex-1 w-full">
             <div className="flex flex-wrap items-baseline justify-between gap-2 mb-8">
               <p className="text-sm text-slate-500 font-medium">
-                Showing{' '}
-                <span className="font-bold text-slate-800">{visible.length}</span> of{' '}
-                <span className="font-bold text-slate-800">{filtered.length}</span> products
-                {selectedCategories.length > 0 || query ? ' (filtered)' : ''}
+                {t('products.showing', { a: visible.length, b: filtered.length })}
+                {selectedCategories.length > 0 || query ? ` ${t('products.filtered')}` : ''}
               </p>
               {(selectedCategories.length > 0 || query) && (
                 <button
                   onClick={resetFilters}
                   className="text-sm font-bold text-[#D61118] hover:underline"
                 >
-                  Clear filters
+                  {t('products.clearFilters')}
                 </button>
               )}
             </div>
@@ -111,15 +111,13 @@ export function ProductCatalog() {
 
             {filtered.length === 0 && (
               <div className="py-24 text-center">
-                <p className="text-lg font-bold text-slate-800 mb-2">No products found</p>
-                <p className="text-sm text-slate-500 mb-6">
-                  Try a different search term or clear your filters.
-                </p>
+                <p className="text-lg font-bold text-[var(--ink)] mb-2">{t('products.none')}</p>
+                <p className="text-sm text-[var(--steel)] mb-6">{t('products.noneHelp')}</p>
                 <button
                   onClick={resetFilters}
                   className="px-6 py-3 bg-[#D61118] text-white font-bold text-sm uppercase tracking-wide hover:bg-[#b00d13] transition-colors"
                 >
-                  Reset All Filters
+                  {t('products.resetAll')}
                 </button>
               </div>
             )}

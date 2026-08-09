@@ -5,14 +5,17 @@ import Link from 'next/link';
 import { MapPin, Mail, Phone, ArrowRight, Building2 } from 'lucide-react';
 import { Reveal } from '@/components/motion/Reveal';
 import { COMPANY } from '@/data/company';
+import { useI18n } from '@/i18n/LanguageProvider';
 
 export function ContactHQ() {
+  const { c } = useI18n();
+
   return (
     <section className="section bg-white">
       <div className="shell grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
         <Reveal>
-          <p className="eyebrow mb-5">Head office</p>
-          <h2 className="text-step-2 mb-8">Corporate headquarters</h2>
+          <p className="eyebrow mb-5">{c.contact.hqEyebrow}</p>
+          <h2 className="text-step-2 mb-8">{c.contact.hqTitle}</h2>
 
           <div className="border-l-2 border-[var(--brand-red)] pl-6 mb-10">
             <p className="font-bold text-[var(--ink)] text-step-1 mb-4">
@@ -48,26 +51,23 @@ export function ContactHQ() {
               </li>
               <li className="flex items-center gap-3">
                 <Building2 className="w-[18px] h-[18px] text-[var(--brand-teal)] shrink-0" />
-                <span>International department — Manager Zhang</span>
+                <span>{c.contact.intlDept}</span>
               </li>
             </ul>
           </div>
 
           <div className="pt-8 border-t border-[var(--line)]">
             <h2 className="text-step-1 font-bold mb-4">
-              Documentation &amp; quality support
+              {c.contact.docsTitle}
             </h2>
             <p className="text-[var(--ink-3)] mb-5 leading-relaxed">
-              For technical documentation (TDS / SDS), compliance files or
-              quality-related questions, contact the team using the details above
-              or send an enquiry and mark it{' '}
-              <span className="font-bold text-[var(--ink)]">Documentation</span>.
+              {c.contact.docsBody}
             </p>
             <Link
               href="/products"
               className="link-sweep text-[var(--brand-red)] font-bold text-sm uppercase tracking-[0.1em]"
             >
-              Browse product datasheets <ArrowRight className="w-4 h-4" />
+              {c.contact.datasheetsLink} <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </Reveal>
@@ -88,9 +88,9 @@ export function ContactHQ() {
 
             <div className="grid grid-cols-3 gap-px bg-[var(--line)] border border-[var(--line)] border-t-0">
               {[
-                { k: 'Founded', v: '2000' },
-                { k: 'Bases', v: 'CN · BD' },
-                { k: 'Export', v: 'Worldwide' },
+                { k: c.contact.founded, v: '2000' },
+                { k: c.contact.bases, v: 'CN · BD' },
+                { k: c.contact.exportLabel, v: c.contact.exportValue },
               ].map((s) => (
                 <div key={s.k} className="bg-white px-4 py-5 text-center">
                   <p className="text-xs uppercase tracking-[0.1em] text-[var(--steel)] mb-1">

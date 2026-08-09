@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { ChevronDown, Check, SlidersHorizontal } from 'lucide-react';
 import type { Category } from '@/data/products';
+import { useI18n } from '@/i18n/LanguageProvider';
 
 interface ProductFilterSidebarProps {
   categories: Category[];
@@ -17,6 +18,7 @@ export function ProductFilterSidebar({
   onToggle,
   onReset,
 }: ProductFilterSidebarProps) {
+  const { t, categoryName } = useI18n();
   const [isCategoryOpen, setIsCategoryOpen] = useState(true);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
@@ -31,7 +33,7 @@ export function ProductFilterSidebar({
         >
           <span className="flex items-center gap-2.5">
             <SlidersHorizontal className="w-5 h-5 text-[var(--brand-red)]" />
-            Filters
+            {t('products.filters')}
             {selected.length > 0 && (
               <span className="px-2 py-0.5 bg-[var(--brand-red)] text-white text-xs font-bold tnum">
                 {selected.length}
@@ -51,14 +53,14 @@ export function ProductFilterSidebar({
       >
         <div className="flex justify-between items-center px-6 py-5 border-b border-[var(--line)]">
           <h2 className="text-sm font-bold uppercase tracking-[0.14em] text-[var(--ink)]">
-            Filters
+            {t('products.filters')}
           </h2>
           <button
             onClick={onReset}
             disabled={selected.length === 0}
             className="text-xs font-bold uppercase tracking-[0.1em] text-[var(--brand-red)] hover:underline disabled:opacity-35 disabled:no-underline disabled:cursor-not-allowed"
           >
-            Reset
+            {t('products.reset')}
           </button>
         </div>
 
@@ -68,7 +70,7 @@ export function ProductFilterSidebar({
             aria-expanded={isCategoryOpen}
             className="flex justify-between items-center w-full text-left font-bold text-[var(--ink)] mb-4"
           >
-            <span className="text-xs uppercase tracking-[0.12em]">Product category</span>
+            <span className="text-xs uppercase tracking-[0.12em]">{t('products.category')}</span>
             <ChevronDown
               className={`w-4 h-4 transition-transform duration-300 ${isCategoryOpen ? 'rotate-180' : ''}`}
             />
@@ -101,7 +103,7 @@ export function ProductFilterSidebar({
                           : 'text-[var(--ink-3)] group-hover:text-[var(--brand-red)]'
                       }`}
                     >
-                      {cat.name}
+                      {categoryName(cat.slug, cat.name)}
                       <span className="text-[var(--steel-2)] font-medium tnum"> ({cat.count})</span>
                     </span>
                   </label>

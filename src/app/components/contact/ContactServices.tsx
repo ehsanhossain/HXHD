@@ -2,40 +2,27 @@
 
 import { Droplets, PaintBucket, Factory, ArrowRight } from 'lucide-react';
 import { Reveal, Stagger, StaggerItem } from '@/components/motion/Reveal';
+import { useI18n } from '@/i18n/LanguageProvider';
 
 /**
  * The source site publishes a single sales contact rather than per-department
  * addresses, so every route below points at the real one instead of inventing
  * department mailboxes.
  */
-const SERVICES = [
-  {
-    icon: Droplets,
-    title: 'Construction & Waterproofing Systems',
-    desc: 'Cement-based coatings, thermal insulation mortar, bitumen systems.',
-  },
-  {
-    icon: PaintBucket,
-    title: 'Coatings & Additives Formulation',
-    desc: 'Architectural emulsions, interior/exterior systems, functional additives.',
-  },
-  {
-    icon: Factory,
-    title: 'OEM & Manufacturing Partnership',
-    desc: 'Custom formulation, in-plant support and export-ready supply.',
-  },
-];
+const SERVICE_ICONS = [Droplets, PaintBucket, Factory];
 
 export function ContactServices() {
+  const { c } = useI18n();
+  const SERVICES = c.contact.serviceItems;
+
   return (
     <section className="section bg-[var(--paper-2)] border-y border-[var(--line)]">
       <div className="shell">
         <Reveal className="max-w-2xl mb-12">
-          <p className="eyebrow mb-5">Technical services</p>
-          <h2 className="text-step-2 mb-4">How can the team help?</h2>
+          <p className="eyebrow mb-5">{c.contact.servicesEyebrow}</p>
+          <h2 className="text-step-2 mb-4">{c.contact.servicesTitle}</h2>
           <p className="text-[var(--ink-3)] leading-relaxed">
-            Serving China, Bangladesh and international partners. Tell us your
-            application and we&rsquo;ll route you to the right specialist.
+            {c.contact.servicesLead}
           </p>
         </Reveal>
 
@@ -51,7 +38,7 @@ export function ContactServices() {
                 </span>
 
                 <span className="grid place-items-center w-12 h-12 border border-[var(--line-strong)] text-[var(--brand-teal)] mb-6 transition-all duration-300 group-hover:bg-[var(--brand-teal)] group-hover:border-[var(--brand-teal)] group-hover:text-white">
-                  <service.icon className="w-[22px] h-[22px]" />
+                  {(() => { const Icon = SERVICE_ICONS[idx]; return <Icon className="w-[22px] h-[22px]" />; })()}
                 </span>
 
                 <h3 className="text-step-1 font-bold mb-3 leading-snug transition-colors group-hover:text-white">
@@ -62,7 +49,7 @@ export function ContactServices() {
                 </p>
 
                 <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-[var(--brand-red)] transition-colors group-hover:text-white">
-                  Start an enquiry
+                  {c.contact.startEnquiry}
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
 

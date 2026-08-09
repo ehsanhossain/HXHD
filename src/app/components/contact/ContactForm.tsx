@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Send, AlertCircle } from 'lucide-react';
 import { Reveal } from '@/components/motion/Reveal';
 import { COMPANY } from '@/data/company';
+import { useI18n } from '@/i18n/LanguageProvider';
 
 const CONTACT_EMAIL = COMPANY.email;
 
@@ -18,6 +19,7 @@ function Required() {
 }
 
 export function ContactForm() {
+  const { c, fill } = useI18n();
   const [error, setError] = useState<string | null>(null);
 
   /**
@@ -30,7 +32,7 @@ export function ContactForm() {
     const form = e.currentTarget;
 
     if (!form.checkValidity()) {
-      setError('Please complete the required fields marked with an asterisk.');
+      setError(c.contact.errorRequired);
       form.reportValidity();
       return;
     }
@@ -63,17 +65,17 @@ export function ContactForm() {
     <section id="enquiry" className="section bg-white scroll-mt-24">
       <div className="shell max-w-4xl">
         <Reveal className="mb-10">
-          <p className="eyebrow mb-5">Enquiry</p>
-          <h2 className="text-step-2 mb-4">Submit an enquiry</h2>
+          <p className="eyebrow mb-5">{c.contact.formEyebrow}</p>
+          <h2 className="text-step-2 mb-4">{c.contact.formTitle}</h2>
           <p className="text-[var(--ink-3)] leading-relaxed">
-            Complete the form and it will open a pre-filled message to{' '}
+            {fill(c.contact.formLead, { email: '' }).split('{email}')[0]}
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="font-bold text-[var(--brand-red)] hover:underline"
+              className="font-bold text-[var(--brand-red)] hover:underline break-all"
             >
               {CONTACT_EMAIL}
             </a>
-            . Fields marked <Required /> are required.
+            {fill(c.contact.formLead, { email: '' }).split('{email}')[1] ?? ''}
           </p>
         </Reveal>
 
@@ -81,83 +83,69 @@ export function ContactForm() {
           <form onSubmit={handleSubmit} noValidate={false} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="firstName" className={LABEL}>First name <Required /></label>
+                <label htmlFor="firstName" className={LABEL}>{c.contact.firstName} <Required /></label>
                 <input id="firstName" name="firstName" type="text" autoComplete="given-name" className={FIELD} required />
               </div>
               <div>
-                <label htmlFor="lastName" className={LABEL}>Last name <Required /></label>
+                <label htmlFor="lastName" className={LABEL}>{c.contact.lastName} <Required /></label>
                 <input id="lastName" name="lastName" type="text" autoComplete="family-name" className={FIELD} required />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="email" className={LABEL}>Email <Required /></label>
+                <label htmlFor="email" className={LABEL}>{c.contact.email} <Required /></label>
                 <input id="email" name="email" type="email" autoComplete="email" inputMode="email" className={FIELD} required />
               </div>
               <div>
-                <label htmlFor="phone" className={LABEL}>Phone <Required /></label>
+                <label htmlFor="phone" className={LABEL}>{c.contact.phone} <Required /></label>
                 <input id="phone" name="phone" type="tel" autoComplete="tel" inputMode="tel" className={FIELD} required />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="country" className={LABEL}>Country <Required /></label>
+                <label htmlFor="country" className={LABEL}>{c.contact.country} <Required /></label>
                 <select id="country" name="country" className={FIELD} defaultValue="" required>
-                  <option value="" disabled>Please select</option>
-                  <option>China</option>
-                  <option>Bangladesh</option>
-                  <option>India</option>
-                  <option>Vietnam</option>
-                  <option>Indonesia</option>
-                  <option>Other</option>
+                  <option value="" disabled>{c.contact.pleaseSelect}</option>
+                  {c.contact.countries.map((o) => <option key={o}>{o}</option>)}
                 </select>
               </div>
               <div>
-                <label htmlFor="company" className={LABEL}>Company</label>
+                <label htmlFor="company" className={LABEL}>{c.contact.company}</label>
                 <input id="company" name="company" type="text" autoComplete="organization" className={FIELD} />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="role" className={LABEL}>I am a <Required /></label>
+                <label htmlFor="role" className={LABEL}>{c.contact.iAmA} <Required /></label>
                 <select id="role" name="role" className={FIELD} defaultValue="" required>
-                  <option value="" disabled>Please select</option>
-                  <option>Manufacturer</option>
-                  <option>Distributor</option>
-                  <option>Contractor</option>
-                  <option>Trader / Importer</option>
-                  <option>Other</option>
+                  <option value="" disabled>{c.contact.pleaseSelect}</option>
+                  {c.contact.roles.map((o) => <option key={o}>{o}</option>)}
                 </select>
               </div>
               <div>
-                <label htmlFor="help" className={LABEL}>How can we help?</label>
+                <label htmlFor="help" className={LABEL}>{c.contact.howHelp}</label>
                 <select id="help" name="help" className={FIELD} defaultValue="">
-                  <option value="" disabled>Please select</option>
-                  <option>Product enquiry</option>
-                  <option>Technical support</option>
-                  <option>Documentation (TDS / SDS)</option>
-                  <option>Sample request</option>
-                  <option>OEM / custom formulation</option>
-                  <option>Distribution</option>
+                  <option value="" disabled>{c.contact.pleaseSelect}</option>
+                  {c.contact.helpOptions.map((o) => <option key={o}>{o}</option>)}
                 </select>
               </div>
             </div>
 
             <div>
-              <label htmlFor="project" className={LABEL}>Do you have an active project? <Required /></label>
+              <label htmlFor="project" className={LABEL}>{c.contact.activeProject} <Required /></label>
               <select id="project" name="project" className={FIELD} defaultValue="" required>
-                <option value="" disabled>Please select</option>
-                <option>Yes</option>
-                <option>No</option>
+                <option value="" disabled>{c.contact.pleaseSelect}</option>
+                <option>{c.contact.yes}</option>
+                <option>{c.contact.no}</option>
               </select>
             </div>
 
             <div>
               <label htmlFor="message" className={LABEL}>
-                Comments — substrate, performance targets, volumes
+                {c.contact.comments}
               </label>
               <textarea
                 id="message"
@@ -169,23 +157,20 @@ export function ContactForm() {
 
             <div className="pt-4 space-y-4 border-t border-[var(--line)]">
               <p className="text-sm text-[var(--steel)] leading-relaxed">
-                HXHD is committed to protecting and respecting your privacy. Your
-                information is used only to administer your enquiry.
+                {c.contact.privacyNote}
               </p>
 
               <label className="flex items-start gap-3 cursor-pointer">
                 <input type="checkbox" name="marketing" className="mt-1 w-4 h-4 accent-[var(--brand-red)]" />
                 <span className="text-sm text-[var(--ink-3)]">
-                  I would like to receive news about HXHD products and services.
+                  {c.contact.marketingOptIn}
                 </span>
               </label>
 
               <label className="flex items-start gap-3 cursor-pointer">
                 <input type="checkbox" name="terms" className="mt-1 w-4 h-4 accent-[var(--brand-red)]" required />
                 <span className="text-sm text-[var(--ink-3)]">
-                  I have read and agree to the{' '}
-                  <a href="#" className="text-[var(--brand-red)] hover:underline">Terms of Use</a> and{' '}
-                  <a href="#" className="text-[var(--brand-red)] hover:underline">Privacy Policy</a>. <Required />
+                  {c.contact.termsAgree}
                 </span>
               </label>
             </div>
@@ -201,7 +186,7 @@ export function ContactForm() {
             )}
 
             <button type="submit" className="btn btn-primary cut-br group">
-              Submit enquiry
+              {c.contact.submit}
               <Send className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" />
             </button>
           </form>

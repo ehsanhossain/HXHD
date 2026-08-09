@@ -4,23 +4,22 @@ import Link from 'next/link';
 import { FileText, Download, Beaker, Library, ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Reveal, Stagger, StaggerItem } from '@/components/motion/Reveal';
 import { TECHNICAL_ARTICLES } from '@/data/knowledge';
-import { useT } from '@/i18n/LanguageProvider';
+import { useI18n } from '@/i18n/LanguageProvider';
 
 /** Three real published guides, newest first. */
 const ARTICLES = TECHNICAL_ARTICLES.slice(0, 3);
 
-const QUICK_LINKS = [
-  { label: 'Find a TDS', icon: FileText, href: '/products' },
-  { label: 'Find a SDS', icon: Beaker, href: '/contact' },
-  { label: 'Download Center', icon: Download, href: '/contact' },
-  { label: 'Technical Library', icon: Library, href: '/knowledge' },
-];
+const QUICK_LINK_ICONS = [FileText, Beaker, Download, Library];
+const QUICK_LINK_HREFS = ['/products', '/contact', '/contact', '/knowledge'];
 
 const FIELD =
   'w-full h-12 px-4 bg-[var(--paper-2)] border border-[var(--line)] focus:border-[var(--brand-teal)] focus:outline-none text-[var(--ink)] placeholder:text-[var(--steel-2)] transition-colors';
 
 export function ResourcesAndInsights() {
-  const t = useT();
+  const { t, c, article: localized } = useI18n();
+  const QUICK_LINKS = [c.home.findTds, c.home.findSds, c.home.downloadCenter, c.home.technicalLibrary]
+    .map((label, i) => ({ label, icon: QUICK_LINK_ICONS[i], href: QUICK_LINK_HREFS[i] }));
+
 
   return (
     <>
@@ -29,10 +28,9 @@ export function ResourcesAndInsights() {
         <div className="shell grid grid-cols-1 lg:grid-cols-2 gap-14">
           <Reveal>
             <p className="eyebrow mb-5">{t('sec.documentation')}</p>
-            <h2 className="text-step-3 mb-4">Get easy access to technical resources</h2>
+            <h2 className="text-step-3 mb-4">{c.home.resourcesTitle}</h2>
             <p className="text-[var(--ink-3)] text-step-0 mb-8 leading-relaxed">
-              Access TDS, SDS, technical bulletins, application guides and product
-              documentation.
+              {c.home.resourcesBody}
             </p>
 
             <div className="bg-white p-7 sm:p-8 border border-[var(--line)] cut-br">
@@ -40,13 +38,13 @@ export function ResourcesAndInsights() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="res-name" className="block text-xs font-bold uppercase tracking-[0.1em] text-[var(--ink-3)] mb-2">
-                      Name
+                      {c.home.fieldName}
                     </label>
                     <input id="res-name" type="text" autoComplete="name" className={FIELD} />
                   </div>
                   <div>
                     <label htmlFor="res-company" className="block text-xs font-bold uppercase tracking-[0.1em] text-[var(--ink-3)] mb-2">
-                      Company
+                      {c.home.fieldCompany}
                     </label>
                     <input id="res-company" type="text" autoComplete="organization" className={FIELD} />
                   </div>
@@ -54,7 +52,7 @@ export function ResourcesAndInsights() {
 
                 <div>
                   <label htmlFor="res-email" className="block text-xs font-bold uppercase tracking-[0.1em] text-[var(--ink-3)] mb-2">
-                    Email
+                    {c.home.fieldEmail}
                   </label>
                   <input id="res-email" type="email" autoComplete="email" className={FIELD} />
                 </div>
@@ -62,10 +60,10 @@ export function ResourcesAndInsights() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="res-country" className="block text-xs font-bold uppercase tracking-[0.1em] text-[var(--ink-3)] mb-2">
-                      Country
+                      {c.home.fieldCountry}
                     </label>
                     <select id="res-country" className={FIELD} defaultValue="">
-                      <option value="" disabled>Select country</option>
+                      <option value="" disabled>{c.home.selectCountry}</option>
                       <option>China</option>
                       <option>Bangladesh</option>
                       <option>Other</option>
@@ -73,17 +71,17 @@ export function ResourcesAndInsights() {
                   </div>
                   <div>
                     <label htmlFor="res-role" className="block text-xs font-bold uppercase tracking-[0.1em] text-[var(--ink-3)] mb-2">
-                      Role
+                      {c.home.fieldRole}
                     </label>
                     <input id="res-role" type="text" className={FIELD} />
                   </div>
                 </div>
 
                 <button type="submit" className="btn btn-primary w-full mt-2 cut-br">
-                  Sign up
+                  {c.home.signUp}
                 </button>
                 <p className="text-xs text-[var(--steel-2)] text-center">
-                  By signing up, you agree to our Terms of Use and Privacy Policy.
+                  {c.home.signUpNote}
                 </p>
               </form>
             </div>
@@ -115,14 +113,14 @@ export function ResourcesAndInsights() {
             <div className="max-w-xl">
               <p className="eyebrow mb-5">{t('sec.knowledge')}</p>
               <h2 className="text-step-3">
-                Knowledge that supports better formulation decisions
+                {c.home.knowledgeTitle}
               </h2>
             </div>
             <Link
               href="/knowledge"
               className="link-sweep text-[var(--brand-teal)] font-bold text-sm uppercase tracking-[0.1em]"
             >
-              Explore Knowledge Hub <ArrowRight className="w-4 h-4" />
+              {c.home.exploreHub} <ArrowRight className="w-4 h-4" />
             </Link>
           </Reveal>
 
@@ -143,19 +141,19 @@ export function ResourcesAndInsights() {
                       {String(idx + 1).padStart(2, '0')}
                     </span>
                     <span className="absolute bottom-0 left-8 bg-[var(--brand-red)] text-white px-3 py-1.5 text-[0.65rem] font-bold uppercase tracking-[0.14em]">
-                      {article.kind}
+                      {article.kind === 'Technical' ? c.knowledge.kindTechnical : c.knowledge.kindCompany}
                     </span>
                   </div>
 
                   <h3 className="text-step-1 font-bold mb-3 leading-snug transition-colors group-hover:text-white line-clamp-3">
-                    {article.title}
+                    {localized(article.href, { title: article.title, summary: article.summary }).title}
                   </h3>
                   <p className="text-xs text-[var(--steel)] mb-8 transition-colors group-hover:text-white/45">
                     {article.topics.join(' · ')}
                   </p>
 
                   <span className="mt-auto inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-[var(--brand-teal)] transition-colors group-hover:text-white">
-                    Read article
+                    {c.home.readArticle}
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>
                 </a>

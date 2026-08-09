@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
 import { ACTIVE_CATEGORIES } from '@/data/products';
 import { COMPANY } from '@/data/company';
-import { useT } from '@/i18n/LanguageProvider';
+import { useI18n } from '@/i18n/LanguageProvider';
 
 const SERVICES = [
   { label: 'Technical Consultation', href: '/services' },
@@ -24,7 +24,7 @@ const RESOURCES = [
 ];
 
 export function Footer() {
-  const t = useT();
+  const { t, categoryName } = useI18n();
 
   return (
     <footer className="bg-[var(--ink)] text-[var(--steel-2)]">
@@ -84,7 +84,7 @@ export function Footer() {
                     href={`/products?category=${cat.slug}`}
                     className="hover:text-[var(--brand-teal)] transition-colors inline-flex items-center gap-2"
                   >
-                    {cat.name}
+                    {categoryName(cat.slug, cat.name)}
                     <span className="text-[var(--steel)]/60 text-xs tnum">{cat.count}</span>
                   </Link>
                 </li>

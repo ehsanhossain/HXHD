@@ -5,13 +5,27 @@ import {
 } from 'react';
 import { DEFAULT_LOCALE, LOCALE_META, STORAGE_KEY, type Locale } from './config';
 import { DICTIONARIES, type Dict } from './dictionaries';
+import { PAGE_CONTENT, type PageContent } from './content';
+import { localizedSummary } from './productCopy';
+import { localizedArticle, type ArticleCopy } from './articleCopy';
 
 type Vars = Record<string, string | number>;
 
 interface LanguageContextValue {
   locale: Locale;
   setLocale: (l: Locale) => void;
+  /** Short UI strings. */
   t: (key: keyof Dict, vars?: Vars) => string;
+  /** Structured page content for the active locale. */
+  c: PageContent;
+  /** Localised category name, falling back to the English name in the data. */
+  categoryName: (slug: string, fallback?: string) => string;
+  /** Fills {placeholders} in any string taken from `c`. */
+  fill: (template: string, vars: Vars) => string;
+  /** Localised product card summary, falling back to the English one. */
+  summary: (slug: string, fallback: string) => string;
+  /** Localised article title + summary, falling back to the English one. */
+  article: (href: string, fallback: ArticleCopy) => ArticleCopy;
 }
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
@@ -61,7 +75,30 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     [locale]
   );
 
-  const value = useMemo(() => ({ locale, setLocale, t }), [locale, setLocale, t]);
+  const c = PAGE_CONTENT[locale] ?? PAGE_CONTENT[DEFAULT_LOCALE];
+
+  const categoryName = useCallback(
+    (slug: string, fallback?: string) =>
+      c.categories[slug] ?? PAGE_CONTENT[DEFAULT_LOCALE].categories[slug] ?? fallback ?? slug,
+    [c]
+  );
+
+  const fill = useCallback((template: string, vars: Vars) => interpolate(template, vars), []);
+
+  const summary = useCallback(
+    (slug: string, fallback: string) => localizedSummary(locale, slug, fallback),
+    [locale]
+  );
+
+  const article = useCallback(
+    (href: string, fallback: ArticleCopy) => localizedArticle(locale, href, fallback),
+    [locale]
+  );
+
+  const value = useMemo(
+    () => ({ locale, setLocale, t, c, categoryName, fill, summary, article }),
+    [locale, setLocale, t, c, categoryName, fill, summary, article]
+  );
 
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
 }

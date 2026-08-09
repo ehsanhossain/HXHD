@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useT } from '@/i18n/LanguageProvider';
 
 interface PaginationProps {
   currentPage: number;
@@ -25,17 +26,18 @@ function pageItems(current: number, total: number): (number | null)[] {
 }
 
 export function Pagination({ currentPage, totalPages, onPageChange }: PaginationProps) {
+  const t = useT();
   const items = pageItems(currentPage, totalPages);
 
   return (
     <nav
       className="flex justify-center items-center gap-2 mt-16 mb-20"
-      aria-label="Product pagination"
+      aria-label={t('products.pagination')}
     >
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        aria-label="Previous page"
+        aria-label={t('products.prev')}
         className="p-2 text-slate-600 hover:text-[#D61118] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:text-slate-600"
       >
         <ChevronLeft className="w-5 h-5" />
@@ -65,7 +67,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        aria-label="Next page"
+        aria-label={t('products.next')}
         className="p-2 text-slate-600 hover:text-[#D61118] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:text-slate-600"
       >
         <ChevronRight className="w-5 h-5" />

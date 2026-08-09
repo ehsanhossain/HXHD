@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Search } from 'lucide-react';
 import { ACTIVE_CATEGORIES } from '@/data/products';
-import { useT } from '@/i18n/LanguageProvider';
+import { useI18n } from '@/i18n/LanguageProvider';
 
 /** Six highest-count categories become the quick filters. */
 const QUICK = ACTIVE_CATEGORIES.slice(0, 6);
@@ -13,7 +13,7 @@ const QUICK = ACTIVE_CATEGORIES.slice(0, 6);
 export function SearchStrip() {
   const [query, setQuery] = useState('');
   const router = useRouter();
-  const t = useT();
+  const { t, categoryName } = useI18n();
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -53,7 +53,7 @@ export function SearchStrip() {
                 href={`/products?category=${cat.slug}`}
                 className="group inline-flex items-center gap-1.5 px-4 h-10 bg-white border border-[var(--line)] text-sm font-bold text-[var(--ink-3)] hover:border-[var(--brand-red)] hover:text-[var(--brand-red)] transition-colors"
               >
-                {cat.name}
+                {categoryName(cat.slug, cat.name)}
                 <span className="text-[0.68rem] text-[var(--steel-2)] group-hover:text-[var(--brand-red)] tnum">
                   {cat.count}
                 </span>

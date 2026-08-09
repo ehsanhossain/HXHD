@@ -5,9 +5,11 @@ import Image from 'next/image';
 import { ArrowRight, Mail, Phone } from 'lucide-react';
 import { motion, useReducedMotion } from 'motion/react';
 import { COMPANY } from '@/data/company';
+import { useI18n } from '@/i18n/LanguageProvider';
 
 export function ContactHero() {
   const reduced = useReducedMotion();
+  const { t, c } = useI18n();
 
   const rise = (delay: number) => ({
     initial: { opacity: 0, y: reduced ? 0 : 20 },
@@ -20,9 +22,11 @@ export function ContactHero() {
       {/* Breadcrumb */}
       <div className="bg-[var(--paper-2)] border-b border-[var(--line)]">
         <div className="shell py-3 text-xs text-[var(--steel)] flex items-center gap-1.5">
-          <Link href="/" className="hover:text-[var(--brand-red)] transition-colors">Home</Link>
+          <Link href="/" className="hover:text-[var(--brand-red)] transition-colors">
+            {t('nav.home')}
+          </Link>
           <span className="text-[var(--line-strong)]">/</span>
-          <span className="font-bold text-[var(--ink)]">Contact</span>
+          <span className="font-bold text-[var(--ink)]">{t('nav.support')}</span>
         </div>
       </div>
 
@@ -51,26 +55,24 @@ export function ContactHero() {
 
           <div className="relative px-8 lg:px-14 py-14 lg:py-20 flex flex-col justify-center h-full">
             <motion.p className="eyebrow mb-5" {...rise(0)}>
-              Get in touch
+              {t('page.contact.eyebrow')}
             </motion.p>
 
             <motion.h1 className="text-step-3 mb-6" {...rise(0.06)}>
-              Contact us
+              {t('page.contact.title')}
             </motion.h1>
 
             <motion.p className="text-white/65 leading-relaxed mb-9 max-w-xl" {...rise(0.12)}>
-              Our sales and technical representatives are here to assist with
-              formulation targets, substrates, documentation and supply. Send an
-              enquiry below, or reach the team directly.
+              {c.contact.heroBody}
             </motion.p>
 
             <motion.div className="flex flex-col sm:flex-row gap-3 mb-8" {...rise(0.18)}>
               <a href="#enquiry" className="btn btn-primary cut-br group">
-                Send an Enquiry
+                {t('cta.sendEnquiry')}
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
               <Link href="/products" className="btn btn-on-dark">
-                Browse Products
+                {t('cta.browseProducts')}
               </Link>
             </motion.div>
 

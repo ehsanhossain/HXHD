@@ -4,12 +4,14 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { ACTIVE_CATEGORIES, PRODUCTS } from '@/data/products';
+import { useI18n } from '@/i18n/LanguageProvider';
 
 interface ProductsMegaMenuProps {
   onClose: () => void;
 }
 
 export function ProductsMegaMenu({ onClose }: ProductsMegaMenuProps) {
+  const { t, categoryName } = useI18n();
   const featured = PRODUCTS.find((p) => p.code === 'HX-470') ?? PRODUCTS[0];
 
   return (
@@ -26,7 +28,7 @@ export function ProductsMegaMenu({ onClose }: ProductsMegaMenuProps) {
             onClick={onClose}
             className="inline-flex items-center gap-2 text-[#D61118] font-bold text-lg hover:underline hover:text-[#b00d13] transition-colors"
           >
-            Find Your Product <ArrowRight className="w-5 h-5" />
+            {t('cta.findProduct')} <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
 
@@ -39,7 +41,7 @@ export function ProductsMegaMenu({ onClose }: ProductsMegaMenuProps) {
                 onClick={onClose}
                 className="text-slate-600 hover:text-[#D61118] font-medium transition-colors text-sm"
               >
-                {category.name}
+                {categoryName(category.slug, category.name)}
                 <span className="text-slate-400"> ({category.count})</span>
               </Link>
             ))}
@@ -70,7 +72,7 @@ export function ProductsMegaMenu({ onClose }: ProductsMegaMenuProps) {
             onClick={onClose}
             className="inline-flex items-center gap-2 text-[#D61118] font-bold text-sm hover:underline uppercase tracking-wide"
           >
-            View All {PRODUCTS.length} Products <ArrowRight className="w-4 h-4" />
+            {t('cta.viewAll', { n: PRODUCTS.length })} <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>

@@ -5,8 +5,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import type { Product } from '@/data/products';
 import { Stagger, StaggerItem } from '@/components/motion/Reveal';
+import { useI18n } from '@/i18n/LanguageProvider';
 
 function ProductCard({ product, index }: { product: Product; index: number }) {
+  const { t, categoryName, summary } = useI18n();
+
   return (
     <Link
       href={`/products/${product.slug}`}
@@ -35,7 +38,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
             </span>
           )}
           <span className="text-[0.68rem] font-bold uppercase tracking-[0.1em] text-[var(--brand-teal)] truncate">
-            {product.category}
+            {categoryName(product.categorySlug, product.category)}
           </span>
         </div>
 
@@ -44,11 +47,11 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
         </h3>
 
         <p className="text-sm text-[var(--steel)] mb-6 leading-relaxed line-clamp-3">
-          {product.summary}
+          {summary(product.slug, product.summary)}
         </p>
 
         <span className="mt-auto inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-[var(--brand-red)]">
-          View product
+          {t('cta.viewProduct')}
           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
         </span>
       </div>
