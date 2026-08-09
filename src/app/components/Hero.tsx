@@ -7,41 +7,51 @@ import {
   ArrowRight, CheckCircle2, FlaskConical, Globe2, FileText, Pause, Play,
 } from 'lucide-react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
-import { PRODUCTS, getProductBySlug } from '@/data/products';
+import { PRODUCTS, getProductsByCategory } from '@/data/products';
 import { useT } from '@/i18n/LanguageProvider';
 
-/** How long each slide holds, in milliseconds. */
+/** How long each headline slide holds, in milliseconds. */
 const SLIDE_DURATION = 12_000;
+
+/** How long each product holds in the plate. Divides into SLIDE_DURATION. */
+const PRODUCT_DURATION = 4_000;
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 /**
- * Four capability areas, each anchored to a real product from the catalogue.
- * `code` is resolved against PRODUCTS so the imagery and links can never
- * drift from the data module.
+ * Four capability areas. Each names the catalogue categories it covers, so
+ * the product plate can rotate through real products for that area — the
+ * imagery can never drift from the data module.
+ *
+ * Slide 1 has no category of its own; it shows the most-reviewed products
+ * across the whole catalogue.
  */
 const SLIDES = [
+  { k: 's1', accentLine: 1, cats: [] as string[] },
+  { k: 's2', accentLine: 1, cats: ['waterproof-emulsion'] },
+  { k: 's3', accentLine: 1, cats: ['architectural-emulsion'] },
   {
-    code: 'HX-470',
-    k: 's1',
-    accentLine: 1,
-  },
-  {
-    code: 'HX-470',
-    k: 's2',
-    accentLine: 1,
-  },
-  {
-    code: 'HX-303',
-    k: 's3',
-    accentLine: 1,
-  },
-  {
-    code: 'HX-3086',
     k: 's4',
     accentLine: 1,
+    cats: [
+      'ceramic-tile-adhesive',
+      'transparent-waterproof-adhesive',
+      'wall-curing-agent-adhesive',
+    ],
   },
 ] as const;
+
+/** Most-reviewed products, used as slide 1's rotation. */
+const FEATURED = [...PRODUCTS]
+  .sort((a, b) => (b.rating?.count ?? 0) - (a.rating?.count ?? 0))
+  .slice(0, 6);
+
+/** Products the plate cycles through for a given slide. */
+function poolFor(slide: (typeof SLIDES)[number]) {
+  if (!slide.cats.length) return FEATURED;
+  const pool = slide.cats.flatMap((c) => getProductsByCategory(c));
+  return pool.length ? pool : FEATURED;
+}
 
 const MARKERS = [
   { icon: CheckCircle2, k: 'trust.established' },
@@ -54,6 +64,7 @@ export function Hero() {
   const reduced = useReducedMotion();
   const t = useT();
   const [index, setIndex] = useState(0);
+  const [productIndex, setProductIndex] = useState(0);
   const [paused, setPaused] = useState(false);
 
   // Track elapsed time so pause/resume continues rather than restarting
@@ -89,6 +100,34 @@ export function Hero() {
     };
   }, [index, paused, reduced]);
 
+  /**
+   * Reset the plate to the first product of the new slide's pool.
+   *
+   * This lives in its own effect rather than alongside setIndex: the slide
+   * advance (12s) and the third product tick (3 × 4s) land on the same
+   * instant, and batching the two writes together let the tick win — which
+   * meant pool[0] was skipped on every slide. An effect keyed on `index`
+   * runs after that batch, so the reset always lands last.
+   */
+  useEffect(() => {
+    setProductIndex(0);
+  }, [index]);
+
+  /**
+   * The plate rotates faster than the headline — one product every
+   * PRODUCT_DURATION, so each 12s headline shows three products from its own
+   * category. Respects the same pause conditions as the headline.
+   */
+  useEffect(() => {
+    if (reduced || paused) return;
+
+    const id = setInterval(() => {
+      setProductIndex((i) => i + 1);
+    }, PRODUCT_DURATION);
+
+    return () => clearInterval(id);
+  }, [index, paused, reduced]);
+
   // Don't burn through slides while the tab is in the background
   useEffect(() => {
     const onVisibility = () => setPaused(document.hidden);
@@ -97,9 +136,9 @@ export function Hero() {
   }, []);
 
   const slide = SLIDES[index];
-  const product = getProductBySlug(
-    PRODUCTS.find((p) => p.code === slide.code)?.slug ?? ''
-  ) ?? PRODUCTS[0];
+  const pool = poolFor(slide);
+  // productIndex counts up without bound; wrap it against the current pool
+  const product = pool[productIndex % pool.length] ?? PRODUCTS[0];
 
   const autoRotating = !reduced;
 
