@@ -1,3 +1,101 @@
-﻿"use client";
+"use client";
 
-import { ArrowRight } from 'lucide-react';export function ContactHero() {  return (    <section className="bg-slate-950 text-white">      {/* Breadcrumb - Placed here to sit below header */}      <div className="bg-white text-slate-500 text-xs py-2 px-6 border-b border-slate-200">        <div className="max-w-screen-2xl mx-auto">          <span className="hover:underline cursor-pointer">Home</span> / <span className="hover:underline cursor-pointer">About Us</span> / <span className="font-bold text-slate-800">Contact Us</span>        </div>      </div>      <div className="flex flex-col md:flex-row min-h-[400px]">        {/* Left Image */}        <div className="w-full md:w-1/2 relative h-64 md:h-auto">             <img              src="https://images.unsplash.com/photo-1573153178631-49e3aa9e018b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwd29ya2VyJTIwc2FmZXR5JTIwZ2VhciUyMGNoZW1pY2FsJTIwcGxhbnQlMjBkYXJrfGVufDF8fHx8MTc2ODM2MTkzM3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"              alt="Industrial Worker"              className="absolute inset-0 w-full h-full object-cover"            />            <div className="absolute inset-0 bg-slate-900/30"></div>        </div>        {/* Right Content */}        <div className="w-full md:w-1/2 p-10 lg:p-16 flex flex-col justify-center bg-slate-900">          <h1 className="text-4xl font-bold mb-6">Contact Us</h1>          <p className="text-lg text-slate-300 mb-8 leading-relaxed">            Our sales, technical, and customer service representatives are here to assist you. Use our Partner & Distributor Locator to find a partner in your region. Otherwise, please use the contact information below or fill out the inquiry form to get in touch.          </p>          <a href="#" className="inline-flex items-center justify-center px-6 py-3 bg-[#D61118] text-white font-bold rounded-none hover:bg-[#b00d13] transition-colors w-fit">            Partner & Distributor Locator          </a>          <a href="#" className="mt-6 text-sm text-[#1B8C88] hover:text-white transition-colors underline decoration-dotted underline-offset-4">            Looking for international locations? View our international page.          </a>        </div>      </div>    </section>  );}
+import Link from 'next/link';
+import Image from 'next/image';
+import { ArrowRight, Mail, Phone } from 'lucide-react';
+import { motion, useReducedMotion } from 'motion/react';
+import { COMPANY } from '@/data/company';
+
+export function ContactHero() {
+  const reduced = useReducedMotion();
+
+  const rise = (delay: number) => ({
+    initial: { opacity: 0, y: reduced ? 0 : 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: reduced ? 0 : 0.6, delay: reduced ? 0 : delay, ease: [0.16, 1, 0.3, 1] as const },
+  });
+
+  return (
+    <section>
+      {/* Breadcrumb */}
+      <div className="bg-[var(--paper-2)] border-b border-[var(--line)]">
+        <div className="shell py-3 text-xs text-[var(--steel)] flex items-center gap-1.5">
+          <Link href="/" className="hover:text-[var(--brand-red)] transition-colors">Home</Link>
+          <span className="text-[var(--line-strong)]">/</span>
+          <span className="font-bold text-[var(--ink)]">Contact</span>
+        </div>
+      </div>
+
+      <div className="flex flex-col lg:flex-row">
+        {/* Real facility photograph */}
+        <div className="w-full lg:w-1/2 relative min-h-[280px] lg:min-h-[520px]">
+          <Image
+            src="/images/about/company.jpg"
+            alt="HXHD — Hubei Hongxing Hongda New Materials head office"
+            fill
+            priority
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-[var(--ink)]/35" aria-hidden />
+          <div className="absolute inset-0 bg-grid-dark opacity-40" aria-hidden />
+        </div>
+
+        {/* Copy */}
+        <div className="w-full lg:w-1/2 relative bg-[var(--ink)] text-white overflow-hidden">
+          <div
+            className="absolute bottom-0 right-0 h-2/3 w-2/3 bg-[var(--brand-teal)]/10"
+            style={{ clipPath: 'polygon(100% 0, 100% 100%, 0 100%)' }}
+            aria-hidden
+          />
+
+          <div className="relative px-8 lg:px-14 py-14 lg:py-20 flex flex-col justify-center h-full">
+            <motion.p className="eyebrow mb-5" {...rise(0)}>
+              Get in touch
+            </motion.p>
+
+            <motion.h1 className="text-step-3 mb-6" {...rise(0.06)}>
+              Contact us
+            </motion.h1>
+
+            <motion.p className="text-white/65 leading-relaxed mb-9 max-w-xl" {...rise(0.12)}>
+              Our sales and technical representatives are here to assist with
+              formulation targets, substrates, documentation and supply. Send an
+              enquiry below, or reach the team directly.
+            </motion.p>
+
+            <motion.div className="flex flex-col sm:flex-row gap-3 mb-8" {...rise(0.18)}>
+              <a href="#enquiry" className="btn btn-primary cut-br group">
+                Send an Enquiry
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </a>
+              <Link href="/products" className="btn btn-on-dark">
+                Browse Products
+              </Link>
+            </motion.div>
+
+            <motion.div
+              className="flex flex-col sm:flex-row gap-x-8 gap-y-3 pt-7 border-t border-white/12"
+              {...rise(0.24)}
+            >
+              <a
+                href={`tel:${COMPANY.phoneHref}`}
+                className="inline-flex items-center gap-2.5 text-sm text-white/75 hover:text-white transition-colors"
+              >
+                <Phone className="w-4 h-4 text-[var(--brand-teal)]" />
+                {COMPANY.phone}
+              </a>
+              <a
+                href={`mailto:${COMPANY.email}`}
+                className="inline-flex items-center gap-2.5 text-sm text-white/75 hover:text-white transition-colors break-all"
+              >
+                <Mail className="w-4 h-4 text-[var(--brand-teal)] shrink-0" />
+                {COMPANY.email}
+              </a>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

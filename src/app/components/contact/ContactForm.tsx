@@ -1,3 +1,212 @@
-﻿"use client";
+"use client";
 
-export function ContactForm() {  return (    <section className="py-20 bg-slate-50 border-t border-slate-200">      <div className="max-w-4xl mx-auto px-6">        <h2 className="text-3xl font-bold text-center text-slate-900 mb-12">Submit Inquiry</h2>                <form className="space-y-6">          {/* Row 1 */}          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">            <div className="space-y-2">              <label htmlFor="firstName" className="block text-sm font-bold text-slate-700">First Name <span className="text-[#D61118]">*</span></label>              <input type="text" id="firstName" className="w-full px-4 py-3 bg-white border border-slate-300 focus:border-[#D61118] focus:ring-1 focus:ring-[#D61118] focus:outline-none rounded-none transition-colors" required />            </div>            <div className="space-y-2">              <label htmlFor="lastName" className="block text-sm font-bold text-slate-700">Last Name <span className="text-[#D61118]">*</span></label>              <input type="text" id="lastName" className="w-full px-4 py-3 bg-white border border-slate-300 focus:border-[#D61118] focus:ring-1 focus:ring-[#D61118] focus:outline-none rounded-none transition-colors" required />            </div>          </div>          {/* Row 2 */}          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">            <div className="space-y-2">              <label htmlFor="email" className="block text-sm font-bold text-slate-700">Email <span className="text-[#D61118]">*</span></label>              <input type="email" id="email" className="w-full px-4 py-3 bg-white border border-slate-300 focus:border-[#D61118] focus:ring-1 focus:ring-[#D61118] focus:outline-none rounded-none transition-colors" required />            </div>            <div className="space-y-2">              <label htmlFor="phone" className="block text-sm font-bold text-slate-700">Phone Number <span className="text-[#D61118]">*</span></label>              <input type="text" id="phone" className="w-full px-4 py-3 bg-white border border-slate-300 focus:border-[#D61118] focus:ring-1 focus:ring-[#D61118] focus:outline-none rounded-none transition-colors" required />            </div>          </div>          {/* Row 3 */}          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">            <div className="space-y-2">              <label htmlFor="country" className="block text-sm font-bold text-slate-700">Country <span className="text-[#D61118]">*</span></label>              <select id="country" className="w-full px-4 py-3 bg-white border border-slate-300 focus:border-[#D61118] focus:ring-1 focus:ring-[#D61118] focus:outline-none rounded-none text-slate-700 transition-colors" defaultValue="" required>                <option value="" disabled>Please Select</option>                <option value="CN">China</option>                <option value="BD">Bangladesh</option>                <option value="US">United States</option>                <option value="Other">Other</option>              </select>            </div>            <div className="space-y-2">              <label htmlFor="state" className="block text-sm font-bold text-slate-700">State/Province <span className="text-[#D61118]">*</span></label>              <select id="state" className="w-full px-4 py-3 bg-white border border-slate-300 focus:border-[#D61118] focus:ring-1 focus:ring-[#D61118] focus:outline-none rounded-none text-slate-700 transition-colors" defaultValue="" required>                <option value="" disabled>Please Select</option>                <option value="NA">Not Applicable</option>                <option value="JS">Jiangsu</option>                <option value="DH">Dhaka</option>              </select>            </div>          </div>          {/* Row 4 */}          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">             <div className="space-y-2">              <label htmlFor="zip" className="block text-sm font-bold text-slate-700">Zip/Postal Code <span className="text-[#D61118]">*</span></label>              <input type="text" id="zip" className="w-full px-4 py-3 bg-white border border-slate-300 focus:border-[#D61118] focus:ring-1 focus:ring-[#D61118] focus:outline-none rounded-none transition-colors" required />            </div>          </div>          {/* Row 5 */}          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">            <div className="space-y-2">              <label htmlFor="company" className="block text-sm font-bold text-slate-700">Company Name</label>              <input type="text" id="company" className="w-full px-4 py-3 bg-white border border-slate-300 focus:border-[#D61118] focus:ring-1 focus:ring-[#D61118] focus:outline-none rounded-none transition-colors" />            </div>            <div className="space-y-2">              <label htmlFor="role" className="block text-sm font-bold text-slate-700">I am a <span className="text-[#D61118]">*</span></label>              <select id="role" className="w-full px-4 py-3 bg-white border border-slate-300 focus:border-[#D61118] focus:ring-1 focus:ring-[#D61118] focus:outline-none rounded-none text-slate-700 transition-colors" defaultValue="" required>                <option value="" disabled>Please Select</option>                <option value="Manufacturer">Manufacturer</option>                <option value="Distributor">Distributor</option>                <option value="Contractor">Contractor</option>                <option value="Other">Other</option>              </select>            </div>          </div>          {/* Row 6 */}          <div className="space-y-2">            <label htmlFor="help" className="block text-sm font-bold text-slate-700">How can we help?</label>            <select id="help" className="w-full px-4 py-3 bg-white border border-slate-300 focus:border-[#D61118] focus:ring-1 focus:ring-[#D61118] focus:outline-none rounded-none text-slate-700 transition-colors" defaultValue="">              <option value="" disabled>Please Select</option>              <option value="Product Inquiry">Product Inquiry</option>              <option value="Technical Support">Technical Support</option>              <option value="Sales">Sales</option>              <option value="Other">Other</option>            </select>          </div>          {/* Row 7 */}          <div className="space-y-2">            <label htmlFor="project" className="block text-sm font-bold text-slate-700">Do you have a project? <span className="text-[#D61118]">*</span></label>            <select id="project" className="w-full px-4 py-3 bg-white border border-slate-300 focus:border-[#D61118] focus:ring-1 focus:ring-[#D61118] focus:outline-none rounded-none text-slate-700 transition-colors" defaultValue="" required>              <option value="" disabled>Please Select</option>              <option value="Yes">Yes</option>              <option value="No">No</option>            </select>          </div>          {/* Row 8 */}          <div className="space-y-2">            <label htmlFor="message" className="block text-sm font-bold text-slate-700 uppercase tracking-wide">COMMENTS</label>            <textarea id="message" rows={5} className="w-full px-4 py-3 bg-white border border-slate-300 focus:border-[#D61118] focus:ring-1 focus:ring-[#D61118] focus:outline-none rounded-none transition-colors"></textarea>          </div>          {/* Row 9 */}          <div className="space-y-2">            <label htmlFor="source" className="block text-sm font-bold text-slate-700">How did you hear about HXHD? <span className="text-[#D61118]">*</span></label>            <select id="source" className="w-full px-4 py-3 bg-white border border-slate-300 focus:border-[#D61118] focus:ring-1 focus:ring-[#D61118] focus:outline-none rounded-none text-slate-700 transition-colors" defaultValue="" required>              <option value="" disabled>Please Select</option>              <option value="Search Engine">Search Engine</option>              <option value="Social Media">Social Media</option>              <option value="Referral">Referral</option>              <option value="Exhibition">Exhibition</option>            </select>          </div>          {/* Privacy & Consent */}          <div className="pt-6 space-y-4">            <p className="text-sm text-slate-600 leading-relaxed">              HXHD is committed to protecting and respecting your privacy. We will only use your personal information to administer your inquiry and provide the products and services you requested.            </p>                        <div className="flex items-start gap-3">              <input type="checkbox" id="marketing" className="mt-1 w-4 h-4 text-[#D61118] border-slate-300 rounded-sm focus:ring-[#D61118]" />              <label htmlFor="marketing" className="text-sm text-slate-600">                Yes, I would like to receive news and other communications about HXHD products and services. I understand I may unsubscribe at any time.              </label>            </div>            <div className="flex items-start gap-3">              <input type="checkbox" id="terms" className="mt-1 w-4 h-4 text-[#D61118] border-slate-300 rounded-sm focus:ring-[#D61118]" required />              <label htmlFor="terms" className="text-sm text-slate-600">                I have read and agree to the <a href="#" className="text-[#D61118] hover:underline">Terms of Use</a> and <a href="#" className="text-[#D61118] hover:underline">Privacy Policy</a>. <span className="text-[#D61118]">*</span>              </label>            </div>          </div>          {/* Recaptcha Placeholder */}          <div className="py-4">            <div className="w-[304px] h-[78px] bg-slate-100 border border-slate-300 rounded-sm flex items-center justify-center text-slate-400 text-xs">              reCAPTCHA Placeholder            </div>          </div>          {/* Submit Button */}          <div>            <button type="submit" className="px-8 py-4 bg-[#D61118] text-white font-bold text-sm uppercase tracking-wide hover:bg-[#b00d13] transition-colors rounded-none shadow-sm">              Submit            </button>          </div>        </form>      </div>    </section>  );}
+import { useState } from 'react';
+import { Send, AlertCircle } from 'lucide-react';
+import { Reveal } from '@/components/motion/Reveal';
+import { COMPANY } from '@/data/company';
+
+const CONTACT_EMAIL = COMPANY.email;
+
+const FIELD =
+  'w-full h-12 px-4 bg-white border border-[var(--line-strong)] focus:border-[var(--brand-red)] focus:outline-none text-[var(--ink)] placeholder:text-[var(--steel-2)] transition-colors';
+
+const LABEL =
+  'block text-xs font-bold uppercase tracking-[0.1em] text-[var(--ink-3)] mb-2';
+
+function Required() {
+  return <span className="text-[var(--brand-red)]">*</span>;
+}
+
+export function ContactForm() {
+  const [error, setError] = useState<string | null>(null);
+
+  /**
+   * There is no backend on this site, so rather than faking a "submitted"
+   * state the form composes the enquiry into a mail draft addressed to the
+   * real sales inbox. The user stays in control of actually sending it.
+   */
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+
+    if (!form.checkValidity()) {
+      setError('Please complete the required fields marked with an asterisk.');
+      form.reportValidity();
+      return;
+    }
+
+    const data = new FormData(form);
+    const get = (k: string) => String(data.get(k) ?? '').trim();
+
+    const subject = `Enquiry — ${get('help') || 'General'} — ${get('company') || get('firstName')}`;
+    const body = [
+      `Name: ${get('firstName')} ${get('lastName')}`,
+      `Company: ${get('company') || '—'}`,
+      `Role: ${get('role')}`,
+      `Email: ${get('email')}`,
+      `Phone: ${get('phone')}`,
+      `Country: ${get('country')}`,
+      `Enquiry type: ${get('help') || '—'}`,
+      `Has a project: ${get('project')}`,
+      '',
+      'Message:',
+      get('message') || '—',
+    ].join('\n');
+
+    setError(null);
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+  };
+
+  return (
+    <section id="enquiry" className="section bg-white scroll-mt-24">
+      <div className="shell max-w-4xl">
+        <Reveal className="mb-10">
+          <p className="eyebrow mb-5">Enquiry</p>
+          <h2 className="text-step-2 mb-4">Submit an enquiry</h2>
+          <p className="text-[var(--ink-3)] leading-relaxed">
+            Complete the form and it will open a pre-filled message to{' '}
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="font-bold text-[var(--brand-red)] hover:underline"
+            >
+              {CONTACT_EMAIL}
+            </a>
+            . Fields marked <Required /> are required.
+          </p>
+        </Reveal>
+
+        <Reveal delay={0.08}>
+          <form onSubmit={handleSubmit} noValidate={false} className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor="firstName" className={LABEL}>First name <Required /></label>
+                <input id="firstName" name="firstName" type="text" autoComplete="given-name" className={FIELD} required />
+              </div>
+              <div>
+                <label htmlFor="lastName" className={LABEL}>Last name <Required /></label>
+                <input id="lastName" name="lastName" type="text" autoComplete="family-name" className={FIELD} required />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor="email" className={LABEL}>Email <Required /></label>
+                <input id="email" name="email" type="email" autoComplete="email" inputMode="email" className={FIELD} required />
+              </div>
+              <div>
+                <label htmlFor="phone" className={LABEL}>Phone <Required /></label>
+                <input id="phone" name="phone" type="tel" autoComplete="tel" inputMode="tel" className={FIELD} required />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor="country" className={LABEL}>Country <Required /></label>
+                <select id="country" name="country" className={FIELD} defaultValue="" required>
+                  <option value="" disabled>Please select</option>
+                  <option>China</option>
+                  <option>Bangladesh</option>
+                  <option>India</option>
+                  <option>Vietnam</option>
+                  <option>Indonesia</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div>
+                <label htmlFor="company" className={LABEL}>Company</label>
+                <input id="company" name="company" type="text" autoComplete="organization" className={FIELD} />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor="role" className={LABEL}>I am a <Required /></label>
+                <select id="role" name="role" className={FIELD} defaultValue="" required>
+                  <option value="" disabled>Please select</option>
+                  <option>Manufacturer</option>
+                  <option>Distributor</option>
+                  <option>Contractor</option>
+                  <option>Trader / Importer</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div>
+                <label htmlFor="help" className={LABEL}>How can we help?</label>
+                <select id="help" name="help" className={FIELD} defaultValue="">
+                  <option value="" disabled>Please select</option>
+                  <option>Product enquiry</option>
+                  <option>Technical support</option>
+                  <option>Documentation (TDS / SDS)</option>
+                  <option>Sample request</option>
+                  <option>OEM / custom formulation</option>
+                  <option>Distribution</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="project" className={LABEL}>Do you have an active project? <Required /></label>
+              <select id="project" name="project" className={FIELD} defaultValue="" required>
+                <option value="" disabled>Please select</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </div>
+
+            <div>
+              <label htmlFor="message" className={LABEL}>
+                Comments — substrate, performance targets, volumes
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows={5}
+                className={`${FIELD} !h-auto py-3 resize-y`}
+              />
+            </div>
+
+            <div className="pt-4 space-y-4 border-t border-[var(--line)]">
+              <p className="text-sm text-[var(--steel)] leading-relaxed">
+                HXHD is committed to protecting and respecting your privacy. Your
+                information is used only to administer your enquiry.
+              </p>
+
+              <label className="flex items-start gap-3 cursor-pointer">
+                <input type="checkbox" name="marketing" className="mt-1 w-4 h-4 accent-[var(--brand-red)]" />
+                <span className="text-sm text-[var(--ink-3)]">
+                  I would like to receive news about HXHD products and services.
+                </span>
+              </label>
+
+              <label className="flex items-start gap-3 cursor-pointer">
+                <input type="checkbox" name="terms" className="mt-1 w-4 h-4 accent-[var(--brand-red)]" required />
+                <span className="text-sm text-[var(--ink-3)]">
+                  I have read and agree to the{' '}
+                  <a href="#" className="text-[var(--brand-red)] hover:underline">Terms of Use</a> and{' '}
+                  <a href="#" className="text-[var(--brand-red)] hover:underline">Privacy Policy</a>. <Required />
+                </span>
+              </label>
+            </div>
+
+            {error && (
+              <p
+                role="alert"
+                className="flex items-center gap-2 text-sm font-bold text-[var(--brand-red)] bg-[var(--brand-red-soft)] border border-[var(--brand-red)]/25 px-4 py-3"
+              >
+                <AlertCircle className="w-4 h-4 shrink-0" />
+                {error}
+              </p>
+            )}
+
+            <button type="submit" className="btn btn-primary cut-br group">
+              Submit enquiry
+              <Send className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+            </button>
+          </form>
+        </Reveal>
+      </div>
+    </section>
+  );
+}

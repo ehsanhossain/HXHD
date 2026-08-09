@@ -9,10 +9,7 @@ export default function ContactPage() {
     <div className="bg-white">
       <ContactHero />
       <ContactHQ />
-      <div className="h-px bg-slate-200 w-full max-w-screen-2xl mx-auto" />
-      <div className="pt-16">
-        <ContactServices />
-      </div>
+      <ContactServices />
       <ContactForm />
       <NewsletterStrip />
     </div>

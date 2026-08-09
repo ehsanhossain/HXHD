@@ -1,3 +1,68 @@
-﻿"use client";
+"use client";
 
-export function ProductNewsletter() {  return (    <section className="bg-slate-900 text-white py-16">      <div className="max-w-screen-2xl mx-auto px-6">        <div className="text-center mb-10">          <h2 className="text-3xl font-bold mb-2">Sign up for our newsletter</h2>          <p className="text-slate-400 text-lg">Subscribe to get the latest product updates, technical articles, and industry insights.</p>        </div>        <form className="max-w-2xl mx-auto space-y-6">          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">            <div className="space-y-1">              <label htmlFor="pnl-firstName" className="block text-sm font-bold text-slate-300">First Name</label>              <input type="text" id="pnl-firstName" className="w-full px-4 py-3 bg-white border border-slate-700 focus:border-[#D61118] focus:ring-1 focus:ring-[#D61118] focus:outline-none rounded-none text-slate-900" />            </div>            <div className="space-y-1">              <label htmlFor="pnl-email" className="block text-sm font-bold text-slate-300">Email</label>              <input type="email" id="pnl-email" className="w-full px-4 py-3 bg-white border border-slate-700 focus:border-[#D61118] focus:ring-1 focus:ring-[#D61118] focus:outline-none rounded-none text-slate-900" />            </div>          </div>                    <div className="space-y-1">             <label htmlFor="pnl-role" className="block text-sm font-bold text-slate-300">I am a</label>             <select id="pnl-role" className="w-full px-4 py-3 bg-white border border-slate-700 focus:border-[#D61118] focus:ring-1 focus:ring-[#D61118] focus:outline-none rounded-none text-slate-900" defaultValue="">                <option value="" disabled>Please Select</option>                <option value="Manufacturer">Manufacturer</option>                <option value="Distributor">Distributor</option>                <option value="Consultant">Consultant</option>                <option value="Contractor">Contractor</option>                <option value="Other">Other</option>             </select>          </div>           <div className="pt-4 space-y-4">            <div className="flex items-start gap-3">              <input type="checkbox" id="pnl-marketing" className="mt-1 w-4 h-4 text-[#D61118] border-slate-600 rounded-sm focus:ring-[#D61118] bg-slate-800" />              <label htmlFor="pnl-marketing" className="text-sm text-slate-400">                Yes, I would like to receive news and other communications about HXHD products and services. I understand I may unsubscribe at any time.              </label>            </div>            <div className="flex items-start gap-3">              <input type="checkbox" id="pnl-terms" className="mt-1 w-4 h-4 text-[#D61118] border-slate-600 rounded-sm focus:ring-[#D61118] bg-slate-800" required />              <label htmlFor="pnl-terms" className="text-sm text-slate-400">                I have read and agree to the <a href="#" className="text-[#D61118] hover:underline">Terms of Use</a> and <a href="#" className="text-[#D61118] hover:underline">Privacy Policy</a>. <span className="text-[#D61118]">*</span>              </label>            </div>          </div>          <div className="py-2">            <div className="w-[304px] h-[78px] bg-slate-800 border border-slate-700 rounded-sm flex items-center justify-center text-slate-500 text-xs">              reCAPTCHA Placeholder            </div>          </div>          <button type="submit" className="w-full md:w-auto px-10 py-4 bg-[#D61118] text-white font-bold text-sm uppercase tracking-wide hover:bg-[#b00d13] transition-colors rounded-none shadow-sm">              Subscribe          </button>        </form>      </div>    </section>  );}
+import { useState } from 'react';
+import { Send, CheckCircle2 } from 'lucide-react';
+import { Reveal } from '@/components/motion/Reveal';
+import { useT } from '@/i18n/LanguageProvider';
+
+export function ProductNewsletter() {
+  const [email, setEmail] = useState('');
+  const [done, setDone] = useState(false);
+  const t = useT();
+
+  return (
+    <section className="relative bg-[var(--ink)] text-white overflow-hidden">
+      <div className="absolute inset-0 bg-grid-dark opacity-60" aria-hidden />
+      <div
+        className="absolute top-0 right-0 h-full w-1/3 bg-[var(--brand-red)]/10 hidden md:block"
+        style={{ clipPath: 'polygon(40% 0, 100% 0, 100% 100%, 0 100%)' }}
+        aria-hidden
+      />
+
+      <div className="shell relative py-16 grid lg:grid-cols-2 gap-10 items-center">
+        <Reveal>
+          <p className="eyebrow mb-5">Stay informed</p>
+          <h2 className="text-step-2 mb-3">Product & technical updates</h2>
+          <p className="text-white/60 leading-relaxed max-w-lg">
+            New grades, datasheet revisions and application notes — sent
+            occasionally, never shared.
+          </p>
+        </Reveal>
+
+        <Reveal direction="left" delay={0.08}>
+          {done ? (
+            <p className="flex items-center gap-3 text-[var(--brand-teal)] font-bold border border-[var(--brand-teal)]/35 bg-[var(--brand-teal)]/10 px-5 py-4">
+              <CheckCircle2 className="w-5 h-5 shrink-0" />
+              {t('news.thanks', { email })}
+            </p>
+          ) : (
+            <form
+              className="flex flex-col sm:flex-row gap-3"
+              onSubmit={(e) => {
+                e.preventDefault();
+                if (email.trim()) setDone(true);
+              }}
+            >
+              <label htmlFor="product-newsletter" className="sr-only">
+                {t('news.emailLabel')}
+              </label>
+              <input
+                id="product-newsletter"
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="you@company.com"
+                className="flex-1 h-12 px-5 bg-white/5 border border-white/20 text-white placeholder:text-white/35 focus:border-[var(--brand-teal)] focus:outline-none transition-colors"
+              />
+              <button type="submit" className="btn btn-primary cut-br group shrink-0">
+                {t('cta.subscribe')}
+                <Send className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+              </button>
+            </form>
+          )}
+        </Reveal>
+      </div>
+    </section>
+  );
+}

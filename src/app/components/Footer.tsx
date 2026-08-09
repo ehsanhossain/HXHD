@@ -1,3 +1,179 @@
-﻿"use client";
+"use client";
 
-import { Phone, Mail, MapPin } from 'lucide-react';export function Footer() {  return (    <footer className="bg-slate-950 text-slate-400">            {/* Support Section */}      <div className="bg-[#D61118] border-b border-[#b00d13]">        <div className="max-w-screen-2xl mx-auto px-6 py-16">          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">            <h2 className="text-2xl lg:text-3xl font-bold text-white text-center lg:text-left tracking-tight">              Need documentation, samples, or distributor support?            </h2>            <div className="flex flex-wrap justify-center gap-4">              <a href="#" className="px-6 py-3 bg-white text-[#D61118] font-bold rounded-none hover:bg-slate-100 transition-colors uppercase tracking-wide text-sm">                Visit Support Center              </a>              <a href="#" className="px-6 py-3 border-2 border-white text-white font-bold rounded-none hover:bg-white hover:text-[#D61118] transition-colors uppercase tracking-wide text-sm">                Distributor / Partner Inquiry              </a>              <a href="#" className="px-6 py-3 border-2 border-white text-white font-bold rounded-none hover:bg-white hover:text-[#D61118] transition-colors uppercase tracking-wide text-sm">                Contact HXHD              </a>            </div>          </div>        </div>      </div>      {/* Main Footer Content */}      <div className="max-w-screen-2xl mx-auto px-6 py-16">        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-sm">                    {/* Column 1 */}          <div>            <h3 className="text-white font-bold uppercase tracking-wider mb-6">Products & Industries</h3>            <ul className="space-y-3 font-medium">              <li><a href="#" className="hover:text-[#D61118] transition-colors">Waterproofing Emulsions</a></li>              <li><a href="#" className="hover:text-[#D61118] transition-colors">Coating Solutions</a></li>              <li><a href="#" className="hover:text-[#D61118] transition-colors">Adhesives & Bonding</a></li>              <li><a href="#" className="hover:text-[#D61118] transition-colors">Functional Additives</a></li>              <li><a href="#" className="hover:text-[#D61118] transition-colors">Infrastructure & Asphalt</a></li>              <li><a href="#" className="hover:text-[#D61118] transition-colors">VAE Systems</a></li>            </ul>          </div>          {/* Column 2 */}          <div>            <h3 className="text-white font-bold uppercase tracking-wider mb-6">Services & Expertise</h3>            <ul className="space-y-3 font-medium">              <li><a href="#" className="hover:text-[#D61118] transition-colors">Technical Consultation</a></li>              <li><a href="#" className="hover:text-[#D61118] transition-colors">OEM Manufacturing</a></li>              <li><a href="#" className="hover:text-[#D61118] transition-colors">Custom Formulation</a></li>              <li><a href="#" className="hover:text-[#D61118] transition-colors">Export Support</a></li>              <li><a href="#" className="hover:text-[#D61118] transition-colors">R&D Capabilities</a></li>            </ul>          </div>          {/* Column 3 */}          <div>            <h3 className="text-white font-bold uppercase tracking-wider mb-6">Resources</h3>            <ul className="space-y-3 font-medium">              <li><a href="#" className="hover:text-[#D61118] transition-colors">Technical Data Sheets (TDS)</a></li>              <li><a href="#" className="hover:text-[#D61118] transition-colors">Safety Data Sheets (SDS)</a></li>              <li><a href="#" className="hover:text-[#D61118] transition-colors">Knowledge Hub</a></li>              <li><a href="#" className="hover:text-[#D61118] transition-colors">FAQ</a></li>              <li><a href="#" className="hover:text-[#D61118] transition-colors">Download Center</a></li>            </ul>          </div>          {/* Column 4: Contact */}          <div>            <h3 className="text-white font-bold uppercase tracking-wider mb-6">Contact</h3>            <div className="space-y-4 font-medium">              <div className="flex items-start gap-3">                <MapPin className="w-5 h-5 text-[#D61118] shrink-0" />                <span>                  <strong className="text-slate-200 block">China HQ & Plant</strong>                  No. 88 Industrial Road, Chemical Park, Jiangsu, China                </span>              </div>              <div className="flex items-start gap-3">                <MapPin className="w-5 h-5 text-[#D61118] shrink-0" />                <span>                  <strong className="text-slate-200 block">Bangladesh Plant</strong>                  Dhaka Export Processing Zone, Dhaka, Bangladesh                </span>              </div>              <div className="flex items-center gap-3">                <Mail className="w-5 h-5 text-[#D61118] shrink-0" />                <a href="mailto:info@hxhd-chem.com" className="hover:text-white">info@hxhd-chem.com</a>              </div>              <div className="flex items-center gap-3">                <Phone className="w-5 h-5 text-[#D61118] shrink-0" />                <span>+86-512-0000-0000</span>              </div>            </div>          </div>        </div>        {/* Bottom Bar */}        <div className="pt-8 mt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold">          <p>&copy; {new Date().getFullYear()} HXHD Chemical Co., Ltd. All rights reserved.</p>          <div className="flex gap-6">            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>            <a href="#" className="hover:text-white transition-colors">Terms of Use</a>            <a href="#" className="hover:text-white transition-colors">Cookies</a>            <a href="#" className="hover:text-white transition-colors">Data Protection Statement</a>          </div>        </div>      </div>    </footer>  );}
+import Link from 'next/link';
+import Image from 'next/image';
+import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
+import { ACTIVE_CATEGORIES } from '@/data/products';
+import { COMPANY } from '@/data/company';
+import { useT } from '@/i18n/LanguageProvider';
+
+const SERVICES = [
+  { label: 'Technical Consultation', href: '/services' },
+  { label: 'OEM & Custom Formulation', href: '/services' },
+  { label: 'Local Supply — Bangladesh', href: '/services' },
+  { label: 'Documentation & Compliance', href: '/services' },
+  { label: 'Industries We Serve', href: '/industries' },
+];
+
+const RESOURCES = [
+  { label: 'Technical Guides', href: '/knowledge' },
+  { label: 'Company Updates', href: '/knowledge' },
+  { label: 'Technical Data Sheets (TDS)', href: '/products' },
+  { label: 'Safety Data Sheets (SDS)', href: '/contact' },
+  { label: 'Support & Contact', href: '/contact' },
+];
+
+export function Footer() {
+  const t = useT();
+
+  return (
+    <footer className="bg-[var(--ink)] text-[var(--steel-2)]">
+      {/* Support band */}
+      <div className="bg-[var(--brand-red)] relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-dark opacity-40" aria-hidden />
+        <div className="shell relative py-14 flex flex-col lg:flex-row items-center justify-between gap-8">
+          <h2 className="text-step-2 text-white text-center lg:text-left max-w-xl">
+            {t('footer.supportTitle')}
+          </h2>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Link
+              href="/contact"
+              className="btn bg-white text-[var(--brand-red)] hover:bg-[var(--ink)] hover:text-white cut-br"
+            >
+              {t('cta.contact')}
+            </Link>
+            <Link href="/contact" className="btn btn-on-dark">
+              {t('cta.distributor')}
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Main */}
+      <div className="shell py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 text-sm">
+          {/* Brand */}
+          <div className="lg:col-span-3">
+            <Image
+              src="/images/logo.png"
+              alt="HXHD"
+              width={200}
+              height={60}
+              className="h-14 w-auto mb-5 brightness-0 invert opacity-95"
+            />
+            <p className="leading-relaxed text-[var(--steel-2)]/80">
+              {t('footer.tagline')}
+            </p>
+            <Link
+              href="/products"
+              className="link-sweep mt-6 inline-flex text-[var(--brand-teal)] font-bold text-xs uppercase tracking-[0.12em]"
+            >
+              {t('cta.browseCatalogue')} <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+
+          {/* Categories (real) */}
+          <div className="lg:col-span-3">
+            <h3 className="text-white font-bold uppercase tracking-[0.12em] text-xs mb-5">
+              {t('footer.categories')}
+            </h3>
+            <ul className="space-y-2.5">
+              {ACTIVE_CATEGORIES.slice(0, 7).map((cat) => (
+                <li key={cat.slug}>
+                  <Link
+                    href={`/products?category=${cat.slug}`}
+                    className="hover:text-[var(--brand-teal)] transition-colors inline-flex items-center gap-2"
+                  >
+                    {cat.name}
+                    <span className="text-[var(--steel)]/60 text-xs tnum">{cat.count}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div className="lg:col-span-2">
+            <h3 className="text-white font-bold uppercase tracking-[0.12em] text-xs mb-5">
+              {t('footer.services')}
+            </h3>
+            <ul className="space-y-2.5">
+              {SERVICES.map((s) => (
+                <li key={s.label}>
+                  <Link href={s.href} className="hover:text-[var(--brand-teal)] transition-colors">
+                    {s.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div className="lg:col-span-2">
+            <h3 className="text-white font-bold uppercase tracking-[0.12em] text-xs mb-5">
+              {t('footer.resources')}
+            </h3>
+            <ul className="space-y-2.5">
+              {RESOURCES.map((r) => (
+                <li key={r.label}>
+                  <Link href={r.href} className="hover:text-[var(--brand-teal)] transition-colors">
+                    {r.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div className="lg:col-span-2">
+            <h3 className="text-white font-bold uppercase tracking-[0.12em] text-xs mb-5">
+              {t('footer.contact')}
+            </h3>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-[var(--brand-red)] shrink-0 mt-0.5" />
+                <span className="leading-relaxed">
+                  9B, West Liando U Valley, Majuqiao Town, Tongzhou District,
+                  Beijing, China
+                </span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Mail className="w-4 h-4 text-[var(--brand-red)] shrink-0" />
+                <a
+                  href={`mailto:${COMPANY.email}`}
+                  className="hover:text-white transition-colors break-all"
+                >
+                  {COMPANY.email}
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <Phone className="w-4 h-4 text-[var(--brand-red)] shrink-0" />
+                <a
+                  href={`tel:${COMPANY.phoneHref}`}
+                  className="hover:text-white transition-colors"
+                >
+                  {COMPANY.phone}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom */}
+        <div className="pt-8 mt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+          <p>
+            &copy; {new Date().getFullYear()} Hubei Hongxing Hongda New Materials Co., Ltd.
+            {t('footer.rights')}
+          </p>
+          <div className="flex flex-wrap justify-center gap-6 font-medium">
+            {['Privacy Policy', 'Terms of Use', 'Cookies', 'Data Protection'].map((l) => (
+              <a key={l} href="#" className="hover:text-white transition-colors">
+                {l}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}

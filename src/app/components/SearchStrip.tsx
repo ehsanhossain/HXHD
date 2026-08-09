@@ -1,3 +1,67 @@
-﻿"use client";
+"use client";
 
-import { Search } from 'lucide-react';export function SearchStrip() {  return (    <div className="w-full bg-slate-50 border-b border-slate-200">      <div className="max-w-screen-2xl mx-auto px-6 py-8">        <div className="flex flex-col lg:flex-row items-center gap-6">                    {/* Search Input Container */}          <div className="w-full lg:w-1/3 relative">            <div className="relative">              <input                 type="text"                 placeholder="Search by product name, code, or application"                 className="w-full pl-12 pr-4 py-3 bg-white border border-slate-300 rounded-none focus:outline-none focus:border-[#D61118] focus:ring-1 focus:ring-[#D61118] text-slate-700 placeholder-slate-400"              />              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />            </div>          </div>          {/* Quick Filter Pills */}          <div className="w-full lg:w-2/3 flex flex-wrap items-center gap-2">            <span className="text-sm font-bold text-slate-500 mr-2 uppercase tracking-wide">Quick Filters:</span>            {['Waterproofing', 'Coatings', 'Adhesives', 'Asphalt', 'Additives', 'VAE'].map((pill) => (              <button                 key={pill}                 className="px-5 py-2 bg-white border border-slate-200 text-slate-600 text-sm font-bold rounded-none hover:border-[#D61118] hover:text-[#D61118] hover:bg-red-50 transition-colors"              >                {pill}              </button>            ))}          </div>        </div>      </div>    </div>  );}
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import { Search } from 'lucide-react';
+import { ACTIVE_CATEGORIES } from '@/data/products';
+import { useT } from '@/i18n/LanguageProvider';
+
+/** Six highest-count categories become the quick filters. */
+const QUICK = ACTIVE_CATEGORIES.slice(0, 6);
+
+export function SearchStrip() {
+  const [query, setQuery] = useState('');
+  const router = useRouter();
+  const t = useT();
+
+  const submit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const q = query.trim();
+    router.push(q ? `/products?q=${encodeURIComponent(q)}` : '/products');
+  };
+
+  return (
+    <div className="w-full bg-[var(--paper-2)] border-b border-[var(--line)]">
+      <div className="shell py-7">
+        <div className="flex flex-col lg:flex-row items-stretch lg:items-center gap-5">
+          <form onSubmit={submit} role="search" className="w-full lg:w-[36%] relative">
+            <label htmlFor="quick-search" className="sr-only">
+              {t('nav.searchProducts')}
+            </label>
+            <Search
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-[18px] h-[18px] text-[var(--steel-2)] pointer-events-none"
+              aria-hidden
+            />
+            <input
+              id="quick-search"
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder={t('search.placeholder')}
+              className="w-full h-12 pl-12 pr-4 bg-white border border-[var(--line-strong)] focus:border-[var(--brand-red)] focus:outline-none text-[var(--ink)] placeholder:text-[var(--steel-2)] transition-colors"
+            />
+          </form>
+
+          <div className="w-full lg:w-[64%] flex flex-wrap items-center gap-2">
+            <span className="text-xs font-bold text-[var(--steel)] uppercase tracking-[0.12em] mr-1">
+              {t('search.quickFilters')}
+            </span>
+            {QUICK.map((cat) => (
+              <Link
+                key={cat.slug}
+                href={`/products?category=${cat.slug}`}
+                className="group inline-flex items-center gap-1.5 px-4 h-10 bg-white border border-[var(--line)] text-sm font-bold text-[var(--ink-3)] hover:border-[var(--brand-red)] hover:text-[var(--brand-red)] transition-colors"
+              >
+                {cat.name}
+                <span className="text-[0.68rem] text-[var(--steel-2)] group-hover:text-[var(--brand-red)] tnum">
+                  {cat.count}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

@@ -1,3 +1,108 @@
-﻿"use client";
+"use client";
 
-export function ContactHQ() {  return (    <section className="py-16 bg-white">      <div className="max-w-screen-2xl mx-auto px-6">        <div className="flex flex-col lg:flex-row gap-12 items-stretch">          {/* Left Text Block */}          <div className="flex-1 flex flex-col justify-center">            <div className="mb-10">              <h2 className="text-2xl font-bold text-slate-900 mb-6 uppercase tracking-tight">Corporate Headquarters</h2>              <div className="text-slate-600 space-y-2">                <p className="font-bold text-slate-800">HXHD China HQ</p>                <p>Weixian, China</p>                <p>No. 88 Industrial Road, Chemical Park, Jiangsu Province</p>                <p>Phone: <span className="font-medium">+86-512-0000-0000</span></p>                <p>Email: <a href="mailto:info@hxhdchemical.com" className="text-[#1B8C88] hover:underline">info@hxhdchemical.com</a></p>              </div>            </div>            <div className="pt-8 border-t border-slate-200">              <h2 className="text-2xl font-bold text-slate-900 mb-6 uppercase tracking-tight">Product Documentation & Quality Support</h2>              <p className="text-slate-600 mb-4">                For documentation support (TDS/SDS), compliance files, or quality-related questions, please contact:              </p>              <p className="mb-4">                Email: <a href="mailto:support@hxhdchemical.com" className="text-[#1B8C88] hover:underline">support@hxhdchemical.com</a>              </p>              <a href="#" className="text-[#D61118] font-bold hover:underline flex items-center gap-1">                Visit the Documentation page              </a>            </div>          </div>          {/* Right Image Block */}          <div className="flex-1 min-h-[400px] relative">            <img               src="https://images.unsplash.com/photo-1758599543152-a73184816eba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMG1lZXRpbmclMjBoYW5kc2hha2UlMjBpbmR1c3RyaWFsJTIwb2ZmaWNlJTIwY29uc3RydWN0aW9ufGVufDF8fHx8MTc2ODM2MTkzNHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"               alt="Corporate HQ"               className="absolute inset-0 w-full h-full object-cover"             />          </div>        </div>      </div>    </section>  );}
+import Image from 'next/image';
+import Link from 'next/link';
+import { MapPin, Mail, Phone, ArrowRight, Building2 } from 'lucide-react';
+import { Reveal } from '@/components/motion/Reveal';
+import { COMPANY } from '@/data/company';
+
+export function ContactHQ() {
+  return (
+    <section className="section bg-white">
+      <div className="shell grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
+        <Reveal>
+          <p className="eyebrow mb-5">Head office</p>
+          <h2 className="text-step-2 mb-8">Corporate headquarters</h2>
+
+          <div className="border-l-2 border-[var(--brand-red)] pl-6 mb-10">
+            <p className="font-bold text-[var(--ink)] text-step-1 mb-4">
+              Hubei Hongxing Hongda New Materials Co., Ltd.
+            </p>
+
+            <ul className="space-y-4 text-[var(--ink-3)]">
+              <li className="flex items-start gap-3">
+                <MapPin className="w-[18px] h-[18px] text-[var(--brand-teal)] shrink-0 mt-1" />
+                <span className="leading-relaxed">
+                  9B, West Liando U Valley, Majuqiao Town,
+                  <br />
+                  Tongzhou District, Beijing, China
+                </span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone className="w-[18px] h-[18px] text-[var(--brand-teal)] shrink-0" />
+                <a
+                  href={`tel:${COMPANY.phoneHref}`}
+                  className="hover:text-[var(--brand-red)] transition-colors font-medium"
+                >
+                  {COMPANY.phone}
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail className="w-[18px] h-[18px] text-[var(--brand-teal)] shrink-0" />
+                <a
+                  href={`mailto:${COMPANY.email}`}
+                  className="hover:text-[var(--brand-red)] transition-colors font-medium break-all"
+                >
+                  {COMPANY.email}
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Building2 className="w-[18px] h-[18px] text-[var(--brand-teal)] shrink-0" />
+                <span>International department — Manager Zhang</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="pt-8 border-t border-[var(--line)]">
+            <h2 className="text-step-1 font-bold mb-4">
+              Documentation &amp; quality support
+            </h2>
+            <p className="text-[var(--ink-3)] mb-5 leading-relaxed">
+              For technical documentation (TDS / SDS), compliance files or
+              quality-related questions, contact the team using the details above
+              or send an enquiry and mark it{' '}
+              <span className="font-bold text-[var(--ink)]">Documentation</span>.
+            </p>
+            <Link
+              href="/products"
+              className="link-sweep text-[var(--brand-red)] font-bold text-sm uppercase tracking-[0.1em]"
+            >
+              Browse product datasheets <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </Reveal>
+
+        {/* Real facility imagery */}
+        <Reveal direction="left" delay={0.1}>
+          <div className="relative">
+            <div className="relative cut-tr-lg overflow-hidden border border-[var(--line)]">
+              <Image
+                src="/images/about/factory.jpg"
+                alt="Aerial view of the HXHD manufacturing campus"
+                width={400}
+                height={225}
+                sizes="(max-width: 1024px) 100vw, 46vw"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+
+            <div className="grid grid-cols-3 gap-px bg-[var(--line)] border border-[var(--line)] border-t-0">
+              {[
+                { k: 'Founded', v: '2000' },
+                { k: 'Bases', v: 'CN · BD' },
+                { k: 'Export', v: 'Worldwide' },
+              ].map((s) => (
+                <div key={s.k} className="bg-white px-4 py-5 text-center">
+                  <p className="text-xs uppercase tracking-[0.1em] text-[var(--steel)] mb-1">
+                    {s.k}
+                  </p>
+                  <p className="font-bold text-[var(--ink)]">{s.v}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}

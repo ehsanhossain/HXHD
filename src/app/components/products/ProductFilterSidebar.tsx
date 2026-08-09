@@ -1,3 +1,116 @@
-﻿"use client";
+"use client";
 
-import { useState } from 'react';import { ChevronDown, Check, SlidersHorizontal } from 'lucide-react';export function ProductFilterSidebar() {  const [openSections, setOpenSections] = useState({    app: true,    type: true,    system: true  });  const [isMobileOpen, setIsMobileOpen] = useState(false);  const toggleSection = (section: keyof typeof openSections) => {    setOpenSections(prev => ({ ...prev, [section]: !prev[section] }));  };  return (    <>      {/* Mobile Toggle Button */}      <div className="lg:hidden w-full mb-6">        <button           onClick={() => setIsMobileOpen(!isMobileOpen)}          className="w-full flex items-center justify-between px-6 py-4 bg-white border border-slate-300 font-bold text-slate-800"        >          <span className="flex items-center gap-2">            <SlidersHorizontal className="w-5 h-5 text-[#D61118]" />            Filters          </span>          <ChevronDown className={`w-5 h-5 transition-transform ${isMobileOpen ? 'rotate-180' : ''}`} />        </button>      </div>      <div className={`w-full lg:w-80 flex-shrink-0 bg-slate-50 p-6 border-r border-slate-200 h-full lg:block ${isMobileOpen ? 'block' : 'hidden'}`}>        <div className="flex justify-between items-center mb-6">          <h2 className="text-lg font-bold text-slate-900 uppercase tracking-tight">Product Filters</h2>        </div>                <button className="w-full py-3 bg-[#D61118] text-white font-bold text-sm uppercase tracking-wide mb-8 hover:bg-[#b00d13] transition-colors">          Reset All Filters        </button>        <div className="space-y-8">          {/* Recommended Application */}          <div>            <button               onClick={() => toggleSection('app')}              className="flex justify-between items-center w-full text-left font-bold text-slate-800 mb-3"            >              Recommended Application              <ChevronDown className={`w-4 h-4 transition-transform ${openSections.app ? 'rotate-180' : ''}`} />            </button>                        {openSections.app && (              <div className="relative">                <select className="w-full p-3 bg-white border border-slate-300 text-slate-600 text-sm focus:outline-none focus:border-[#D61118] appearance-none rounded-none">                  <option>Select One</option>                  <option>Cement-Based Waterproof Coatings</option>                  <option>Thermal Insulation Mortar</option>                  <option>Exterior Wall Coatings</option>                  <option>Interior Wall Coatings</option>                  <option>Tile Back Glue & Bonding</option>                  <option>Industrial Coatings</option>                  <option>Asphalt & Infrastructure Waterproofing</option>                </select>                <div className="absolute right-3 top-3.5 pointer-events-none">                  <ChevronDown className="w-4 h-4 text-slate-400" />                </div>              </div>            )}          </div>          {/* Product Type */}          <div>            <button               onClick={() => toggleSection('type')}              className="flex justify-between items-center w-full text-left font-bold text-slate-800 mb-3"            >              Product Type              <ChevronDown className={`w-4 h-4 transition-transform ${openSections.type ? 'rotate-180' : ''}`} />            </button>                        {openSections.type && (              <div className="space-y-2">                {[                  "Waterproof Emulsions",                  "Acrylic Emulsions",                  "Styrene Acrylic Emulsions",                  "VAE Emulsions",                  "Adhesive & Bonding Emulsions",                  "Asphalt Emulsions",                  "Functional Additives",                  "Sealants & Systems",                  "Specialty Modifiers"                ].map((item, idx) => (                  <label key={idx} className="flex items-center gap-3 cursor-pointer group">                    <div className="relative flex items-center">                      <input type="checkbox" className="peer appearance-none w-5 h-5 border border-slate-300 bg-white checked:bg-[#D61118] checked:border-[#D61118] transition-colors rounded-none" />                      <Check className="w-3.5 h-3.5 text-white absolute left-0.5 top-0.5 opacity-0 peer-checked:opacity-100 pointer-events-none" />                    </div>                    <span className="text-sm text-slate-600 group-hover:text-[#D61118] transition-colors">{item}</span>                  </label>                ))}              </div>            )}          </div>          {/* System Suitable Products */}          <div>            <button               onClick={() => toggleSection('system')}              className="flex justify-between items-center w-full text-left mb-1"            >              <span className="font-bold text-slate-800">System Suitable Products</span>              <ChevronDown className={`w-4 h-4 transition-transform ${openSections.system ? 'rotate-180' : ''}`} />            </button>            <p className="text-xs text-slate-400 mb-3">Check product pages for compatibility</p>                        {openSections.system && (               <div className="space-y-2">                {[                  "Cement Waterproofing Systems",                  "Exterior Insulation & Finishing Systems",                  "Industrial Coating Systems",                  "Asphalt Waterproofing Systems",                  "Tile Adhesive & Bonding Systems"                ].map((item, idx) => (                  <label key={idx} className="flex items-start gap-3 cursor-pointer group">                    <div className="relative flex items-center mt-0.5">                      <input type="checkbox" className="peer appearance-none w-5 h-5 border border-slate-300 bg-white checked:bg-[#D61118] checked:border-[#D61118] transition-colors rounded-none" />                      <Check className="w-3.5 h-3.5 text-white absolute left-0.5 top-0.5 opacity-0 peer-checked:opacity-100 pointer-events-none" />                    </div>                    <span className="text-sm text-slate-600 group-hover:text-[#D61118] transition-colors leading-tight">{item}</span>                  </label>                ))}              </div>            )}          </div>        </div>      </div>    </>  );}
+import { useState } from 'react';
+import { ChevronDown, Check, SlidersHorizontal } from 'lucide-react';
+import type { Category } from '@/data/products';
+
+interface ProductFilterSidebarProps {
+  categories: Category[];
+  selected: string[];
+  onToggle: (slug: string) => void;
+  onReset: () => void;
+}
+
+export function ProductFilterSidebar({
+  categories,
+  selected,
+  onToggle,
+  onReset,
+}: ProductFilterSidebarProps) {
+  const [isCategoryOpen, setIsCategoryOpen] = useState(true);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
+
+  return (
+    <>
+      {/* Mobile toggle */}
+      <div className="lg:hidden w-full mb-6">
+        <button
+          onClick={() => setIsMobileOpen(!isMobileOpen)}
+          aria-expanded={isMobileOpen}
+          className="w-full flex items-center justify-between px-5 h-14 bg-white border border-[var(--line-strong)] font-bold text-[var(--ink)]"
+        >
+          <span className="flex items-center gap-2.5">
+            <SlidersHorizontal className="w-5 h-5 text-[var(--brand-red)]" />
+            Filters
+            {selected.length > 0 && (
+              <span className="px-2 py-0.5 bg-[var(--brand-red)] text-white text-xs font-bold tnum">
+                {selected.length}
+              </span>
+            )}
+          </span>
+          <ChevronDown
+            className={`w-5 h-5 transition-transform duration-300 ${isMobileOpen ? 'rotate-180' : ''}`}
+          />
+        </button>
+      </div>
+
+      <aside
+        className={`w-full lg:w-80 flex-shrink-0 bg-[var(--paper-2)] border border-[var(--line)] lg:block ${
+          isMobileOpen ? 'block' : 'hidden'
+        }`}
+      >
+        <div className="flex justify-between items-center px-6 py-5 border-b border-[var(--line)]">
+          <h2 className="text-sm font-bold uppercase tracking-[0.14em] text-[var(--ink)]">
+            Filters
+          </h2>
+          <button
+            onClick={onReset}
+            disabled={selected.length === 0}
+            className="text-xs font-bold uppercase tracking-[0.1em] text-[var(--brand-red)] hover:underline disabled:opacity-35 disabled:no-underline disabled:cursor-not-allowed"
+          >
+            Reset
+          </button>
+        </div>
+
+        <div className="p-6">
+          <button
+            onClick={() => setIsCategoryOpen(!isCategoryOpen)}
+            aria-expanded={isCategoryOpen}
+            className="flex justify-between items-center w-full text-left font-bold text-[var(--ink)] mb-4"
+          >
+            <span className="text-xs uppercase tracking-[0.12em]">Product category</span>
+            <ChevronDown
+              className={`w-4 h-4 transition-transform duration-300 ${isCategoryOpen ? 'rotate-180' : ''}`}
+            />
+          </button>
+
+          {isCategoryOpen && (
+            <div className="space-y-1">
+              {categories.map((cat) => {
+                const checked = selected.includes(cat.slug);
+                return (
+                  <label
+                    key={cat.slug}
+                    className={`flex items-start gap-3 cursor-pointer group py-2 px-2 -mx-2 transition-colors ${
+                      checked ? 'bg-white' : 'hover:bg-white/70'
+                    }`}
+                  >
+                    <span className="relative flex items-center mt-0.5">
+                      <input
+                        type="checkbox"
+                        checked={checked}
+                        onChange={() => onToggle(cat.slug)}
+                        className="peer appearance-none w-5 h-5 border border-[var(--line-strong)] bg-white checked:bg-[var(--brand-red)] checked:border-[var(--brand-red)] transition-colors"
+                      />
+                      <Check className="w-3.5 h-3.5 text-white absolute left-[3px] top-[3px] opacity-0 peer-checked:opacity-100 pointer-events-none" />
+                    </span>
+                    <span
+                      className={`text-sm leading-snug flex-1 transition-colors ${
+                        checked
+                          ? 'text-[var(--ink)] font-bold'
+                          : 'text-[var(--ink-3)] group-hover:text-[var(--brand-red)]'
+                      }`}
+                    >
+                      {cat.name}
+                      <span className="text-[var(--steel-2)] font-medium tnum"> ({cat.count})</span>
+                    </span>
+                  </label>
+                );
+              })}
+            </div>
+          )}
+        </div>
+      </aside>
+    </>
+  );
+}

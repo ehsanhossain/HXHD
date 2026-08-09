@@ -3,12 +3,15 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { ACTIVE_CATEGORIES, PRODUCTS } from '@/data/products';
 
 interface ProductsMegaMenuProps {
   onClose: () => void;
 }
 
 export function ProductsMegaMenu({ onClose }: ProductsMegaMenuProps) {
+  const featured = PRODUCTS.find((p) => p.code === 'HX-470') ?? PRODUCTS[0];
+
   return (
     <div 
       className="absolute top-full left-0 w-full bg-white border-t border-slate-200 shadow-xl z-50 py-10 animate-in fade-in slide-in-from-top-2 duration-200"
@@ -29,44 +32,45 @@ export function ProductsMegaMenu({ onClose }: ProductsMegaMenuProps) {
 
         {/* Column 2 & 3: Product Categories */}
         <div className="col-span-12 md:col-span-6 grid grid-cols-2 gap-x-8 gap-y-4">
-            {[
-              "Waterproof Emulsions",
-              "Acrylic & Styrene",
-              "VAE Emulsions",
-              "Adhesives & Bonding",
-              "Asphalt Emulsions",
-              "Functional Additives",
-              "Sealants & Systems",
-              "Specialty Modifiers",
-              "Industrial Coatings",
-              "Infrastructure Solutions"
-            ].map((category, idx) => (
-              <Link 
-                key={idx} 
-                href="/products"
+            {ACTIVE_CATEGORIES.map((category) => (
+              <Link
+                key={category.slug}
+                href={`/products?category=${category.slug}`}
                 onClick={onClose}
                 className="text-slate-600 hover:text-[#D61118] font-medium transition-colors text-sm"
               >
-                {category}
+                {category.name}
+                <span className="text-slate-400"> ({category.count})</span>
               </Link>
             ))}
         </div>
 
-        {/* Column 4: Featured Image + View All */}
+        {/* Column 4: Featured Product + View All */}
         <div className="col-span-12 md:col-span-3 flex flex-col items-start gap-4">
-          <div className="w-full aspect-[4/3] bg-slate-100 overflow-hidden relative">
-            <img 
-              src="https://images.unsplash.com/photo-1673297821205-e0575bbc2ab7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwcGFpbnQlMjBidWNrZXQlMjBjb2F0aW5nfGVufDF8fHx8MTc2ODM2MjU5MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-              alt="Featured Product" 
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 mix-blend-multiply"
-            />
-          </div>
-          <Link 
+          {featured && (
+            <Link
+              href={`/products/${featured.slug}`}
+              onClick={onClose}
+              className="w-full group"
+            >
+              <div className="w-full aspect-[4/3] bg-slate-50 overflow-hidden relative border border-slate-200">
+                <img
+                  src={featured.image}
+                  alt={featured.name}
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              <p className="mt-3 text-sm font-bold text-slate-800 group-hover:text-[#D61118] transition-colors line-clamp-2">
+                {featured.name}
+              </p>
+            </Link>
+          )}
+          <Link
             href="/products"
             onClick={onClose}
             className="inline-flex items-center gap-2 text-[#D61118] font-bold text-sm hover:underline uppercase tracking-wide"
           >
-            View All Products <ArrowRight className="w-4 h-4" />
+            View All {PRODUCTS.length} Products <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>

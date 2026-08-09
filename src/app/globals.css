@@ -1,11 +1,53 @@
-@import url('https://fonts.cdnfonts.com/css/mont');
 @import 'tailwindcss' source(none);
 @source '../**/*.{js,ts,jsx,tsx}';
 @import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
+/* ============================================================
+   HXHD DESIGN SYSTEM
+   Industrial / technical. Sharp geometry, one typeface,
+   restrained palette, motion that explains rather than decorates.
+   ============================================================ */
+
 :root {
+  /* --- Brand ------------------------------------------------ */
+  --brand-red: #d61118;
+  --brand-red-dark: #a80d13;
+  --brand-red-soft: #fdf0f0;
+  --brand-teal: #1b8c88;
+  --brand-teal-dark: #146a67;
+  --brand-teal-soft: #eef7f6;
+
+  /* --- Neutrals (cool industrial grey, not pure black) ------ */
+  --ink: #0d1418;
+  --ink-2: #1b262d;
+  --ink-3: #33454f;
+  --steel: #5c7381;
+  --steel-2: #8ea3ae;
+  --line: #dfe5e9;
+  --line-strong: #c3ced5;
+  --paper: #ffffff;
+  --paper-2: #f5f7f8;
+  --paper-3: #eceff1;
+
+  /* --- Type scale (fluid) ----------------------------------- */
+  --step--1: clamp(0.8rem, 0.76rem + 0.18vw, 0.875rem);
+  --step-0: clamp(0.95rem, 0.91rem + 0.2vw, 1.0625rem);
+  --step-1: clamp(1.15rem, 1.05rem + 0.45vw, 1.4rem);
+  --step-2: clamp(1.45rem, 1.25rem + 0.9vw, 2rem);
+  --step-3: clamp(1.85rem, 1.45rem + 1.8vw, 2.9rem);
+  --step-4: clamp(2.3rem, 1.6rem + 3.1vw, 4.2rem);
+  --step-5: clamp(2.8rem, 1.7rem + 5vw, 6rem);
+
+  /* --- Motion ----------------------------------------------- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 160ms;
+  --dur-base: 240ms;
+  --dur-slow: 400ms;
+
+  /* --- shadcn/ui compatibility (48 primitives depend on these) */
   --font-size: 16px;
   --background: #ffffff;
   --foreground: oklch(0.145 0 0);
@@ -35,7 +77,7 @@
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
+  --radius: 0rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: #030213;
@@ -47,6 +89,33 @@
 }
 
 @theme inline {
+  --font-sans: var(--font-grotesk), ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand-red: var(--brand-red);
+  --color-brand-red-dark: var(--brand-red-dark);
+  --color-brand-red-soft: var(--brand-red-soft);
+  --color-brand-teal: var(--brand-teal);
+  --color-brand-teal-dark: var(--brand-teal-dark);
+  --color-brand-teal-soft: var(--brand-teal-soft);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-steel: var(--steel);
+  --color-steel-2: var(--steel-2);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-paper-3: var(--paper-3);
+
+  --text-step--1: var(--step--1);
+  --text-step-0: var(--step-0);
+  --text-step-1: var(--step-1);
+  --text-step-2: var(--step-2);
+  --text-step-3: var(--step-3);
+  --text-step-4: var(--step-4);
+  --text-step-5: var(--step-5);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -73,10 +142,10 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-sm: 0rem;
+  --radius-md: 0rem;
+  --radius-lg: 0rem;
+  --radius-xl: 0rem;
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -91,47 +160,239 @@
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground;
-    font-family: 'Mont', sans-serif;
-  }
+
   html {
     font-size: var(--font-size);
+    -webkit-text-size-adjust: 100%;
   }
-  h1 {
-    font-size: var(--text-2xl);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-grotesk), ui-sans-serif, system-ui, sans-serif;
+    font-size: var(--step-0);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
-  h2 {
-    font-size: var(--text-xl);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.08;
+    letter-spacing: -0.022em;
+    font-weight: 700;
+    text-wrap: balance;
   }
-  h3 {
-    font-size: var(--text-lg);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
+
+  p { text-wrap: pretty; }
+
+  /* Datasheet figures must not jitter between rows */
+  table, .tnum { font-variant-numeric: tabular-nums; }
+
+  /* Visible, on-brand focus ring everywhere */
+  :focus-visible {
+    outline: 2px solid var(--brand-teal);
+    outline-offset: 2px;
   }
-  h4 {
-    font-size: var(--text-base);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
+
+  ::selection {
+    background: var(--brand-teal);
+    color: #fff;
   }
-  label {
-    font-size: var(--text-base);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
+}
+
+@layer components {
+  /* --- Section rhythm -------------------------------------- */
+  .section {
+    padding-block: clamp(3.5rem, 2rem + 6vw, 7.5rem);
   }
-  button {
-    font-size: var(--text-base);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
+  .shell {
+    width: 100%;
+    max-width: 88rem;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 0.5rem + 3vw, 3rem);
   }
-  input {
-    font-size: var(--text-base);
-    font-weight: var(--font-weight-normal);
-    line-height: 1.5;
+
+  /* --- Eyebrow: small technical label with a leading rule --- */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: var(--step--1);
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--brand-teal);
+  }
+  .eyebrow::before {
+    content: '';
+    width: 2rem;
+    height: 2px;
+    background: var(--brand-red);
+    flex: none;
+  }
+
+  /* --- Blueprint grid: technical drawing paper -------------- */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, var(--line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+  .bg-grid-dark {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+  /* Fine engineering hatch, used sparingly behind figures */
+  .bg-hatch {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      var(--line) 0 1px,
+      transparent 1px 9px
+    );
+  }
+  .bg-hatch-red {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      rgba(214, 17, 24, 0.28) 0 1px,
+      transparent 1px 9px
+    );
+  }
+
+  /* --- Shape language: chamfered corners (machined edge) ---- */
+  .cut-br { clip-path: polygon(0 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%); }
+  .cut-tl { clip-path: polygon(22px 0, 100% 0, 100% 100%, 0 100%, 0 22px); }
+  .cut-tr-lg { clip-path: polygon(0 0, calc(100% - 56px) 0, 100% 56px, 100% 100%, 0 100%); }
+  .cut-bl-lg { clip-path: polygon(0 0, 100% 0, 100% 100%, 56px 100%, 0 calc(100% - 56px)); }
+
+  /* --- Corner ticks: technical-drawing registration marks --- */
+  .ticks { position: relative; }
+  .ticks::before,
+  .ticks::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-color: var(--brand-red);
+    pointer-events: none;
+  }
+  .ticks::before { top: 0; left: 0; border-top: 2px solid; border-left: 2px solid; }
+  .ticks::after { bottom: 0; right: 0; border-bottom: 2px solid; border-right: 2px solid; }
+
+  /* --- Buttons --------------------------------------------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    min-height: 3rem;               /* 48px touch target */
+    padding-inline: 1.75rem;
+    font-size: var(--step--1);
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    border: 2px solid transparent;
+    transition: background-color var(--dur-base) var(--ease-out),
+                color var(--dur-base) var(--ease-out),
+                border-color var(--dur-base) var(--ease-out),
+                transform var(--dur-fast) var(--ease-out);
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn-primary { background: var(--brand-red); color: #fff; }
+  .btn-primary:hover { background: var(--brand-red-dark); }
+  .btn-ghost { border-color: var(--line-strong); color: var(--ink); background: transparent; }
+  .btn-ghost:hover { border-color: var(--brand-red); color: var(--brand-red); }
+  .btn-on-dark { border-color: rgba(255,255,255,0.35); color: #fff; background: transparent; }
+  .btn-on-dark:hover { background: #fff; color: var(--ink); border-color: #fff; }
+
+  /* --- Link with a sweeping underline ---------------------- */
+  .link-sweep {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .link-sweep::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 2px;
+    width: 100%;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--dur-base) var(--ease-out);
+  }
+  .link-sweep:hover::after { transform: scaleX(1); transform-origin: left; }
+
+  /* --- Index numeral used across sections ------------------ */
+  .index-num {
+    font-size: var(--step--1);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--steel-2);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer components {
+  /* Hero slide timer bar — CSS-driven so pausing holds its position */
+  @keyframes hero-progress {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+  .hero-progress {
+    transform-origin: left;
+    animation: hero-progress var(--hero-duration, 12s) linear forwards;
+  }
+}
+
+@layer components {
+  /* ---------------------------------------------------------------
+     Script-aware typography.
+     Space Grotesk carries no Bengali or CJK glyphs, so those locales
+     fall back to system faces. Latin tracking and uppercasing are
+     wrong for both scripts — uppercase is a no-op, and letter-spacing
+     visually breaks Bengali conjuncts. Neutralise them per language.
+     --------------------------------------------------------------- */
+  :root[lang='bn'] body,
+  :root[lang^='zh'] body {
+    font-family: var(--font-grotesk), 'Nirmala UI', 'Noto Sans Bengali',
+      'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', ui-sans-serif, sans-serif;
+  }
+
+  :root[lang='bn'] .eyebrow,
+  :root[lang='bn'] .btn,
+  :root[lang='bn'] .index-num,
+  :root[lang^='zh'] .eyebrow,
+  :root[lang^='zh'] .btn,
+  :root[lang^='zh'] .index-num {
+    letter-spacing: 0.02em;
+    text-transform: none;
+  }
+
+  /* Bengali sits taller than Latin — give headings room to breathe */
+  :root[lang='bn'] h1,
+  :root[lang='bn'] h2,
+  :root[lang='bn'] h3 {
+    line-height: 1.28;
+    letter-spacing: 0;
+  }
+
+  :root[lang^='zh'] h1,
+  :root[lang^='zh'] h2,
+  :root[lang^='zh'] h3 {
+    line-height: 1.22;
+    letter-spacing: 0.01em;
+  }
+}
+
+@layer utilities {
+  .stroke-text {
+    -webkit-text-stroke: 1.5px var(--line-strong);
+    color: transparent;
   }
 }
 
@@ -151,4 +412,16 @@ html.lenis body {
 }
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
+}
+
+/* Honour reduced-motion globally: motion should never be a barrier */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
