@@ -1,11 +1,16 @@
 "use client";
 
 import { useState } from 'react';
-import { Send, AlertCircle } from 'lucide-react';
+import { Send, AlertCircle, CheckCircle2, Loader2 } from 'lucide-react';
 import { Reveal } from '@/components/motion/Reveal';
 import { COMPANY } from '@/data/company';
+import { submitForm } from '@/lib/submitForm';
 import { useI18n } from '@/i18n/LanguageProvider';
 
+/**
+ * Shown in the page copy as the public enquiry address. The draft itself goes
+ * to every address in FORM_RECIPIENTS — see mailtoHref.
+ */
 const CONTACT_EMAIL = COMPANY.email;
 
 const FIELD =
@@ -21,13 +26,14 @@ function Required() {
 export function ContactForm() {
   const { c, fill } = useI18n();
   const [error, setError] = useState<string | null>(null);
+  const [state, setState] = useState<'idle' | 'sending' | 'sent' | 'mailto'>('idle');
 
   /**
-   * There is no backend on this site, so rather than faking a "submitted"
-   * state the form composes the enquiry into a mail draft addressed to the
-   * real sales inbox. The user stays in control of actually sending it.
+   * Posts to /api/contact, which mails every address in FORM_RECIPIENTS. If the
+   * server has no SMTP credentials it answers `not_configured` and submitForm
+   * falls back to opening a pre-addressed draft, so an enquiry is never lost.
    */
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
 
@@ -40,26 +46,58 @@ export function ContactForm() {
     const data = new FormData(form);
     const get = (k: string) => String(data.get(k) ?? '').trim();
 
-    const subject = `Enquiry — ${get('help') || 'General'} — ${get('company') || get('firstName')}`;
-    const body = [
-      `Name: ${get('firstName')} ${get('lastName')}`,
-      `Company: ${get('company') || '—'}`,
-      `Role: ${get('role')}`,
-      `Email: ${get('email')}`,
-      `Phone: ${get('phone')}`,
-      `Country: ${get('country')}`,
-      `Enquiry type: ${get('help') || '—'}`,
-      `Has a project: ${get('project')}`,
-      '',
-      'Message:',
-      get('message') || '—',
-    ].join('\n');
-
     setError(null);
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
+    setState('sending');
+
+    const outcome = await submitForm({
+      formType: 'Enquiry',
+      subject: `Enquiry — ${get('help') || 'General'} — ${get('company') || get('firstName')}`,
+      website: get('website'),
+      fields: {
+        Name: `${get('firstName')} ${get('lastName')}`,
+        Company: get('company'),
+        Role: get('role'),
+        Email: get('email'),
+        Phone: get('phone'),
+        Country: get('country'),
+        'Enquiry type': get('help'),
+        'Has a project': get('project'),
+        'Marketing opt-in': get('marketing') ? 'Yes' : 'No',
+        Message: get('message'),
+      },
+    });
+
+    if (outcome.status === 'error') {
+      setState('idle');
+      setError(fill(c.contact.errorSend, { email: CONTACT_EMAIL }));
+      return;
+    }
+
+    setState(outcome.status === 'sent' ? 'sent' : 'mailto');
+    form.reset();
   };
+
+  if (state === 'sent' || state === 'mailto') {
+    return (
+      <section id="enquiry" className="section bg-white scroll-mt-24">
+        <div className="shell max-w-4xl">
+          <Reveal>
+            <div className="border-l-2 border-[var(--brand-teal)] bg-[var(--paper-2)] px-7 py-8">
+              <p className="flex items-center gap-3 text-step-1 font-bold text-[var(--ink)] mb-3">
+                <CheckCircle2 className="w-6 h-6 text-[var(--brand-teal)] shrink-0" />
+                {c.contact.sentTitle}
+              </p>
+              <p className="text-[var(--ink-3)] leading-relaxed">
+                {state === 'sent'
+                  ? fill(c.contact.sentBody, { email: CONTACT_EMAIL })
+                  : c.contact.mailtoNote}
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="enquiry" className="section bg-white scroll-mt-24">
@@ -185,9 +223,24 @@ export function ContactForm() {
               </p>
             )}
 
-            <button type="submit" className="btn btn-primary cut-br group">
-              {c.contact.submit}
-              <Send className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+            {/* Honeypot: hidden from people and from screen readers, so only
+                bots fill it. Any value makes the server discard the message. */}
+            <div className="hidden" aria-hidden>
+              <label htmlFor="website">Website</label>
+              <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+            </div>
+
+            <button
+              type="submit"
+              disabled={state === 'sending'}
+              className="btn btn-primary cut-br group disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              {state === 'sending' ? c.contact.sending : c.contact.submit}
+              {state === 'sending' ? (
+                <Loader2 className="w-4 h-4 animate-spin" />
+              ) : (
+                <Send className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+              )}
             </button>
           </form>
         </Reveal>

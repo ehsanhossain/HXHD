@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Send, CheckCircle2 } from 'lucide-react';
 import { Reveal } from '@/components/motion/Reveal';
+import { submitForm } from '@/lib/submitForm';
 import { useT } from '@/i18n/LanguageProvider';
 
 export function ProductNewsletter() {
@@ -38,9 +39,16 @@ export function ProductNewsletter() {
           ) : (
             <form
               className="flex flex-col sm:flex-row gap-3"
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 e.preventDefault();
-                if (email.trim()) setDone(true);
+                const value = email.trim();
+                if (!value) return;
+                await submitForm({
+                  formType: 'Product updates',
+                  subject: 'Product & technical updates subscription',
+                  fields: { Email: value, Source: 'Products page' },
+                });
+                setDone(true);
               }}
             >
               <label htmlFor="product-newsletter" className="sr-only">

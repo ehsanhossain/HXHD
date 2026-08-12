@@ -16,10 +16,19 @@ export const COMPANY = {
   group: 'Hongxing Hongda',
   legalName: 'Hubei Hongxing Hongda New Materials Co., Ltd.',
   founded: 2000,
-  headOffice:
-    '9B, West Liando U Valley, Majuqiao Town, Tongzhou District, Beijing, China',
-  phone: '+86 137 1827 5936',
-  phoneHref: '+8613718275936',
+  /**
+   * Contact address for this site. Split into lines so the footer and contact
+   * page can break it identically without re-typing it. `headOffice` is the
+   * one-line form for metadata and plain-text contexts.
+   */
+  address: {
+    line1: 'House-51, Road No.-07',
+    line2: 'Nikunja-1, Dhaka-1229',
+    country: 'Bangladesh',
+  },
+  headOffice: 'House-51, Road No.-07, Nikunja-1, Dhaka-1229, Bangladesh',
+  phone: '+880 1335 203691',
+  phoneHref: '+8801335203691',
   /**
    * Designated enquiry address for this site. Import COMPANY.email rather than
    * hardcoding it — every page, form and footer reads from here.
@@ -29,6 +38,34 @@ export const COMPANY = {
   email: 'hongxinghongda7@gmail.com',
   sourceUrl: 'https://www.hxhdchemical.com/about-us/',
 } as const;
+
+/**
+ * Every form on the site (enquiry, newsletter, resource sign-up) is delivered
+ * to BOTH of these inboxes. There is no backend, so forms open a pre-composed
+ * mail draft addressed to this list — see `mailtoHref` below.
+ *
+ * Order matters only cosmetically: the first address is what a mail client
+ * shows as the primary recipient. Add or remove entries here and every form
+ * picks it up; do not hardcode recipients in components.
+ */
+export const FORM_RECIPIENTS = [
+  'hongxinghongda7@gmail.com',
+  'dibbodutta06@gmail.com',
+] as const;
+
+/**
+ * Builds a `mailto:` URL addressed to all FORM_RECIPIENTS.
+ *
+ * RFC 6068 allows a comma-separated address list in the `to` part, which Gmail,
+ * Outlook, Apple Mail and Thunderbird all honour. The addresses themselves are
+ * NOT percent-encoded — encoding the separating commas is what breaks multi-
+ * recipient drafts in several clients. Subject and body are encoded normally.
+ */
+export function mailtoHref(subject: string, body: string): string {
+  const to = FORM_RECIPIENTS.join(',');
+  const query = `subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  return `mailto:${to}?${query}`;
+}
 
 export const PRODUCTION_BASES: ProductionBase[] = [
   {

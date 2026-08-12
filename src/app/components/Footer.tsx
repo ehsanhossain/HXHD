@@ -133,8 +133,9 @@ export function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[var(--brand-red)] shrink-0 mt-0.5" />
                 <span className="leading-relaxed">
-                  9B, West Liando U Valley, Majuqiao Town, Tongzhou District,
-                  Beijing, China
+                  {COMPANY.address.line1}, {COMPANY.address.line2},
+                  <br />
+                  {COMPANY.address.country}
                 </span>
               </div>
               <div className="flex items-center gap-3">

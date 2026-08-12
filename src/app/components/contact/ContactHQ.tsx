@@ -26,9 +26,9 @@ export function ContactHQ() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-[18px] h-[18px] text-[var(--brand-teal)] shrink-0 mt-1" />
                 <span className="leading-relaxed">
-                  9B, West Liando U Valley, Majuqiao Town,
+                  {COMPANY.address.line1},
                   <br />
-                  Tongzhou District, Beijing, China
+                  {COMPANY.address.line2}, {COMPANY.address.country}
                 </span>
               </li>
               <li className="flex items-center gap-3">

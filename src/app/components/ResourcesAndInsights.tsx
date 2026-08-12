@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from 'react';
 import Link from 'next/link';
-import { FileText, Download, Beaker, Library, ArrowRight, ArrowUpRight } from 'lucide-react';
+import { FileText, Download, Beaker, Library, ArrowRight, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import { Reveal, Stagger, StaggerItem } from '@/components/motion/Reveal';
 import { TECHNICAL_ARTICLES } from '@/data/knowledge';
+import { submitForm } from '@/lib/submitForm';
 import { useI18n } from '@/i18n/LanguageProvider';
 
 /** Three real published guides, newest first. */
@@ -17,6 +19,7 @@ const FIELD =
 
 export function ResourcesAndInsights() {
   const { t, c, article: localized } = useI18n();
+  const [sent, setSent] = useState(false);
   const QUICK_LINKS = [c.home.findTds, c.home.findSds, c.home.downloadCenter, c.home.technicalLibrary]
     .map((label, i) => ({ label, icon: QUICK_LINK_ICONS[i], href: QUICK_LINK_HREFS[i] }));
 
@@ -34,19 +37,42 @@ export function ResourcesAndInsights() {
             </p>
 
             <div className="bg-white p-7 sm:p-8 border border-[var(--line)] cut-br">
-              <form className="grid grid-cols-1 gap-4" onSubmit={(e) => e.preventDefault()}>
+              <form
+                className="grid grid-cols-1 gap-4"
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  const form = e.currentTarget;
+                  const data = new FormData(form);
+                  const get = (k: string) => String(data.get(k) ?? '').trim();
+                  setSent(false);
+                  await submitForm({
+                    formType: 'Resource access',
+                    subject: `Technical resource access — ${get('company') || get('name') || 'Enquiry'}`,
+                    fields: {
+                      Name: get('name'),
+                      Company: get('company'),
+                      Email: get('email'),
+                      Country: get('country'),
+                      Role: get('role'),
+                      Request: 'Access to technical documentation (TDS / SDS / download centre)',
+                    },
+                  });
+                  setSent(true);
+                  form.reset();
+                }}
+              >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="res-name" className="block text-xs font-bold uppercase tracking-[0.1em] text-[var(--ink-3)] mb-2">
                       {c.home.fieldName}
                     </label>
-                    <input id="res-name" type="text" autoComplete="name" className={FIELD} />
+                    <input id="res-name" name="name" type="text" autoComplete="name" className={FIELD} />
                   </div>
                   <div>
                     <label htmlFor="res-company" className="block text-xs font-bold uppercase tracking-[0.1em] text-[var(--ink-3)] mb-2">
                       {c.home.fieldCompany}
                     </label>
-                    <input id="res-company" type="text" autoComplete="organization" className={FIELD} />
+                    <input id="res-company" name="company" type="text" autoComplete="organization" className={FIELD} />
                   </div>
                 </div>
 
@@ -54,7 +80,7 @@ export function ResourcesAndInsights() {
                   <label htmlFor="res-email" className="block text-xs font-bold uppercase tracking-[0.1em] text-[var(--ink-3)] mb-2">
                     {c.home.fieldEmail}
                   </label>
-                  <input id="res-email" type="email" autoComplete="email" className={FIELD} />
+                  <input id="res-email" name="email" type="email" autoComplete="email" className={FIELD} />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -62,7 +88,7 @@ export function ResourcesAndInsights() {
                     <label htmlFor="res-country" className="block text-xs font-bold uppercase tracking-[0.1em] text-[var(--ink-3)] mb-2">
                       {c.home.fieldCountry}
                     </label>
-                    <select id="res-country" className={FIELD} defaultValue="">
+                    <select id="res-country" name="country" className={FIELD} defaultValue="">
                       <option value="" disabled>{c.home.selectCountry}</option>
                       <option>China</option>
                       <option>Bangladesh</option>
@@ -73,16 +99,23 @@ export function ResourcesAndInsights() {
                     <label htmlFor="res-role" className="block text-xs font-bold uppercase tracking-[0.1em] text-[var(--ink-3)] mb-2">
                       {c.home.fieldRole}
                     </label>
-                    <input id="res-role" type="text" className={FIELD} />
+                    <input id="res-role" name="role" type="text" className={FIELD} />
                   </div>
                 </div>
 
                 <button type="submit" className="btn btn-primary w-full mt-2 cut-br">
                   {c.home.signUp}
                 </button>
-                <p className="text-xs text-[var(--steel-2)] text-center">
-                  {c.home.signUpNote}
-                </p>
+                {sent ? (
+                  <p className="flex items-center justify-center gap-2 text-sm font-bold text-[var(--brand-teal)]">
+                    <CheckCircle2 className="w-4 h-4 shrink-0" />
+                    {c.contact.sentTitle}
+                  </p>
+                ) : (
+                  <p className="text-xs text-[var(--steel-2)] text-center">
+                    {c.home.signUpNote}
+                  </p>
+                )}
               </form>
             </div>
           </Reveal>

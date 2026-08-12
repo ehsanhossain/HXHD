@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Send, CheckCircle2 } from 'lucide-react';
 import { Reveal } from '@/components/motion/Reveal';
+import { submitForm } from '@/lib/submitForm';
 import { useT } from '@/i18n/LanguageProvider';
 
 export function NewsletterStrip() {
@@ -31,9 +32,16 @@ export function NewsletterStrip() {
           ) : (
             <form
               className="flex flex-col sm:flex-row gap-3"
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 e.preventDefault();
-                if (email.trim()) setDone(true);
+                const value = email.trim();
+                if (!value) return;
+                await submitForm({
+                  formType: 'Newsletter',
+                  subject: 'Newsletter subscription',
+                  fields: { Email: value, Source: 'Contact page' },
+                });
+                setDone(true);
               }}
             >
               <label htmlFor="contact-newsletter" className="sr-only">
