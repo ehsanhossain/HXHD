@@ -8,6 +8,8 @@ import { DICTIONARIES, type Dict } from './dictionaries';
 import { PAGE_CONTENT, type PageContent } from './content';
 import { localizedSummary } from './productCopy';
 import { localizedArticle, type ArticleCopy } from './articleCopy';
+import { localizedBody } from './articleBody';
+import type { Block } from '@/data/knowledge';
 
 type Vars = Record<string, string | number>;
 
@@ -26,6 +28,8 @@ interface LanguageContextValue {
   summary: (slug: string, fallback: string) => string;
   /** Localised article title + summary, falling back to the English one. */
   article: (href: string, fallback: ArticleCopy) => ArticleCopy;
+  /** Localised article body blocks, falling back to the English ones. */
+  articleBody: (slug: string, fallback: Block[]) => Block[];
 }
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
@@ -95,9 +99,14 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     [locale]
   );
 
+  const articleBody = useCallback(
+    (slug: string, fallback: Block[]) => localizedBody(locale, slug, fallback),
+    [locale]
+  );
+
   const value = useMemo(
-    () => ({ locale, setLocale, t, c, categoryName, fill, summary, article }),
-    [locale, setLocale, t, c, categoryName, fill, summary, article]
+    () => ({ locale, setLocale, t, c, categoryName, fill, summary, article, articleBody }),
+    [locale, setLocale, t, c, categoryName, fill, summary, article, articleBody]
   );
 
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;

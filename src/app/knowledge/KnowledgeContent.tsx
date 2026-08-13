@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import { ArrowRight, ArrowUpRight, FileText, Beaker, Download, Library } from 'lucide-react';
+import { ArrowRight, FileText, Beaker, Download, Library } from 'lucide-react';
 import { PageHero } from '../components/PageHero';
 import { NewsletterStrip } from '../components/contact/NewsletterStrip';
 import { Reveal, Stagger, StaggerItem } from '@/components/motion/Reveal';
@@ -21,13 +21,11 @@ function ArticleCard({
   index: number;
 }) {
   const { c, locale, article: localized } = useI18n();
-  const copy = localized(article.href, { title: article.title, summary: article.summary });
+  const copy = localized(article.slug, { title: article.title, summary: article.summary });
 
   return (
-    <a
-      href={article.href}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Link
+      href={`/knowledge/${article.slug}`}
       className="group relative flex flex-col h-full bg-white border border-[var(--line)] hover:border-[var(--brand-teal)] transition-all duration-300 hover:-translate-y-1"
     >
       <div className="relative h-28 bg-[var(--paper-2)] border-b border-[var(--line)] overflow-hidden">
@@ -67,10 +65,10 @@ function ArticleCard({
               </span>
             ))}
           </span>
-          <ArrowUpRight className="w-4 h-4 text-[var(--brand-teal)] shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          <ArrowRight className="w-4 h-4 text-[var(--brand-teal)] shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
         </div>
       </div>
-    </a>
+    </Link>
   );
 }
 
@@ -114,7 +112,7 @@ export function KnowledgeContent() {
 
           <Stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {TECHNICAL_ARTICLES.map((a, i) => (
-              <StaggerItem key={a.href}>
+              <StaggerItem key={a.slug}>
                 <ArticleCard article={a} index={i} />
               </StaggerItem>
             ))}
@@ -176,7 +174,7 @@ export function KnowledgeContent() {
 
           <Stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {COMPANY_ARTICLES.map((a, i) => (
-              <StaggerItem key={a.href}>
+              <StaggerItem key={a.slug}>
                 <ArticleCard article={a} index={i} />
               </StaggerItem>
             ))}

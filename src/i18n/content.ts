@@ -249,6 +249,15 @@ const en = {
     source: 'Source',
     kindTechnical: 'Technical',
     kindCompany: 'Company',
+    backToKnowledge: 'All articles',
+    minRead: '{n} min read',
+    originallyPublished: 'Originally published by Hongxing Hongda',
+    viewOriginal: 'View the original',
+    relatedTitle: 'Related reading',
+    articleCtaTitle: 'Need this specified for your line?',
+    articleCtaBody:
+      'Our technical team can match the chemistry in this article to your substrate, process and documentation requirements in Bangladesh.',
+    articleCtaBtn: 'Talk to the technical team',
   },
 
   // ── Contact page ─────────────────────────────────────────────────────
@@ -553,6 +562,15 @@ const zh: PageContent = {
     source: '来源',
     kindTechnical: '技术',
     kindCompany: '公司',
+    backToKnowledge: '全部文章',
+    minRead: '约 {n} 分钟阅读',
+    originallyPublished: '本文由红星宏达首发',
+    viewOriginal: '查看原文',
+    relatedTitle: '相关阅读',
+    articleCtaTitle: '需要将该体系用于您的产线？',
+    articleCtaBody:
+      '我们的技术团队可根据孟加拉国当地的基材、工艺与文件要求，为您匹配本文所述的化学体系。',
+    articleCtaBtn: '联系技术团队',
   },
 
   contact: {
@@ -840,6 +858,15 @@ const bn: PageContent = {
     source: 'উৎস',
     kindTechnical: 'কারিগরি',
     kindCompany: 'কোম্পানি',
+    backToKnowledge: 'সব নিবন্ধ',
+    minRead: '{n} মিনিটের পাঠ',
+    originallyPublished: 'মূল প্রকাশক হংশিং হংদা',
+    viewOriginal: 'মূল লেখা দেখুন',
+    relatedTitle: 'সম্পর্কিত পাঠ',
+    articleCtaTitle: 'আপনার লাইনের জন্য এটি প্রয়োজন?',
+    articleCtaBody:
+      'আমাদের কারিগরি দল এই নিবন্ধের রসায়নকে বাংলাদেশে আপনার সাবস্ট্রেট, প্রক্রিয়া ও ডকুমেন্টেশনের প্রয়োজনের সাথে মিলিয়ে দিতে পারে।',
+    articleCtaBtn: 'কারিগরি দলের সাথে কথা বলুন',
   },
 
   contact: {

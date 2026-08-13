@@ -53,7 +53,7 @@ export function Footer() {
       <div className="shell py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 text-sm">
           {/* Brand */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-2">
             <Image
               src="/images/logo.png"
               alt="HXHD"
@@ -125,7 +125,7 @@ export function Footer() {
           </div>
 
           {/* Contact */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-3">
             <h3 className="text-white font-bold uppercase tracking-[0.12em] text-xs mb-5">
               {t('footer.contact')}
             </h3>
@@ -142,7 +142,7 @@ export function Footer() {
                 <Mail className="w-4 h-4 text-[var(--brand-red)] shrink-0" />
                 <a
                   href={`mailto:${COMPANY.email}`}
-                  className="hover:text-white transition-colors break-all"
+                  className="hover:text-white transition-colors whitespace-nowrap"
                 >
                   {COMPANY.email}
                 </a>
@@ -163,7 +163,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="pt-8 mt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
           <p>
-            &copy; {new Date().getFullYear()} Hubei Hongxing Hongda New Materials Co., Ltd.
+            &copy; {new Date().getFullYear()} Hubei Hongxing Hongda New Materials Co., Ltd.{' '}
             {t('footer.rights')}
           </p>
           <div className="flex flex-wrap justify-center gap-6 font-medium">

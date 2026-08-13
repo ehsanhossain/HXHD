@@ -159,11 +159,9 @@ export function ResourcesAndInsights() {
 
           <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[var(--line)] border border-[var(--line)]">
             {ARTICLES.map((article, idx) => (
-              <StaggerItem key={article.href}>
-                <a
-                  href={article.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+              <StaggerItem key={article.slug}>
+                <Link
+                  href={`/knowledge/${article.slug}`}
                   className="group relative flex flex-col h-full bg-white p-8 hover:bg-[var(--ink)] transition-colors duration-300 overflow-hidden"
                 >
                   {/* Graphical plate instead of stock photography */}
@@ -179,7 +177,7 @@ export function ResourcesAndInsights() {
                   </div>
 
                   <h3 className="text-step-1 font-bold mb-3 leading-snug transition-colors group-hover:text-white line-clamp-3">
-                    {localized(article.href, { title: article.title, summary: article.summary }).title}
+                    {localized(article.slug, { title: article.title, summary: article.summary }).title}
                   </h3>
                   <p className="text-xs text-[var(--steel)] mb-8 transition-colors group-hover:text-white/45">
                     {article.topics.join(' · ')}
@@ -189,7 +187,7 @@ export function ResourcesAndInsights() {
                     {c.home.readArticle}
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>
-                </a>
+                </Link>
               </StaggerItem>
             ))}
           </Stagger>
