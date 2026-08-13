@@ -16,7 +16,7 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 12
 
     steps:
       - uses: actions/checkout@v4
@@ -56,6 +56,12 @@ jobs:
           port: 21
           local-dir: ./deploy/
           server-dir: ${{ secrets.FTP_REMOTE_DIR }}
+          # Pure-FTPd on this host accepts the control connection but the data
+          # channel stalls from GitHub's runners — without a timeout the step
+          # hangs for the full job limit having written nothing. Fail fast and
+          # print the handshake so the cause is visible in the log.
+          timeout: 60000
+          log-level: verbose
           # The action keeps a manifest on the server and uploads only what
           # changed, so the first deploy is slow and later ones are quick.
           state-name: .ftp-deploy-sync-state.json
