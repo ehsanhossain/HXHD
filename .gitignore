@@ -47,6 +47,6 @@ HQ Website/
 /deploy/
 hxhdbd-deploy.tar.gz
 
-# Operational docs — contain live credentials, deliberately not published.
-# They live on disk only; see "MD file/info.md".
-/MD file/
+# The operations docs are committed; only the raw access token is withheld,
+# because GitHub push protection rejects any commit containing one.
+/MD file/token.txt
