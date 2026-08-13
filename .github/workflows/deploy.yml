@@ -1,0 +1,114 @@
+name: Build and deploy to HostSeba
+
+# Deploys hxhdbd.com on every push to main. Manual runs are allowed so a
+# deploy can be re-triggered without an empty commit.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# A second push while one deploy is mid-upload would interleave files on the
+# server. Queue instead, and never cancel a run that is already writing.
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      # react-day-picker@8 declares peers of React ≤18 while the project is on
+      # React 19, so a plain `npm ci` fails to resolve.
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Build
+        run: npm run build
+
+      # Assembles ./deploy: standalone server + .next/static + public, minus
+      # build-only packages. Fails loudly if a required piece is missing.
+      - name: Assemble deploy bundle
+        run: npm run package
+
+      # Passenger reloads the app when this file's mtime changes. Shipping it
+      # as part of the sync is what makes the new code actually take effect.
+      - name: Stamp restart trigger
+        run: |
+          mkdir -p deploy/tmp
+          date -u +"restart requested %Y-%m-%dT%H:%M:%SZ" > deploy/tmp/restart.txt
+
+      - name: Deploy over FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./deploy/
+          server-dir: ${{ secrets.FTP_REMOTE_DIR }}
+          # The action keeps a manifest on the server and uploads only what
+          # changed, so the first deploy is slow and later ones are quick.
+          state-name: .ftp-deploy-sync-state.json
+          # Never let a stray local artefact reach production.
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/.cache/**
+            **/*.map
+
+      - name: Summary
+        run: |
+          echo "### Deployed to hxhdbd.com" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Commit: \`${GITHUB_SHA::7}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Passenger restarts on the new \`tmp/restart.txt\`; first request after that recompiles." >> "$GITHUB_STEP_SUMMARY"
+
+  # Runs after the deploy and fails the run if the live site is not healthy,
+  # so a broken release is visible in the Actions tab rather than discovered
+  # by a visitor.
+  verify:
+    needs: deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Wait for Passenger to come back
+        run: sleep 45
+
+      - name: Check every page responds
+        run: |
+          fail=0
+          for path in "" products services industries knowledge contact; do
+            url="https://hxhdbd.com/$path"
+            code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 45 "$url" || echo 000)
+            printf '%-46s %s\n' "$url" "$code"
+            [ "$code" = "200" ] || fail=1
+          done
+          exit $fail
+
+      - name: Check a product detail page
+        run: |
+          url="https://hxhdbd.com/products/waterproof-emulsion-hx470-for-anionic-cationic-and-non-ionic-emulsified-bitumen"
+          code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 45 "$url" || echo 000)
+          echo "detail -> $code"
+          [ "$code" = "200" ]
+
+      - name: Check CSS actually loaded
+        run: |
+          # A site whose .next/static did not sync still returns 200 but has no
+          # stylesheet — catch that specifically.
+          css=$(curl -s --max-time 45 https://hxhdbd.com/ | grep -o '/_next/static/css/[^"]*\.css' | head -1)
+          if [ -z "$css" ]; then echo "no stylesheet referenced"; exit 1; fi
+          code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 45 "https://hxhdbd.com$css")
+          echo "stylesheet $css -> $code"
+          [ "$code" = "200" ]

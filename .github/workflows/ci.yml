@@ -1,0 +1,65 @@
+name: CI
+
+# Build-checks pull requests so a broken build is caught before it reaches
+# main — where merging would immediately trigger a production deploy.
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci --legacy-peer-deps
+
+      # `next build` type-checks the whole project, so this catches type errors
+      # as well as compile failures.
+      - name: Build
+        run: npm run build
+
+      - name: Assemble deploy bundle
+        run: npm run package
+
+      # The packaging script already asserts the bundle is complete and that
+      # archive paths are portable; this proves the built server actually boots
+      # and serves, which a build alone does not.
+      - name: Smoke-test the built server
+        run: |
+          node deploy/server.js &
+          pid=$!
+          trap 'kill $pid 2>/dev/null || true' EXIT
+
+          for i in $(seq 1 30); do
+            curl -sf -o /dev/null http://localhost:3000/ && break
+            sleep 1
+          done
+
+          fail=0
+          for path in "" products services industries knowledge contact; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 20 "http://localhost:3000/$path")
+            printf '%-34s %s\n' "/$path" "$code"
+            [ "$code" = "200" ] || fail=1
+          done
+
+          # /api/contact has no SMTP credentials in CI, so 503 not_configured is
+          # the correct answer. Anything else means the route itself is broken.
+          api=$(curl -s -o /dev/null -w "%{http_code}" -X POST http://localhost:3000/api/contact \
+            -H 'Content-Type: application/json' \
+            -d '{"formType":"ci","subject":"ci","fields":{},"website":""}' --max-time 20)
+          echo "/api/contact -> $api"
+          [ "$api" = "503" ] || [ "$api" = "400" ] || fail=1
+
+          exit $fail
+        env:
+          PORT: 3000
+          NODE_ENV: production
