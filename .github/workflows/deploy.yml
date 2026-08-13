@@ -16,7 +16,9 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 40
+    # This host answers FTP commands slowly for GitHub runners: measured at
+    # ~15 files/min, so the ~326-file sync needs roughly 25 minutes.
 
     steps:
       - uses: actions/checkout@v4
