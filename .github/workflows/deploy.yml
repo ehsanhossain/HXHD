@@ -20,6 +20,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2   # the dependency-drift guard diffs against HEAD~1
 
       - uses: actions/setup-node@v4
         with:
@@ -46,6 +48,18 @@ jobs:
           mkdir -p deploy/tmp
           date -u +"restart requested %Y-%m-%dT%H:%M:%SZ" > deploy/tmp/restart.txt
 
+      # The FTP sync skips node_modules, so a lockfile change would deploy new
+      # application code against the old dependency tree. Stop rather than ship
+      # that; dependencies need a full sync (scripts/README: npm run deploy:ftp).
+      - name: Guard against dependency drift
+        run: |
+          if git rev-parse HEAD~1 >/dev/null 2>&1 && \
+             ! git diff --quiet HEAD~1 HEAD -- package-lock.json package.json; then
+            echo "::error::package.json or package-lock.json changed. node_modules is not part of the automated sync — run a full deploy manually, then re-run this workflow."
+            exit 1
+          fi
+          echo "dependencies unchanged — safe to sync application files only"
+
       - name: Deploy over FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -66,10 +80,18 @@ jobs:
           # changed, so the first deploy is slow and later ones are quick.
           state-name: .ftp-deploy-sync-state.json
           # Never let a stray local artefact reach production.
+          #
+          # node_modules is excluded deliberately. It is 1843 of the bundle's
+          # 2169 files and 330 of its 369 directories, and the first two runs
+          # spent their entire job limit issuing CWD/MKD/CDUP through it
+          # without uploading anything — this host answers FTP commands from
+          # GitHub's runners orders of magnitude slower than from a local
+          # connection. The dependencies are already on the server and only
+          # change when the lockfile does, which the guard step below catches.
           exclude: |
             **/.git*
             **/.git*/**
-            **/node_modules/.cache/**
+            **/node_modules/**
             **/*.map
 
       - name: Summary
