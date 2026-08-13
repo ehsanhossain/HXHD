@@ -17,7 +17,7 @@ import { promisify } from 'node:util';
 const run = promisify(execFile);
 const ROOT = resolve(import.meta.dirname, '..');
 const OUT = join(ROOT, 'deploy');
-const ZIP = join(ROOT, 'hxhdbd-deploy.zip');
+const ARCHIVE = join(ROOT, 'hxhdbd-deploy.tar.gz');
 
 const STANDALONE = join(ROOT, '.next', 'standalone');
 
@@ -74,18 +74,49 @@ for (const required of ['server.js', '.next/static', 'public', 'node_modules/nex
 
 console.log(`bundle assembled: ${mb(await dirSize(OUT))}`);
 
-// 5. zip it (PowerShell is always present on Windows; zip/ditto elsewhere)
-await rm(ZIP, { force: true });
-if (process.platform === 'win32') {
-  await run('powershell', [
-    '-NoProfile',
-    '-Command',
-    `Compress-Archive -Path '${OUT}\\*' -DestinationPath '${ZIP}' -CompressionLevel Optimal -Force`,
-  ]);
-} else {
-  await run('zip', ['-qr', ZIP, '.'], { cwd: OUT });
+/**
+ * 5. Archive with `tar`, not PowerShell's Compress-Archive.
+ *
+ * Compress-Archive writes entry paths using the Windows separator
+ * (".next\static\main.js"). The ZIP spec mandates forward slashes, so Linux
+ * unzip does not see directories at all — it creates single files whose names
+ * literally contain backslashes. The upload looks fine and the site then fails
+ * to start because .next/ does not exist. bsdtar (shipped with Windows 10+)
+ * writes portable paths, and cPanel extracts .tar.gz natively.
+ */
+await rm(ARCHIVE, { force: true });
+
+/**
+ * GNU tar (the one Git for Windows puts on PATH) reads "F:\..." as a remote
+ * host spec and fails with "Cannot connect to F". Forward slashes plus
+ * --force-local keep it local, and are harmless to bsdtar and GNU tar on Unix.
+ */
+const tarPath = (p) => p.replace(/\\/g, '/');
+const tarArgs = (extra) => ['--force-local', ...extra];
+
+await run('tar', tarArgs(['-czf', tarPath(ARCHIVE), '-C', tarPath(OUT), '.']), {
+  maxBuffer: 64 * 1024 * 1024,
+});
+
+// Prove the separators are portable before anyone uploads this
+const { stdout: listing } = await run('tar', tarArgs(['-tzf', tarPath(ARCHIVE)]), {
+  maxBuffer: 128 * 1024 * 1024,
+});
+const entries = listing.split('\n').filter(Boolean);
+const backslashed = entries.filter((e) => e.includes('\\'));
+if (backslashed.length) {
+  console.error(
+    `${backslashed.length} entries contain backslashes, e.g. ${backslashed[0]}\n` +
+      'Refusing to ship an archive Linux cannot extract.'
+  );
+  process.exit(1);
+}
+if (!entries.some((e) => e.includes('.next/static/'))) {
+  console.error('Archive has no .next/static/ entries — the site would load without CSS.');
+  process.exit(1);
 }
 
-const { size } = await stat(ZIP);
-console.log(`hxhdbd-deploy.zip: ${mb(size)}`);
+const { size } = await stat(ARCHIVE);
+console.log(`${entries.length} entries, separators verified portable`);
+console.log(`hxhdbd-deploy.tar.gz: ${mb(size)}`);
 console.log('\nUpload it per DEPLOY.md, then Restart the app in cPanel.');

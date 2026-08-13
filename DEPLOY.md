@@ -1,149 +1,142 @@
 # Deploying hxhdbd.com
 
-Target: **HostSeba BDIX Premium (cPanel + CloudLinux + LiteSpeed)**, domain
-**hxhdbd.com** on **Cloudflare** DNS.
+**Domain** hxhdbd.com (Cloudflare DNS) · **Host** HostSeba BDIX Premium
+(cPanel + CloudLinux + LiteSpeed) · **Server** `hydra.hostseba.com` →
+`103.65.138.26` · **cPanel user** `hxhdbdco`
 
-The site is a Next.js app with a live API route (`/api/contact`) that sends
-form submissions over SMTP, so it needs a **Node.js process** — it is not a
-folder of static HTML.
+The site is a Next.js app with a live `/api/contact` route that sends mail over
+SMTP, so it runs as a **Node process** — not a folder of static HTML.
 
----
-
-## 0. Build the upload package
-
-```bash
-npm run build          # produces .next/standalone
-npm run package        # assembles ./deploy and hxhdbd-deploy.zip
-```
-
-`hxhdbd-deploy.zip` (~27 MB) contains everything the server needs:
-
-```
-server.js          Next's standalone server
-node_modules/      only the traced runtime deps
-.next/             compiled app + static assets
-public/            images, logo, favicon
-```
-
-`node_modules` is already inside — **do not run `npm install` on the server.**
+Deployment is automated: **push to `main` and it ships.** The manual route is
+kept at the bottom for first-time setup and emergencies.
 
 ---
 
-## 1. Find your server IP (needed for step 3)
+## How it works
 
-1. Log in to <https://www.hostseba.com/login>
-2. **Services → My Services →** the BDIX Premium plan (invoice #1625841)
-3. Click through to **cPanel**
-4. In cPanel's right-hand sidebar, read **Shared IP Address** — e.g. `103.x.x.x`
+| Workflow | Trigger | Does |
+|---|---|---|
+| [`ci.yml`](.github/workflows/ci.yml) | pull request → `main` | Builds, packages, boots the server and smoke-tests every page |
+| [`deploy.yml`](.github/workflows/deploy.yml) | push → `main` | Builds, packages, FTP-syncs to the server, restarts Passenger, then verifies the live site |
 
-Keep that IP. Cloudflare needs it.
+Building in CI on Ubuntu is not incidental — it removes two failure modes that
+bit us building on Windows:
+
+- **`sharp`** ships platform-specific native binaries. A Windows build traced in
+  `sharp-win32-x64`, which cannot load on the Linux host.
+- **`Compress-Archive`** writes ZIP entries with backslashes (`.next\static\…`).
+  The ZIP spec requires forward slashes, so Linux `unzip` created files whose
+  *names* contained backslashes and no `.next/` directory ever appeared. The
+  upload looked successful and the site would not start.
+
+`npm run package` now asserts both: it refuses to produce an archive containing
+backslashed paths or missing `.next/static`.
 
 ---
 
-## 2. Upload and start the Node app (cPanel)
+## One-time setup
 
-### 2a. Upload
+### 1. Create an FTP account
 
-1. cPanel → **File Manager**
-2. Go to your home directory (`/home/<user>`), **not** `public_html`
-3. Create a folder `hxhdbd`
-4. **Upload** `hxhdbd-deploy.zip` into it
-5. Select the zip → **Extract**
-
-> Why not `public_html`? A Node app is run by Passenger from its own folder.
-> `public_html` stays as the document root that Passenger serves through.
-
-### 2b. Create the app
-
-cPanel → **Setup Node.js App** → **Create Application**
+cPanel → **FTP Accounts** → Add FTP Account
 
 | Field | Value |
 |---|---|
-| Node.js version | **20.x** (or the highest 18+ offered) |
+| Log In | `deploy` |
+| Directory | `/home/hxhdbdco/hxhdbd` |
+| Quota | Unlimited |
+
+Note the full username — cPanel makes it `deploy@hxhdbd.com`.
+
+### 2. Add the GitHub secrets
+
+Repo → **Settings → Secrets and variables → Actions → New repository secret**
+
+| Secret | Value |
+|---|---|
+| `FTP_HOST` | `103.65.138.26` |
+| `FTP_USER` | `deploy@hxhdbd.com` |
+| `FTP_PASSWORD` | the FTP account password |
+| `FTP_REMOTE_DIR` | `/` (the FTP user is already chrooted to the app folder) |
+
+> If the FTP account is created without a directory restriction, set
+> `FTP_REMOTE_DIR` to `/hxhdbd/` instead.
+
+### 3. Create the Node.js app (once)
+
+cPanel → **Setup Node.js App** → Create Application
+
+| Field | Value |
+|---|---|
+| Node.js version | **20.x** |
 | Application mode | **Production** |
 | Application root | `hxhdbd` |
 | Application URL | `hxhdbd.com` |
 | Application startup file | `server.js` |
 
-Click **Create**.
-
-### 2c. Add environment variables
-
-Still in Setup Node.js App, open the app and add these under
-**Environment variables** (values from your `.env.local`):
+Then add **Environment variables**:
 
 | Name | Value |
 |---|---|
-| `SMTP_USER` | the Gmail address that authenticates |
-| `SMTP_PASS` | the 16-character Google **App Password** |
+| `SMTP_USER` | Gmail address used to authenticate |
+| `SMTP_PASS` | 16-character Google **App Password** |
 | `SMTP_FROM_NAME` | `HXHD Website` |
 | `SMTP_HOST` | `smtp.gmail.com` |
 | `SMTP_PORT` | `465` |
 | `NEXT_PUBLIC_SITE_URL` | `https://hxhdbd.com` |
 | `NODE_ENV` | `production` |
 
-Then **Save** and **Restart** the application.
+Save, then **Restart**.
 
-> If SMTP is left unset the site still works — every form quietly falls back to
-> opening a pre-addressed mail draft instead of sending server-side. Nothing
-> breaks, but the visitor has to press Send themselves.
+> Without SMTP the site still works — every form falls back to opening a
+> pre-addressed mail draft. Nothing breaks; the visitor just has to press Send.
+>
+> If the host blocks outbound 465, use `SMTP_PORT=587`; the route switches to
+> STARTTLS for any port that is not 465.
 
-> If HostSeba blocks outbound port 465, set `SMTP_PORT=587`. The route switches
-> to STARTTLS automatically for any port that isn't 465.
+### 4. Point DNS at the server
 
----
-
-## 3. Point DNS at the server (Cloudflare)
-
-<https://dash.cloudflare.com> → select **hxhdbd.com** → **DNS → Records**
-
-Add both records, replacing `<SERVER-IP>` with the IP from step 1:
+Cloudflare → **hxhdbd.com → DNS → Records**
 
 | Type | Name | Content | Proxy |
 |---|---|---|---|
-| A | `@` | `<SERVER-IP>` | **Proxied** (orange cloud) |
-| A | `www` | `<SERVER-IP>` | **Proxied** (orange cloud) |
+| A | `@` | `103.65.138.26` | Proxied |
+| A | `www` | `103.65.138.26` | Proxied |
 
-Then **SSL/TLS → Overview → set encryption mode to `Full (strict)`**.
+Then **SSL/TLS → Overview → `Full (strict)`** and **Edge Certificates →
+Always Use HTTPS**.
 
-> Leaving it on `Flexible` causes a redirect loop once cPanel's own SSL is
-> active. Use `Full (strict)` after AutoSSL has issued a certificate; if the
-> site errors immediately after DNS propagates, drop to `Full` for the hour or
-> so it takes cPanel to issue one.
-
-Also enable **SSL/TLS → Edge Certificates → Always Use HTTPS**.
-
-DNS propagation is usually minutes on Cloudflare, occasionally up to an hour.
+> `Flexible` causes a redirect loop against cPanel's own TLS. If the site errors
+> right after DNS propagates, sit on `Full` for the hour AutoSSL needs to issue
+> a certificate, then raise to `Full (strict)`.
 
 ---
 
-## 4. Verify
+## Everyday use
 
 ```bash
-curl -I https://hxhdbd.com                 # expect 200
-curl -I https://hxhdbd.com/products        # expect 200
-curl -I https://hxhdbd.com/services
-curl -I https://hxhdbd.com/industries
-curl -I https://hxhdbd.com/knowledge
-curl -I https://hxhdbd.com/contact
+git push origin main
 ```
 
-Then in a browser:
+Watch it in the repo's **Actions** tab. The `verify` job fails the run if any
+page stops returning 200 — including a check that the stylesheet actually
+loads, which catches a partial sync that would otherwise look fine.
 
-- switch language **EN / 中文 / বাংলা** in the top bar — the whole page should change
-- open **/contact**, submit the enquiry form, confirm mail arrives at the
-  addresses in `FORM_RECIPIENTS` (`src/data/company.ts`)
+To redeploy without a code change: **Actions → Build and deploy → Run workflow**.
 
 ---
 
-## Redeploying after a change
+## Manual deploy (fallback)
 
 ```bash
-npm run build && npm run package
+npm run build
+npm run package     # → hxhdbd-deploy.tar.gz, paths verified portable
 ```
 
-Upload the new `hxhdbd-deploy.zip`, extract over `hxhdbd` (replacing files),
-then **Restart** the app in Setup Node.js App. Environment variables persist.
+cPanel → File Manager → `/home/hxhdbdco/hxhdbd` → Upload → select the archive →
+**Extract** → then **Restart** in Setup Node.js App.
+
+Use `.tar.gz`, not a Windows-made `.zip` — see the backslash note above.
 
 ---
 
@@ -151,21 +144,22 @@ then **Restart** the app in Setup Node.js App. Environment variables persist.
 
 | Symptom | Cause | Fix |
 |---|---|---|
-| 503 / "passenger" error page | App not started | Setup Node.js App → **Restart** |
-| Site loads, CSS missing | `.next/static` not uploaded | Re-extract the zip; confirm `hxhdbd/.next/static` exists |
-| Images 404 | `public/` not uploaded | Confirm `hxhdbd/public/images` exists |
+| 503 / Passenger error | App not running | Setup Node.js App → **Restart** |
+| Loads but unstyled | `.next/static` did not sync | Re-run the deploy; the `verify` job catches this |
+| Images 404 | `public/` did not sync | Same |
 | Redirect loop | Cloudflare SSL on `Flexible` | Switch to `Full (strict)` |
-| Form says "opened a draft" instead of sending | SMTP vars missing/wrong | Re-check the 5 SMTP vars, then Restart |
-| Form 500s | Port 465 blocked | Set `SMTP_PORT=587`, Restart |
+| Form opens a draft instead of sending | SMTP vars unset | Re-check the five SMTP vars, Restart |
+| Form 500s | Port 465 blocked | `SMTP_PORT=587`, Restart |
+| FTP step fails auth | Wrong user format | Use the full `deploy@hxhdbd.com` |
 
 ---
 
 ## Notes
 
-- **Image optimisation is off** (`images.unoptimized` in `next.config.ts`).
-  Next's optimiser needs `sharp`, whose native binaries are platform-specific —
-  a bundle built on Windows carries only the Windows build and would fail on the
-  Linux host. Images are served as-is instead. If you later want optimisation,
-  build on Linux (or in CI) and drop the `unoptimized` flag.
-- **Secrets are never committed.** `.env.local` is gitignored; production values
-  live only in the cPanel environment-variables panel.
+- **Image optimisation is off** (`images.unoptimized`). Now that builds happen
+  on Linux in CI, it could be re-enabled — drop the flag and stop stripping
+  `@img` in `scripts/package-deploy.mjs`. Left off so a local Windows build
+  still produces a working bundle.
+- **Secrets never enter the repo.** `.env.local` is gitignored; production SMTP
+  credentials live only in cPanel's environment panel, and FTP credentials only
+  in GitHub Actions secrets.
