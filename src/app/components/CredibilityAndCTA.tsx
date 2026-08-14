@@ -60,11 +60,11 @@ export function CredibilityAndCTA() {
 
             <Reveal delay={0.1}>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Link href="/contact" className="btn btn-primary cut-br group">
+                <Link href="/about" className="btn btn-primary cut-br group">
                   {c.home.aboutBtn}
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
-                <Link href="/contact" className="btn btn-on-dark">
+                <Link href="/about" className="btn btn-on-dark">
                   {c.home.qualityBtn}
                 </Link>
               </div>

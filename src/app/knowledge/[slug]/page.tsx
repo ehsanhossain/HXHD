@@ -25,6 +25,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: article.summary,
       type: 'article',
       publishedTime: article.iso,
+      images: [{ url: '/images/og-image.jpg', width: 1200, height: 630, alt: article.title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.title,
+      description: article.summary,
+      images: ['/images/og-image.jpg'],
     },
   };
 }

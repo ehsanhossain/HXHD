@@ -16,10 +16,11 @@ const SERVICES = [
 ];
 
 const RESOURCES = [
+  { label: 'About HXHD', href: '/about' },
+  { label: 'Careers & Hiring', href: '/career' },
   { label: 'Technical Guides', href: '/knowledge' },
   { label: 'Company Updates', href: '/knowledge' },
   { label: 'Technical Data Sheets (TDS)', href: '/products' },
-  { label: 'Safety Data Sheets (SDS)', href: '/contact' },
   { label: 'Support & Contact', href: '/contact' },
 ];
 

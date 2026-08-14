@@ -12,10 +12,12 @@ import { LOCALES, LOCALE_META } from '@/i18n/config';
 import { COMPANY } from '@/data/company';
 
 const NAV = [
+  { key: 'nav.about', href: '/about', hasMenu: false },
   { key: 'nav.products', href: '/products', hasMenu: true },
   { key: 'nav.services', href: '/services', hasMenu: false },
   { key: 'nav.industries', href: '/industries', hasMenu: false },
   { key: 'nav.knowledge', href: '/knowledge', hasMenu: false },
+  { key: 'nav.career', href: '/career', hasMenu: false },
   // Support is the contact page — there is one team, one inbox.
   { key: 'nav.support', href: '/contact', hasMenu: false },
 ] as const;

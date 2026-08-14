@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { Send, AlertCircle, CheckCircle2, Loader2 } from 'lucide-react';
+import { Send, AlertCircle, CheckCircle2, Loader2, CalendarDays, Clock, Video } from 'lucide-react';
 import { Reveal } from '@/components/motion/Reveal';
 import { COMPANY } from '@/data/company';
 import { submitForm } from '@/lib/submitForm';
@@ -50,8 +50,10 @@ export function ContactForm() {
     setState('sending');
 
     const outcome = await submitForm({
-      formType: 'Enquiry',
-      subject: `Enquiry — ${get('help') || 'General'} — ${get('company') || get('firstName')}`,
+      formType: get('appointmentDate') ? 'Enquiry & Consultation Appointment' : 'Enquiry',
+      subject: `Enquiry — ${get('help') || 'General'} — ${get('company') || get('firstName')}${
+        get('appointmentDate') ? ` [Meeting: ${get('appointmentDate')}]` : ''
+      }`,
       website: get('website'),
       fields: {
         Name: `${get('firstName')} ${get('lastName')}`,
@@ -62,6 +64,13 @@ export function ContactForm() {
         Country: get('country'),
         'Enquiry type': get('help'),
         'Has a project': get('project'),
+        ...(get('appointmentDate')
+          ? {
+              'Scheduled Meeting Date': get('appointmentDate'),
+              'Scheduled Time Slot': get('appointmentTime') || 'Any time during business hours',
+              'Meeting Format': get('meetingMode') || 'Online / Direct',
+            }
+          : {}),
         'Marketing opt-in': get('marketing') ? 'Yes' : 'No',
         Message: get('message'),
       },
@@ -179,6 +188,75 @@ export function ContactForm() {
                 <option>{c.contact.yes}</option>
                 <option>{c.contact.no}</option>
               </select>
+            </div>
+
+            {/* Appointment & Consultation Scheduling */}
+            <div className="p-6 bg-[var(--paper-2)] border border-[var(--line)] space-y-4">
+              <div className="flex items-start sm:items-center gap-3 text-[var(--ink)]">
+                <span className="grid place-items-center w-9 h-9 bg-[var(--brand-red)]/10 text-[var(--brand-red)] shrink-0">
+                  <CalendarDays className="w-5 h-5" />
+                </span>
+                <div>
+                  <h3 className="text-xs font-bold uppercase tracking-[0.1em] text-[var(--ink)]">
+                    {c.contact.scheduleHeading}
+                  </h3>
+                  <p className="text-xs text-[var(--ink-3)] mt-0.5 leading-relaxed">
+                    {c.contact.scheduleLead}
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-1">
+                <div>
+                  <label htmlFor="appointmentDate" className={LABEL}>
+                    <span className="inline-flex items-center gap-1.5">
+                      <CalendarDays className="w-3.5 h-3.5 text-[var(--brand-teal)]" />
+                      {c.contact.scheduleDate}
+                    </span>
+                  </label>
+                  <input
+                    id="appointmentDate"
+                    name="appointmentDate"
+                    type="date"
+                    min={new Date().toISOString().split('T')[0]}
+                    className={FIELD}
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="appointmentTime" className={LABEL}>
+                    <span className="inline-flex items-center gap-1.5">
+                      <Clock className="w-3.5 h-3.5 text-[var(--brand-teal)]" />
+                      {c.contact.scheduleTime}
+                    </span>
+                  </label>
+                  <select id="appointmentTime" name="appointmentTime" className={FIELD} defaultValue="">
+                    <option value="">{c.contact.pleaseSelect}</option>
+                    {c.contact.timeSlots.map((slot) => (
+                      <option key={slot} value={slot}>
+                        {slot}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <label htmlFor="meetingMode" className={LABEL}>
+                    <span className="inline-flex items-center gap-1.5">
+                      <Video className="w-3.5 h-3.5 text-[var(--brand-teal)]" />
+                      {c.contact.scheduleMode}
+                    </span>
+                  </label>
+                  <select id="meetingMode" name="meetingMode" className={FIELD} defaultValue="">
+                    <option value="">{c.contact.pleaseSelect}</option>
+                    {c.contact.meetingModes.map((mode) => (
+                      <option key={mode} value={mode}>
+                        {mode}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
             </div>
 
             <div>

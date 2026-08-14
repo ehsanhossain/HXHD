@@ -6,9 +6,23 @@ import { ProductNewsletter } from '../components/products/ProductNewsletter';
 import { PRODUCTS } from '@/data/products';
 
 export const metadata: Metadata = {
-  title: `Products | HXHD — ${PRODUCTS.length} Emulsion & Functional Chemical Solutions`,
+  title: `Products Catalogue | HXHD — ${PRODUCTS.length} Emulsion & Chemical Grades`,
   description:
-    'Browse the full HXHD range of waterproof emulsions, architectural emulsions, adhesives, coatings and functional additives.',
+    'Browse the full HXHD range of waterproof emulsions, architectural emulsions, adhesives, coatings and functional additives with TDS technical specifications.',
+  openGraph: {
+    title: `Products Catalogue | HXHD — ${PRODUCTS.length} Emulsion & Chemical Grades`,
+    description:
+      'Search and filter our complete range of polymer emulsions, waterproofing systems, and chemical additives engineered for performance.',
+    url: '/products',
+    images: [{ url: '/images/og-image.jpg', width: 1200, height: 630, alt: 'HXHD Product Catalogue' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Products Catalogue | HXHD — ${PRODUCTS.length} Emulsion Solutions`,
+    description:
+      'Browse the full HXHD range of polymer emulsions, adhesives, coatings and functional additives.',
+    images: ['/images/og-image.jpg'],
+  },
 };
 
 export default function ProductsPage() {
