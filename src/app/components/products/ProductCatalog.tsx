@@ -93,14 +93,14 @@ export function ProductCatalog() {
 
           <div className="flex-1 w-full">
             <div className="flex flex-wrap items-baseline justify-between gap-2 mb-8">
-              <p className="text-sm text-slate-500 font-medium">
+              <p className="text-sm text-[var(--steel)] font-medium">
                 {t('products.showing', { a: visible.length, b: filtered.length })}
                 {selectedCategories.length > 0 || query ? ` ${t('products.filtered')}` : ''}
               </p>
               {(selectedCategories.length > 0 || query) && (
                 <button
                   onClick={resetFilters}
-                  className="text-sm font-bold text-[#D61118] hover:underline"
+                  className="text-sm font-bold text-[var(--brand-red)] hover:underline"
                 >
                   {t('products.clearFilters')}
                 </button>
@@ -115,7 +115,7 @@ export function ProductCatalog() {
                 <p className="text-sm text-[var(--steel)] mb-6">{t('products.noneHelp')}</p>
                 <button
                   onClick={resetFilters}
-                  className="px-6 py-3 bg-[#D61118] text-white font-bold text-sm uppercase tracking-wide hover:bg-[#b00d13] transition-colors"
+                  className="px-6 py-3 bg-[var(--brand-red)] text-white font-bold text-sm uppercase tracking-wide hover:bg-[#b00d13] transition-colors"
                 >
                   {t('products.resetAll')}
                 </button>

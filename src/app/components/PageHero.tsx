@@ -75,7 +75,7 @@ export function PageHero({
         <div className="absolute left-0 top-0 h-full w-[3px] bg-[var(--brand-red)]" aria-hidden />
 
         <div className="shell relative py-16 lg:py-20">
-          <motion.p className="eyebrow mb-5" {...rise(0)}>
+          <motion.p className="eyebrow eyebrow-on-dark mb-5" {...rise(0)}>
             {eyebrowText}
           </motion.p>
           <motion.h1 className="text-step-4 max-w-4xl" {...rise(0.06)}>

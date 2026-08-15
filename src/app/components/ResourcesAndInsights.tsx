@@ -15,7 +15,7 @@ const QUICK_LINK_ICONS = [FileText, Beaker, Download, Library];
 const QUICK_LINK_HREFS = ['/products', '/contact', '/contact', '/knowledge'];
 
 const FIELD =
-  'w-full h-12 px-4 bg-[var(--paper-2)] border border-[var(--line)] focus:border-[var(--brand-teal)] focus:outline-none text-[var(--ink)] placeholder:text-[var(--steel-2)] transition-colors';
+  'w-full h-12 px-4 bg-[var(--paper-2)] border border-[var(--line)] focus:border-[var(--brand-teal)] focus:outline-none text-[var(--ink)] placeholder:text-[var(--steel)] transition-colors';
 
 export function ResourcesAndInsights() {
   const { t, c, article: localized } = useI18n();
@@ -107,12 +107,12 @@ export function ResourcesAndInsights() {
                   {c.home.signUp}
                 </button>
                 {sent ? (
-                  <p className="flex items-center justify-center gap-2 text-sm font-bold text-[var(--brand-teal)]">
+                  <p className="flex items-center justify-center gap-2 text-sm font-bold text-[var(--teal-on-light)]">
                     <CheckCircle2 className="w-4 h-4 shrink-0" />
                     {c.contact.sentTitle}
                   </p>
                 ) : (
-                  <p className="text-xs text-[var(--steel-2)] text-center">
+                  <p className="text-xs text-[var(--steel)] text-center">
                     {c.home.signUpNote}
                   </p>
                 )}
@@ -127,11 +127,11 @@ export function ResourcesAndInsights() {
                   href={link.href}
                   className="group relative flex flex-col items-center justify-center gap-4 p-9 h-full bg-white border border-[var(--line)] hover:border-[var(--brand-red)] transition-all duration-300 hover:-translate-y-1"
                 >
-                  <link.icon className="w-9 h-9 text-[var(--steel-2)] group-hover:text-[var(--brand-red)] transition-colors" />
+                  <link.icon className="w-9 h-9 text-[var(--steel)] group-hover:text-[var(--brand-red)] transition-colors" />
                   <span className="font-bold text-[var(--ink-2)] group-hover:text-[var(--brand-red)] transition-colors text-center">
                     {link.label}
                   </span>
-                  <ArrowUpRight className="absolute top-4 right-4 w-4 h-4 text-[var(--steel-2)] opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  <ArrowUpRight className="absolute top-4 right-4 w-4 h-4 text-[var(--steel)] opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
               </StaggerItem>
             ))}
@@ -151,7 +151,7 @@ export function ResourcesAndInsights() {
             </div>
             <Link
               href="/knowledge"
-              className="link-sweep text-[var(--brand-teal)] font-bold text-sm uppercase tracking-[0.1em]"
+              className="link-sweep text-[var(--teal-on-light)] font-bold text-sm uppercase tracking-[0.1em]"
             >
               {c.home.exploreHub} <ArrowRight className="w-4 h-4" />
             </Link>
@@ -168,7 +168,10 @@ export function ResourcesAndInsights() {
                   <div className="relative h-32 -mx-8 -mt-8 mb-7 bg-[var(--paper-2)] border-b border-[var(--line)] overflow-hidden transition-colors duration-300 group-hover:bg-[var(--ink-2)] group-hover:border-white/10">
                     <div className="absolute inset-0 bg-hatch opacity-70 group-hover:opacity-0 transition-opacity duration-300" aria-hidden />
                     <div className="absolute inset-0 bg-hatch-red opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden />
-                    <span className="absolute top-5 left-8 stroke-text text-[3.4rem] font-bold leading-none select-none tnum">
+                    <span
+                      aria-hidden
+                      className="absolute top-5 left-8 stroke-text text-[3.4rem] font-bold leading-none select-none tnum"
+                    >
                       {String(idx + 1).padStart(2, '0')}
                     </span>
                     <span className="absolute bottom-0 left-8 bg-[var(--brand-red)] text-white px-3 py-1.5 text-[0.65rem] font-bold uppercase tracking-[0.14em]">
@@ -183,7 +186,7 @@ export function ResourcesAndInsights() {
                     {article.topics.join(' · ')}
                   </p>
 
-                  <span className="mt-auto inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-[var(--brand-teal)] transition-colors group-hover:text-white">
+                  <span className="mt-auto inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-[var(--teal-on-light)] transition-colors group-hover:text-white">
                     {c.home.readArticle}
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>

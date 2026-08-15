@@ -33,7 +33,7 @@ export function CredibilityAndCTA() {
         <div className="shell relative grid lg:grid-cols-12 gap-14 items-center">
           <div className="lg:col-span-7">
             <Reveal>
-              <p className="eyebrow mb-6">{t('sec.company')}</p>
+              <p className="eyebrow eyebrow-on-dark mb-6">{t('sec.company')}</p>
               <h2 className="text-step-3 mb-6">{t('sec.companyTitle')}</h2>
               <div className="w-20 h-[6px] bg-[var(--brand-red)] mb-8" />
               <p className="text-step-1 text-white/70 leading-relaxed font-light mb-10 max-w-2xl">
@@ -52,7 +52,7 @@ export function CredibilityAndCTA() {
                     <p className="text-xs font-bold uppercase tracking-[0.1em] text-white/85 leading-snug">
                       {s.label}
                     </p>
-                    <p className="text-[0.7rem] text-white/40 mt-1">{s.note}</p>
+                    <p className="text-[0.7rem] text-white/60 mt-1">{s.note}</p>
                   </div>
                 </StaggerItem>
               ))}
@@ -110,7 +110,9 @@ export function CredibilityAndCTA() {
       </section>
 
       {/* ── Consultation CTA ────────────────────────────────── */}
-      <section className="bg-[var(--brand-teal)] relative overflow-hidden">
+      {/* teal-dark, not teal — see NewsletterStrip: white body copy needs
+          4.5:1 and only clears 4.08:1 on --brand-teal. */}
+      <section className="bg-[var(--brand-teal-dark)] relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-20 bg-hatch"
           style={{ filter: 'invert(1)' }}
@@ -121,7 +123,7 @@ export function CredibilityAndCTA() {
             <h2 className="text-step-2 text-white mb-2">
               {c.home.ctaTitle}
             </h2>
-            <p className="text-white/80 text-step-0">
+            <p className="text-white/90 text-step-0">
               {c.home.ctaBody}
             </p>
           </div>

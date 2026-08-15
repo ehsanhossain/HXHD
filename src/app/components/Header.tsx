@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
-import { Search, ChevronDown, Globe, Menu, X, Phone } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Search, ChevronDown, Menu, X, Phone } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -51,57 +51,12 @@ export function Header() {
       className="sticky top-0 z-50 w-full"
       onMouseLeave={() => setActiveDropdown(null)}
     >
-      {/* Utility bar */}
-      <div className="bg-[var(--ink)] text-white/80 text-[0.72rem]">
-        <div className="shell flex flex-col md:flex-row justify-between items-center gap-1.5 py-2">
-          <p className="tracking-wide text-center md:text-left">
-            <span className="text-white/50">{t('util.portfolio')}</span>{' '}
-            {(['util.china', 'util.bangladesh', 'util.asean'] as const).map((k, i) => (
-              <React.Fragment key={k}>
-                {i > 0 && <span className="mx-1.5 text-white/25">/</span>}
-                <span className="font-medium">{t(k)}</span>
-              </React.Fragment>
-            ))}
-          </p>
+      {/* The brand rule. All that survives of the old ink utility bar —
+          it keeps red at the top of the page without spending a whole row
+          on it. Matches the 3px rule down the left of the hero. */}
+      <div className="h-[3px] bg-[var(--brand-red)]" aria-hidden />
 
-          <div className="flex items-center gap-5 font-medium">
-            <a
-              href={`tel:${COMPANY.phoneHref}`}
-              className="hidden sm:inline-flex items-center gap-1.5 hover:text-white transition-colors"
-            >
-              <Phone className="w-3 h-3" />
-              {COMPANY.phone}
-            </a>
-
-            <div
-              className="flex items-center gap-1.5"
-              role="group"
-              aria-label={t('nav.chooseLanguage')}
-            >
-              <Globe className="w-3 h-3 text-white/50" aria-hidden />
-              {LOCALES.map((l, i) => (
-                <React.Fragment key={l}>
-                  {i > 0 && <span className="text-white/25">·</span>}
-                  <button
-                    onClick={() => setLocale(l)}
-                    lang={LOCALE_META[l].htmlLang}
-                    aria-current={locale === l ? 'true' : undefined}
-                    className={`transition-colors ${
-                      locale === l
-                        ? 'text-white font-bold'
-                        : 'text-white/70 hover:text-white'
-                    }`}
-                  >
-                    {LOCALE_META[l].short}
-                  </button>
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main bar */}
+      {/* Single bar */}
       <div
         className={`relative bg-white/95 backdrop-blur-sm border-b transition-all duration-300 ${
           scrolled
@@ -110,7 +65,7 @@ export function Header() {
         }`}
       >
         <div
-          className={`shell flex justify-between items-center transition-all duration-300 ${
+          className={`shell flex justify-between items-center gap-4 transition-all duration-300 ${
             scrolled ? 'py-2.5' : 'py-4'
           }`}
         >
@@ -127,8 +82,10 @@ export function Header() {
             />
           </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden lg:flex items-stretch self-stretch">
+          {/* Desktop nav. xl, not lg: seven uppercase items plus the utility
+              cluster measured 208px wider than a 1024 viewport, so 1024-1279
+              keeps the drawer. */}
+          <nav className="hidden xl:flex items-stretch self-stretch">
             {NAV.map((item) => {
               const active = isActive(item.href);
               return (
@@ -139,7 +96,7 @@ export function Header() {
                 >
                   <Link
                     href={item.href}
-                    className={`group relative flex items-center gap-1 px-4 text-[0.78rem] font-bold uppercase tracking-[0.1em] transition-colors ${
+                    className={`group relative flex items-center gap-1 whitespace-nowrap px-2.5 2xl:px-3.5 text-[0.72rem] 2xl:text-[0.78rem] font-bold uppercase tracking-[0.08em] transition-colors ${
                       active || activeDropdown === item.key
                         ? 'text-[var(--brand-red)]'
                         : 'text-[var(--ink-2)] hover:text-[var(--brand-red)]'
@@ -165,29 +122,65 @@ export function Header() {
             })}
           </nav>
 
-          {/* Actions */}
-          <div className="hidden lg:flex items-center gap-2 shrink-0">
+          {/* Utilities — absorbed from the retired utility bar */}
+          <div className="flex items-center gap-2 lg:gap-3 shrink-0">
+            <a
+              href={`tel:${COMPANY.phoneHref}`}
+              className="hidden 2xl:inline-flex items-center gap-1.5 whitespace-nowrap text-[0.78rem] font-bold text-[var(--ink-3)] hover:text-[var(--brand-red)] transition-colors"
+            >
+              <Phone className="w-3.5 h-3.5" />
+              {COMPANY.phone}
+            </a>
+
+            {/* Segmented locale control. The old inline text buttons were
+                14x19px — under the 24x24 floor in WCAG 2.5.8. */}
+            <div
+              className="flex items-center border border-[var(--line-strong)]"
+              role="group"
+              aria-label={t('nav.chooseLanguage')}
+            >
+              {LOCALES.map((l) => (
+                <button
+                  key={l}
+                  onClick={() => setLocale(l)}
+                  lang={LOCALE_META[l].htmlLang}
+                  aria-current={locale === l ? 'true' : undefined}
+                  className={`min-w-9 h-8 px-2 text-[0.7rem] font-bold tracking-wide transition-colors ${
+                    locale === l
+                      ? 'bg-[var(--ink)] text-white'
+                      : 'text-[var(--ink-3)] hover:bg-[var(--paper-2)] hover:text-[var(--brand-red)]'
+                  }`}
+                >
+                  {LOCALE_META[l].short}
+                </button>
+              ))}
+            </div>
+
             <Link
               href="/products"
               aria-label={t('nav.searchProducts')}
-              className="grid place-items-center w-11 h-11 text-[var(--ink-3)] hover:text-[var(--brand-red)] hover:bg-[var(--paper-2)] transition-colors"
+              className="hidden 2xl:grid place-items-center w-11 h-11 text-[var(--ink-3)] hover:text-[var(--brand-red)] hover:bg-[var(--paper-2)] transition-colors"
             >
               <Search className="w-[18px] h-[18px]" />
             </Link>
-            <Link href="/contact" className="btn btn-primary cut-br !min-h-[2.75rem] !px-6">
+
+            <Link
+              href="/contact"
+              className="hidden xl:inline-flex btn btn-primary cut-br !min-h-[2.75rem] !px-4 2xl:!px-6"
+            >
               {t('cta.requestSample')}
             </Link>
-          </div>
 
-          {/* Mobile toggle */}
-          <button
-            className="lg:hidden grid place-items-center w-11 h-11 text-[var(--ink)]"
-            onClick={() => setIsMobileMenuOpen((v) => !v)}
-            aria-label={isMobileMenuOpen ? t('nav.closeMenu') : t('nav.openMenu')}
-            aria-expanded={isMobileMenuOpen}
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+            {/* Mobile toggle */}
+            <button
+              className="xl:hidden grid place-items-center w-11 h-11 text-[var(--ink)]"
+              onClick={() => setIsMobileMenuOpen((v) => !v)}
+              aria-label={isMobileMenuOpen ? t('nav.closeMenu') : t('nav.openMenu')}
+              aria-expanded={isMobileMenuOpen}
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mega menu */}
@@ -209,7 +202,7 @@ export function Header() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="lg:hidden absolute w-full left-0 bg-white border-t border-[var(--line)] shadow-xl z-40 overflow-hidden"
+            className="xl:hidden absolute w-full left-0 bg-white border-t border-[var(--line)] shadow-xl z-40 overflow-hidden"
             initial={{ height: reduced ? 'auto' : 0, opacity: reduced ? 1 : 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: reduced ? 'auto' : 0, opacity: 0 }}

@@ -54,7 +54,7 @@ export function ContactHero() {
           />
 
           <div className="relative px-8 lg:px-14 py-14 lg:py-20 flex flex-col justify-center h-full">
-            <motion.p className="eyebrow mb-5" {...rise(0)}>
+            <motion.p className="eyebrow eyebrow-on-dark mb-5" {...rise(0)}>
               {t('page.contact.eyebrow')}
             </motion.p>
 

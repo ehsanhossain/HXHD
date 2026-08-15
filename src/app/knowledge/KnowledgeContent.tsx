@@ -31,7 +31,10 @@ function ArticleCard({
       <div className="relative h-28 bg-[var(--paper-2)] border-b border-[var(--line)] overflow-hidden">
         <div className="absolute inset-0 bg-hatch opacity-70 group-hover:opacity-0 transition-opacity duration-300" aria-hidden />
         <div className="absolute inset-0 bg-hatch-red opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden />
-        <span className="absolute top-4 left-6 stroke-text text-[2.8rem] font-bold leading-none select-none tnum">
+        <span
+          aria-hidden
+          className="absolute top-4 left-6 stroke-text text-[2.8rem] font-bold leading-none select-none tnum"
+        >
           {String(index + 1).padStart(2, '0')}
         </span>
         <span className="absolute bottom-0 left-6 bg-[var(--brand-red)] text-white px-3 py-1.5 text-[0.62rem] font-bold uppercase tracking-[0.14em]">
@@ -42,7 +45,7 @@ function ArticleCard({
       <div className="flex flex-col flex-grow p-6">
         <time
           dateTime={article.iso}
-          className="text-[0.7rem] font-bold uppercase tracking-[0.1em] text-[var(--steel-2)] mb-3"
+          className="text-[0.7rem] font-bold uppercase tracking-[0.1em] text-[var(--steel)] mb-3"
         >
           {new Intl.DateTimeFormat(locale === 'zh' ? 'zh-CN' : locale === 'bn' ? 'bn-BD' : 'en-GB',
             { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(article.iso))}
@@ -126,7 +129,7 @@ export function KnowledgeContent() {
 
         <div className="shell relative">
           <Reveal className="max-w-2xl mb-14">
-            <p className="eyebrow mb-6">{c.knowledge.timelineEyebrow}</p>
+            <p className="eyebrow eyebrow-on-dark mb-6">{c.knowledge.timelineEyebrow}</p>
             <h2 className="text-step-3 mb-6">{c.knowledge.timelineTitle}</h2>
             <div className="w-20 h-[6px] bg-[var(--brand-red)]" />
           </Reveal>
@@ -143,19 +146,6 @@ export function KnowledgeContent() {
                   </h3>
                   <p className="md:col-span-6 text-white/60 leading-relaxed text-sm">
                     {c.milestones[mi]?.body ?? m.body}
-                    {m.source && (
-                      <>
-                        {' '}
-                        <a
-                          href={m.source}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[var(--brand-teal)] font-bold hover:underline whitespace-nowrap"
-                        >
-                          {c.knowledge.source} ↗
-                        </a>
-                      </>
-                    )}
                   </p>
                 </div>
               </StaggerItem>
@@ -209,7 +199,7 @@ export function KnowledgeContent() {
                   href={link.href}
                   className="group relative flex flex-col items-center justify-center gap-4 p-9 h-full bg-white border border-[var(--line)] hover:border-[var(--brand-red)] transition-all duration-300 hover:-translate-y-1"
                 >
-                  <link.icon className="w-9 h-9 text-[var(--steel-2)] group-hover:text-[var(--brand-red)] transition-colors" />
+                  <link.icon className="w-9 h-9 text-[var(--steel)] group-hover:text-[var(--brand-red)] transition-colors" />
                   <span className="font-bold text-[var(--ink-2)] group-hover:text-[var(--brand-red)] transition-colors text-center">
                     {link.label}
                   </span>

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Search, X } from 'lucide-react';
 import { motion, useReducedMotion } from 'motion/react';
 import { PRODUCTS, ACTIVE_CATEGORIES } from '@/data/products';
@@ -25,12 +26,22 @@ export function ProductSearchHeader({ query, onQueryChange }: ProductSearchHeade
     <div className="w-full">
       {/* Title banner */}
       <div className="relative bg-[var(--ink)] text-white overflow-hidden">
-        <div className="absolute inset-0 bg-grid-dark opacity-70" aria-hidden />
-        <div
-          className="absolute top-0 right-0 h-full w-1/3 bg-[var(--brand-teal)]/12 hidden md:block"
-          style={{ clipPath: 'polygon(35% 0, 100% 0, 100% 100%, 0 100%)' }}
+        {/* Coating line behind the catalogue title — decorative, so the
+            headline below is what actually announces the page. */}
+        <Image
+          src="/images/hero/nonwoven-coating.webp"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-right"
           aria-hidden
         />
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-[var(--ink)] from-25% via-[var(--ink)]/90 via-60% to-[var(--ink)]/35"
+          aria-hidden
+        />
+        <div className="absolute inset-0 bg-grid-dark opacity-25" aria-hidden />
         <div className="absolute left-0 top-0 h-full w-[3px] bg-[var(--brand-red)]" aria-hidden />
 
         {/* Breadcrumb sits inside the client banner so it can be translated */}
@@ -43,7 +54,7 @@ export function ProductSearchHeader({ query, onQueryChange }: ProductSearchHeade
         </div>
 
         <div className="shell relative pt-8 pb-16 lg:pb-20">
-          <motion.p className="eyebrow mb-5" {...rise(0)}>
+          <motion.p className="eyebrow eyebrow-on-dark mb-5" {...rise(0)}>
             {t('sec.catalogue')}
           </motion.p>
 
@@ -69,7 +80,7 @@ export function ProductSearchHeader({ query, onQueryChange }: ProductSearchHeade
                 {t('nav.searchProducts')}
               </label>
               <Search
-                className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--steel-2)] pointer-events-none"
+                className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--steel)] pointer-events-none"
                 aria-hidden
               />
               <input
@@ -78,14 +89,14 @@ export function ProductSearchHeader({ query, onQueryChange }: ProductSearchHeade
                 value={query}
                 onChange={(e) => onQueryChange(e.target.value)}
                 placeholder={t('search.cataloguePlaceholder')}
-                className="w-full h-full pl-14 pr-12 bg-white border border-[var(--line-strong)] border-r-0 focus:border-[var(--brand-red)] focus:outline-none text-step-0 text-[var(--ink)] placeholder:text-[var(--steel-2)] transition-colors"
+                className="w-full h-full pl-14 pr-12 bg-white border border-[var(--line-strong)] border-r-0 focus:border-[var(--brand-red)] focus:outline-none text-step-0 text-[var(--ink)] placeholder:text-[var(--steel)] transition-colors"
               />
               {query && (
                 <button
                   type="button"
                   onClick={() => onQueryChange('')}
                   aria-label={t('search.clear')}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-[var(--steel-2)] hover:text-[var(--brand-red)] transition-colors"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-[var(--steel)] hover:text-[var(--brand-red)] transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </button>

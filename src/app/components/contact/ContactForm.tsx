@@ -14,7 +14,7 @@ import { useI18n } from '@/i18n/LanguageProvider';
 const CONTACT_EMAIL = COMPANY.email;
 
 const FIELD =
-  'w-full h-12 px-4 bg-white border border-[var(--line-strong)] focus:border-[var(--brand-red)] focus:outline-none text-[var(--ink)] placeholder:text-[var(--steel-2)] transition-colors';
+  'w-full h-12 px-4 bg-white border border-[var(--line-strong)] focus:border-[var(--brand-red)] focus:outline-none text-[var(--ink)] placeholder:text-[var(--steel)] transition-colors';
 
 const LABEL =
   'block text-xs font-bold uppercase tracking-[0.1em] text-[var(--ink-3)] mb-2';

@@ -30,7 +30,7 @@ export default function ProductsPage() {
     <div className="bg-white">
       <Suspense
         fallback={
-          <div className="max-w-screen-2xl mx-auto px-6 py-32 text-center text-slate-400">
+          <div className="max-w-screen-2xl mx-auto px-6 py-32 text-center text-[var(--steel)]">
             Loading products…
           </div>
         }

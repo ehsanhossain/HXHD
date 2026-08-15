@@ -1,5 +1,6 @@
 "use client";
 
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
@@ -64,6 +65,20 @@ export function Footer() {
             />
             <p className="leading-relaxed text-[var(--steel-2)]/80">
               {t('footer.tagline')}
+            </p>
+
+            {/* Relocated from the old header utility bar when the header
+                collapsed to a single row — the signal is worth keeping. */}
+            <p className="mt-5 text-xs leading-relaxed">
+              <span className="block font-bold uppercase tracking-[0.14em] text-[var(--teal-on-dark)] mb-1.5">
+                {t('util.portfolio')}
+              </span>
+              {(['util.china', 'util.bangladesh', 'util.asean'] as const).map((k, i) => (
+                <React.Fragment key={k}>
+                  {i > 0 && <span className="mx-2 text-white/25">/</span>}
+                  <span className="font-medium text-white/80">{t(k)}</span>
+                </React.Fragment>
+              ))}
             </p>
             <Link
               href="/products"

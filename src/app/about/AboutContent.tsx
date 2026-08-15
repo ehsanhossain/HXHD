@@ -15,7 +15,6 @@ import {
   Calendar,
   Layers,
   Sparkles,
-  ExternalLink,
 } from 'lucide-react';
 import { PageHero } from '../components/PageHero';
 import { NewsletterStrip } from '../components/contact/NewsletterStrip';
@@ -72,9 +71,9 @@ export function AboutContent() {
 
               {/* Mission & Vision Box */}
               <Reveal delay={0.08}>
-                <div className="grid sm:grid-cols-2 gap-6 bg-[var(--paper-2)] p-6 border-l-4 border-[var(--brand-teal)] my-8">
+                <div className="grid sm:grid-cols-2 gap-6 bg-[var(--paper-2)] p-6 border border-[var(--line)] ticks my-8">
                   <div>
-                    <h3 className="text-xs font-bold uppercase tracking-[0.12em] text-[var(--brand-teal)] mb-2 flex items-center gap-2">
+                    <h3 className="text-xs font-bold uppercase tracking-[0.12em] text-[var(--teal-on-light)] mb-2 flex items-center gap-2">
                       <Sparkles className="w-4 h-4" />
                       {c.about.missionTitle}
                     </h3>
@@ -207,7 +206,7 @@ export function AboutContent() {
         <div className="shell relative">
           <div className="max-w-3xl mb-14">
             <Reveal>
-              <p className="eyebrow mb-4">{c.about.facilitiesTitle}</p>
+              <p className="eyebrow eyebrow-on-dark mb-4">{c.about.facilitiesTitle}</p>
               <h2 className="text-step-3 mb-5 leading-tight">{c.about.facilitiesLead}</h2>
               <div className="w-20 h-[5px] bg-[var(--brand-red)] mb-6" />
               <p className="text-white/70 text-step-0 leading-relaxed">
@@ -238,7 +237,7 @@ export function AboutContent() {
                     <div className="flex items-start gap-3.5">
                       <MapPin
                         className={`w-5 h-5 shrink-0 mt-0.5 ${
-                          b.primary ? 'text-[var(--brand-teal)]' : 'text-white/45'
+                          b.primary ? 'text-[var(--teal-on-dark)]' : 'text-white/70'
                         }`}
                       />
                       <div>
@@ -247,7 +246,7 @@ export function AboutContent() {
                             {b.entity}
                           </h4>
                           {b.primary && (
-                            <span className="px-2 py-0.5 text-[0.68rem] font-bold uppercase tracking-wider bg-[var(--brand-teal)] text-white">
+                            <span className="px-2 py-0.5 text-[0.68rem] font-bold uppercase tracking-wider bg-[var(--brand-teal-dark)] text-white">
                               Bangladesh Flagship
                             </span>
                           )}
@@ -256,7 +255,7 @@ export function AboutContent() {
                           {b.city} · {b.country}
                         </p>
                         {b.note && (
-                          <p className="text-xs text-[var(--brand-teal)] font-medium mt-2">
+                          <p className="text-xs text-[var(--teal-on-dark)] font-medium mt-2">
                             {b.note}
                           </p>
                         )}
@@ -285,7 +284,7 @@ export function AboutContent() {
                       </span>
                     </div>
                     <p className="text-sm text-white/85 font-medium mt-1">{cap.label}</p>
-                    <p className="text-xs text-white/40">{cap.scope}</p>
+                    <p className="text-xs text-white/60">{cap.scope}</p>
                   </div>
                 ))}
               </div>
@@ -323,16 +322,6 @@ export function AboutContent() {
                       {c.milestones[idx]?.body || m.body}
                     </p>
 
-                    {m.source && (
-                      <a
-                        href={m.source}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs text-[var(--brand-teal)] font-bold mt-4 hover:underline"
-                      >
-                        Official News Release <ExternalLink className="w-3 h-3" />
-                      </a>
-                    )}
                   </div>
                 </div>
               </Reveal>
@@ -399,7 +388,7 @@ export function AboutContent() {
             <h2 className="text-step-2 text-white mb-3 font-bold">
               {c.about.ctaTitle}
             </h2>
-            <p className="text-white/80 text-step-0 leading-relaxed">
+            <p className="text-white text-step-0 leading-relaxed">
               {c.about.ctaLead}
             </p>
           </div>

@@ -106,7 +106,7 @@ export function IndustriesContent() {
                     <h3 className="text-step-1 font-bold leading-tight mb-1 transition-colors group-hover:text-[var(--brand-red)]">
                       {s.name}
                     </h3>
-                    <p className="text-xs font-bold uppercase tracking-[0.1em] text-[var(--brand-teal)]">
+                    <p className="text-xs font-bold uppercase tracking-[0.1em] text-[var(--teal-on-light)]">
                       {s.lead}
                     </p>
                   </div>
@@ -144,7 +144,7 @@ export function IndustriesContent() {
 
         <div className="shell relative max-w-4xl">
           <Reveal>
-            <p className="eyebrow mb-6">{c.industries.whyEyebrow}</p>
+            <p className="eyebrow eyebrow-on-dark mb-6">{c.industries.whyEyebrow}</p>
             <h2 className="text-step-3 mb-6">{c.industries.whyTitle}</h2>
             <div className="w-20 h-[6px] bg-[var(--brand-red)] mb-8" />
             <p className="text-step-1 text-white/70 font-light leading-relaxed mb-10">

@@ -20,10 +20,12 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  // Resolves relative OG/Twitter image URLs. Override via NEXT_PUBLIC_SITE_URL
-  // when deploying to the production domain.
+  // Resolves canonical and relative OG/Twitter URLs. This must be THIS site's
+  // own domain: the workflow never sets NEXT_PUBLIC_SITE_URL, so the fallback
+  // is what production actually ships, and pointing it at the group's other
+  // domain published every canonical on hxhdbd.com as hxhdchemical.com.
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.hxhdchemical.com"
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://hxhdbd.com"
   ),
   title: {
     default: "HXHD | Polymer Emulsions, Waterproofing & Functional Chemical Solutions",

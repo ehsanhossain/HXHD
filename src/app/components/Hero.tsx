@@ -27,9 +27,29 @@ const EASE = [0.16, 1, 0.3, 1] as const;
  * across the whole catalogue.
  */
 const SLIDES = [
-  { k: 's1', accentLine: 1, cats: [] as string[] },
-  { k: 's2', accentLine: 1, cats: ['waterproof-emulsion'] },
-  { k: 's3', accentLine: 1, cats: ['architectural-emulsion'] },
+  {
+    k: 's1',
+    accentLine: 1,
+    cats: [] as string[],
+    // Slide 1 speaks to capability rather than a category, so it gets the
+    // plant/QC frame. Each other slide gets the application its copy names.
+    image: '/images/hero/lab-qc.webp',
+    imageAlt: 'HXHD chemist checking an emulsion batch against spec on the production floor',
+  },
+  {
+    k: 's2',
+    accentLine: 1,
+    cats: ['waterproof-emulsion'],
+    image: '/images/hero/roof-waterproofing.webp',
+    imageAlt: 'Applicator rolling waterproof emulsion across a rooftop deck above the Dhaka skyline',
+  },
+  {
+    k: 's3',
+    accentLine: 1,
+    cats: ['architectural-emulsion'],
+    image: '/images/hero/window-sealant.webp',
+    imageAlt: 'Transparent waterproof coating being brushed along an exterior window reveal',
+  },
   {
     k: 's4',
     accentLine: 1,
@@ -38,6 +58,8 @@ const SLIDES = [
       'transparent-waterproof-adhesive',
       'wall-curing-agent-adhesive',
     ],
+    image: '/images/hero/tile-adhesive.webp',
+    imageAlt: 'Tiler bedding a large-format tile with HXHD ceramic tile back adhesive',
   },
 ] as const;
 
@@ -152,21 +174,62 @@ export function Hero() {
       onFocusCapture={() => autoRotating && setPaused(true)}
       onBlurCapture={() => autoRotating && setPaused(false)}
     >
-      <div className="absolute inset-0 bg-grid-dark opacity-70" aria-hidden />
+      {/* Application imagery. Decorative here — the headline already carries
+          the message — so alt stays empty and the descriptive alt travels
+          with the spec card below instead of being read twice. */}
+      <div className="absolute inset-0" aria-hidden>
+        <AnimatePresence initial={false}>
+          <motion.div
+            key={slide.k}
+            className="absolute inset-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: reduced ? 0 : 0.9, ease: EASE }}
+          >
+            <Image
+              src={slide.image}
+              alt=""
+              fill
+              priority={index === 0}
+              sizes="100vw"
+              className="object-cover object-right"
+            />
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      {/* Scrim. Held to ~20% across the picture itself, which is where the
+          photograph has to read. It only stays heavy over the copy column and
+          falls away fast: measured in the copy zone these frames average
+          L=0.33-0.62 and every one contains blown-out white, so white text
+          needs roughly 60% ink behind it to clear AA in the worst patch.
+          Hence 82% at the left edge, still 67% where the longest line ends,
+          20% by the right. */}
       <div
-        className="absolute top-0 right-0 h-full w-1/2 opacity-[0.13] hidden md:block"
-        style={{ background: 'var(--brand-teal)', clipPath: 'polygon(38% 0, 100% 0, 100% 100%, 0 100%)' }}
+        className="absolute inset-0 hidden lg:block bg-gradient-to-r from-[var(--ink)]/88 from-0% via-[var(--ink)]/76 via-55% to-[var(--ink)]/20"
         aria-hidden
       />
+      {/* Mobile stacks copy across the whole frame, so there is no clear
+          column to fall away to — the scrim stays above the ~60% floor
+          everywhere text lands, and only opens up below the fold. */}
+      <div
+        className="absolute inset-0 lg:hidden bg-gradient-to-b from-[var(--ink)]/82 via-[var(--ink)]/72 via-70% to-[var(--ink)]/62"
+        aria-hidden
+      />
+
+      <div className="absolute inset-0 bg-grid-dark opacity-25" aria-hidden />
       <div className="absolute left-0 top-0 h-full w-[3px] bg-[var(--brand-red)]" aria-hidden />
 
       {/* Fills the viewport below the sticky header (utility bar + main bar
           ≈ 7rem), with content vertically centred inside it. min-height, not
           height, so shorter screens simply scroll rather than clipping. */}
-      <div className="shell relative z-10 grid lg:grid-cols-12 gap-10 lg:gap-8 items-center py-12 lg:py-[clamp(2.5rem,5vh,4rem)] lg:min-h-[calc(100dvh-7rem)]">
+      {/* Fills the viewport below the single sticky header (~6.25rem).
+          min-height, not height, so shorter screens scroll rather than clip. */}
+      <div className="shell relative z-10 flex flex-col justify-center py-14 lg:py-[clamp(2.5rem,5vh,4rem)] lg:min-h-[calc(100dvh-6.25rem)]">
         {/* Copy */}
         <div
-          className="lg:col-span-7 xl:col-span-6"
+          className="max-w-2xl xl:max-w-3xl"
           aria-live="polite"
           aria-atomic="false"
         >
@@ -178,10 +241,17 @@ export function Hero() {
               key={index}
               initial={{ opacity: 0, y: reduced ? 0 : 18 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: reduced ? 0 : -12 }}
+              // mode="wait" holds the enter until the exit finishes, so the
+              // exit has to be brief — otherwise the headline is simply
+              // absent for half a second while the photo keeps moving.
+              exit={{
+                opacity: 0,
+                y: reduced ? 0 : -12,
+                transition: { duration: reduced ? 0 : 0.22, ease: EASE },
+              }}
               transition={{ duration: reduced ? 0 : 0.5, ease: EASE }}
             >
-              <p className="eyebrow !text-[var(--brand-teal)] mb-5">
+              <p className="eyebrow eyebrow-on-dark mb-5">
                 {t(`hero.${slide.k}.eyebrow` as never)}
               </p>
 
@@ -189,14 +259,16 @@ export function Hero() {
                 {[1, 2, 3].map((n, i) => (
                   <span
                     key={n}
-                    className={`block ${i === slide.accentLine ? 'text-[var(--brand-teal)]' : ''}`}
+                    className={`block ${i === slide.accentLine ? 'text-[var(--teal-on-dark)]' : ''}`}
                   >
                     {t(`hero.${slide.k}.l${n}` as never)}
                   </span>
                 ))}
               </h1>
 
-              <p className="text-step-0 text-white/65 max-w-2xl mb-8 leading-relaxed">
+              {/* /80 not /65: over a photograph the thinner tint measured
+                  3.55:1 on the brightest frame. */}
+              <p className="text-step-0 text-white/80 max-w-2xl mb-8 leading-relaxed">
                 {t(`hero.${slide.k}.copy` as never)}
               </p>
             </motion.div>
@@ -264,7 +336,7 @@ export function Hero() {
               </button>
             )}
 
-            <span className="index-num !text-white/40">
+            <span className="index-num !text-white/60">
               {String(index + 1).padStart(2, '0')} / {String(SLIDES.length).padStart(2, '0')}
             </span>
           </div>
@@ -273,7 +345,7 @@ export function Hero() {
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3.5 pt-[clamp(1.25rem,2.5vh,1.75rem)] border-t border-white/12">
             {MARKERS.map(({ icon: Icon, k }) => (
               <li key={k} className="flex items-center gap-3 text-sm text-white/70">
-                <span className="grid place-items-center w-9 h-9 border border-white/15 text-[var(--brand-teal)] shrink-0">
+                <span className="grid place-items-center w-9 h-9 border border-white/15 text-[var(--teal-on-dark)] shrink-0">
                   <Icon className="w-[18px] h-[18px]" />
                 </span>
                 <span className="font-medium">{t(k)}</span>
@@ -282,71 +354,48 @@ export function Hero() {
           </ul>
         </div>
 
-        {/* Product plate */}
-        <div className="lg:col-span-5 xl:col-span-6 relative">
-          <div className="relative mx-auto max-w-lg">
-            <div className="absolute -inset-4 border border-white/12 cut-tr-lg hidden sm:block" aria-hidden />
-
-            <div className="relative bg-white cut-tr-lg overflow-hidden ticks">
-              <div className="absolute inset-0 bg-hatch opacity-40" aria-hidden />
-
-              <div className="relative aspect-square">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={product.slug}
-                    className="absolute inset-0"
-                    initial={{ opacity: 0, scale: reduced ? 1 : 1.04 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: reduced ? 1 : 0.98 }}
-                    transition={{ duration: reduced ? 0 : 0.6, ease: EASE }}
-                  >
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      fill
-                      priority={index === 0}
-                      sizes="(max-width: 1024px) 90vw, 40vw"
-                      className="object-contain p-10"
-                    />
-                  </motion.div>
-                </AnimatePresence>
-              </div>
-
-              {/* Spec plate */}
-              <div className="relative bg-[var(--ink)] text-white px-6 py-4 flex items-center justify-between gap-4 min-h-[68px]">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={product.slug}
-                    className="min-w-0"
-                    initial={{ opacity: 0, y: reduced ? 0 : 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: reduced ? 0 : -8 }}
-                    transition={{ duration: reduced ? 0 : 0.35, ease: EASE }}
-                  >
-                    <p className="index-num !text-[var(--brand-teal)]">
-                      {product.code || 'FEATURED'}
-                    </p>
-                    <p className="font-bold text-sm truncate">{product.category}</p>
-                  </motion.div>
-                </AnimatePresence>
-
-                <Link
-                  href={`/products/${product.slug}`}
-                  className="link-sweep text-[var(--brand-teal)] text-xs font-bold uppercase tracking-widest shrink-0"
-                >
-                  {t('cta.view')} <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Count chip — above the plate so it never covers the spec bar */}
-            <div className="absolute -top-5 -left-3 sm:-left-6 z-10 bg-[var(--brand-red)] text-white px-5 py-3 cut-br shadow-lg">
+        {/* In-focus product. The plate is gone — the photograph carries the
+            scene now — but the catalogue path off the hero is worth keeping,
+            so it survives as a spec card. xl only: below that the copy column
+            and this card would fight for the same width. */}
+        <div className="hidden xl:block absolute right-[clamp(1.25rem,0.5rem+3vw,3rem)] bottom-[clamp(2rem,5vh,3.5rem)] w-[22rem]">
+          <div className="bg-[var(--ink)]/92 backdrop-blur-sm border border-white/15 cut-tr-lg ticks flex items-stretch">
+            <div className="bg-[var(--brand-red)] text-white px-4 py-3 shrink-0 grid place-content-center text-center">
               <span className="block text-2xl font-bold leading-none tnum">
                 {PRODUCTS.length}
               </span>
-              <span className="block text-[0.62rem] font-bold uppercase tracking-[0.16em] text-white/80 mt-1">
+              <span className="block text-[0.58rem] font-bold uppercase tracking-[0.14em] leading-tight mt-1">
                 {t('hero.productsInCatalogue')}
               </span>
+            </div>
+
+            <div className="min-w-0 flex-1 px-4 py-3 flex flex-col justify-center">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={product.slug}
+                  className="min-w-0"
+                  initial={{ opacity: 0, y: reduced ? 0 : 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{
+                    opacity: 0,
+                    y: reduced ? 0 : -8,
+                    transition: { duration: reduced ? 0 : 0.15, ease: EASE },
+                  }}
+                  transition={{ duration: reduced ? 0 : 0.35, ease: EASE }}
+                >
+                  <p className="index-num !text-[var(--teal-on-dark)]">
+                    {product.code || 'FEATURED'}
+                  </p>
+                  <p className="font-bold text-sm text-white truncate">{product.category}</p>
+                </motion.div>
+              </AnimatePresence>
+
+              <Link
+                href={`/products/${product.slug}`}
+                className="link-sweep text-[var(--teal-on-dark)] text-xs font-bold uppercase tracking-widest mt-2 self-start"
+              >
+                {t('cta.view')} <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
             </div>
           </div>
         </div>

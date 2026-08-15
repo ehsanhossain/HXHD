@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import { ArrowLeft, ArrowRight, ArrowUpRight, Calendar, Clock } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import type { Article } from '@/data/knowledge';
 import { Reveal, Stagger, StaggerItem } from '@/components/motion/Reveal';
 import { useI18n } from '@/i18n/LanguageProvider';
@@ -142,18 +142,10 @@ export function ArticleDetail({
             })}
           </Stagger>
 
-          {/* Attribution */}
-          <Reveal className="mt-14 pt-7 border-t border-[var(--line)] flex flex-wrap items-center justify-between gap-4">
-            <p className="text-xs text-[var(--steel-2)]">{c.knowledge.originallyPublished}</p>
-            <a
-              href={article.source}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.1em] text-[var(--brand-teal)] hover:text-[var(--brand-red)] transition-colors"
-            >
-              {c.knowledge.viewOriginal}
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </a>
+          {/* Attribution. The outbound link to the group's other domain was
+              removed deliberately — this site does not hand its readers off. */}
+          <Reveal className="mt-14 pt-7 border-t border-[var(--line)] flex flex-wrap items-center gap-4">
+            <p className="text-xs text-[var(--steel)]">{c.knowledge.originallyPublished}</p>
           </Reveal>
 
           <Reveal className="mt-10">

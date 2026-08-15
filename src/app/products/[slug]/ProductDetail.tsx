@@ -85,14 +85,11 @@ export function ProductDetail({ product, related }: { product: Product; related:
                 {t('cta.requestQuote')}
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
-              <a
-                href={product.sourceUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-ghost"
-              >
+              {/* Was an outbound link to the group's other domain. TDS is
+                  issued on request, same as everywhere else on this site. */}
+              <Link href="/contact" className="btn btn-ghost">
                 <FileText className="w-4 h-4" /> {t('cta.datasheet')}
-              </a>
+              </Link>
             </div>
           </Reveal>
         </div>

@@ -94,7 +94,7 @@ export function ServicesContent() {
         <div className="shell relative grid lg:grid-cols-12 gap-14 items-center">
           <div className="lg:col-span-7">
             <Reveal>
-              <p className="eyebrow mb-6">{c.services.bdEyebrow}</p>
+              <p className="eyebrow eyebrow-on-dark mb-6">{c.services.bdEyebrow}</p>
               <h2 className="text-step-3 mb-6">{c.services.bdTitle}</h2>
               <div className="w-20 h-[6px] bg-[var(--brand-red)] mb-8" />
               <p className="text-step-1 text-white/70 font-light leading-relaxed mb-8 max-w-2xl">
@@ -122,7 +122,7 @@ export function ServicesContent() {
                     <p className="text-xs font-bold text-white/85 leading-snug">
                       {CAP_LABELS[i]}
                     </p>
-                    <p className="text-[0.7rem] text-white/35 mt-1">{c.services.capScope}</p>
+                    <p className="text-[0.7rem] text-white/60 mt-1">{c.services.capScope}</p>
                   </div>
                 </StaggerItem>
               ))}
@@ -151,7 +151,7 @@ export function ServicesContent() {
                 >
                   <MapPin
                     className={`w-4 h-4 shrink-0 mt-0.5 ${
-                      b.primary ? 'text-[var(--brand-teal)]' : 'text-white/35'
+                      b.primary ? 'text-[var(--teal-on-dark)]' : 'text-white/70'
                     }`}
                   />
                   <div className="min-w-0">
@@ -160,7 +160,7 @@ export function ServicesContent() {
                       {b.city} · {b.country}
                     </p>
                     {b.note && (
-                      <p className="text-xs text-[var(--brand-teal)] mt-1">{b.note}</p>
+                      <p className="text-xs text-[var(--teal-on-dark)] mt-1">{b.note}</p>
                     )}
                   </div>
                 </div>
@@ -182,7 +182,10 @@ export function ServicesContent() {
             {HOW_IT_WORKS.map((s, i) => (
               <StaggerItem key={s.step}>
                 <div className="relative bg-white border border-[var(--line)] p-7 h-full">
-                  <span className="stroke-text text-[3rem] font-bold leading-none block mb-4 tnum">
+                  <span
+                    aria-hidden
+                    className="stroke-text text-[3rem] font-bold leading-none block mb-4 tnum"
+                  >
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   <h3 className="font-bold text-step-1 mb-2 leading-snug">{s.step}</h3>

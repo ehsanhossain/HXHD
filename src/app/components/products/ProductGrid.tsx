@@ -37,7 +37,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
               {product.code}
             </span>
           )}
-          <span className="text-[0.68rem] font-bold uppercase tracking-[0.1em] text-[var(--brand-teal)] truncate">
+          <span className="text-[0.68rem] font-bold uppercase tracking-[0.1em] text-[var(--teal-on-light)] truncate">
             {categoryName(product.categorySlug, product.category)}
           </span>
         </div>

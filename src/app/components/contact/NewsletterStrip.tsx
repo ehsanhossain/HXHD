@@ -11,14 +11,16 @@ export function NewsletterStrip() {
   const [done, setDone] = useState(false);
   const t = useT();
 
+  // Band is teal-dark, not teal: white body copy needs 4.5:1 and only
+  // clears 4.08:1 on --brand-teal. Same hue, one step down.
   return (
-    <section className="bg-[var(--brand-teal)] relative overflow-hidden">
+    <section className="bg-[var(--brand-teal-dark)] relative overflow-hidden">
       <div className="absolute inset-0 bg-hatch opacity-20" style={{ filter: 'invert(1)' }} aria-hidden />
 
       <div className="shell relative py-14 grid lg:grid-cols-2 gap-8 items-center">
         <Reveal>
           <h2 className="text-step-2 text-white mb-2">{t('news.title')}</h2>
-          <p className="text-white/80">
+          <p className="text-white/90">
             {t('news.copy')}
           </p>
         </Reveal>
@@ -54,7 +56,7 @@ export function NewsletterStrip() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@company.com"
-                className="flex-1 h-12 px-5 bg-white/95 border border-transparent text-[var(--ink)] placeholder:text-[var(--steel-2)] focus:border-[var(--ink)] focus:outline-none transition-colors"
+                className="flex-1 h-12 px-5 bg-white/95 border border-transparent text-[var(--ink)] placeholder:text-[var(--steel)] focus:border-[var(--ink)] focus:outline-none transition-colors"
               />
               <button
                 type="submit"

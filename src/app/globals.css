@@ -19,6 +19,17 @@
   --brand-teal-dark: #146a67;
   --brand-teal-soft: #eef7f6;
 
+  /* --- Accessible text pairs -------------------------------- *
+   * --brand-teal is a fill/border colour, not a text colour: it
+   * clears AA on ink (4.56:1) but lands at 4.08:1 on paper. No
+   * single teal can pass on both — clearing ink needs relative
+   * luminance >= 0.204, clearing paper needs <= 0.183 — so teal
+   * TEXT picks the variant matching the surface underneath it.
+   * Same story for --steel-2, which is 7.08:1 on ink and only
+   * 2.62:1 on paper.                                           */
+  --teal-on-light: #146a67;   /* 6.39:1 on paper */
+  --teal-on-dark: #3fb3ae;    /* 7.32:1 on ink   */
+
   /* --- Neutrals (cool industrial grey, not pure black) ------ */
   --ink: #0d1418;
   --ink-2: #1b262d;
@@ -97,6 +108,8 @@
   --color-brand-teal: var(--brand-teal);
   --color-brand-teal-dark: var(--brand-teal-dark);
   --color-brand-teal-soft: var(--brand-teal-soft);
+  --color-teal-on-light: var(--teal-on-light);
+  --color-teal-on-dark: var(--teal-on-dark);
   --color-ink: var(--ink);
   --color-ink-2: var(--ink-2);
   --color-ink-3: var(--ink-3);
@@ -221,7 +234,11 @@
     font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--brand-teal);
+    color: var(--teal-on-light);
+  }
+  /* Same label on an ink section — see the --teal-on-* note above. */
+  .eyebrow-on-dark {
+    color: var(--teal-on-dark);
   }
   .eyebrow::before {
     content: '';
@@ -332,7 +349,7 @@
     font-size: var(--step--1);
     font-weight: 700;
     letter-spacing: 0.1em;
-    color: var(--steel-2);
+    color: var(--steel);
     font-variant-numeric: tabular-nums;
   }
 }
@@ -414,14 +431,19 @@ html.lenis body {
   pointer-events: none;
 }
 
-/* Honour reduced-motion globally: motion should never be a barrier */
+/* Honour reduced-motion: motion should never be a barrier.
+   Travel and looping are what trigger vestibular symptoms, so those go.
+   Transitions stay — shortened, not deleted. Every transition here is a
+   colour, border or 1px press on an interactive control, and collapsing
+   them to 0.01ms turns hover and focus into a jump-cut, which costs the
+   same users the feedback that tells them the control responded. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    transition-duration: 0.12s !important;
     scroll-behavior: auto !important;
   }
 }

@@ -22,7 +22,7 @@ export function ProductNewsletter() {
 
       <div className="shell relative py-16 grid lg:grid-cols-2 gap-10 items-center">
         <Reveal>
-          <p className="eyebrow mb-5">Stay informed</p>
+          <p className="eyebrow eyebrow-on-dark mb-5">Stay informed</p>
           <h2 className="text-step-2 mb-3">Product & technical updates</h2>
           <p className="text-white/60 leading-relaxed max-w-lg">
             New grades, datasheet revisions and application notes — sent
@@ -32,7 +32,7 @@ export function ProductNewsletter() {
 
         <Reveal direction="left" delay={0.08}>
           {done ? (
-            <p className="flex items-center gap-3 text-[var(--brand-teal)] font-bold border border-[var(--brand-teal)]/35 bg-[var(--brand-teal)]/10 px-5 py-4">
+            <p className="flex items-center gap-3 text-[var(--teal-on-dark)] font-bold border border-[var(--brand-teal)]/35bg-[var(--brand-teal)]/10 px-5 py-4">
               <CheckCircle2 className="w-5 h-5 shrink-0" />
               {t('news.thanks', { email })}
             </p>

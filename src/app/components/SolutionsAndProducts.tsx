@@ -145,7 +145,7 @@ export function SolutionsAndProducts() {
                     <p className="text-xs text-[var(--steel)] mb-5 line-clamp-1">
                       {categoryName(prod.categorySlug, prod.category)}
                     </p>
-                    <span className="mt-auto inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.1em] text-[var(--brand-teal)] transition-colors group-hover:text-[var(--brand-red)]">
+                    <span className="mt-auto inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.1em] text-[var(--teal-on-light)] transition-colors group-hover:text-[var(--brand-red)]">
                       {t('cta.viewProduct')}
                       <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </span>

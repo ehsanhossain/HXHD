@@ -38,14 +38,14 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
         aria-label={t('products.prev')}
-        className="p-2 text-slate-600 hover:text-[#D61118] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:text-slate-600"
+        className="p-2 text-[var(--ink-3)] hover:text-[var(--brand-red)] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:text-[var(--ink-3)]"
       >
         <ChevronLeft className="w-5 h-5" />
       </button>
 
       {items.map((item, idx) =>
         item === null ? (
-          <div key={`gap-${idx}`} className="px-2 text-slate-400">
+          <div key={`gap-${idx}`} className="px-2 text-[var(--steel)]">
             ...
           </div>
         ) : (
@@ -55,8 +55,8 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
             aria-current={item === currentPage ? 'page' : undefined}
             className={`w-10 h-10 flex items-center justify-center font-bold text-sm transition-colors ${
               item === currentPage
-                ? 'bg-[#D61118] text-white'
-                : 'bg-white border border-slate-200 text-slate-600 hover:border-[#D61118] hover:text-[#D61118]'
+                ? 'bg-[var(--brand-red)] text-white'
+                : 'bg-white border border-[var(--line)] text-[var(--ink-3)] hover:border-[var(--brand-red)] hover:text-[var(--brand-red)]'
             }`}
           >
             {item}
@@ -68,7 +68,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
         aria-label={t('products.next')}
-        className="p-2 text-slate-600 hover:text-[#D61118] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:text-slate-600"
+        className="p-2 text-[var(--ink-3)] hover:text-[var(--brand-red)] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:text-[var(--ink-3)]"
       >
         <ChevronRight className="w-5 h-5" />
       </button>

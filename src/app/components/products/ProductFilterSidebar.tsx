@@ -104,7 +104,7 @@ export function ProductFilterSidebar({
                       }`}
                     >
                       {categoryName(cat.slug, cat.name)}
-                      <span className="text-[var(--steel-2)] font-medium tnum"> ({cat.count})</span>
+                      <span className="text-[var(--steel)] font-medium tnum"> ({cat.count})</span>
                     </span>
                   </label>
                 );

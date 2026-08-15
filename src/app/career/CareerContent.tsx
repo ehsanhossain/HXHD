@@ -193,7 +193,7 @@ export function CareerContent() {
                       >
                         <div className="space-y-2">
                           <div className="flex flex-wrap items-center gap-2.5">
-                            <span className="px-2.5 py-0.5 bg-[var(--brand-teal)]/10 text-[var(--brand-teal)] text-[0.7rem] font-bold uppercase tracking-wider">
+                            <span className="px-2.5 py-0.5 bg-[var(--brand-teal)]/10 text-[var(--teal-on-light)] text-[0.7rem] font-bold uppercase tracking-wider">
                               {pos.dept}
                             </span>
                             <span className="px-2.5 py-0.5 bg-[var(--paper-2)] text-[var(--ink-3)] text-[0.7rem] font-bold uppercase tracking-wider border border-[var(--line)]">
@@ -215,7 +215,7 @@ export function CareerContent() {
                         </div>
 
                         <div className="flex items-center gap-4 self-end md:self-center shrink-0">
-                          <span className="text-xs font-bold uppercase tracking-wider text-[var(--brand-teal)] hidden sm:inline">
+                          <span className="text-xs font-bold uppercase tracking-wider text-[var(--teal-on-light)] hidden sm:inline">
                             {isExpanded ? 'Hide Details' : c.career.viewDetails}
                           </span>
                           <span
@@ -311,7 +311,7 @@ export function CareerContent() {
         <div className="shell relative">
           <div className="max-w-3xl mx-auto text-center">
             <Reveal>
-              <p className="eyebrow mb-4">{c.career.applyTitle}</p>
+              <p className="eyebrow eyebrow-on-dark mb-4">{c.career.applyTitle}</p>
               <h2 className="text-step-3 mb-4 leading-tight">
                 Don’t see your exact role listed?
               </h2>
@@ -335,7 +335,7 @@ export function CareerContent() {
                   Contact HR Department
                 </Link>
               </div>
-              <p className="text-xs text-white/40 mt-6">{c.career.applyNote}</p>
+              <p className="text-xs text-white/60 mt-6">{c.career.applyNote}</p>
             </Reveal>
           </div>
         </div>

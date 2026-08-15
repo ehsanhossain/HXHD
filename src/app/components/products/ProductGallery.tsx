@@ -15,7 +15,7 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
 
   if (!images.length) {
     return (
-      <div className="aspect-square w-full bg-[var(--paper-2)] border border-[var(--line)] grid place-items-center text-[var(--steel-2)] text-sm">
+      <div className="aspect-square w-full bg-[var(--paper-2)] border border-[var(--line)] grid place-items-center text-[var(--steel)] text-sm">
         No image available
       </div>
     );

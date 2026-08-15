@@ -30,7 +30,7 @@ export function SearchStrip() {
               {t('nav.searchProducts')}
             </label>
             <Search
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-[18px] h-[18px] text-[var(--steel-2)] pointer-events-none"
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-[18px] h-[18px] text-[var(--steel)] pointer-events-none"
               aria-hidden
             />
             <input
@@ -39,7 +39,7 @@ export function SearchStrip() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder={t('search.placeholder')}
-              className="w-full h-12 pl-12 pr-4 bg-white border border-[var(--line-strong)] focus:border-[var(--brand-red)] focus:outline-none text-[var(--ink)] placeholder:text-[var(--steel-2)] transition-colors"
+              className="w-full h-12 pl-12 pr-4 bg-white border border-[var(--line-strong)] focus:border-[var(--brand-red)] focus:outline-none text-[var(--ink)] placeholder:text-[var(--steel)] transition-colors"
             />
           </form>
 
@@ -54,7 +54,7 @@ export function SearchStrip() {
                 className="group inline-flex items-center gap-1.5 px-4 h-10 bg-white border border-[var(--line)] text-sm font-bold text-[var(--ink-3)] hover:border-[var(--brand-red)] hover:text-[var(--brand-red)] transition-colors"
               >
                 {categoryName(cat.slug, cat.name)}
-                <span className="text-[0.68rem] text-[var(--steel-2)] group-hover:text-[var(--brand-red)] tnum">
+                <span className="text-[0.68rem] text-[var(--steel)] group-hover:text-[var(--brand-red)] tnum">
                   {cat.count}
                 </span>
               </Link>
