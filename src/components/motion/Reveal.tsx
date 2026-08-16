@@ -49,7 +49,11 @@ export function Reveal({
       className={className}
       initial={{ opacity: 0, x: offset.x, y: offset.y }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, amount: 0.25 }}
+      // `amount` is a fraction of the element, so any threshold above zero is
+      // unreachable once the element is taller than the viewport — it would
+      // simply never animate in. Trigger on first contact and hold the entrance
+      // back with a bottom margin instead, which is independent of height.
+      viewport={{ once: true, amount: 'some', margin: '0px 0px -12% 0px' }}
       transition={{ duration: reduced ? 0 : DURATION, delay: reduced ? 0 : delay, ease: EASE }}
     >
       {children}
@@ -94,7 +98,12 @@ export function Stagger({
       variants={variants}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.15 }}
+      // Stagger wraps grids and lists, which are the tallest things on the
+      // page — the products grid is a single 5,536px column on a phone. A
+      // fractional `amount` needed 830px of it on screen at once against an
+      // 844px viewport, so the products never appeared until the user had
+      // scrolled deep into a blank region. See the note in Reveal above.
+      viewport={{ once: true, amount: 'some', margin: '0px 0px -8% 0px' }}
     >
       {children}
     </MotionTag>
