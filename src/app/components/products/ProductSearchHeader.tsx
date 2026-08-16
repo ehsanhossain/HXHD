@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Search, X } from 'lucide-react';
 import { motion, useReducedMotion } from 'motion/react';
-import { PRODUCTS, ACTIVE_CATEGORIES } from '@/data/products';
+import { PRODUCTS, CATEGORIES } from '@/data/products';
 import { useT } from '@/i18n/LanguageProvider';
 
 interface ProductSearchHeaderProps {
@@ -65,7 +65,7 @@ export function ProductSearchHeader({ query, onQueryChange }: ProductSearchHeade
           <motion.p className="mt-5 text-white/60 max-w-2xl" {...rise(0.12)}>
             {t('products.intro', {
               n: PRODUCTS.length,
-              c: ACTIVE_CATEGORIES.length,
+              c: CATEGORIES.length,
             })}
           </motion.p>
         </div>

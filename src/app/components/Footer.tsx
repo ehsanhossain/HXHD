@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
-import { ACTIVE_CATEGORIES } from '@/data/products';
+import { CATEGORIES } from '@/data/products';
 import { COMPANY } from '@/data/company';
 import { useI18n } from '@/i18n/LanguageProvider';
 
@@ -94,14 +94,19 @@ export function Footer() {
               {t('footer.categories')}
             </h3>
             <ul className="space-y-2.5">
-              {ACTIVE_CATEGORIES.slice(0, 7).map((cat) => (
+              {CATEGORIES.slice(0, 7).map((cat) => (
                 <li key={cat.slug}>
                   <Link
                     href={`/products?category=${cat.slug}`}
                     className="hover:text-[var(--brand-teal)] transition-colors inline-flex items-center gap-2"
                   >
                     {categoryName(cat.slug, cat.name)}
-                    <span className="text-[var(--steel)]/60 text-xs tnum">{cat.count}</span>
+                    {/* A bare "0" beside a name reads as a fault rather than
+                        an empty range, so the tally only shows when there is
+                        something to count. */}
+                    {cat.count > 0 && (
+                      <span className="text-[var(--steel)]/60 text-xs tnum">{cat.count}</span>
+                    )}
                   </Link>
                 </li>
               ))}

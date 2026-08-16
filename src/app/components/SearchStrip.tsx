@@ -7,7 +7,12 @@ import { Search } from 'lucide-react';
 import { ACTIVE_CATEGORIES } from '@/data/products';
 import { useI18n } from '@/i18n/LanguageProvider';
 
-/** Six highest-count categories become the quick filters. */
+/**
+ * The first six categories that actually hold products become quick filters.
+ * These are shortcuts on the home page, so unlike the catalogue — which lists
+ * all 21 categories, empty ones included — a chip leading to "no products"
+ * would be no help to anyone.
+ */
 const QUICK = ACTIVE_CATEGORIES.slice(0, 6);
 
 export function SearchStrip() {

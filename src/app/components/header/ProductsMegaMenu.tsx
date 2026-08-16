@@ -3,7 +3,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
-import { ACTIVE_CATEGORIES, PRODUCTS } from '@/data/products';
+import { CATEGORIES, PRODUCTS } from '@/data/products';
 import { useI18n } from '@/i18n/LanguageProvider';
 
 interface ProductsMegaMenuProps {
@@ -34,7 +34,7 @@ export function ProductsMegaMenu({ onClose }: ProductsMegaMenuProps) {
 
         {/* Column 2 & 3: Product Categories */}
         <div className="col-span-12 md:col-span-6 grid grid-cols-2 gap-x-8 gap-y-4">
-            {ACTIVE_CATEGORIES.map((category) => (
+            {CATEGORIES.map((category) => (
               <Link
                 key={category.slug}
                 href={`/products?category=${category.slug}`}
@@ -42,7 +42,9 @@ export function ProductsMegaMenu({ onClose }: ProductsMegaMenuProps) {
                 className="text-[var(--ink-3)] hover:text-[var(--brand-red)] font-medium transition-colors text-sm"
               >
                 {categoryName(category.slug, category.name)}
-                <span className="text-[var(--steel)]"> ({category.count})</span>
+                {category.count > 0 && (
+                  <span className="text-[var(--steel)]"> ({category.count})</span>
+                )}
               </Link>
             ))}
         </div>

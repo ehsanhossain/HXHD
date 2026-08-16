@@ -12,7 +12,7 @@ import { Reveal, Stagger, StaggerItem } from '@/components/motion/Reveal';
 import { useI18n } from '@/i18n/LanguageProvider';
 
 import { BANGLADESH, CAPACITY, PRODUCTION_BASES } from '@/data/company';
-import { PRODUCTS, ACTIVE_CATEGORIES } from '@/data/products';
+import { PRODUCTS, CATEGORIES } from '@/data/products';
 
 /** Icons pair positionally with c.services.items. */
 const SERVICE_ICONS = [FlaskConical, Beaker, Factory, FileCheck2, PackageCheck, Headphones];
@@ -201,7 +201,7 @@ export function ServicesContent() {
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
             <Link href="/products" className="btn btn-ghost">
-              {fill(c.services.browseCats, { n: ACTIVE_CATEGORIES.length })}
+              {fill(c.services.browseCats, { n: CATEGORIES.length })}
             </Link>
           </Reveal>
         </div>

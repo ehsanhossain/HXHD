@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { PRODUCTS, ACTIVE_CATEGORIES } from '@/data/products';
+import { PRODUCTS, CATEGORIES } from '@/data/products';
 import { ProductFilterSidebar } from './ProductFilterSidebar';
 import { ProductGrid } from './ProductGrid';
 import { Pagination } from './Pagination';
@@ -19,7 +19,7 @@ export function ProductCatalog() {
 
   const [query, setQuery] = useState(queryParam);
   const [selectedCategories, setSelectedCategories] = useState<string[]>(() =>
-    categoryParam && ACTIVE_CATEGORIES.some((c) => c.slug === categoryParam)
+    categoryParam && CATEGORIES.some((c) => c.slug === categoryParam)
       ? [categoryParam]
       : []
   );
@@ -27,7 +27,7 @@ export function ProductCatalog() {
 
   // Follow ?category= when navigating between mega-menu links on this same page
   useEffect(() => {
-    if (categoryParam && ACTIVE_CATEGORIES.some((c) => c.slug === categoryParam)) {
+    if (categoryParam && CATEGORIES.some((c) => c.slug === categoryParam)) {
       setSelectedCategories([categoryParam]);
       setPage(1);
     }
@@ -85,7 +85,7 @@ export function ProductCatalog() {
       <div className="max-w-screen-2xl mx-auto px-6 py-10">
         <div className="flex flex-col lg:flex-row gap-10 items-start">
           <ProductFilterSidebar
-            categories={ACTIVE_CATEGORIES}
+            categories={CATEGORIES}
             selected={selectedCategories}
             onToggle={toggleCategory}
             onReset={resetFilters}
