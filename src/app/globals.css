@@ -390,6 +390,19 @@
     text-transform: none;
   }
 
+}
+
+@layer utilities {
+  /* Script-aware heading leading.
+   *
+   * These live in `utilities`, not `components`, on purpose. Headings carry
+   * Tailwind leading utilities (the hero uses `leading-[1.02]`, tuned for
+   * Latin), and a utility in a later layer beats any selector in an earlier
+   * one however specific it is — so from `components` this rule was silently
+   * dead and Bengali rendered at 1.02, with the matras of one line touching
+   * the next. Same layer, and specificity decides in our favour.
+   */
+
   /* Bengali sits taller than Latin — give headings room to breathe */
   :root[lang='bn'] h1,
   :root[lang='bn'] h2,
@@ -404,9 +417,7 @@
     line-height: 1.22;
     letter-spacing: 0.01em;
   }
-}
 
-@layer utilities {
   .stroke-text {
     -webkit-text-stroke: 1.5px var(--line-strong);
     color: transparent;

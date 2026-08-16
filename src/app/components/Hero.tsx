@@ -226,7 +226,7 @@ export function Hero() {
           height, so shorter screens simply scroll rather than clipping. */}
       {/* Fills the viewport below the single sticky header (~6.25rem).
           min-height, not height, so shorter screens scroll rather than clip. */}
-      <div className="shell relative z-10 flex flex-col justify-center py-14 lg:py-[clamp(2.5rem,5vh,4rem)] lg:min-h-[calc(100dvh-6.25rem)]">
+      <div className="shell relative z-10 flex flex-col justify-center py-9 sm:py-12 lg:py-[clamp(2.5rem,5vh,4rem)] lg:min-h-[calc(100dvh-6.25rem)]">
         {/* Copy */}
         <div
           className="max-w-2xl xl:max-w-3xl"
@@ -251,11 +251,14 @@ export function Hero() {
               }}
               transition={{ duration: reduced ? 0 : 0.5, ease: EASE }}
             >
-              <p className="eyebrow eyebrow-on-dark mb-5">
+              {/* Slide 1's eyebrow is the full company name — 35 characters,
+                  which wrapped to two lines at 390px. Easing the tracking and
+                  size on small screens keeps it on one. */}
+              <p className="eyebrow eyebrow-on-dark mb-3 sm:mb-5 text-[0.62rem] sm:text-[length:var(--step--1)] !tracking-[0.1em] sm:!tracking-[0.18em]">
                 {t(`hero.${slide.k}.eyebrow` as never)}
               </p>
 
-              <h1 className="text-step-4 font-bold mb-5 leading-[1.02]">
+              <h1 className="text-step-4 font-bold mb-4 sm:mb-5 leading-[1.02]">
                 {[1, 2, 3].map((n, i) => (
                   <span
                     key={n}
@@ -268,14 +271,14 @@ export function Hero() {
 
               {/* /80 not /65: over a photograph the thinner tint measured
                   3.55:1 on the brightest frame. */}
-              <p className="text-step-0 text-white/80 max-w-2xl mb-8 leading-relaxed">
+              <p className="text-step-0 text-white/80 max-w-2xl mb-6 sm:mb-8 leading-relaxed">
                 {t(`hero.${slide.k}.copy` as never)}
               </p>
             </motion.div>
           </AnimatePresence>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-3 mb-8">
+          <div className="flex flex-col sm:flex-row gap-3 mb-6 sm:mb-8">
             <Link href="/products" className="btn btn-primary cut-br group">
               {t('cta.exploreProducts', { n: PRODUCTS.length })}
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -342,13 +345,15 @@ export function Hero() {
           </div>
 
           {/* Constant credentials — deliberately static across slides */}
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3.5 pt-[clamp(1.25rem,2.5vh,1.75rem)] border-t border-white/12">
+          {/* Two columns from the smallest width: stacked, these four rows ran
+              to ~250px on a phone and pushed the hero past the viewport. */}
+          <ul className="grid grid-cols-2 gap-x-4 sm:gap-x-8 gap-y-3 sm:gap-y-3.5 pt-[clamp(1.25rem,2.5vh,1.75rem)] border-t border-white/12">
             {MARKERS.map(({ icon: Icon, k }) => (
-              <li key={k} className="flex items-center gap-3 text-sm text-white/70">
-                <span className="grid place-items-center w-9 h-9 border border-white/15 text-[var(--teal-on-dark)] shrink-0">
-                  <Icon className="w-[18px] h-[18px]" />
+              <li key={k} className="flex items-center gap-2.5 sm:gap-3 text-xs sm:text-sm text-white/70">
+                <span className="grid place-items-center w-8 h-8 sm:w-9 sm:h-9 border border-white/15 text-[var(--teal-on-dark)] shrink-0">
+                  <Icon className="w-4 h-4 sm:w-[18px] sm:h-[18px]" />
                 </span>
-                <span className="font-medium">{t(k)}</span>
+                <span className="font-medium leading-tight">{t(k)}</span>
               </li>
             ))}
           </ul>

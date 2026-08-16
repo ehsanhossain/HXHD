@@ -59,29 +59,31 @@ const en = {
   'hero.s1.l1': 'Emulsion & functional',
   'hero.s1.l2': 'chemical solutions',
   'hero.s1.l3': 'that perform',
+  // Hero copy is read in about a second before the slide turns, and on a phone
+  // every extra line pushes the buttons off-screen. One idea per slide.
   'hero.s1.copy':
-    'An R&D-driven manufacturer of polymer emulsions, waterproofing systems, coating emulsions and functional additives — engineered for consistent formulation performance and export-ready supply.',
+    'Polymer emulsions, waterproofing and coating systems — built for consistent performance and export-ready supply.',
   // Hero — slide 2
   'hero.s2.eyebrow': 'Waterproofing systems',
   'hero.s2.l1': 'Waterproofing that',
   'hero.s2.l2': 'holds under load',
   'hero.s2.l3': 'and low temperature',
   'hero.s2.copy':
-    'Emulsions compatible with anionic, cationic and non-ionic emulsified asphalt — flexible to −15 °C, applicable to damp substrates, and formulated for roofing, basements and infrastructure.',
+    'Flexible to −15 °C and workable on damp substrates — for roofing, basements and infrastructure.',
   // Hero — slide 3
   'hero.s3.eyebrow': 'Architectural coatings',
   'hero.s3.l1': 'Exterior and interior',
   'hero.s3.l2': 'wall coatings',
   'hero.s3.l3': 'built to last',
   'hero.s3.copy':
-    'Modified acrylic and styrene architectural emulsions for middle and top-grade wall coatings — weather resistance, clean film formation and reliable batch-to-batch consistency.',
+    'Acrylic and styrene emulsions for exterior and interior walls — weather resistant, batch after batch.',
   // Hero — slide 4
   'hero.s4.eyebrow': 'Adhesives & bonding',
   'hero.s4.l1': 'Tile bonding and',
   'hero.s4.l2': 'surface adhesion',
   'hero.s4.l3': 'you can specify',
   'hero.s4.copy':
-    'Ceramic tile adhesives and transparent waterproof bonding systems engineered for strong, durable adhesion across demanding construction substrates.',
+    'Ceramic tile adhesives and transparent bonding systems for durable adhesion on demanding substrates.',
 
   'hero.productsInCatalogue': 'Products in catalogue',
   'hero.pause': 'Pause slideshow',
@@ -215,25 +217,25 @@ const zh: Dict = {
   'hero.s1.l2': '功能化学品',
   'hero.s1.l3': '解决方案',
   'hero.s1.copy':
-    '以研发驱动的聚合物乳液、防水体系、涂料乳液及功能助剂制造商——为配方性能的稳定一致与出口供应而设计。',
+    '聚合物乳液、防水与涂料体系——为稳定的配方性能与出口供应而生。',
   'hero.s2.eyebrow': '防水体系',
   'hero.s2.l1': '经得起荷载与',
   'hero.s2.l2': '低温考验的',
   'hero.s2.l3': '防水方案',
   'hero.s2.copy':
-    '可与阴离子、阳离子及非离子乳化沥青配伍——低温柔性达 −15 °C，可在潮湿基面施工，适用于屋面、地下室与基础设施工程。',
+    '低温柔性达 −15 °C，可在潮湿基面施工——适用于屋面、地下室与基础设施。',
   'hero.s3.eyebrow': '建筑涂料',
   'hero.s3.l1': '内外墙涂料',
   'hero.s3.l2': '持久耐候',
   'hero.s3.l3': '品质稳定',
   'hero.s3.copy':
-    '改性丙烯酸与苯丙建筑乳液，适用于中高档内外墙涂料——耐候性优异、成膜洁净，批次间品质稳定可靠。',
+    '内外墙用丙烯酸与苯丙乳液——耐候性优异，批次间稳定可靠。',
   'hero.s4.eyebrow': '胶粘与粘结',
   'hero.s4.l1': '瓷砖粘结与',
   'hero.s4.l2': '表面附着力',
   'hero.s4.l3': '可按需指定',
   'hero.s4.copy':
-    '瓷砖背涂胶与透明防水粘结体系，针对复杂建筑基面提供牢固、耐久的粘结性能。',
+    '瓷砖背涂胶与透明粘结体系——在复杂基面上实现耐久粘结。',
 
   'hero.productsInCatalogue': '目录产品数',
   'hero.pause': '暂停轮播',
@@ -357,25 +359,25 @@ const bn: Dict = {
   'hero.s1.l2': 'রাসায়নিক সমাধান',
   'hero.s1.l3': 'যা কাজ করে',
   'hero.s1.copy':
-    'পলিমার ইমালশন, ওয়াটারপ্রুফিং সিস্টেম, কোটিং ইমালশন ও কার্যকরী অ্যাডিটিভের গবেষণা-নির্ভর প্রস্তুতকারক — ধারাবাহিক ফর্মুলেশন পারফরম্যান্স ও রপ্তানি-প্রস্তুত সরবরাহের জন্য প্রকৌশলকৃত।',
+    'পলিমার ইমালশন, ওয়াটারপ্রুফিং ও কোটিং সিস্টেম — ধারাবাহিক পারফরম্যান্স ও রপ্তানি-প্রস্তুত সরবরাহের জন্য।',
   'hero.s2.eyebrow': 'ওয়াটারপ্রুফিং সিস্টেম',
   'hero.s2.l1': 'ভার ও নিম্ন তাপমাত্রায়',
   'hero.s2.l2': 'টিকে থাকা',
   'hero.s2.l3': 'ওয়াটারপ্রুফিং',
   'hero.s2.copy':
-    'অ্যানায়নিক, ক্যাটায়নিক ও নন-আয়নিক ইমালসিফাইড অ্যাসফল্টের সাথে সঙ্গতিপূর্ণ ইমালশন — −১৫ °C পর্যন্ত নমনীয়, ভেজা তলে প্রয়োগযোগ্য, ছাদ, বেসমেন্ট ও অবকাঠামোর জন্য উপযুক্ত।',
+    '−১৫ °C পর্যন্ত নমনীয় ও ভেজা তলে প্রয়োগযোগ্য — ছাদ, বেসমেন্ট ও অবকাঠামোর জন্য।',
   'hero.s3.eyebrow': 'স্থাপত্য কোটিং',
   'hero.s3.l1': 'অভ্যন্তরীণ ও বাহ্যিক',
   'hero.s3.l2': 'দেয়াল কোটিং',
   'hero.s3.l3': 'দীর্ঘস্থায়ী মানের',
   'hero.s3.copy':
-    'মধ্যম ও উচ্চ মানের দেয়াল কোটিংয়ের জন্য মডিফায়েড অ্যাক্রিলিক ও স্টাইরিন স্থাপত্য ইমালশন — আবহাওয়া প্রতিরোধ, পরিচ্ছন্ন ফিল্ম গঠন ও ব্যাচভিত্তিক ধারাবাহিকতা।',
+    'ভেতর ও বাইরের দেয়ালের জন্য অ্যাক্রিলিক ও স্টাইরিন ইমালশন — আবহাওয়া-প্রতিরোধী, প্রতি ব্যাচে সমান।',
   'hero.s4.eyebrow': 'আঠা ও বন্ধন',
   'hero.s4.l1': 'টাইল বন্ধন ও',
   'hero.s4.l2': 'পৃষ্ঠতলের আঠালোতা',
   'hero.s4.l3': 'আপনার স্পেসিফিকেশনে',
   'hero.s4.copy':
-    'সিরামিক টাইল অ্যাডহেসিভ ও স্বচ্ছ ওয়াটারপ্রুফ বন্ধন সিস্টেম — কঠিন নির্মাণ তলেও শক্তিশালী ও টেকসই আঠালোতার জন্য প্রকৌশলকৃত।',
+    'সিরামিক টাইল অ্যাডহেসিভ ও স্বচ্ছ বন্ধন সিস্টেম — কঠিন তলেও টেকসই আঠালোতা।',
 
   'hero.productsInCatalogue': 'ক্যাটালগে পণ্য',
   'hero.pause': 'স্লাইডশো বিরতি',
