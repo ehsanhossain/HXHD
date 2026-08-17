@@ -59,7 +59,6 @@ const en = {
     { title: 'Hongxing Hongda founded', body: 'Established as a chemical group integrating R&D, production, sales and after-sales service of emulsions and coatings.' },
     { title: 'CNY 1.6 bn expansion announced', body: 'CNY 1.1 bn for 400,000 t/yr water-based and 60,000 t/yr butadiene emulsion, plus CNY 500 m for 50,000 t/yr vinylidene chloride copolymer emulsion.' },
     { title: 'Strategic cooperation with Keshun Waterproof Technology', body: 'Agreement for in-depth cooperation in waterproof coatings, following a technical review of Hongxing Hongda production facilities.' },
-    { title: 'Bangladesh plant agreement signed', body: 'USD 76.41 million committed with Mingda to build a plant in the BEPZA Economic Zone, Mirsharai, Chattogram — creating 500+ local positions.' },
     { title: 'China Coating Show 2025', body: 'Exhibited across the three-day China Coating Show, presenting the emulsion and waterproofing portfolio.' },
   ],
   signedOn: '8 January 2024',
@@ -160,7 +159,7 @@ const en = {
     bdEyebrow: 'Supplied from Bangladesh',
     bdTitle: 'A production base inside the BEPZA Economic Zone',
     bdBody:
-      'Hongxing Hongda committed {investment} with Mingda to build {entity} in the {zone} — a project expected to create {jobs}+ local positions. The agreement was signed on {date}.',
+      'Hongxing Hongda committed {investment} to build {entity} in the {zone} — a project expected to create {jobs}+ local positions. The agreement was signed on {date}.',
     capWaterBased: 'Water-based emulsion',
     capVdc: 'VDC copolymer emulsion',
     capLines: 'Automatic emulsion lines',
@@ -354,7 +353,7 @@ const en = {
   // ── About Us page ──────────────────────────────────────────────────
   about: {
     intro:
-      'For more than 26 years, Hubei Hongxing Hongda New Materials Co., Ltd. has specialized in the R&D, advanced synthesis, and large-scale manufacturing of high-performance polymer emulsions, waterproofing systems, and functional chemical additives.',
+      'For more than 26 years, Hongxing Hongda (BD) Two Win Technology Co., Ltd. has specialized in the R&D, advanced synthesis, and large-scale manufacturing of high-performance polymer emulsions, waterproofing systems, and functional chemical additives.',
     leadStory:
       'Founded in 2000, HXHD has expanded from an R&D-focused enterprise into an international chemical manufacturing group with multiple production campuses across China and a flagship USD 76.41 million facility in Bangladesh. We provide consistent, export-grade materials and direct technical formulation support to manufacturers worldwide.',
     missionTitle: 'Our Mission & Vision',
@@ -379,6 +378,9 @@ const en = {
         desc: 'Dedicated to green chemistry, water-based formulations, zero formaldehyde, and low-VOC environmental compliance.',
       },
     ],
+    groupTitle: 'The group',
+    groupLead: 'Hongxing Hongda operates as a group of companies across Asia and Africa.',
+    groupThisSite: 'This site',
     heritageTitle: 'Our Journey & Milestones',
     heritageLead:
       'A track record of continuous capacity expansion, strategic industry partnerships, and regional manufacturing investments.',
@@ -595,7 +597,6 @@ const zh: PageContent = {
     { title: '红星宏达成立', body: '成立为集乳液与涂料研发、生产、销售及售后服务于一体的化工集团。' },
     { title: '宣布 16 亿元扩产计划', body: '11 亿元用于年产 40 万吨水性乳液与 6 万吨丁苯乳液，另有 5 亿元用于年产 5 万吨偏氯乙烯共聚乳液。' },
     { title: '与科顺防水科技达成战略合作', body: '双方在考察红星宏达生产设施后，就防水涂料领域的深度合作达成协议。' },
-    { title: '孟加拉国工厂协议签署', body: '与明达共同投资 7641 万美元，在孟加拉国吉大港米尔萨莱 BEPZA 经济区建厂，预计创造 500 个以上本地岗位。' },
     { title: '2025 中国涂料展', body: '参展为期三天的中国涂料展，展示乳液与防水产品体系。' },
   ],
   signedOn: '2024 年 1 月 8 日',
@@ -691,7 +692,7 @@ const zh: PageContent = {
     bdEyebrow: '孟加拉国本地供应',
     bdTitle: '位于 BEPZA 经济区的生产基地',
     bdBody:
-      '红星宏达与明达共同投资 {investment}，在 {zone} 建设 {entity}，预计为当地创造 {jobs} 个以上就业岗位。协议于 {date} 签署。',
+      '红星宏达投资 {investment}，在 {zone} 建设 {entity}，预计为当地创造 {jobs} 个以上就业岗位。协议于 {date} 签署。',
     capWaterBased: '水性乳液',
     capVdc: '偏氯乙烯共聚乳液',
     capLines: '自动化乳液生产线',
@@ -874,6 +875,9 @@ const zh: PageContent = {
       { title: '本地化稳定供应保障', desc: '中国与孟加拉国双基地直供，有效帮助客户规避跨国供应链中断与汇率风险。' },
       { title: '绿色环保与可持续发展', desc: '深耕水性化环保配方，实现无甲醛、低VOC，全面符合国际环保规范。' },
     ],
+    groupTitle: '集团成员',
+    groupLead: '红星宏达在亚洲与非洲以集团形式运营多家公司。',
+    groupThisSite: '本站主体',
     heritageTitle: '发展历程与里程碑',
     heritageLead: '二十余年稳扎稳打，持续扩充产能、深化产业战略合作并进行区域重点布局。',
     facilitiesTitle: '全球制造基地布局',
@@ -1072,7 +1076,6 @@ const bn: PageContent = {
     { title: 'হংশিং হংদা প্রতিষ্ঠা', body: 'ইমালশন ও কোটিংয়ের গবেষণা, উৎপাদন, বিক্রয় ও বিক্রয়োত্তর সেবার সমন্বিত রাসায়নিক গ্রুপ হিসেবে প্রতিষ্ঠিত।' },
     { title: '১.৬ বিলিয়ন ইউয়ান সম্প্রসারণ ঘোষণা', body: 'বছরে ৪,০০,০০০ টন পানি-ভিত্তিক ও ৬০,০০০ টন বিউটাডাইন ইমালশনের জন্য ১.১ বিলিয়ন ইউয়ান, সাথে ৫০,০০০ টন VDC কোপলিমারের জন্য ৫০০ মিলিয়ন ইউয়ান।' },
     { title: 'কেশুন ওয়াটারপ্রুফ টেকনোলজির সাথে কৌশলগত সহযোগিতা', body: 'হংশিং হংদার উৎপাদন সুবিধা পরিদর্শনের পর ওয়াটারপ্রুফ কোটিং ক্ষেত্রে গভীর সহযোগিতার চুক্তি।' },
-    { title: 'বাংলাদেশ কারখানা চুক্তি স্বাক্ষর', body: 'মিংদার সাথে ৭৬.৪১ মিলিয়ন ডলার বিনিয়োগে চট্টগ্রামের মিরসরাই BEPZA অর্থনৈতিক অঞ্চলে কারখানা — ৫০০+ স্থানীয় কর্মসংস্থান।' },
     { title: 'চায়না কোটিং শো ২০২৫', body: 'তিন দিনব্যাপী চায়না কোটিং শোতে ইমালশন ও ওয়াটারপ্রুফিং পোর্টফোলিও প্রদর্শন।' },
   ],
   signedOn: '৮ জানুয়ারি ২০২৪',
@@ -1169,7 +1172,7 @@ const bn: PageContent = {
     bdEyebrow: 'বাংলাদেশ থেকে সরবরাহ',
     bdTitle: 'BEPZA অর্থনৈতিক অঞ্চলের ভেতরে একটি উৎপাদন কেন্দ্র',
     bdBody:
-      'হংশিং হংদা মিংদার সাথে {investment} বিনিয়োগ করে {zone}-এ {entity} নির্মাণ করছে — যা {jobs}+ স্থানীয় কর্মসংস্থান সৃষ্টি করবে বলে আশা করা হচ্ছে। চুক্তিটি {date} তারিখে স্বাক্ষরিত হয়।',
+      'হংশিং হংদা {investment} বিনিয়োগ করে {zone}-এ {entity} নির্মাণ করছে — যা {jobs}+ স্থানীয় কর্মসংস্থান সৃষ্টি করবে বলে আশা করা হচ্ছে। চুক্তিটি {date} তারিখে স্বাক্ষরিত হয়।',
     capWaterBased: 'পানি-ভিত্তিক ইমালশন',
     capVdc: 'VDC কোপলিমার ইমালশন',
     capLines: 'স্বয়ংক্রিয় ইমালশন লাইন',
@@ -1364,6 +1367,9 @@ const bn: PageContent = {
       { title: 'স্থানীয় সরবরাহ নিরাপত্তা', desc: 'বাংলাদেশ ও চীনে সরাসরি কারখানা থাকার ফলে বৈশ্বিক সরবরাহ সংকট ও মুদ্রা ওঠানামা থেকে সুরক্ষা।' },
       { title: 'পরিবেশ সচেতনতা', desc: 'গ্রিন কেমিস্ট্রি, পরিবেশবান্ধব ওয়াটার-বেসড ফর্মুলেশন, ফর্মালডিহাইড-মুক্ত ও কম ভিওসি প্রযুক্তি।' },
     ],
+    groupTitle: 'গ্রুপ',
+    groupLead: 'হংশিং হংদা এশিয়া ও আফ্রিকা জুড়ে কয়েকটি কোম্পানির সমন্বয়ে পরিচালিত হয়।',
+    groupThisSite: 'এই সাইট',
     heritageTitle: 'আমাদের যাত্রা ও ইতিহাস',
     heritageLead: 'ধারাবাহিক সক্ষমতা বৃদ্ধি, কৌশলগত অংশীদারিত্ব এবং আঞ্চলিক বিনিয়োগের দুই দশকের সাফল্যগাথা।',
     facilitiesTitle: 'বিশ্বমানের উৎপাদন অবকাঠামো',

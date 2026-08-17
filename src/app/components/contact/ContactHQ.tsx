@@ -19,7 +19,7 @@ export function ContactHQ() {
 
           <div className="border-l-2 border-[var(--brand-red)] pl-6 mb-10">
             <p className="font-bold text-[var(--ink)] text-step-1 mb-4">
-              Hubei Hongxing Hongda New Materials Co., Ltd.
+              Hongxing Hongda (BD) Two Win Technology Co., Ltd.
             </p>
 
             <ul className="space-y-4 text-[var(--ink-3)]">

@@ -4,7 +4,7 @@ import { CareerContent } from './CareerContent';
 export const metadata: Metadata = {
   title: 'Careers | HXHD Bangladesh & International',
   description:
-    'Explore career opportunities in polymer formulation R&D, chemical engineering, technical sales, and plant operations at Hubei Hongxing Hongda New Materials.',
+    'Explore career opportunities in polymer formulation R&D, chemical engineering, technical sales, and plant operations at Hongxing Hongda (BD) Two Win Technology.',
   openGraph: {
     title: 'Careers at HXHD | Shape the Future of Materials Science',
     description:

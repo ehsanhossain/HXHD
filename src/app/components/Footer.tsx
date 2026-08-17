@@ -184,7 +184,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="pt-8 mt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
           <p>
-            &copy; {new Date().getFullYear()} Hubei Hongxing Hongda New Materials Co., Ltd.{' '}
+            &copy; {new Date().getFullYear()} Hongxing Hongda (BD) Two Win Technology Co., Ltd.{' '}
             {t('footer.rights')}
           </p>
           <div className="flex flex-wrap justify-center gap-6 font-medium">

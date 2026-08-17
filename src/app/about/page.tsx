@@ -4,7 +4,7 @@ import { AboutContent } from './AboutContent';
 export const metadata: Metadata = {
   title: 'About Us | HXHD Bangladesh & Global',
   description:
-    'Learn about Hubei Hongxing Hongda New Materials Co., Ltd. (HXHD) — 26+ years of polymer emulsion synthesis, multi-base manufacturing in China and Bangladesh, and export-grade chemical solutions.',
+    'Learn about Hongxing Hongda (BD) Two Win Technology Co., Ltd. (HXHD) — 26+ years of polymer emulsion synthesis, multi-base manufacturing in China and Bangladesh, and export-grade chemical solutions.',
   openGraph: {
     title: 'About Us | HXHD Bangladesh & Global Manufacturing',
     description:

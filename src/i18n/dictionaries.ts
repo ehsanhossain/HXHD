@@ -55,7 +55,7 @@ const en = {
   'cta.sendEnquiry': 'Send an Enquiry',
 
   // Hero — slide 1
-  'hero.s1.eyebrow': 'Hubei Hongxing Hongda New Materials',
+  'hero.s1.eyebrow': 'Hongxing Hongda (BD) Two Win Technology',
   'hero.s1.l1': 'Emulsion & functional',
   'hero.s1.l2': 'chemical solutions',
   'hero.s1.l3': 'that perform',
@@ -126,7 +126,7 @@ const en = {
   'footer.contact': 'Contact',
   'footer.rights': 'All rights reserved.',
   'footer.tagline':
-    'Hubei Hongxing Hongda New Materials Co., Ltd. — polymer emulsions, waterproofing systems, coatings and functional additives.',
+    'Hongxing Hongda (BD) Two Win Technology Co., Ltd. — polymer emulsions, waterproofing systems, coatings and functional additives.',
 
   // Newsletter
   'news.title': 'Stay up to date with HXHD',
@@ -212,7 +212,7 @@ const zh: Dict = {
   'cta.browseProducts': '浏览产品',
   'cta.sendEnquiry': '发送询盘',
 
-  'hero.s1.eyebrow': '湖北红星宏达新材料',
+  'hero.s1.eyebrow': 'Hongxing Hongda (BD) Two Win Technology',
   'hero.s1.l1': '高性能乳液与',
   'hero.s1.l2': '功能化学品',
   'hero.s1.l3': '解决方案',
@@ -273,7 +273,7 @@ const zh: Dict = {
   'footer.contact': '联系方式',
   'footer.rights': '版权所有。',
   'footer.tagline':
-    '湖北红星宏达新材料有限公司——聚合物乳液、防水体系、涂料及功能助剂。',
+    'Hongxing Hongda (BD) Two Win Technology Co., Ltd. — 聚合物乳液、防水体系、涂料及功能助剂。',
 
   'news.title': '订阅 HXHD 最新动态',
   'news.copy': '不定期发送新品、技术文件与应用资讯。',
@@ -354,7 +354,7 @@ const bn: Dict = {
   'cta.browseProducts': 'পণ্য দেখুন',
   'cta.sendEnquiry': 'অনুসন্ধান পাঠান',
 
-  'hero.s1.eyebrow': 'হুবেই হংশিং হংদা নিউ ম্যাটেরিয়ালস',
+  'hero.s1.eyebrow': 'Hongxing Hongda (BD) Two Win Technology',
   'hero.s1.l1': 'ইমালশন ও কার্যকরী',
   'hero.s1.l2': 'রাসায়নিক সমাধান',
   'hero.s1.l3': 'যা কাজ করে',
@@ -416,7 +416,7 @@ const bn: Dict = {
   'footer.contact': 'যোগাযোগ',
   'footer.rights': 'সর্বস্বত্ব সংরক্ষিত।',
   'footer.tagline':
-    'হুবেই হংশিং হংদা নিউ ম্যাটেরিয়ালস কোং লিমিটেড — পলিমার ইমালশন, ওয়াটারপ্রুফিং সিস্টেম, কোটিং ও কার্যকরী অ্যাডিটিভ।',
+    'Hongxing Hongda (BD) Two Win Technology Co., Ltd. — পলিমার ইমালশন, ওয়াটারপ্রুফিং সিস্টেম, কোটিং ও কার্যকরী অ্যাডিটিভ।',
 
   'news.title': 'HXHD-এর সাথে আপডেট থাকুন',
   'news.copy': 'নতুন গ্রেড, ডকুমেন্টেশন ও প্রয়োগ নিয়ে মাঝে মাঝে আপডেট।',

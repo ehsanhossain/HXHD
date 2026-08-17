@@ -14,7 +14,12 @@ export interface ProductionBase {
 
 export const COMPANY = {
   group: 'Hongxing Hongda',
-  legalName: 'Hubei Hongxing Hongda New Materials Co., Ltd.',
+  /**
+   * This site belongs to the Bangladesh entity, so `legalName` is the
+   * Bangladesh company — not the Hubei one, which is a separate member of the
+   * group and appears in GROUP_COMPANIES below.
+   */
+  legalName: 'Hongxing Hongda (BD) Two Win Technology Co., Ltd.',
   founded: 2000,
   /**
    * Contact address for this site. Split into lines so the footer and contact
@@ -69,7 +74,7 @@ export function mailtoHref(subject: string, body: string): string {
 
 export const PRODUCTION_BASES: ProductionBase[] = [
   {
-    entity: 'Mingda (Bangladesh) New Material Co., Ltd.',
+    entity: 'Hongxing Hongda (BD) Two Win Technology Co., Ltd.',
     city: 'BEPZA Economic Zone, Mirsharai, Chattogram',
     country: 'Bangladesh',
     note: 'USD 76.41 million investment · 500+ local jobs',
@@ -95,7 +100,7 @@ export const PRODUCTION_BASES: ProductionBase[] = [
 
 /** Bangladesh-specific facts, all sourced from the company news archive. */
 export const BANGLADESH = {
-  entity: 'Mingda (Bangladesh) New Material Co., Ltd.',
+  entity: 'Hongxing Hongda (BD) Two Win Technology Co., Ltd.',
   zone: 'BEPZA Economic Zone, Mirsharai, Chattogram',
   investmentUsd: 76_410_000,
   investmentLabel: 'USD 76.41 M',
@@ -136,17 +141,38 @@ export const MILESTONES = [
       'https://www.hxhdchemical.com/news/hongxing-hongda-cooperates-with-keshun-waterproof-technology-co-ltd-to-bring-a-new-future-of-the-industry/',
   },
   {
-    year: '2024',
-    title: 'Bangladesh plant agreement signed',
-    body: 'USD 76.41 million committed with Mingda to build a plant in the BEPZA Economic Zone, Mirsharai, Chattogram — creating 500+ local positions.',
-    source:
-      'https://www.hxhdchemical.com/news/hongxing-hongda-will-establish-a-new-plant-in-bangladesh/',
-  },
-  {
     year: '2025',
     title: 'China Coating Show 2025',
     body: 'Exhibited across the three-day China Coating Show, presenting the emulsion and waterproofing portfolio.',
     source:
       'https://www.hxhdchemical.com/news/the-three-day-china-coating-show-2025-came-to-a-successful-conclusion/',
   },
+];
+
+/**
+ * The companies that make up the group, as listed on the corporate plaque.
+ *
+ * Names are reproduced exactly as written there, including the spacing of
+ * "(BD) Two Win" — they are legal entity names, so they are not translated or
+ * tidied. `country` is ours, added so the list can be grouped or filtered.
+ */
+export interface GroupCompany {
+  name: string;
+  country: string;
+  /** The entity this website belongs to. */
+  isThisSite?: boolean;
+}
+
+export const GROUP_COMPANIES: GroupCompany[] = [
+  { name: 'Beijing Xinda Shiji New Materials Co., Ltd', country: 'China' },
+  { name: 'Weixian Shuangying Chemical Industry Co., Ltd', country: 'China' },
+  { name: 'Hubei Hongxing Hongda New Materials Co., Ltd', country: 'China' },
+  {
+    name: 'Hongxing Hongda (BD) Two Win Technology Co., Ltd',
+    country: 'Bangladesh',
+    isThisSite: true,
+  },
+  { name: 'Hongxing Hongda (Cambodia) Co., Ltd', country: 'Cambodia' },
+  { name: 'Golden Coast Opus Ltd (Ghana)', country: 'Ghana' },
+  { name: 'Hongxing Hongda (Nigeria) Co., Ltd', country: 'Nigeria' },
 ];
