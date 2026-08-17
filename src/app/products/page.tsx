@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import Link from 'next/link';
 import { ProductCatalog } from '../components/products/ProductCatalog';
+import { ProductModelRange } from '../components/products/ProductModelRange';
 import { ProductNewsletter } from '../components/products/ProductNewsletter';
 import { PRODUCTS } from '@/data/products';
 
@@ -37,6 +38,8 @@ export default function ProductsPage() {
       >
         <ProductCatalog />
       </Suspense>
+
+      <ProductModelRange />
 
       <ProductNewsletter />
     </div>

@@ -150,6 +150,12 @@ const en = {
   'products.pagination': 'Product pagination',
   'products.prev': 'Previous page',
   'products.next': 'Next page',
+  // Official model range
+  'products.modelsEyebrow': 'Model range',
+  'products.modelsTitle': 'The full grade range',
+  'products.modelsBody':
+    'Every grade we supply, as listed on our product model sheet. Grades with a catalogue page link through to it; for the rest, ask the technical team and we will send the datasheet.',
+  'products.modelsCta': 'Request a datasheet',
 
   // Product detail
   'detail.keyCharacteristics': 'Key characteristics',
@@ -294,6 +300,11 @@ const zh: Dict = {
   'products.pagination': '产品分页',
   'products.prev': '上一页',
   'products.next': '下一页',
+  'products.modelsEyebrow': '产品型号',
+  'products.modelsTitle': '完整型号系列',
+  'products.modelsBody':
+    '我们供应的全部型号，依据产品型号表列出。已建有产品页面的型号可直接点击查看；其余型号请联系技术团队索取技术资料。',
+  'products.modelsCta': '索取技术资料',
 
   'detail.keyCharacteristics': '主要特性',
   'detail.description': '产品说明',
@@ -438,6 +449,11 @@ const bn: Dict = {
   'products.pagination': 'পণ্য পেজিনেশন',
   'products.prev': 'পূর্ববর্তী পাতা',
   'products.next': 'পরবর্তী পাতা',
+  'products.modelsEyebrow': 'মডেল পরিসর',
+  'products.modelsTitle': 'সম্পূর্ণ গ্রেড পরিসর',
+  'products.modelsBody':
+    'আমাদের সরবরাহ করা প্রতিটি গ্রেড, পণ্য মডেল তালিকা অনুযায়ী। যেসব গ্রেডের ক্যাটালগ পাতা আছে সেগুলোতে সরাসরি যাওয়া যায়; বাকিগুলোর জন্য কারিগরি দলের সাথে যোগাযোগ করুন, আমরা ডেটাশিট পাঠিয়ে দেব।',
+  'products.modelsCta': 'ডেটাশিট চান',
 
   'detail.keyCharacteristics': 'প্রধান বৈশিষ্ট্য',
   'detail.description': 'পণ্যের বিবরণ',

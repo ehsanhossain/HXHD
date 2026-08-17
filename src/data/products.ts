@@ -16,8 +16,17 @@ export interface Product {
   id: string;
   slug: string;
   name: string;
-  /** Manufacturer SKU, e.g. "HX-470". Empty for products the source site lists without a code. */
+  /**
+   * Grade as the company writes it, e.g. "HXHD-416". Empty for products the
+   * source site lists without a code.
+   */
   code: string;
+  /**
+   * The short form the group site's datasheets use, e.g. "HX-416", kept where
+   * `code` was normalised to the HXHD- prefix on the official model sheet. It
+   * is what to search for when cross-referencing the original datasheet.
+   */
+  sourceCode?: string;
   category: string;
   categorySlug: string;
   /** Meta description from the source page. */
@@ -1018,8 +1027,9 @@ export const PRODUCTS: Product[] = [
   {
     "id": "pure-acrylic-textile-emulsion-hx929-for-high-grade-silk-cotton-and-dupont-cotton",
     "slug": "pure-acrylic-textile-emulsion-hx929-for-high-grade-silk-cotton-and-dupont-cotton",
-    "name": "Pure Acrylic Textile Emulsion HX-929 for High Grade Silk Cotton and DuPont Cotton",
-    "code": "HX-929",
+    "name": "Pure Acrylic Textile Emulsion HXHD-929 for High Grade Silk Cotton and DuPont Cotton",
+    "code": "HXHD-929",
+    "sourceCode": "HX-929",
     "category": "Textile Emulsion",
     "categorySlug": "textile-emulsion",
     "summary": "Looking for a high-quality textile emulsion? Check out HX-929 for your textile printing needs. Superior quality and performance for your fabric designs",
@@ -1224,8 +1234,9 @@ export const PRODUCTS: Product[] = [
   {
     "id": "waterproof-emulsion-hx-416-1-product",
     "slug": "waterproof-emulsion-hx-416-1-product",
-    "name": "Waterproof Emulsion HX-416",
-    "code": "HX-416",
+    "name": "Waterproof Emulsion HXHD-416",
+    "code": "HXHD-416",
+    "sourceCode": "HX-416",
     "category": "Waterproof Emulsion",
     "categorySlug": "waterproof-emulsion",
     "summary": "Looking for a reliable waterproof emulsion? Try HX-416 for all your waterproofing needs. Durable and long-lasting protection for any surface",
@@ -1348,8 +1359,9 @@ export const PRODUCTS: Product[] = [
   {
     "id": "toilet-and-roof-acrylic-and-styrene-waterproof-emulsion-hx400-for-thermal-insulation-mortar-and-two-component-cement-waterproof-coating",
     "slug": "toilet-and-roof-acrylic-and-styrene-waterproof-emulsion-hx400-for-thermal-insulation-mortar-and-two-component-cement-waterproof-coating",
-    "name": "Toilet and Roof Acrylic and Styrene Waterproof Emulsion HX-400 for Thermal Insulation Mortar and Two Component Cement Waterproof Coating",
-    "code": "HX-400",
+    "name": "Toilet and Roof Acrylic and Styrene Waterproof Emulsion HXHD-400 for Thermal Insulation Mortar and Two Component Cement Waterproof Coating",
+    "code": "HXHD-400",
+    "sourceCode": "HX-400",
     "category": "Waterproof Emulsion",
     "categorySlug": "waterproof-emulsion",
     "summary": "Shop the best Waterproof Emulsion HX-400 for ultimate protection. Durable, long-lasting, and reliable for all your waterproofing needs",
@@ -1575,8 +1587,9 @@ export const PRODUCTS: Product[] = [
   {
     "id": "acrylic-and-styrene-waterproof-emulsion-hx416-for-thermal-insulation-mortar-and-two-component-cement-waterproof-coating",
     "slug": "acrylic-and-styrene-waterproof-emulsion-hx416-for-thermal-insulation-mortar-and-two-component-cement-waterproof-coating",
-    "name": "Acrylic and Styrene Waterproof Emulsion HX-416 for Thermal Insulation Mortar and Two Component Cement Waterproof Coating",
-    "code": "HX-416",
+    "name": "Acrylic and Styrene Waterproof Emulsion HXHD-416 for Thermal Insulation Mortar and Two Component Cement Waterproof Coating",
+    "code": "HXHD-416",
+    "sourceCode": "HX-416",
     "category": "Waterproof Emulsion",
     "categorySlug": "waterproof-emulsion",
     "summary": "Looking for a high-quality waterproof emulsion? Check out HX-406A for the best waterproofing and protection for your surfaces. Purchase now!",
@@ -1689,8 +1702,9 @@ export const PRODUCTS: Product[] = [
   {
     "id": "waterproof-emulsion-hx-406-product",
     "slug": "waterproof-emulsion-hx-406-product",
-    "name": "Waterproof Emulsion HX-406",
-    "code": "HX-406",
+    "name": "Waterproof Emulsion HXHD-406",
+    "code": "HXHD-406",
+    "sourceCode": "HX-406",
     "category": "Waterproof Emulsion",
     "categorySlug": "waterproof-emulsion",
     "summary": "Looking for a reliable waterproof emulsion? Check out HX-406 for high-quality and durable waterproofing solution. Order now!",
@@ -1815,8 +1829,9 @@ export const PRODUCTS: Product[] = [
   {
     "id": "low-temperature-elastic-acrylic-and-styrene-waterproof-emulsion-hx416-for-thermal-insulation-mortar-and-cement-waterproof-coating",
     "slug": "low-temperature-elastic-acrylic-and-styrene-waterproof-emulsion-hx416-for-thermal-insulation-mortar-and-cement-waterproof-coating",
-    "name": "Low Temperature Elastic Acrylic and Styrene Waterproof Emulsion HX-416 for Thermal Insulation Mortar and Cement Waterproof Coating",
-    "code": "HX-416",
+    "name": "Low Temperature Elastic Acrylic and Styrene Waterproof Emulsion HXHD-416 for Thermal Insulation Mortar and Cement Waterproof Coating",
+    "code": "HXHD-416",
+    "sourceCode": "HX-416",
     "category": "Waterproof Emulsion",
     "categorySlug": "waterproof-emulsion",
     "summary": "Looking for a high-quality waterproof emulsion? Check out our HX-416 for a durable and reliable solution. Perfect for a range of applications",
@@ -2414,3 +2429,85 @@ export function getProductsByCategory(categorySlug: string): Product[] {
 
 /** Categories that actually contain products. */
 export const ACTIVE_CATEGORIES: Category[] = CATEGORIES.filter((c) => c.count > 0);
+
+/**
+ * The official model range, as printed on the company's Product Model sheet.
+ *
+ * This is the authoritative list of grades the company sells. It is kept
+ * separate from PRODUCTS on purpose: PRODUCTS holds the catalogue pages
+ * scraped from the group site (descriptions, spec tables, images), and several
+ * grades below have no such page yet. Listing them here means the full range
+ * is published even where there is nothing to link to.
+ *
+ * `productSlug` is set only where a catalogue page is confirmed to be the same
+ * grade. Where it is absent the model still shows, without a link.
+ */
+export interface ProductModel {
+  code: string;
+  /** Descriptive prefix from the sheet, e.g. "Waterproof double component". */
+  label?: string;
+  /** Catalogue page for this grade, when one exists. */
+  productSlug?: string;
+}
+
+export interface ModelGroup {
+  categorySlug: string;
+  title: string;
+  models: ProductModel[];
+}
+
+export const PRODUCT_MODELS: ModelGroup[] = [
+  {
+    categorySlug: 'waterproof-emulsion',
+    title: 'Waterproof emulsion',
+    models: [
+      { code: 'HXHD-400', label: 'Waterproof double component', productSlug: 'toilet-and-roof-acrylic-and-styrene-waterproof-emulsion-hx400-for-thermal-insulation-mortar-and-two-component-cement-waterproof-coating' },
+      // The catalogue's HX-406 page is the plain 406; whether it is the 406A
+      // on the model sheet is unconfirmed, so no link is claimed.
+      { code: 'HXHD-406A', label: 'Waterproof double component' },
+      // Three catalogue pages carry HX-416. Which of them are the 416, 416A
+      // and 416M is unconfirmed, so the base grade links to the plain page
+      // and the variants are listed without one.
+      { code: 'HXHD-416', label: 'Waterproof double component', productSlug: 'waterproof-emulsion-hx-416-1-product' },
+      { code: 'HXHD-511', label: 'Waterproof double component' },
+      { code: 'HXHD-416A', label: 'Waterproof single component' },
+      { code: 'HXHD-416M', label: 'Waterproof single component' },
+    ],
+  },
+  {
+    categorySlug: 'textile-emulsion',
+    title: 'Textile emulsion',
+    models: [
+      { code: 'HXHD-927E' },
+      { code: 'HXHD-706K' },
+      { code: 'HXHD-929', productSlug: 'pure-acrylic-textile-emulsion-hx929-for-high-grade-silk-cotton-and-dupont-cotton' },
+      { code: 'HXHD-403' },
+      { code: 'HXHD-60' },
+      { code: 'HD-701' },
+      { code: 'HXHD-601' },
+      { code: 'HXHD-604' },
+    ],
+  },
+  {
+    categorySlug: 'sand-fixing-agent',
+    title: 'Sand fixing agent',
+    models: [
+      { code: 'HXHD-500A', label: 'Sand fixing agent', productSlug: 'anti-alkali-anti-cracking-and-anti-mould-waterproof-sand-fixing-agent-500a-500b' },
+      { code: 'HXHD-500B', label: 'Sand fixing agent', productSlug: 'anti-alkali-anti-cracking-and-anti-mould-waterproof-sand-fixing-agent-500a-500b' },
+    ],
+  },
+  {
+    categorySlug: 'rust-stabilizer',
+    title: 'Rust fixing / conversion agent',
+    models: [
+      { code: 'HXHD-900A', label: 'Rust fixing agent', productSlug: 'steel-iron-oxidation-resistant-and-rust-fixing-agent-900a-900b' },
+      { code: 'HXHD-900B', label: 'Rust fixing agent', productSlug: 'steel-iron-oxidation-resistant-and-rust-fixing-agent-900a-900b' },
+      // The catalogue lists an 800AB converting agent. Whether that is this
+      // grade is unconfirmed, so no link is claimed.
+      { code: 'HXHD-800D', label: 'Rust conversion agent' },
+    ],
+  },
+];
+
+/** Every model in the official range, flattened. */
+export const ALL_MODELS: ProductModel[] = PRODUCT_MODELS.flatMap((g) => g.models);
