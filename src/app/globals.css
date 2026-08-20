@@ -177,11 +177,20 @@
   html {
     font-size: var(--font-size);
     -webkit-text-size-adjust: 100%;
+    /* The horizontal scrollbar lives on the root element, so clipping only
+       the body leaves it in place — see the note on body below. */
+    overflow-x: clip;
   }
 
   body {
     background: var(--paper);
     color: var(--ink);
+    /* Reveal animates elements in from x: ±28px, and anything still waiting
+       to enter extends the scrollable area by that much — enough to give
+       /about and /contact an 8px horizontal scrollbar at 390px.
+       `clip` rather than `hidden`: it suppresses the overflow without
+       turning the element into a scroll container. */
+    overflow-x: clip;
     font-family: var(--font-grotesk), ui-sans-serif, system-ui, sans-serif;
     font-size: var(--step-0);
     line-height: 1.65;

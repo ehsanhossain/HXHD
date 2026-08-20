@@ -359,6 +359,23 @@ const en = {
     missionTitle: 'Our Mission',
     mission: 'To deliver stable, high-performance, and eco-friendly polymer solutions with unwavering batch-to-batch consistency and resilient local supply.',
     vision: 'To be Asia’s premier manufacturing partner for advanced architectural, waterproofing, and industrial polymer emulsions.',
+    whyTitle: 'Why choose HXHD Bangladesh',
+    whyLead:
+      'What a buyer here actually gets: material that behaves the same every drum, held locally, with the documentation and technical help to specify it properly.',
+    whyPoints: [
+      { title: 'Consistent every batch', desc: 'Automated reactor lines and multi-point QC, so the drum you order next quarter performs like the one you tested.' },
+      { title: 'Made in China and Bangladesh', desc: 'Two production countries behind the same range — local supply without giving up the group\'s manufacturing scale.' },
+      { title: '200,000 t/yr capacity', desc: 'Volume that holds through peak season, backed by 16 automatic emulsion lines at the flagship plant.' },
+      { title: 'A range, not a product', desc: '28 grades across 21 categories — waterproofing, architectural, adhesives and functional additives from one supplier.' },
+      { title: 'Built for this climate', desc: 'Grades that stay flexible to −15 °C and go down on damp substrates — tested against how Bangladesh actually builds.' },
+      { title: 'OEM and custom formulation', desc: 'Bring a performance target, a substrate and a process; we formulate to it rather than selling you the nearest match.' },
+      { title: 'Export-ready documentation', desc: 'TDS, certificates of analysis and compliance files prepared for customs and for your own QA file.' },
+      { title: 'Technical people, locally', desc: 'Questions about substrate, dosage or film performance go to engineers who know the products, not a call centre.' },
+    ],
+    certsEyebrow: 'Certifications',
+    certsTitle: 'Patents and certifications',
+    certsLead:
+      'Invention patents and industry certifications held by the group. Open any one to read the issuing body and the seal.',
     valuesTitle: 'Core Values',
     values: [
       {
@@ -863,6 +880,23 @@ const zh: PageContent = {
     missionTitle: '企业使命',
     mission: '以卓越的批次稳定性与本地化供应保障，为客户提供高性能、环保型的聚合物解决方案。',
     vision: '成为亚洲领先的建筑、防水及工业特种高分子乳液制造与技术合作伙伴。',
+    whyTitle: '为什么选择 HXHD 孟加拉国',
+    whyLead:
+      '买家真正得到的是：每一桶表现一致的材料、本地库存，以及能把它用对的技术文件与支持。',
+    whyPoints: [
+      { title: '批批一致', desc: '自动化反应釜产线与多点质量控制——下季度订的货，与您送检的那一桶表现相同。' },
+      { title: '中国与孟加拉国双基地', desc: '同一产品系列由两国生产支撑——既有本地供应，也不失集团的制造规模。' },
+      { title: '年产 20 万吨产能', desc: '旺季亦可保障供货，依托旗舰工厂 16 条乳液自动化生产线。' },
+      { title: '不是单品，而是体系', desc: '21 个类别、28 款产品——防水、建筑、胶粘与功能助剂，一家供应。' },
+      { title: '为本地气候而设', desc: '低温柔性达 −15 °C，可在潮湿基面施工——针对孟加拉国真实施工条件。' },
+      { title: 'OEM 与定制配方', desc: '请提出性能目标、基材与工艺，我们据此开发配方，而非拿最接近的现货应付。' },
+      { title: '出口就绪的技术文件', desc: '技术数据表、质量分析证书与合规文件，既可用于清关，也可归入您的质量档案。' },
+      { title: '技术支持在本地', desc: '关于基材、用量或成膜性能的问题，由熟悉产品的工程师解答，而非客服中心。' },
+    ],
+    certsEyebrow: '资质认证',
+    certsTitle: '专利与资质证书',
+    certsLead:
+      '集团持有的发明专利与行业资质证书。点击任意一张可查看颁发机构与印章。',
     valuesTitle: '核心价值观',
     values: [
       { title: '技术精湛与持续研发', desc: '坚持高分子合成创新，紧密契合严苛的工业应用与气候挑战。' },
@@ -1350,6 +1384,23 @@ const bn: PageContent = {
     missionTitle: 'আমাদের লক্ষ্য',
     mission: 'অবিচল ব্যাচ-টু-ব্যাচ ধারাবাহিকতা এবং নির্ভরযোগ্য স্থানীয় সরবরাহের মাধ্যমে উন্নত ও পরিবেশবান্ধব পলিমার সমাধান পৌঁছে দেওয়া।',
     vision: 'স্থাপত্য, ওয়াটারপ্রুফিং ও শিল্পক্ষেত্রে উচ্চমানের পলিমার ইমালশনের জন্য এশিয়ার শীর্ষস্থানীয় উৎপাদন অংশীদার হওয়া।',
+    whyTitle: 'কেন HXHD বাংলাদেশ',
+    whyLead:
+      'একজন ক্রেতা এখানে আসলে যা পান: প্রতিটি ড্রামে একই রকম আচরণ করা উপকরণ, স্থানীয়ভাবে মজুত, আর তা সঠিকভাবে ব্যবহারের ডকুমেন্টেশন ও কারিগরি সহায়তা।',
+    whyPoints: [
+      { title: 'প্রতি ব্যাচে একই মান', desc: 'স্বয়ংক্রিয় রিঅ্যাক্টর লাইন ও বহু-পর্যায়ের মান নিয়ন্ত্রণ — পরের বার যে ড্রাম নেবেন, সেটিও পরীক্ষিতটির মতোই কাজ করবে।' },
+      { title: 'চীন ও বাংলাদেশে উৎপাদন', desc: 'একই পণ্য পরিসরের পেছনে দুটি উৎপাদনকারী দেশ — স্থানীয় সরবরাহ, তবু গ্রুপের উৎপাদন সক্ষমতা অটুট।' },
+      { title: 'বছরে ২,০০,০০০ টন সক্ষমতা', desc: 'মৌসুমের চাপেও সরবরাহ ঠিক থাকে, প্রধান কারখানার ১৬টি স্বয়ংক্রিয় ইমালশন লাইনের ভরসায়।' },
+      { title: 'একটি পণ্য নয়, পুরো পরিসর', desc: '২১টি ক্যাটাগরিতে ২৮টি গ্রেড — ওয়াটারপ্রুফিং, স্থাপত্য, আঠা ও কার্যকরী অ্যাডিটিভ, এক সরবরাহকারীর কাছেই।' },
+      { title: 'এই জলবায়ুর জন্য তৈরি', desc: '−১৫ °C পর্যন্ত নমনীয় এবং ভেজা তলে প্রয়োগযোগ্য — বাংলাদেশে যেভাবে নির্মাণ হয়, সেই বাস্তবতা মাথায় রেখে।' },
+      { title: 'OEM ও কাস্টম ফর্মুলেশন', desc: 'পারফরম্যান্স লক্ষ্য, সাবস্ট্রেট ও প্রক্রিয়া জানান; কাছাকাছি কিছু ধরিয়ে না দিয়ে আমরা সেই অনুযায়ী ফর্মুলেশন করি।' },
+      { title: 'রপ্তানি-প্রস্তুত ডকুমেন্টেশন', desc: 'TDS, বিশ্লেষণ সনদ ও কমপ্লায়েন্স ফাইল — কাস্টমসের জন্যও, আপনার নিজস্ব QA ফাইলের জন্যও।' },
+      { title: 'কারিগরি সহায়তা কাছেই', desc: 'সাবস্ট্রেট, ডোজ বা ফিল্ম পারফরম্যান্সের প্রশ্ন যায় পণ্য-জানা প্রকৌশলীদের কাছে, কল সেন্টারে নয়।' },
+    ],
+    certsEyebrow: 'সনদপত্র',
+    certsTitle: 'পেটেন্ট ও সনদপত্র',
+    certsLead:
+      'গ্রুপের অর্জিত উদ্ভাবনী পেটেন্ট ও শিল্পখাতের সনদপত্র। যেকোনো একটিতে ক্লিক করে প্রদানকারী সংস্থা ও সিলমোহর দেখে নিন।',
     valuesTitle: 'মূল মূল্যবোধ',
     values: [
       { title: 'কারিগরি শ্রেষ্ঠত্ব ও গবেষণা', desc: 'শিল্পের কঠোর প্রয়োজনীয়তা পূরণে পলিমার সংশ্লেষণ প্রযুক্তির ধারাবাহিক উদ্ভাবন।' },
