@@ -121,23 +121,25 @@ export function ProductDetail({ product, related }: { product: Product; related:
             <h2 className="text-step-2 mb-2">{t('detail.description')}</h2>
             <div className="w-16 h-[5px] bg-[var(--brand-red)] mb-8" />
 
-            {/* The opening paragraph leads; the rest is set as a bordered,
-                numbered, striped list so it reads with the same structure as
-                the technical table below rather than as loose prose. */}
-            <p className="text-step-1 text-[var(--ink-2)] leading-[1.65] max-w-4xl mb-9">
-              {product.body[0]}
-            </p>
+            {/* One bordered block, so the lead and the numbered rows share an
+                edge instead of a wide table sitting under a narrower
+                paragraph. Its measure is held by the padding rather than a
+                max-width, which is what pulled the two out of alignment. */}
+            <div className="border border-[var(--line)]">
+              <p className="bg-[var(--ink)] text-white px-5 sm:px-6 py-3.5 text-xs font-bold uppercase tracking-[0.1em]">
+                {t('detail.aboutThisProduct')}
+              </p>
 
-            {product.body.length > 1 && (
-              <div className="border border-[var(--line)]">
-                <p className="bg-[var(--ink)] text-white px-4 py-3.5 text-xs font-bold uppercase tracking-[0.1em]">
-                  {t('detail.aboutThisProduct')}
-                </p>
+              <p className="px-5 sm:px-6 py-6 sm:py-7 text-step-1 text-[var(--ink-2)] leading-[1.6] border-b border-[var(--line)]">
+                {product.body[0]}
+              </p>
+
+              {product.body.length > 1 && (
                 <dl className="divide-y divide-[var(--line)]">
                   {product.body.slice(1).map((para, i) => (
                     <div
                       key={i}
-                      className={`flex gap-4 sm:gap-6 px-4 sm:px-5 py-4 transition-colors hover:bg-[var(--brand-teal-soft)] ${
+                      className={`flex gap-4 sm:gap-6 px-5 sm:px-6 py-4 transition-colors hover:bg-[var(--brand-teal-soft)] ${
                         i % 2 ? 'bg-[var(--paper-2)]' : 'bg-white'
                       }`}
                     >
@@ -148,8 +150,8 @@ export function ProductDetail({ product, related }: { product: Product; related:
                     </div>
                   ))}
                 </dl>
-              </div>
-            )}
+              )}
+            </div>
           </Reveal>
         )}
 
