@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { PageHero } from '../components/PageHero';
 import { NewsletterStrip } from '../components/contact/NewsletterStrip';
+import { AboutLeadership } from '../components/about/AboutLeadership';
 import { Reveal, Stagger, StaggerItem } from '@/components/motion/Reveal';
 import { Counter } from '@/components/motion/Counter';
 import { useI18n } from '@/i18n/LanguageProvider';
@@ -196,6 +197,8 @@ export function AboutContent() {
           </Stagger>
         </div>
       </section>
+
+      <AboutLeadership />
 
       {/* ── Section 3: Manufacturing Bases (China + Bangladesh) ─── */}
       <section className="section bg-[var(--ink)] text-white relative overflow-hidden">

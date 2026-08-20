@@ -148,3 +148,31 @@ export const MILESTONES = [
       'https://www.hxhdchemical.com/news/the-three-day-china-coating-show-2025-came-to-a-successful-conclusion/',
   },
 ];
+
+/**
+ * Company leadership, as shown on the About page.
+ *
+ * `photo` is optional: the card falls back to a monogram until a portrait is
+ * supplied, so the section is never blocked on image assets. Names are given
+ * in Latin script in every language — they are people's names, not copy.
+ */
+export interface Leader {
+  name: string;
+  /** i18n key for the job title, so the role translates but the name does not. */
+  roleKey: 'chairman' | 'generalManager';
+  /** Path under /public, e.g. "/images/about/huang-shangwen.jpg". */
+  photo?: string;
+}
+
+export const LEADERSHIP: Leader[] = [
+  {
+    name: 'Huang Shangwen',
+    roleKey: 'chairman',
+    photo: '/images/about/huang-shangwen.jpg',
+  },
+  {
+    name: 'Hu Jinling',
+    roleKey: 'generalManager',
+    photo: '/images/about/hu-jinling.jpg',
+  },
+];

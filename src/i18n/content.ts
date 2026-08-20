@@ -265,7 +265,7 @@ const en = {
       'Our sales and technical representatives are here to assist with formulation targets, substrates, documentation and supply. Send an enquiry below, or reach the team directly.',
     hqEyebrow: 'Head office',
     hqTitle: 'Corporate headquarters',
-    intlDept: 'International department — Manager Zhang',
+    intlDept: 'Overseas Department (BD) — General Manager Hu Jinling',
     docsTitle: 'Documentation & quality support',
     docsBody:
       'For technical documentation (TDS / SDS), compliance files or quality-related questions, contact the team using the details above or send an enquiry and mark it Documentation.',
@@ -381,6 +381,13 @@ const en = {
     heritageTitle: 'Our Journey & Milestones',
     heritageLead:
       'A track record of continuous capacity expansion, strategic industry partnerships, and regional manufacturing investments.',
+    leadershipEyebrow: 'Leadership',
+    leadershipTitle: 'The people behind the company',
+    roleChairman: 'Chairman',
+    roleGeneralManager: 'General Manager',
+    chairmanMessageTitle: "Chairman's Message",
+    chairmanMessage:
+      'It is my pleasure to welcome you to Hongxing Hongda. Since 2000 we have grown from a research-led producer into an international manufacturing group, and the principle behind that growth has not changed: make the material right, batch after batch, and stand behind it. Our investment in Bangladesh reflects where we believe the next chapter of that work lies — close to the customers who build with what we make. I thank our customers, partners and colleagues for the trust they place in us, and I look forward to building on it.',
     facilitiesTitle: 'Global Manufacturing Infrastructure',
     facilitiesLead:
       'Strategic production campuses equipped with automated emulsion synthesis reactors and high-capacity batch storage.',
@@ -781,7 +788,7 @@ const zh: PageContent = {
       '我们的销售与技术代表可协助您解决配方目标、基材、技术文件与供货等问题。请在下方提交询盘，或直接联系团队。',
     hqEyebrow: '总部',
     hqTitle: '公司总部',
-    intlDept: '国际部——张经理',
+    intlDept: '海外部（孟加拉国）——总经理 Hu Jinling',
     docsTitle: '技术文件与质量支持',
     docsBody:
       '如需技术文件（TDS / SDS）、合规资料或质量相关咨询，请通过上述联系方式与我们联系，或提交询盘并注明「技术文件」。',
@@ -865,6 +872,13 @@ const zh: PageContent = {
     ],
     heritageTitle: '发展历程与里程碑',
     heritageLead: '二十余年稳扎稳打，持续扩充产能、深化产业战略合作并进行区域重点布局。',
+    leadershipEyebrow: '管理团队',
+    leadershipTitle: '公司背后的人',
+    roleChairman: '董事长',
+    roleGeneralManager: '总经理',
+    chairmanMessageTitle: '董事长致辞',
+    chairmanMessage:
+      '欢迎您了解红星宏达。自 2000 年成立以来，我们已从一家以研发见长的生产企业成长为国际化的制造集团，而支撑这一成长的理念始终未变：把材料做对，批批如一，并为之负责。我们在孟加拉国的投资，正体现了我们对下一阶段发展的判断——贴近使用我们产品去建设的客户。感谢客户、合作伙伴与全体同仁的信任，我们期待在此基础上继续前行。',
     facilitiesTitle: '全球制造基地布局',
     facilitiesLead: '现代化生产基地均配备全自动化乳液合成反应釜与规模化仓储体系，辐射全球核心市场。',
     ctaTitle: '与宏星宏达技术专家深入探讨',
@@ -1251,7 +1265,7 @@ const bn: PageContent = {
       'আমাদের বিক্রয় ও কারিগরি প্রতিনিধিরা ফর্মুলেশন লক্ষ্য, সাবস্ট্রেট, ডকুমেন্টেশন ও সরবরাহে সহায়তা করতে প্রস্তুত। নিচে অনুসন্ধান পাঠান, অথবা সরাসরি দলের সাথে যোগাযোগ করুন।',
     hqEyebrow: 'প্রধান কার্যালয়',
     hqTitle: 'কর্পোরেট সদর দপ্তর',
-    intlDept: 'আন্তর্জাতিক বিভাগ — ম্যানেজার ঝাং',
+    intlDept: 'ওভারসিজ ডিপার্টমেন্ট (বিডি) — মহাব্যবস্থাপক Hu Jinling',
     docsTitle: 'ডকুমেন্টেশন ও গুণমান সহায়তা',
     docsBody:
       'কারিগরি ডকুমেন্টেশন (TDS / SDS), কমপ্লায়েন্স ফাইল বা গুণমান-সংক্রান্ত প্রশ্নের জন্য উপরের তথ্য ব্যবহার করে যোগাযোগ করুন, অথবা অনুসন্ধান পাঠিয়ে "ডকুমেন্টেশন" উল্লেখ করুন।',
@@ -1345,6 +1359,13 @@ const bn: PageContent = {
     ],
     heritageTitle: 'আমাদের যাত্রা ও ইতিহাস',
     heritageLead: 'ধারাবাহিক সক্ষমতা বৃদ্ধি, কৌশলগত অংশীদারিত্ব এবং আঞ্চলিক বিনিয়োগের দুই দশকের সাফল্যগাথা।',
+    leadershipEyebrow: 'নেতৃত্ব',
+    leadershipTitle: 'কোম্পানির পেছনের মানুষেরা',
+    roleChairman: 'চেয়ারম্যান',
+    roleGeneralManager: 'মহাব্যবস্থাপক',
+    chairmanMessageTitle: 'চেয়ারম্যানের বার্তা',
+    chairmanMessage:
+      'হংশিং হংদায় আপনাকে স্বাগত জানাতে পেরে আমি আনন্দিত। ২০০০ সাল থেকে আমরা গবেষণা-নির্ভর একটি প্রস্তুতকারক থেকে আন্তর্জাতিক উৎপাদন গ্রুপে পরিণত হয়েছি, আর এই বেড়ে ওঠার পেছনের নীতিটি বদলায়নি: উপকরণ ঠিকভাবে তৈরি করা, প্রতিটি ব্যাচে সমান রাখা, এবং তার দায়িত্ব নেওয়া। বাংলাদেশে আমাদের বিনিয়োগ দেখায় আমরা পরবর্তী অধ্যায়টি কোথায় দেখছি — যাঁরা আমাদের উপকরণ দিয়ে নির্মাণ করেন, তাঁদের কাছাকাছি। গ্রাহক, অংশীদার ও সহকর্মীদের আস্থার জন্য ধন্যবাদ; সেই ভিত্তির উপরেই আমরা এগিয়ে যেতে চাই।',
     facilitiesTitle: 'বিশ্বমানের উৎপাদন অবকাঠামো',
     facilitiesLead: 'স্বয়ংক্রিয় ইমালশন সংশ্লেষণ রিঅ্যাক্টর এবং উচ্চ ধারণক্ষমতাসম্পন্ন বাল্ক স্টোরেজ সমৃদ্ধ আধুনিক উৎপাদন কেন্দ্র।',
     ctaTitle: 'আমাদের বিশেষজ্ঞদের সাথে আলোচনা করুন',

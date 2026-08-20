@@ -64,7 +64,9 @@ export function CredibilityAndCTA() {
                   {c.home.aboutBtn}
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
-                <Link href="/about" className="btn btn-on-dark">
+                {/* Services, not About: the manufacturing and quality detail
+                    lives there now that the About page's QC section is gone. */}
+                <Link href="/services" className="btn btn-on-dark">
                   {c.home.qualityBtn}
                 </Link>
               </div>
