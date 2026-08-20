@@ -66,6 +66,8 @@ export function CareerContent() {
         titleKey="page.career.title"
         intro={c.career.intro}
         crumbs={[{ labelKey: 'nav.career' }]}
+        image="/images/page/career.webp"
+        imageAlt="Operator checking coated fabric coming off the textile line"
       />
 
       {/* ── Section 1: Why HXHD Perks ──────────────────────────── */}

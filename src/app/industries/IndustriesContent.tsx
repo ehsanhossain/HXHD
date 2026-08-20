@@ -76,6 +76,8 @@ export function IndustriesContent() {
         titleKey="page.industries.title"
         intro={c.industries.intro}
         crumbs={[{ labelKey: 'nav.industries' }]}
+        image="/images/page/industries.webp"
+        imageAlt="Tiler bedding a large-format tile with ceramic tile back adhesive"
       />
 
       {/* Sector grid */}

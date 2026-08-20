@@ -52,6 +52,8 @@ export function AboutContent() {
         titleKey="page.about.title"
         intro={c.about.intro}
         crumbs={[{ labelKey: 'nav.about' }]}
+        image="/images/page/about.webp"
+        imageAlt="Chemist checking an emulsion batch in the HXHD plant laboratory"
       />
 
       {/* ── Section 1: Lead Story & Heritage ────────────────────── */}

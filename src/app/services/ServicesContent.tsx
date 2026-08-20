@@ -37,6 +37,8 @@ export function ServicesContent() {
         titleKey="page.services.title"
         intro={fill(c.services.intro, { n: PRODUCTS.length, zone: c.zone })}
         crumbs={[{ labelKey: 'nav.services' }]}
+        image="/images/page/services.webp"
+        imageAlt="Applicator rolling waterproof coating across a roof above the Dhaka skyline"
       />
 
       {/* Services grid */}

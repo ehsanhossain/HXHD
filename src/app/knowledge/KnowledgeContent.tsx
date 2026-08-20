@@ -90,6 +90,8 @@ export function KnowledgeContent() {
         titleKey="page.knowledge.title"
         intro={fill(c.knowledge.intro, { n: TECHNICAL_ARTICLES.length })}
         crumbs={[{ labelKey: 'nav.knowledge' }]}
+        image="/images/page/knowledge.webp"
+        imageAlt="Transparent waterproof coating brushed along an exterior window reveal"
       />
 
       {/* Technical guides */}
