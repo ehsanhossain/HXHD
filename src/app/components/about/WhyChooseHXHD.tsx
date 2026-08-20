@@ -26,26 +26,24 @@ export function WhyChooseHXHD() {
 
   return (
     <section className="section bg-[var(--ink)] text-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid-dark opacity-60" aria-hidden />
-      {/* A red wash on one edge, so the section reads as a statement rather
-          than another list on a dark background. */}
+      <div className="absolute inset-0 bg-grid-dark opacity-50" aria-hidden />
+      {/* A hatched wedge behind the statement column, so the eye lands there
+          first rather than on eight equal boxes. */}
       <div
-        className="absolute -right-24 top-0 h-full w-2/5 bg-hatch-red opacity-[0.07] hidden lg:block"
+        className="absolute -left-32 -top-20 w-[36rem] h-[36rem] bg-hatch-red opacity-[0.16] rotate-12 hidden lg:block"
         aria-hidden
       />
+      <div className="absolute left-0 top-0 h-full w-[3px] bg-[var(--brand-red)]" aria-hidden />
 
       <div className="shell relative">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14">
-          {/* Statement column. Sticky was tried here and measured as not
-              holding — the reveal wrapper it would sit on is a motion element
-              — so it scrolls with the rest rather than carrying a class that
-              does nothing. */}
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          {/* Statement */}
           <div className="lg:col-span-4">
             <Reveal>
               <p className="eyebrow eyebrow-on-dark mb-6">{t('sec.company')}</p>
-              <h2 className="text-step-3 leading-[1.12] mb-6">{c.about.whyTitle}</h2>
+              <h2 className="text-step-3 leading-[1.1] mb-6">{c.about.whyTitle}</h2>
               <div className="w-20 h-[6px] bg-[var(--brand-red)] mb-7" />
-              <p className="text-white/65 leading-relaxed text-sm sm:text-base mb-8">
+              <p className="text-white/60 leading-relaxed text-sm sm:text-base mb-9">
                 {c.about.whyLead}
               </p>
               <Link href="/contact" className="btn btn-primary cut-br group">
@@ -56,26 +54,45 @@ export function WhyChooseHXHD() {
           </div>
 
           {/* Reasons */}
-          <Stagger className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/10 border border-white/10">
+          <Stagger className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-5" step={0.05}>
             {c.about.whyPoints.map((p, i) => {
               const Icon = ICONS[i] ?? Repeat;
               return (
                 <StaggerItem key={p.title}>
-                  <div className="group h-full bg-[var(--ink)] p-6 sm:p-7 hover:bg-[var(--ink-2)] transition-colors duration-300 relative">
+                  <article className="group relative h-full bg-[var(--ink-2)] border border-white/10 cut-br overflow-hidden transition-colors duration-300 hover:border-[var(--brand-teal)]">
+                    {/* Hatch fills in on hover — motion that suggests the
+                        machined surface the rest of the site uses. */}
                     <span
-                      className="absolute top-5 right-6 text-xs font-bold tnum text-white/15 group-hover:text-[var(--brand-red)] transition-colors"
+                      className="absolute inset-0 bg-hatch-red opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                      aria-hidden
+                    />
+
+                    {/* Oversized outlined numeral, bottom-right, clipped by the
+                        chamfer so it reads as printed onto the panel. */}
+                    <span
+                      className="absolute -bottom-5 -right-1 stroke-text text-[5rem] font-bold leading-none select-none tnum opacity-25 group-hover:opacity-40 transition-opacity duration-300"
                       aria-hidden
                     >
                       {String(i + 1).padStart(2, '0')}
                     </span>
 
-                    <span className="grid place-items-center w-11 h-11 border border-white/15 text-[var(--teal-on-dark)] mb-5 group-hover:border-[var(--brand-teal)] transition-colors">
-                      <Icon className="w-5 h-5" />
-                    </span>
+                    <div className="relative p-6 sm:p-7">
+                      <span className="grid place-items-center w-12 h-12 bg-[var(--ink)] border border-white/12 text-[var(--teal-on-dark)] mb-6 transition-colors duration-300 group-hover:border-[var(--brand-teal)] group-hover:text-white">
+                        <Icon className="w-5 h-5" />
+                      </span>
 
-                    <h3 className="font-bold leading-snug mb-2.5">{p.title}</h3>
-                    <p className="text-sm text-white/55 leading-relaxed">{p.desc}</p>
-                  </div>
+                      <h3 className="font-bold leading-snug mb-2.5 text-step-0">{p.title}</h3>
+                      <p className="text-sm text-white/55 leading-relaxed max-w-[34ch]">
+                        {p.desc}
+                      </p>
+                    </div>
+
+                    {/* Red rule that draws itself across the foot on hover. */}
+                    <span
+                      className="absolute bottom-0 left-0 h-[3px] w-full bg-[var(--brand-red)] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"
+                      aria-hidden
+                    />
+                  </article>
                 </StaggerItem>
               );
             })}
