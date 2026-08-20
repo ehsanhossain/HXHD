@@ -122,12 +122,12 @@ export function ResourcesAndInsights() {
             </div>
           </Reveal>
 
-          {/* Sized to their content and pinned to the top. Stretching them to
-              the form's height was tried and made two mostly-empty panels —
-              a short card that says what it is beats a tall one that does
-              not. */}
+          {/* Sized to their content and centred against the form. Stretching
+              them to its full height was tried and made two mostly-empty
+              panels; pinning them to the top left the pair floating above a
+              gap. Centred, the two columns read as one block. */}
           <Stagger
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 self-start"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 self-center"
             delay={0.1}
           >
             {QUICK_LINKS.map((link) => (
