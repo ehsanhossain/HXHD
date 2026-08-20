@@ -265,7 +265,7 @@ const en = {
       'Our sales and technical representatives are here to assist with formulation targets, substrates, documentation and supply. Send an enquiry below, or reach the team directly.',
     hqEyebrow: 'Head office',
     hqTitle: 'Corporate headquarters',
-    intlDept: 'Overseas Department (BD) — General Manager Hu Jinling',
+    intlDept: 'Overseas Department (BD) — General Manager · Hu Jinling',
     docsTitle: 'Documentation & quality support',
     docsBody:
       'For technical documentation (TDS / SDS), compliance files or quality-related questions, contact the team using the details above or send an enquiry and mark it Documentation.',
@@ -788,7 +788,7 @@ const zh: PageContent = {
       '我们的销售与技术代表可协助您解决配方目标、基材、技术文件与供货等问题。请在下方提交询盘，或直接联系团队。',
     hqEyebrow: '总部',
     hqTitle: '公司总部',
-    intlDept: '海外部（孟加拉国）——总经理 Hu Jinling',
+    intlDept: '海外部（孟加拉国）——总经理 · Hu Jinling',
     docsTitle: '技术文件与质量支持',
     docsBody:
       '如需技术文件（TDS / SDS）、合规资料或质量相关咨询，请通过上述联系方式与我们联系，或提交询盘并注明「技术文件」。',
@@ -1265,7 +1265,7 @@ const bn: PageContent = {
       'আমাদের বিক্রয় ও কারিগরি প্রতিনিধিরা ফর্মুলেশন লক্ষ্য, সাবস্ট্রেট, ডকুমেন্টেশন ও সরবরাহে সহায়তা করতে প্রস্তুত। নিচে অনুসন্ধান পাঠান, অথবা সরাসরি দলের সাথে যোগাযোগ করুন।',
     hqEyebrow: 'প্রধান কার্যালয়',
     hqTitle: 'কর্পোরেট সদর দপ্তর',
-    intlDept: 'ওভারসিজ ডিপার্টমেন্ট (বিডি) — মহাব্যবস্থাপক Hu Jinling',
+    intlDept: 'ওভারসিজ ডিপার্টমেন্ট (বিডি) — মহাব্যবস্থাপক · Hu Jinling',
     docsTitle: 'ডকুমেন্টেশন ও গুণমান সহায়তা',
     docsBody:
       'কারিগরি ডকুমেন্টেশন (TDS / SDS), কমপ্লায়েন্স ফাইল বা গুণমান-সংক্রান্ত প্রশ্নের জন্য উপরের তথ্য ব্যবহার করে যোগাযোগ করুন, অথবা অনুসন্ধান পাঠিয়ে "ডকুমেন্টেশন" উল্লেখ করুন।',
