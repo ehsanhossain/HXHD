@@ -384,15 +384,6 @@ const en = {
     facilitiesTitle: 'Global Manufacturing Infrastructure',
     facilitiesLead:
       'Strategic production campuses equipped with automated emulsion synthesis reactors and high-capacity batch storage.',
-    qcTitle: 'Research, Development & Quality Control',
-    qcLead:
-      'Every production batch is tested in our on-site laboratories against international ISO and ASTM standards for solids, viscosity, film tensile strength, and extreme temperature stability (−15 °C flexibility).',
-    qcPoints: [
-      'Digital multi-point temperature, pressure, and monomer feed rate control',
-      'Advanced testing: Brookfield viscometers, solid content ovens, tensile elongation testers',
-      'Full traceability per batch with export-ready TDS and SDS documentation',
-      'Continuous custom formulation adaptation for local ambient temperatures and substrates',
-    ],
     ctaTitle: 'Explore Collaboration with Our Specialists',
     ctaLead:
       'Whether you require standard batch supply, custom emulsion formulation, or in-plant technical audits, our senior engineers are ready to assist.',
@@ -876,15 +867,6 @@ const zh: PageContent = {
     heritageLead: '二十余年稳扎稳打，持续扩充产能、深化产业战略合作并进行区域重点布局。',
     facilitiesTitle: '全球制造基地布局',
     facilitiesLead: '现代化生产基地均配备全自动化乳液合成反应釜与规模化仓储体系，辐射全球核心市场。',
-    qcTitle: '研发创新与质量控制体系',
-    qcLead:
-      '每一批次出厂产品均在实验室按国际 ISO / ASTM 标准完成固含量、粘度、成膜拉伸及低至 −15 °C 的耐低温弯折测试。',
-    qcPoints: [
-      '数字化反应釜多点温度、压力及单体滴加速度精准监控',
-      '先进仪器检测：布氏粘度计、精密固含测定仪、电子万能拉伸试验机',
-      '每批次具备完整生产追溯记录，并配备出口级 TDS 及 SDS 技术文件',
-      '根据不同地域气候特征提供针对性的配方优化与技术支持',
-    ],
     ctaTitle: '与宏星宏达技术专家深入探讨',
     ctaLead: '无论您需要常规规格稳定供货、定制乳液配方开发还是现场工艺指导，我们的资深工程师均随时为您提供支持。',
     ctaContact: '预约技术咨询',
@@ -1365,15 +1347,6 @@ const bn: PageContent = {
     heritageLead: 'ধারাবাহিক সক্ষমতা বৃদ্ধি, কৌশলগত অংশীদারিত্ব এবং আঞ্চলিক বিনিয়োগের দুই দশকের সাফল্যগাথা।',
     facilitiesTitle: 'বিশ্বমানের উৎপাদন অবকাঠামো',
     facilitiesLead: 'স্বয়ংক্রিয় ইমালশন সংশ্লেষণ রিঅ্যাক্টর এবং উচ্চ ধারণক্ষমতাসম্পন্ন বাল্ক স্টোরেজ সমৃদ্ধ আধুনিক উৎপাদন কেন্দ্র।',
-    qcTitle: 'গবেষণা ও মান নিয়ন্ত্রণ',
-    qcLead:
-      'প্রতিটি ব্যাচ আমাদের ল্যাবরেটরিতে আন্তর্জাতিক ISO / ASTM মান অনুযায়ী সলিড কন্টেন্ট, সান্দ্রতা, টান সহ্যক্ষমতা এবং −১৫ ডিগ্রি সেলসিয়াস পর্যন্ত নমনীয়তা পরীক্ষার মাধ্যমে যাচাই করা হয়।',
-    qcPoints: [
-      'ডিজিটাল মনিটরিংয়ের মাধ্যমে নির্ভুল তাপমাত্রা, চাপ ও মনোমার ফিড রেট নিয়ন্ত্রণ',
-      'উন্নত পরীক্ষণ: ব্রুকফিল্ড ভিসকোমিটার, ওভেন সলিড টেস্টার, টেনসিল স্ট্রেংথ টেস্টার',
-      'সম্পূর্ণ ব্যাচ ট্র্যাকিং এবং রপ্তানি-প্রস্তুত TDS ও SDS ডকুমেন্টেশন',
-      'স্থানীয় আবহাওয়া ও সাবস্ট্রেটের উপযোগী ফর্মুলেশন অ্যাডাপ্টেশন',
-    ],
     ctaTitle: 'আমাদের বিশেষজ্ঞদের সাথে আলোচনা করুন',
     ctaLead: 'স্ট্যান্ডার্ড সরবরাহ, কাস্টম ইমালশন ফর্মুলেশন বা কারিগরি অডিটের জন্য আমাদের সিনিয়র প্রকৌশলীদের সাথে সরাসরি যোগাযোগ করুন।',
     ctaContact: 'পরামর্শের সময় নির্ধারণ করুন',

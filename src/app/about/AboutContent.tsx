@@ -8,11 +8,9 @@ import {
   Award,
   Globe,
   MapPin,
-  CheckCircle2,
   ArrowRight,
   FlaskConical,
   Leaf,
-  Calendar,
   Layers,
   Sparkles,
 } from 'lucide-react';
@@ -329,56 +327,6 @@ export function AboutContent() {
           </div>
         </div>
       </section>
-      {/* ── Section 5: R&D and Quality Control ─────────────────── */}
-      <section className="section bg-[var(--paper-2)] border-t border-[var(--line)]">
-        <div className="shell">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-6">
-              <Reveal>
-                <p className="eyebrow mb-4">{c.about.qcTitle}</p>
-                <h2 className="text-step-3 mb-6 leading-tight">
-                  Precision Formulation & Multi-Stage Quality Assurance
-                </h2>
-                <div className="w-16 h-1 bg-[var(--brand-teal)] mb-6" />
-                <p className="text-[var(--ink-3)] text-step-0 leading-relaxed mb-8">
-                  {c.about.qcLead}
-                </p>
-              </Reveal>
-
-              <div className="space-y-3.5">
-                {c.about.qcPoints.map((point) => (
-                  <div key={point} className="flex items-start gap-3 bg-white p-4 border border-[var(--line)]">
-                    <CheckCircle2 className="w-5 h-5 text-[var(--brand-teal)] shrink-0 mt-0.5" />
-                    <span className="text-sm font-medium text-[var(--ink)] leading-relaxed">
-                      {point}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <Reveal direction="left" className="lg:col-span-6" delay={0.1}>
-              <div className="space-y-6">
-                <div className="border border-[var(--line)] overflow-hidden shadow-sm">
-                  <Image
-                    src="/images/about/history-1.jpg"
-                    alt="HXHD Chemical Quality Testing and Synthesis Laboratory"
-                    width={600}
-                    height={400}
-                    className="w-full h-auto object-cover"
-                  />
-                  <div className="p-4 bg-white border-t border-[var(--line)]">
-                    <p className="text-xs font-bold uppercase tracking-[0.1em] text-[var(--ink-3)]">
-                      Formulation Synthesis & Quality Control Laboratory
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
       {/* ── Section 6: Consultation CTA ───────────────────────── */}
       <section className="bg-[var(--brand-red)] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-dark opacity-30" aria-hidden />
