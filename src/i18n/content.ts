@@ -108,6 +108,10 @@ const en = {
     findCoa: 'Certificate of Analysis',
     downloadCenter: 'Download Center',
     technicalLibrary: 'Technical Library',
+    findTdsNote:
+      'Technical data for every grade in the catalogue — solids, viscosity, film properties and handling.',
+    technicalLibraryNote:
+      'Guidance on choosing and using emulsions, plus company updates from the group.',
     fieldName: 'Name',
     fieldCompany: 'Company',
     fieldEmail: 'Email',
@@ -654,6 +658,8 @@ const zh: PageContent = {
     findCoa: '质量分析证书',
     downloadCenter: '下载中心',
     technicalLibrary: '技术资料库',
+    findTdsNote: '目录内每一款产品的技术参数——固含量、黏度、成膜性能与使用注意事项。',
+    technicalLibraryNote: '乳液选型与应用指南，以及集团公司动态。',
     fieldName: '姓名',
     fieldCompany: '公司',
     fieldEmail: '邮箱',
@@ -1146,6 +1152,10 @@ const bn: PageContent = {
     findCoa: 'বিশ্লেষণ সনদ',
     downloadCenter: 'ডাউনলোড সেন্টার',
     technicalLibrary: 'কারিগরি লাইব্রেরি',
+    findTdsNote:
+      'ক্যাটালগের প্রতিটি গ্রেডের কারিগরি তথ্য — সলিড, সান্দ্রতা, ফিল্মের বৈশিষ্ট্য ও ব্যবহারবিধি।',
+    technicalLibraryNote:
+      'ইমালশন নির্বাচন ও ব্যবহারের নির্দেশিকা, সাথে গ্রুপের কোম্পানি আপডেট।',
     fieldName: 'নাম',
     fieldCompany: 'প্রতিষ্ঠান',
     fieldEmail: 'ইমেইল',

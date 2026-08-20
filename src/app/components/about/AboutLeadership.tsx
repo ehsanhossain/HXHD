@@ -26,7 +26,7 @@ function LeaderCard({ leader, role }: { leader: Leader; role: string }) {
 
   return (
     <div className="group bg-white border border-[var(--line)] overflow-hidden hover:border-[var(--brand-teal)] transition-colors duration-300">
-      <div className="relative aspect-[4/5] bg-[var(--paper-2)] overflow-hidden">
+      <div className="relative aspect-[3/4] bg-[var(--paper-2)] overflow-hidden">
         {showPhoto ? (
           <Image
             src={leader.photo!}
@@ -74,7 +74,7 @@ export function AboutLeadership() {
 
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           {/* Portraits */}
-          <Stagger className="lg:col-span-5 grid grid-cols-2 gap-5">
+          <Stagger className="lg:col-span-6 grid grid-cols-2 gap-5 sm:gap-6">
             {LEADERSHIP.map((l) => (
               <StaggerItem key={l.name}>
                 <LeaderCard leader={l} role={roleFor(l.roleKey)} />
@@ -83,7 +83,7 @@ export function AboutLeadership() {
           </Stagger>
 
           {/* Chairman's message */}
-          <Reveal direction="left" delay={0.1} className="lg:col-span-7">
+          <Reveal direction="left" delay={0.1} className="lg:col-span-6">
             <div className="relative bg-white border border-[var(--line)] p-7 sm:p-9 cut-br h-full">
               <Quote
                 className="w-9 h-9 text-[var(--brand-red)]/20 absolute top-6 right-6"

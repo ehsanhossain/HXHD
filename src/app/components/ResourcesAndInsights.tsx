@@ -20,8 +20,10 @@ const FIELD =
 export function ResourcesAndInsights() {
   const { t, c, article: localized } = useI18n();
   const [sent, setSent] = useState(false);
-  const QUICK_LINKS = [c.home.findTds, c.home.technicalLibrary]
-    .map((label, i) => ({ label, icon: QUICK_LINK_ICONS[i], href: QUICK_LINK_HREFS[i] }));
+  const QUICK_LINKS = [
+    { label: c.home.findTds, note: c.home.findTdsNote },
+    { label: c.home.technicalLibrary, note: c.home.technicalLibraryNote },
+  ].map((l, i) => ({ ...l, icon: QUICK_LINK_ICONS[i], href: QUICK_LINK_HREFS[i] }));
 
 
   return (
@@ -131,13 +133,21 @@ export function ResourcesAndInsights() {
               <StaggerItem key={link.label} className="h-full">
                 <Link
                   href={link.href}
-                  className="group relative flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-4 lg:gap-6 p-9 h-full bg-white border border-[var(--line)] hover:border-[var(--brand-red)] transition-all duration-300 hover:-translate-y-1"
+                  className="group relative flex flex-col h-full p-7 sm:p-8 bg-white border border-[var(--line)] cut-br hover:border-[var(--brand-red)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_-14px_rgba(13,20,24,0.28)]"
                 >
-                  <link.icon className="w-9 h-9 shrink-0 text-[var(--steel)] group-hover:text-[var(--brand-red)] transition-colors" />
-                  <span className="font-bold text-[var(--ink-2)] group-hover:text-[var(--brand-red)] transition-colors text-center lg:text-left text-step-1">
-                    {link.label}
+                  <span className="grid place-items-center w-12 h-12 shrink-0 bg-[var(--paper-2)] border border-[var(--line)] text-[var(--teal-on-light)] mb-6 transition-colors duration-300 group-hover:bg-[var(--brand-red)] group-hover:border-[var(--brand-red)] group-hover:text-white">
+                    <link.icon className="w-5 h-5" />
                   </span>
-                  <ArrowUpRight className="absolute top-4 right-4 w-4 h-4 text-[var(--steel)] opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+
+                  <h3 className="text-step-1 font-bold text-[var(--ink)] leading-snug mb-2.5 transition-colors group-hover:text-[var(--brand-red)]">
+                    {link.label}
+                  </h3>
+                  <p className="text-sm text-[var(--steel)] leading-relaxed">{link.note}</p>
+
+                  <span className="mt-auto pt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-[var(--teal-on-light)]">
+                    {t('cta.view')}
+                    <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </span>
                 </Link>
               </StaggerItem>
             ))}
