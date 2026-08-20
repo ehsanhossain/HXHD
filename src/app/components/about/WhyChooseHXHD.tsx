@@ -25,12 +25,12 @@ export function WhyChooseHXHD() {
   const { c, t } = useI18n();
 
   return (
-    <section className="section bg-[var(--ink)] text-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid-dark opacity-50" aria-hidden />
+    <section className="section bg-white relative overflow-hidden border-y border-[var(--line)]">
+      <div className="absolute inset-0 bg-grid opacity-60" aria-hidden />
       {/* A hatched wedge behind the statement column, so the eye lands there
           first rather than on eight equal boxes. */}
       <div
-        className="absolute -left-32 -top-20 w-[36rem] h-[36rem] bg-hatch-red opacity-[0.16] rotate-12 hidden lg:block"
+        className="absolute -left-32 -top-20 w-[36rem] h-[36rem] bg-hatch-red opacity-[0.45] rotate-12 hidden lg:block"
         aria-hidden
       />
       <div className="absolute left-0 top-0 h-full w-[3px] bg-[var(--brand-red)]" aria-hidden />
@@ -40,10 +40,10 @@ export function WhyChooseHXHD() {
           {/* Statement */}
           <div className="lg:col-span-4">
             <Reveal>
-              <p className="eyebrow eyebrow-on-dark mb-6">{t('sec.company')}</p>
+              <p className="eyebrow mb-6">{t('sec.company')}</p>
               <h2 className="text-step-3 leading-[1.1] mb-6">{c.about.whyTitle}</h2>
               <div className="w-20 h-[6px] bg-[var(--brand-red)] mb-7" />
-              <p className="text-white/60 leading-relaxed text-sm sm:text-base mb-9">
+              <p className="text-[var(--steel)] leading-relaxed text-sm sm:text-base mb-9">
                 {c.about.whyLead}
               </p>
               <Link href="/contact" className="btn btn-primary cut-br group">
@@ -59,7 +59,7 @@ export function WhyChooseHXHD() {
               const Icon = ICONS[i] ?? Repeat;
               return (
                 <StaggerItem key={p.title}>
-                  <article className="group relative h-full bg-[var(--ink-2)] border border-white/10 cut-br overflow-hidden transition-colors duration-300 hover:border-[var(--brand-teal)]">
+                  <article className="group relative h-full bg-[var(--paper-2)] border border-[var(--line)] cut-br overflow-hidden transition-all duration-300 hover:border-[var(--brand-teal)] hover:-translate-y-1">
                     {/* Hatch fills in on hover — motion that suggests the
                         machined surface the rest of the site uses. */}
                     <span
@@ -70,19 +70,21 @@ export function WhyChooseHXHD() {
                     {/* Oversized outlined numeral, bottom-right, clipped by the
                         chamfer so it reads as printed onto the panel. */}
                     <span
-                      className="absolute -bottom-5 -right-1 stroke-text text-[5rem] font-bold leading-none select-none tnum opacity-25 group-hover:opacity-40 transition-opacity duration-300"
+                      className="absolute -bottom-5 -right-1 stroke-text text-[5rem] font-bold leading-none select-none tnum opacity-60 group-hover:opacity-100 transition-opacity duration-300"
                       aria-hidden
                     >
                       {String(i + 1).padStart(2, '0')}
                     </span>
 
                     <div className="relative p-6 sm:p-7">
-                      <span className="grid place-items-center w-12 h-12 bg-[var(--ink)] border border-white/12 text-[var(--teal-on-dark)] mb-6 transition-colors duration-300 group-hover:border-[var(--brand-teal)] group-hover:text-white">
+                      <span className="grid place-items-center w-12 h-12 bg-white border border-[var(--line)] text-[var(--teal-on-light)] mb-6 transition-colors duration-300 group-hover:border-[var(--brand-teal)] group-hover:bg-[var(--brand-teal)] group-hover:text-white">
                         <Icon className="w-5 h-5" />
                       </span>
 
-                      <h3 className="font-bold leading-snug mb-2.5 text-step-0">{p.title}</h3>
-                      <p className="text-sm text-white/55 leading-relaxed max-w-[34ch]">
+                      <h3 className="font-bold leading-snug mb-2.5 text-step-0 text-[var(--ink)]">
+                        {p.title}
+                      </h3>
+                      <p className="text-sm text-[var(--steel)] leading-relaxed max-w-[34ch]">
                         {p.desc}
                       </p>
                     </div>
