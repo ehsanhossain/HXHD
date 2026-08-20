@@ -161,6 +161,7 @@ const en = {
   'detail.keyCharacteristics': 'Key characteristics',
   'detail.description': 'Product description',
   'detail.technicalData': 'Technical data',
+  'detail.aboutThisProduct': 'About this product',
   'detail.moreIn': 'More in {category}',
   'detail.reviews': '({n} reviews)',
 
@@ -309,6 +310,7 @@ const zh: Dict = {
   'detail.keyCharacteristics': '主要特性',
   'detail.description': '产品说明',
   'detail.technicalData': '技术参数',
+  'detail.aboutThisProduct': '产品说明',
   'detail.moreIn': '更多{category}产品',
   'detail.reviews': '（{n} 条评价）',
 
@@ -458,6 +460,7 @@ const bn: Dict = {
   'detail.keyCharacteristics': 'প্রধান বৈশিষ্ট্য',
   'detail.description': 'পণ্যের বিবরণ',
   'detail.technicalData': 'কারিগরি তথ্য',
+  'detail.aboutThisProduct': 'এই পণ্য সম্পর্কে',
   'detail.moreIn': '{category} বিভাগে আরও',
   'detail.reviews': '({n} টি রিভিউ)',
 

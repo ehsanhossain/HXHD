@@ -121,17 +121,33 @@ export function ProductDetail({ product, related }: { product: Product; related:
             <h2 className="text-step-2 mb-2">{t('detail.description')}</h2>
             <div className="w-16 h-[5px] bg-[var(--brand-red)] mb-8" />
 
-            <p className="text-step-1 text-[var(--ink-2)] leading-[1.65] max-w-3xl mb-9">
+            {/* The opening paragraph leads; the rest is set as a bordered,
+                numbered, striped list so it reads with the same structure as
+                the technical table below rather than as loose prose. */}
+            <p className="text-step-1 text-[var(--ink-2)] leading-[1.65] max-w-4xl mb-9">
               {product.body[0]}
             </p>
 
             {product.body.length > 1 && (
-              <div className="max-w-5xl lg:columns-2 lg:gap-14 [&>p]:mb-5 [&>p]:break-inside-avoid">
-                {product.body.slice(1).map((para, i) => (
-                  <p key={i} className="text-[var(--ink-3)] leading-[1.8]">
-                    {para}
-                  </p>
-                ))}
+              <div className="border border-[var(--line)]">
+                <p className="bg-[var(--ink)] text-white px-4 py-3.5 text-xs font-bold uppercase tracking-[0.1em]">
+                  {t('detail.aboutThisProduct')}
+                </p>
+                <dl className="divide-y divide-[var(--line)]">
+                  {product.body.slice(1).map((para, i) => (
+                    <div
+                      key={i}
+                      className={`flex gap-4 sm:gap-6 px-4 sm:px-5 py-4 transition-colors hover:bg-[var(--brand-teal-soft)] ${
+                        i % 2 ? 'bg-[var(--paper-2)]' : 'bg-white'
+                      }`}
+                    >
+                      <dt className="shrink-0 w-8 text-xs font-bold tnum text-[var(--steel-2)] pt-1">
+                        {String(i + 1).padStart(2, '0')}
+                      </dt>
+                      <dd className="text-sm text-[var(--ink-3)] leading-[1.75]">{para}</dd>
+                    </div>
+                  ))}
+                </dl>
               </div>
             )}
           </Reveal>
