@@ -31,6 +31,8 @@ interface RevealProps {
   className?: string;
   /** Render as a different element (e.g. "li", "section"). */
   as?: 'div' | 'section' | 'li' | 'span' | 'article';
+  /** Anchor target, so a fragment link can address a revealed block. */
+  id?: string;
 }
 
 export function Reveal({
@@ -39,6 +41,7 @@ export function Reveal({
   delay = 0,
   className,
   as = 'div',
+  id,
 }: RevealProps) {
   const reduced = useReducedMotion();
   const offset = reduced ? OFFSET.none : OFFSET[direction];
@@ -46,6 +49,7 @@ export function Reveal({
 
   return (
     <MotionTag
+      id={id}
       className={className}
       initial={{ opacity: 0, x: offset.x, y: offset.y }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}

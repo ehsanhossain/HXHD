@@ -10,8 +10,8 @@ import { MILESTONES } from '@/data/company';
 import { useI18n } from '@/i18n/LanguageProvider';
 
 
-const QUICK_LINK_ICONS = [FileText, Beaker, Download, Library];
-const QUICK_LINK_HREFS = ['/products', '/contact', '/contact', '/knowledge'];
+const QUICK_LINK_ICONS = [FileText, Library];
+const QUICK_LINK_HREFS = ['/products', '/knowledge'];
 
 function ArticleCard({
   article,
@@ -77,12 +77,7 @@ function ArticleCard({
 
 export function KnowledgeContent() {
   const { c, fill } = useI18n();
-  const QUICK_LINKS = [
-    c.home.findTds,
-    c.home.findCoa,
-    c.home.downloadCenter,
-    c.home.technicalLibrary,
-  ].map((label, i) => ({
+  const QUICK_LINKS = [c.home.findTds, c.home.technicalLibrary].map((label, i) => ({
     label,
     icon: QUICK_LINK_ICONS[i],
     href: QUICK_LINK_HREFS[i],

@@ -26,15 +26,9 @@ export function WhyChooseHXHD() {
 
   return (
     <section className="section bg-white relative overflow-hidden border-y border-[var(--line)]">
-      <div className="absolute inset-0 bg-grid opacity-60" aria-hidden />
-      {/* A hatched wedge behind the statement column, so the eye lands there
-          first rather than on eight equal boxes. Neutral, not red: on white
-          the red hatch read as pink cross-hatching rather than texture. */}
-      <div
-        className="absolute -left-32 -top-20 w-[36rem] h-[36rem] bg-hatch opacity-70 rotate-12 hidden lg:block"
-        aria-hidden
-      />
-      <div className="absolute left-0 top-0 h-full w-[3px] bg-[var(--brand-red)]" aria-hidden />
+      {/* Deliberately unpatterned. A grid and a hatched wedge were tried here
+          and both fought the panels for attention — the section carries its
+          structure through the cards, not the ground. */}
 
       <div className="shell relative">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">

@@ -32,11 +32,6 @@ export function SolutionsAndProducts() {
     <>
       {/* ── Solutions ───────────────────────────────────────── */}
       <section className="section bg-white relative overflow-hidden">
-        <div
-          className="absolute top-0 right-0 w-[38%] h-full bg-grid opacity-60 pointer-events-none"
-          aria-hidden
-        />
-
         <div className="shell relative">
           <Reveal className="max-w-3xl mb-14">
             <p className="eyebrow mb-5">{t('sec.applications')}</p>

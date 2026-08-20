@@ -12,6 +12,14 @@ import { useI18n } from '@/i18n/LanguageProvider';
 export function ProductDetail({ product, related }: { product: Product; related: Product[] }) {
   const { t, categoryName, summary } = useI18n();
 
+  // Prefer the spec tables — that is the datasheet. Some catalogue entries
+  // carry only prose, so fall back to the description before giving up.
+  const sheetAnchor = product.specs.length
+    ? '#technical-data'
+    : product.body.length
+      ? '#description'
+      : null;
+
   return (
     <div className="bg-white">
       {/* Breadcrumb */}
@@ -85,18 +93,26 @@ export function ProductDetail({ product, related }: { product: Product; related:
                 {t('cta.requestQuote')}
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
-              {/* Was an outbound link to the group's other domain. TDS is
-                  issued on request, same as everywhere else on this site. */}
-              <Link href="/contact" className="btn btn-ghost">
-                <FileText className="w-4 h-4" /> {t('cta.datasheet')}
-              </Link>
+              {/* Jumps to the sheet further down this page. Lenis is set up
+                  with anchors: true, so a plain fragment link is handed to the
+                  smooth scroller rather than fighting it. Falls back to the
+                  enquiry form for the few products with neither section. */}
+              {sheetAnchor ? (
+                <a href={sheetAnchor} className="btn btn-ghost">
+                  <FileText className="w-4 h-4" /> {t('cta.datasheet')}
+                </a>
+              ) : (
+                <Link href="/contact" className="btn btn-ghost">
+                  <FileText className="w-4 h-4" /> {t('cta.datasheet')}
+                </Link>
+              )}
             </div>
           </Reveal>
         </div>
 
         {/* Description */}
         {product.body.length > 0 && (
-          <Reveal className="mt-20 max-w-4xl">
+          <Reveal className="mt-20 max-w-4xl scroll-mt-28" id="description">
             <h2 className="text-step-2 mb-2">{t('detail.description')}</h2>
             <div className="w-16 h-[5px] bg-[var(--brand-red)] mb-8" />
             <div className="space-y-4">
@@ -111,7 +127,7 @@ export function ProductDetail({ product, related }: { product: Product; related:
 
         {/* Technical tables */}
         {product.specs.length > 0 && (
-          <Reveal className="mt-20">
+          <Reveal className="mt-20 scroll-mt-28" id="technical-data">
             <h2 className="text-step-2 mb-2">{t('detail.technicalData')}</h2>
             <div className="w-16 h-[5px] bg-[var(--brand-red)] mb-8" />
 

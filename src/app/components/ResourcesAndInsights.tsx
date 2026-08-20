@@ -11,8 +11,8 @@ import { useI18n } from '@/i18n/LanguageProvider';
 /** Three real published guides, newest first. */
 const ARTICLES = TECHNICAL_ARTICLES.slice(0, 3);
 
-const QUICK_LINK_ICONS = [FileText, Beaker, Download, Library];
-const QUICK_LINK_HREFS = ['/products', '/contact', '/contact', '/knowledge'];
+const QUICK_LINK_ICONS = [FileText, Library];
+const QUICK_LINK_HREFS = ['/products', '/knowledge'];
 
 const FIELD =
   'w-full h-12 px-4 bg-[var(--paper-2)] border border-[var(--line)] focus:border-[var(--brand-teal)] focus:outline-none text-[var(--ink)] placeholder:text-[var(--steel)] transition-colors';
@@ -20,7 +20,7 @@ const FIELD =
 export function ResourcesAndInsights() {
   const { t, c, article: localized } = useI18n();
   const [sent, setSent] = useState(false);
-  const QUICK_LINKS = [c.home.findTds, c.home.findCoa, c.home.downloadCenter, c.home.technicalLibrary]
+  const QUICK_LINKS = [c.home.findTds, c.home.technicalLibrary]
     .map((label, i) => ({ label, icon: QUICK_LINK_ICONS[i], href: QUICK_LINK_HREFS[i] }));
 
 
@@ -120,15 +120,21 @@ export function ResourcesAndInsights() {
             </div>
           </Reveal>
 
-          <Stagger className="grid grid-cols-1 sm:grid-cols-2 gap-5 self-center" delay={0.1}>
+          {/* Two tiles beside a tall form left a dead half-column, so on wide
+              screens they stack and share the form's full height instead of
+              sitting as a pair of squares at the top. */}
+          <Stagger
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 lg:grid-rows-2 gap-5 self-stretch"
+            delay={0.1}
+          >
             {QUICK_LINKS.map((link) => (
-              <StaggerItem key={link.label}>
+              <StaggerItem key={link.label} className="h-full">
                 <Link
                   href={link.href}
-                  className="group relative flex flex-col items-center justify-center gap-4 p-9 h-full bg-white border border-[var(--line)] hover:border-[var(--brand-red)] transition-all duration-300 hover:-translate-y-1"
+                  className="group relative flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-4 lg:gap-6 p-9 h-full bg-white border border-[var(--line)] hover:border-[var(--brand-red)] transition-all duration-300 hover:-translate-y-1"
                 >
-                  <link.icon className="w-9 h-9 text-[var(--steel)] group-hover:text-[var(--brand-red)] transition-colors" />
-                  <span className="font-bold text-[var(--ink-2)] group-hover:text-[var(--brand-red)] transition-colors text-center">
+                  <link.icon className="w-9 h-9 shrink-0 text-[var(--steel)] group-hover:text-[var(--brand-red)] transition-colors" />
+                  <span className="font-bold text-[var(--ink-2)] group-hover:text-[var(--brand-red)] transition-colors text-center lg:text-left text-step-1">
                     {link.label}
                   </span>
                   <ArrowUpRight className="absolute top-4 right-4 w-4 h-4 text-[var(--steel)] opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
