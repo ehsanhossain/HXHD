@@ -150,7 +150,7 @@ export const CATEGORIES: Category[] = [
   {
     "slug": "waterproof-emulsion",
     "name": "Waterproof Emulsion",
-    "count": 8
+    "count": 6
   },
   {
     "slug": "architectural-emulsion",
@@ -1363,153 +1363,10 @@ export const PRODUCTS: Product[] = [
     "sourceUrl": ""
   },
   {
-    "id": "waterproof-emulsion-hx470-for-anionic-cationic-and-non-ionic-emulsified-bitumen",
-    "slug": "waterproof-emulsion-hx470-for-anionic-cationic-and-non-ionic-emulsified-bitumen",
-    "name": "Waterproof Emulsion HX-470 for Anionic, Cationic and Non-ionic Emulsified Bitumen",
-    "code": "HX-470",
-    "category": "Waterproof Emulsion",
-    "categorySlug": "waterproof-emulsion",
-    "summary": "Looking for a reliable waterproof emulsion? Check out HX-470 for quality and durability. Perfect for any purchaser looking for long-lasting protection.",
-    "keywords": [
-      "Waterproof Emulsion HX-470",
-      "Emulsion paint",
-      "Waterproof coating",
-      "Construction material",
-      "Building material",
-      "Waterproof technology",
-      "Waterproof formula",
-      "Water-resistant paint"
-    ],
-    "image": "/images/catalog/41013192da33.jpg",
-    "images": [
-      "/images/catalog/41013192da33.jpg",
-      "/images/catalog/d3dd5462c1b6.png"
-    ],
-    "rating": {
-      "value": 5,
-      "count": 69
-    },
-    "highlights": [
-      "Excellent water resistance and low temperature flexibility (- 15 ° C)make it an ideal choice for challenging environmental conditions.",
-      "The paint has good glossiness and good leveling property,enhancing the overall appearance of the coated surface",
-      "Good thickening property,further enhancing its practicality and usability."
-    ],
-    "body": [
-      "This emulsion is compatible with different kinds of emulsified asphalt. The waterproof coatings made from acrylic polymer emulsion and emulsified asphalt can be widely used in engineering construction to solve leaking, permeating and moisturing problems. This kind of coating can be painted on wet base surface.",
-      "The emulsion has flexibility at low temperature which allows the waterproof coatings made from it to be used in cold places.",
-      "The good leveling property ensure the waterproof coatings made from this emulsion can reduce the difficulty of painting to save labor and time.",
-      "Excellent compatibility with anionic, cationic and non-ionic emulsified asphalt, making it highly versatile and suitable for a wide range of applications.",
-      "Waterproof Emulsion HX-470 is a cutting-edge product that serves as a crucial solution in the field of waterproofing and protection. Specifically designed to meet the demanding requirements of surfaces exposed to water, this emulsion offers exceptional performance and reliability.",
-      "One of the key attributes of Waterproof Emulsion HX-470 is its outstanding water resistance, making it an ideal choice for safeguarding various substrates from the detrimental effects of moisture. Whether applied to concrete, masonry, wood, or other surfaces, this emulsion forms a durable and impermeable barrier that effectively repels water, preventing damage and deterioration.",
-      "Moreover, Waterproof Emulsion HX-470 exhibits excellent adhesion to different types of surfaces, ensuring that it remains firmly in place and provides long-lasting protection. This strong bond contributes to the durability and longevity of the treated materials, making it a preferred solution for a wide range of applications including building exteriors, basements, and underground structures.",
-      "In addition, Waterproof Emulsion HX-470 is formulated to withstand harsh environmental conditions, including UV exposure, temperature fluctuations, and chemical exposure. Its resilient nature enables it to maintain its protective properties even in challenging surroundings, offering peace of mind to users and ensuring sustained effectiveness over time.",
-      "Furthermore, the application of Waterproof Emulsion HX-470 is designed to be straightforward and efficient, allowing for seamless integration into various waterproofing and protective projects. Its user-friendly nature and compatibility with different application methods contribute to enhanced productivity and optimized results."
-    ],
-    "specs": [
-      {
-        "headers": [
-          "Product",
-          "Tg℃",
-          "Solid content %",
-          "Viscosity cps/25℃",
-          "PH",
-          "MFFT℃"
-        ],
-        "rows": [
-          [
-            "HX-470",
-            "-15",
-            "50±1",
-            "1200-2500",
-            "7-8",
-            "0"
-          ]
-        ]
-      },
-      {
-        "headers": [
-          "HX-470 Liquid coiled material Test data"
-        ],
-        "rows": [
-          [
-            "Data",
-            "Film thickness mm",
-            "Bond strength Mpa ≥",
-            "Low temperature flexibility℃",
-            "Elongation at break，% ≥"
-          ],
-          [
-            "Standard requirements",
-            "1.5±0.2",
-            "≥0.3",
-            "-15",
-            "≥600%"
-          ],
-          [
-            "Mean value",
-            "1.38",
-            "0.8",
-            "Qualify",
-            "745"
-          ],
-          [
-            "Water Absorportion",
-            "6.76%"
-          ]
-        ]
-      },
-      {
-        "headers": [
-          "Material name",
-          "Mixture ratio"
-        ],
-        "rows": [
-          [
-            "470 emulsion",
-            "300kg"
-          ],
-          [
-            "Water",
-            "100kg"
-          ],
-          [
-            "Dispersant",
-            "5kg"
-          ],
-          [
-            "Defoaming",
-            "5kg"
-          ],
-          [
-            "AMP-95",
-            "2kg"
-          ],
-          [
-            "400 meshes Coarse whiting",
-            "300kg"
-          ],
-          [
-            "Cationic emulsified asphalt",
-            "300kg"
-          ],
-          [
-            "A60：TT-935",
-            "Appropriate amount"
-          ],
-          [
-            "Bactericide",
-            "2kg"
-          ]
-        ]
-      }
-    ],
-    "sourceUrl": "https://www.hxhdchemical.com/waterproof-emulsion-hx470-for-anionic-cationic-and-non-ionic-emulsified-bitumen/"
-  },
-  {
     "id": "waterproof-emulsion-hx-416-1-product",
     "slug": "waterproof-emulsion-hx-416-1-product",
-    "name": "Waterproof Emulsion HXHD-416",
-    "code": "HXHD-416",
+    "name": "Waterproof Emulsion HXHD-416A",
+    "code": "HXHD-416A",
     "sourceCode": "HX-416",
     "category": "Waterproof Emulsion",
     "categorySlug": "waterproof-emulsion",
@@ -1571,69 +1428,9 @@ export const PRODUCTS: Product[] = [
     "sourceUrl": "https://www.hxhdchemical.com/waterproof-emulsion-hx-416-1-product/"
   },
   {
-    "id": "elastic-acrylic-and-styrene-waterproof-emulsion-hx418-for-single-and-two-component-cement-waterproof-coating",
-    "slug": "elastic-acrylic-and-styrene-waterproof-emulsion-hx418-for-single-and-two-component-cement-waterproof-coating",
-    "name": "Elastic Acrylic and Styrene Waterproof Emulsion HX-418 for Single and Two-component Cement Waterproof Coating",
-    "code": "HX-418",
-    "category": "Waterproof Emulsion",
-    "categorySlug": "waterproof-emulsion",
-    "summary": "Get the best waterproof emulsion HX-418 for your needs. Durable, long-lasting, and reliable protection. Order now for a quality solution",
-    "keywords": [
-      "Waterproof emulsion HX-418",
-      "waterproof paint",
-      "water-resistant coating",
-      "durable emulsion",
-      "moisture-resistant emulsion",
-      "waterproofing solution",
-      "wall waterproofing",
-      "waterproof sealant"
-    ],
-    "image": "/images/catalog/95f2dcd701fb.jpg",
-    "images": [
-      "/images/catalog/95f2dcd701fb.jpg",
-      "/images/catalog/ed4d96dc20bf.png"
-    ],
-    "rating": {
-      "value": 5,
-      "count": 135
-    },
-    "highlights": [],
-    "body": [
-      "It can add a variety of powders to reduce costs while having good mechanical properties;",
-      "The emulsion has excellent weather resistance, heat resistance, aging resistance and high tensile strength.It is widely used in production of single component waterproof coating and two component JS (polymer and cement) waterproof coating.",
-      "The particle size of emulsion monomer is small,That is, the emulsion is quite stable while stored or transported. And it has good permeability on concrete surface. So it has good bonding and adhesion with the wall and roof.",
-      "It is compatible with pigment. So it can be used to produce waterproof coatings with different colors. The waterproof coating is not only for the waterproof membrane but also decoration.",
-      "It has high elasticity. The waterproof coating made from it can cover slight cracking seam and adapt to the deformation of base surface.",
-      "Weather resistant, heat resistant and aging resistant. Good tensile strength, Small particle size, Compatible with pigment, High elasticity, Good bonding and adhesion with base surface. Simple formula, Easy to paint"
-    ],
-    "specs": [
-      {
-        "headers": [
-          "Product",
-          "Tg ℃",
-          "Solid content %",
-          "Viscosity cps/25℃",
-          "PH",
-          "MFFT ℃"
-        ],
-        "rows": [
-          [
-            "HX-418",
-            "-10",
-            "55±1",
-            "1000-1800",
-            "7-8",
-            "0"
-          ]
-        ]
-      }
-    ],
-    "sourceUrl": "https://www.hxhdchemical.com/elastic-acrylic-and-styrene-waterproof-emulsion-hx418-for-single-and-two-component-cement-waterproof-coating/"
-  },
-  {
     "id": "toilet-and-roof-acrylic-and-styrene-waterproof-emulsion-hx400-for-thermal-insulation-mortar-and-two-component-cement-waterproof-coating",
     "slug": "toilet-and-roof-acrylic-and-styrene-waterproof-emulsion-hx400-for-thermal-insulation-mortar-and-two-component-cement-waterproof-coating",
-    "name": "Toilet and Roof Acrylic and Styrene Waterproof Emulsion HXHD-400 for Thermal Insulation Mortar and Two Component Cement Waterproof Coating",
+    "name": "Waterproof Emulsion HXHD-400",
     "code": "HXHD-400",
     "sourceCode": "HX-400",
     "category": "Waterproof Emulsion",
@@ -1861,7 +1658,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "acrylic-and-styrene-waterproof-emulsion-hx416-for-thermal-insulation-mortar-and-two-component-cement-waterproof-coating",
     "slug": "acrylic-and-styrene-waterproof-emulsion-hx416-for-thermal-insulation-mortar-and-two-component-cement-waterproof-coating",
-    "name": "Acrylic and Styrene Waterproof Emulsion HXHD-416 for Thermal Insulation Mortar and Two Component Cement Waterproof Coating",
+    "name": "Waterproof Emulsion HXHD-416",
     "code": "HXHD-416",
     "sourceCode": "HX-416",
     "category": "Waterproof Emulsion",
@@ -1976,8 +1773,8 @@ export const PRODUCTS: Product[] = [
   {
     "id": "waterproof-emulsion-hx-406-product",
     "slug": "waterproof-emulsion-hx-406-product",
-    "name": "Waterproof Emulsion HXHD-406",
-    "code": "HXHD-406",
+    "name": "Waterproof Emulsion HXHD-406A",
+    "code": "HXHD-406A",
     "sourceCode": "HX-406",
     "category": "Waterproof Emulsion",
     "categorySlug": "waterproof-emulsion",
@@ -2036,75 +1833,34 @@ export const PRODUCTS: Product[] = [
     "sourceUrl": "https://www.hxhdchemical.com/waterproof-emulsion-hx-406-product/"
   },
   {
-    "id": "acrylic-and-styrene-waterproof-emulsion-hx408-for-thermal-insulation-mortar-and-cement-waterproof-coating",
-    "slug": "acrylic-and-styrene-waterproof-emulsion-hx408-for-thermal-insulation-mortar-and-cement-waterproof-coating",
-    "name": "Acrylic and Styrene Waterproof Emulsion HX-408 for Thermal Insulation Mortar and Cement Waterproof Coating",
-    "code": "HX-408",
+    "id": "waterproof-emulsion-hxhd-511",
+    "slug": "waterproof-emulsion-hxhd-511",
+    "name": "Waterproof Emulsion HXHD-511",
+    "code": "HXHD-511",
     "category": "Waterproof Emulsion",
     "categorySlug": "waterproof-emulsion",
-    "summary": "Shop HX-408 Waterproof Emulsion for durable and water-resistant coating to protect your surfaces. Order now for high-quality waterproofing solution",
+    "summary": "Waterproof emulsion, double component, grade HXHD-511. Contact the technical team for the datasheet and application guidance.",
     "keywords": [
-      "Waterproof Emulsion HX-408",
-      "emulsion waterproofing",
-      "HX-408 emulsion",
-      "waterproof coating",
-      "waterproofing solution",
-      "HX-408 purchaser",
-      "waterproofing material",
-      "emulsion paint",
-      "waterproof sealant"
+      "HXHD-511",
+      "Waterproof emulsion",
+      "Double component",
+      "Cement waterproof coating"
     ],
-    "image": "/images/catalog/c842dda81b72.jpg",
+    "image": "/images/catalog/902254bd984c.jpg",
     "images": [
-      "/images/catalog/c842dda81b72.jpg",
-      "/images/catalog/2606c92a967a.png"
+      "/images/catalog/902254bd984c.jpg"
     ],
-    "rating": {
-      "value": 5,
-      "count": 119
-    },
+    "rating": null,
     "highlights": [],
-    "body": [
-      "The emulsion has solid content of 58% which is high compared with other emulsion. So it is cost saving when exported to other countries.",
-      "It has good elasticity and flexiblity, so it not necessory to add any plasticzer.",
-      "It is compatible with pigments and powders, which makes it can be used to produce waterproof coatings in different colors. At the same time, it can be allowed to add more powders to reduce the cost of coatings.",
-      "With small particle size, the emulsion is quite stable during storage and transportation. Wide application of formulation,excellent workability and storage stability.",
-      "With excellent elasticity and strength, strong adhesion, and fine particle size with good powder and pigment compatibility. It can add a variety of powders to reduce costs while having good mechanical properties; With excellent water resistance, alkali resistance and UVresistance, it is quite suitable to produce polymer cement (JS) composite waterproof coating for roof, wall , bathroom and basement.",
-      "High solid content, low viscosity, plasticizer-free, strong wrapping power of powders , high tensile strength, excellent compatibility with cement, good function of anti carbonization .",
-      "Packing and storage Package : Plastic tank or bucket.",
-      "Storing and transporting conditions: In unopened container and in a ventilated cool dry place, avoid being exposed to direct sunlight. Temperature for transportation and storage: between 5 and 35℃. Higher temperature or high humidity may reduce shelf life.",
-      "Waterproof emulsion is a type of paint that is specifically designed to provide protection against water and moisture. This type of paint is commonly used in areas that are prone to dampness, such as bathrooms, kitchens, and basements.",
-      "HX-408 is acrylate styrene copolymer,non-toxic, tasteless,it is odorless product is not only safe for the environment, but also for the end user. With its pollution-free formulation, HX-408 is the epitome of an eco-friendly choice for various applications.odorless and pollution-free. It is an environment-friendly product with excellent elasticity and strength, strong adhesion, good elasticity, and fine particle size with good powder and pigment compatibility."
-    ],
-    "specs": [
-      {
-        "headers": [
-          "Product",
-          "Tg℃",
-          "Solid content %",
-          "Viscosity (cps/25℃)",
-          "PH",
-          "MFFT ℃"
-        ],
-        "rows": [
-          [
-            "HX-408",
-            "-5",
-            "58±1",
-            "700-900",
-            "7-8",
-            "0"
-          ]
-        ]
-      }
-    ],
-    "sourceUrl": "https://www.hxhdchemical.com/acrylic-and-styrene-waterproof-emulsion-hx408-for-thermal-insulation-mortar-and-cement-waterproof-coating/"
+    "body": [],
+    "specs": [],
+    "sourceUrl": ""
   },
   {
     "id": "low-temperature-elastic-acrylic-and-styrene-waterproof-emulsion-hx416-for-thermal-insulation-mortar-and-cement-waterproof-coating",
     "slug": "low-temperature-elastic-acrylic-and-styrene-waterproof-emulsion-hx416-for-thermal-insulation-mortar-and-cement-waterproof-coating",
-    "name": "Low Temperature Elastic Acrylic and Styrene Waterproof Emulsion HXHD-416 for Thermal Insulation Mortar and Cement Waterproof Coating",
-    "code": "HXHD-416",
+    "name": "Waterproof Emulsion HXHD-416M",
+    "code": "HXHD-416M",
     "sourceCode": "HX-416",
     "category": "Waterproof Emulsion",
     "categorySlug": "waterproof-emulsion",
@@ -2738,14 +2494,14 @@ export const PRODUCT_MODELS: ModelGroup[] = [
       { code: 'HXHD-400', label: 'Waterproof double component', productSlug: 'toilet-and-roof-acrylic-and-styrene-waterproof-emulsion-hx400-for-thermal-insulation-mortar-and-two-component-cement-waterproof-coating' },
       // The catalogue's HX-406 page is the plain 406; whether it is the 406A
       // on the model sheet is unconfirmed, so no link is claimed.
-      { code: 'HXHD-406A', label: 'Waterproof double component' },
+      { code: 'HXHD-406A', label: 'Waterproof double component', productSlug: 'waterproof-emulsion-hx-406-product' },
       // Three catalogue pages carry HX-416. Which of them are the 416, 416A
       // and 416M is unconfirmed, so the base grade links to the plain page
       // and the variants are listed without one.
-      { code: 'HXHD-416', label: 'Waterproof double component', productSlug: 'waterproof-emulsion-hx-416-1-product' },
-      { code: 'HXHD-511', label: 'Waterproof double component' },
-      { code: 'HXHD-416A', label: 'Waterproof single component' },
-      { code: 'HXHD-416M', label: 'Waterproof single component' },
+      { code: 'HXHD-416', label: 'Waterproof double component', productSlug: 'acrylic-and-styrene-waterproof-emulsion-hx416-for-thermal-insulation-mortar-and-two-component-cement-waterproof-coating' },
+      { code: 'HXHD-511', label: 'Waterproof double component', productSlug: 'waterproof-emulsion-hxhd-511' },
+      { code: 'HXHD-416A', label: 'Waterproof single component', productSlug: 'waterproof-emulsion-hx-416-1-product' },
+      { code: 'HXHD-416M', label: 'Waterproof single component', productSlug: 'low-temperature-elastic-acrylic-and-styrene-waterproof-emulsion-hx416-for-thermal-insulation-mortar-and-cement-waterproof-coating' },
     ],
   },
   {
