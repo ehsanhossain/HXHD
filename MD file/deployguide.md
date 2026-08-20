@@ -1,7 +1,15 @@
-![alt text](image.png)# deployguide.md — deploying hxhdbd.com
+# deployguide.md — deploying hxhdbd.com
 
-The complete, working procedure. Follow it top to bottom and the site updates in
-about two minutes.
+![HostSeba Node.js app panel](image.png)
+
+**The normal way to deploy is now `git push origin main`.** CI builds, uploads,
+restarts Passenger and smoke-tests the live site on every push to `main` — see
+`workflow.md`. Last verified green on 20 August 2026.
+
+This guide is the **manual fallback**, for when CI is down, when you need to ship
+without a commit, or when you are rolling back in a hurry. It is also where the
+server-side facts live — paths, Node version, mail, and the traps — so read it
+before touching anything on the host.
 
 **Golden rule: deploy over FTP. Never use cPanel's archive extractor.** Section 8
 explains why in detail; briefly, the extractor builds the directory tree but
@@ -28,7 +36,9 @@ touch is what makes new code take effect.
 
 ---
 
-## 2. Deploy — the whole thing
+## 2. Manual deploy — the whole thing
+
+Only needed when you are bypassing CI. Otherwise push and watch the run.
 
 ```bash
 cd "f:/Claude Projects/HXHDBD"
@@ -197,6 +207,28 @@ printf '%s' "$HTML" | grep -c "$(cat .next/BUILD_ID)"   # 1 = the live app is yo
 Server-side errors are logged to `/stderr.log` in the FTP root — read it first
 whenever something misbehaves.
 
+**After a CI deploy, read the run rather than guessing.** A red run does not
+always mean a broken site — on 20 August the deploy was fine and the *check* was
+stale (see §8, "A pinned smoke-test URL"):
+
+```bash
+export GH_TOKEN=$(grep -oE 'gh[pous]_[A-Za-z0-9]+' "MD file/token.txt" | head -1)
+gh run list --limit 3
+gh run watch <run-id> --exit-status --interval 20
+gh run view <run-id> --log-failed | tail -30      # what actually failed
+```
+
+**Check new assets individually.** A page returning 200 says nothing about the
+images on it — request each new file directly, and confirm the browser really
+decoded it rather than merely receiving bytes:
+
+```bash
+for u in /images/page/about.webp /images/page/services.webp; do
+  printf "  %-32s " "$u"
+  curl -s -o /dev/null -w "%{http_code}  %{size_download}b\n" -m 40 "https://hxhdbd.com$u"
+done
+```
+
 ---
 
 ## 6. Contact form and mail
@@ -247,21 +279,40 @@ rather than landing in spam.
 The repository is `github.com/ehsanhossain/HXHD`, branch `main`.
 
 Account credentials are intentionally not recorded here. When a GitHub account
-picker appears, choose the account already saved in the local Claude memory (`github-account-dibbotcf`) — no need to ask.
+picker appears, choose the account recorded in the local Claude memory (the
+`github-account-*` entry) — no need to ask, and do not write the name down here:
+this repository is public.
 
 For pushing, use the token from `info.md §2`:
 
 ```bash
-git push "https://<GIT-USERNAME>:<TOKEN>@github.com/ehsanhossain/HXHD.git" main
+TOK=$(grep -oE 'gh[pous]_[A-Za-z0-9]+' "MD file/token.txt" | head -1)
+git push "https://x-access-token:${TOK}@github.com/ehsanhossain/HXHD.git" main
 ```
 
-Two hard-won rules:
+`x-access-token` works as the username for any PAT, so the account name never
+has to appear in a command or a log.
+
+Three hard-won rules:
 
 - **Classic tokens only.** Fine-grained tokens fail with *"Permission to
   ehsanhossain/HXHD.git denied to <your-user>"* — they cannot reach a repository
   owned by another account, regardless of permissions granted.
 - **The token needs both `repo` and `workflow`.** Without `workflow`, any push
   touching `.github/workflows/` is rejected outright.
+- **A `workflow` rejection does not mean the token is wrong.** Git on Windows
+  prefers the credential saved in **Credential Manager** over anything you
+  configured, and that saved one is older and narrower. Check what the token
+  actually carries before going to mint a new one:
+
+  ```bash
+  # want to see: repo, workflow
+  curl -s -I -H "Authorization: token $TOK" https://api.github.com/user | grep -i x-oauth-scopes
+  ```
+
+  If the scopes are right and the push still fails, the cached credential is the
+  culprit — push with the token in the URL as above, or clear the entry under
+  *Windows Credential Manager → Generic Credentials → git:https://github.com*.
 
 ---
 
@@ -291,6 +342,51 @@ to **20.20.2**.
 `Compress-Archive` writes backslash paths, so Linux `unzip` creates files
 *named* `.next\static\…` with no directory at all. Use `tar --force-local` with
 forward slashes. Already handled by `package-deploy.mjs`.
+
+### A dev server and a build share `.next`, and wreck each other
+If `npm run dev` is running when you `npm run build`, the two write into the same
+`.next` and you get a hybrid that neither can serve:
+
+```
+Cannot find module './vendor-chunks/motion-dom.js'
+```
+
+with the stylesheet returning 404 or 500. The page still loads — completely
+unstyled, which reads as "my CSS broke" rather than "my build is corrupt". The
+tell is the browser's default 8px body margin: if `<header>` sits at `x: 8`, no
+CSS is applied at all. **Kill the dev server first, then `rm -rf .next` and
+rebuild.** Nothing less than deleting `.next` clears it.
+
+### A dead server keeps the port, and `curl` lies about it
+`next start` fails with `EADDRINUSE` but the shell backgrounded it, so nothing
+appears to be wrong — and `curl http://localhost:4310/` still answers **200**,
+because the *old* process is still listening. You end up testing the previous
+build without realising it.
+
+Always check the log after starting, and confirm what owns the port before
+killing anything — port 3000 once belonged to a different project entirely:
+
+```bash
+netstat -ano | grep -E "TCP.*:4310\s.*LISTENING"
+powershell -NoProfile -Command "Get-CimInstance Win32_Process -Filter 'ProcessId=<pid>' | Select-Object -ExpandProperty CommandLine"
+```
+
+Only kill it once the command line shows `HXHDBD`.
+
+### A pinned smoke-test URL turns content edits into false alarms
+The CI verify job used to request one hard-coded product page. When the
+waterproof range was reconciled against the model sheet, that grade was dropped,
+the check 404'd, and a perfectly good deploy was reported as failed.
+
+It now reads the first slug out of the catalogue at verify time — scoped past the
+categories array, whose slugs are *not* valid `/products/<slug>` URLs:
+
+```bash
+slug=$(sed -n '/export const PRODUCTS/,$p' src/data/products.ts | grep -o '"slug": "[^"]*"' | head -1 | cut -d'"' -f4)
+```
+
+The general rule: **a smoke test must not name specific content.** Derive it, or
+point it at something structural.
 
 ### Cloudflare hides your email address
 Email Obfuscation rewrites `mailto:` links into `/cdn-cgi/l/email-protection#<hex>`.
@@ -342,3 +438,15 @@ retry logic in §4 exists to prevent.
 | Verify | `curl -o /dev/null -w "%{http_code}" https://hxhdbd.com/` |
 | Server errors | read `/stderr.log` over FTP |
 | Restart app | upload any content to `/tmp/restart.txt` |
+
+**CI route (normal):**
+
+| Task | Command |
+|---|---|
+| Deploy | `git push origin main` |
+| Push a workflow change | `git push "https://x-access-token:${TOK}@github.com/ehsanhossain/HXHD.git" main` |
+| Watch the run | `gh run watch <id> --exit-status --interval 20` |
+| Read a failure | `gh run view <id> --log-failed \| tail -30` |
+| Token for `gh` | `export GH_TOKEN=$(grep -oE 'gh[pous]_[A-Za-z0-9]+' "MD file/token.txt" \| head -1)` |
+
+Before any local build: stop the dev server, then `rm -rf .next`. See §8.
