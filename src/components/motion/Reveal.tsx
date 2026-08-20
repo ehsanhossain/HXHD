@@ -10,7 +10,9 @@ import type { ReactNode } from 'react';
  * prefers-reduced-motion.
  */
 const EASE = [0.16, 1, 0.3, 1] as const;
-const DURATION = 0.55;
+// Entrances read as a settle, not a snap. 0.55s measured as too quick to
+// follow when a grid staggers several items at once.
+const DURATION = 0.9;
 
 type Direction = 'up' | 'down' | 'left' | 'right' | 'none';
 
@@ -72,8 +74,8 @@ export function Reveal({
 export function Stagger({
   children,
   className,
-  /** Gap between each child's entrance, in seconds (40ms default). */
-  step = 0.04,
+  /** Gap between each child's entrance, in seconds (90ms default). */
+  step = 0.09,
   delay = 0,
   as = 'div',
 }: {

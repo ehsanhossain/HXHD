@@ -125,12 +125,12 @@ export const CATEGORIES: Category[] = [
   {
     "slug": "rust-stabilizer",
     "name": "Rust Stabilizer",
-    "count": 1
+    "count": 2
   },
   {
     "slug": "sand-fixing-agent",
     "name": "Sand Fixing Agent",
-    "count": 1
+    "count": 2
   },
   {
     "slug": "pressure-sensitive-adhesive",
@@ -950,10 +950,35 @@ export const PRODUCTS: Product[] = [
     "sourceUrl": "https://www.hxhdchemical.com/steel-iron-oxidation-resistant-and-rust-fixing-agent-900a-900b/"
   },
   {
+    "id": "rust-conversion-agent-hxhd-800d",
+    "slug": "rust-conversion-agent-hxhd-800d",
+    "name": "Rust Conversion Agent HXHD-800D",
+    "code": "HXHD-800D",
+    "category": "Rust Stabilizer",
+    "categorySlug": "rust-stabilizer",
+    "summary": "Rust conversion agent, grade HXHD-800D. Contact the technical team for the datasheet and application guidance.",
+    "keywords": [
+      "HXHD-800D",
+      "Rust conversion agent",
+      "Rust converter",
+      "Metal surface treatment",
+      "Anti-corrosion"
+    ],
+    "image": "/images/catalog/9d99f9143e8a.jpg",
+    "images": [
+      "/images/catalog/9d99f9143e8a.jpg"
+    ],
+    "rating": null,
+    "highlights": [],
+    "body": [],
+    "specs": [],
+    "sourceUrl": ""
+  },
+  {
     "id": "anti-alkali-anti-cracking-and-anti-mould-waterproof-sand-fixing-agent-500a-500b",
     "slug": "anti-alkali-anti-cracking-and-anti-mould-waterproof-sand-fixing-agent-500a-500b",
-    "name": "Anti-alkali Anti-cracking and Anti-mould Waterproof Sand Fixing Agent 500A/500B",
-    "code": "500A/500B",
+    "name": "Sand Fixing Agent 500A",
+    "code": "HXHD-500A",
     "category": "Sand Fixing Agent",
     "categorySlug": "sand-fixing-agent",
     "summary": "Looking for a reliable sand fixing agent? Check out Sand Fixing Agent 500A/500B for effective and long-lasting results. Purchase now!",
@@ -1022,7 +1047,81 @@ export const PRODUCTS: Product[] = [
         ]
       }
     ],
-    "sourceUrl": "https://www.hxhdchemical.com/anti-alkali-anti-cracking-and-anti-mould-waterproof-sand-fixing-agent-500a-500b/"
+    "sourceUrl": "https://www.hxhdchemical.com/anti-alkali-anti-cracking-and-anti-mould-waterproof-sand-fixing-agent-500a-500b/",
+    "sourceCode": "500A/500B"
+  },
+  {
+    "id": "sand-fixing-agent-500b",
+    "slug": "sand-fixing-agent-500b",
+    "name": "Sand Fixing Agent 500B",
+    "code": "HXHD-500B",
+    "category": "Sand Fixing Agent",
+    "categorySlug": "sand-fixing-agent",
+    "summary": "Looking for a reliable sand fixing agent? Check out Sand Fixing Agent 500A/500B for effective and long-lasting results. Purchase now!",
+    "keywords": [
+      "sand fixing agent 500A",
+      "sand fixing agent 500B",
+      "soil stabilization",
+      "soil improvement",
+      "construction materials",
+      "soil strengthening",
+      "ground improvement",
+      "road construction additives"
+    ],
+    "image": "/images/catalog/a476357af5eb.jpg",
+    "images": [
+      "/images/catalog/a476357af5eb.jpg",
+      "/images/catalog/ca013cc2e27a.jpg"
+    ],
+    "rating": null,
+    "highlights": [],
+    "body": [
+      "This cutting-edge system is designed to offer comprehensive protection, including waterproofing, alkali resistance, mildew prevention, sand fixation, and resistance to cracking. It is the ideal solution for a range of applications, including roofs, exterior walls, bathrooms, basements, and garage back surfaces. These are areas prone to alkali return, sanding, and the need for wall-penetrating waterproofing and anti-seepage reinforcement.",
+      "In addition, this system can be used for the preliminary treatment of waterproof construction base surfaces. By applying a layer of 500A waterproof sand-fixing agent to the sandy base surface, followed by regular waterproofing operations, the waterproof layer becomes firmly attached to the substrate. This process greatly enhances the effectiveness of the waterproofing, eliminating the need to remove sand from the base surface before construction.",
+      "Our one-component waterproofing system offers a convenient, cost-effective, and reliable solution for a wide range of construction and waterproofing needs. With its exceptional adhesion and protective properties, it is sure to improve the durability and longevity of any structure. Try it today and experience the difference!",
+      "1.Improving the physical strength of concrete base gradually with the passage of time.",
+      "2.Improving the chemical-resistance, weathering resistance and waterproofing.",
+      "3.Replacing other waterproof material, it can be used on roofs or exterior walls with waterproofing, moisture resistance and mould resistance.",
+      "Waterproof and impermeable reinforcement of roof, exterior wall, toilet parts prone to alkali return and sand rising, basement and garage back surface. It can also be used for the preliminary treatment of waterproof construction foundation surface. A layer of 500A waterproof sand consolidation agent is sprayed on the foundation surface with sand particles. After drying, conventional waterproof operations are carried out to ensure that the waterproof layer is fastened to the foundation surface, greatly improving the waterproof effect, and eliminating the process of removing sand particles from the foundation surface before construction."
+    ],
+    "specs": [
+      {
+        "headers": [
+          "Test Item",
+          "500A performance index",
+          "500B performance index"
+        ],
+        "rows": [
+          [
+            "Appearance",
+            "Uniform milky white liquid",
+            "Uniform milky white liquid"
+          ],
+          [
+            "Solid content %",
+            "40±1%",
+            "40±1%"
+          ],
+          [
+            "Viscocity cps/25℃",
+            "300 － 600Mpa.s",
+            "300 － 600Mpa.s"
+          ],
+          [
+            "PH value",
+            "4 － 6",
+            "6 － 7"
+          ],
+          [
+            "Tg℃",
+            "15℃",
+            "15℃"
+          ]
+        ]
+      }
+    ],
+    "sourceUrl": "https://www.hxhdchemical.com/anti-alkali-anti-cracking-and-anti-mould-waterproof-sand-fixing-agent-500a-500b/",
+    "sourceCode": "500A/500B"
   },
   {
     "id": "pure-acrylic-textile-emulsion-hx929-for-high-grade-silk-cotton-and-dupont-cotton",
@@ -2493,7 +2592,7 @@ export const PRODUCT_MODELS: ModelGroup[] = [
     title: 'Sand fixing agent',
     models: [
       { code: 'HXHD-500A', label: 'Sand fixing agent', productSlug: 'anti-alkali-anti-cracking-and-anti-mould-waterproof-sand-fixing-agent-500a-500b' },
-      { code: 'HXHD-500B', label: 'Sand fixing agent', productSlug: 'anti-alkali-anti-cracking-and-anti-mould-waterproof-sand-fixing-agent-500a-500b' },
+      { code: 'HXHD-500B', label: 'Sand fixing agent', productSlug: 'sand-fixing-agent-500b' },
     ],
   },
   {
@@ -2504,7 +2603,7 @@ export const PRODUCT_MODELS: ModelGroup[] = [
       { code: 'HXHD-900B', label: 'Rust fixing agent', productSlug: 'steel-iron-oxidation-resistant-and-rust-fixing-agent-900a-900b' },
       // The catalogue lists an 800AB converting agent. Whether that is this
       // grade is unconfirmed, so no link is claimed.
-      { code: 'HXHD-800D', label: 'Rust conversion agent' },
+      { code: 'HXHD-800D', label: 'Rust conversion agent', productSlug: 'rust-conversion-agent-hxhd-800d' },
     ],
   },
 ];

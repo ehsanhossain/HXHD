@@ -49,7 +49,7 @@ export function WhyChooseHXHD() {
           </div>
 
           {/* Reasons */}
-          <Stagger className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-5" step={0.05}>
+          <Stagger className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-5" step={0.12}>
             {c.about.whyPoints.map((p, i) => {
               const Icon = ICONS[i] ?? Repeat;
               return (
