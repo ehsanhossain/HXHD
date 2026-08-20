@@ -30,13 +30,23 @@ export function ResourcesAndInsights() {
     <>
       {/* ── Technical resources ─────────────────────────────── */}
       <section className="section bg-[var(--paper-2)]">
-        <div className="shell grid grid-cols-1 lg:grid-cols-2 gap-14">
-          <Reveal>
+        {/* The heading spans the section rather than sitting inside the left
+            column. With it stacked above the form, the tiles beside it had
+            nothing to align to and floated against a gap however they were
+            justified. Lifted out, the form and the tiles start on the same
+            line. */}
+        <div className="shell">
+          <Reveal className="max-w-2xl mb-12">
             <p className="eyebrow mb-5">{t('sec.documentation')}</p>
             <h2 className="text-step-3 mb-4">{c.home.resourcesTitle}</h2>
-            <p className="text-[var(--ink-3)] text-step-0 mb-8 leading-relaxed">
+            <p className="text-[var(--ink-3)] text-step-0 leading-relaxed">
               {c.home.resourcesBody}
             </p>
+          </Reveal>
+        </div>
+
+        <div className="shell grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start">
+          <Reveal>
 
             <div className="bg-white p-7 sm:p-8 border border-[var(--line)] cut-br">
               <form
@@ -122,14 +132,10 @@ export function ResourcesAndInsights() {
             </div>
           </Reveal>
 
-          {/* Sized to their content and centred against the form. Stretching
-              them to its full height was tried and made two mostly-empty
-              panels; pinning them to the top left the pair floating above a
-              gap. Centred, the two columns read as one block. */}
-          <Stagger
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 self-center"
-            delay={0.1}
-          >
+          {/* Content-sized. With the heading lifted out of the left column
+              both columns start on the same line, so these need no vertical
+              justification of their own. */}
+          <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4" delay={0.1}>
             {QUICK_LINKS.map((link) => (
               <StaggerItem key={link.label}>
                 <Link
