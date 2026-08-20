@@ -145,7 +145,7 @@ export const CATEGORIES: Category[] = [
   {
     "slug": "textile-emulsion",
     "name": "Textile Emulsion",
-    "count": 1
+    "count": 8
   },
   {
     "slug": "waterproof-emulsion",
@@ -1126,7 +1126,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "pure-acrylic-textile-emulsion-hx929-for-high-grade-silk-cotton-and-dupont-cotton",
     "slug": "pure-acrylic-textile-emulsion-hx929-for-high-grade-silk-cotton-and-dupont-cotton",
-    "name": "Pure Acrylic Textile Emulsion HXHD-929 for High Grade Silk Cotton and DuPont Cotton",
+    "name": "Textile Emulsion HXHD-929",
     "code": "HXHD-929",
     "sourceCode": "HX-929",
     "category": "Textile Emulsion",
@@ -1186,6 +1186,181 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "sourceUrl": "https://www.hxhdchemical.com/pure-acrylic-textile-emulsion-hx929-for-high-grade-silk-cotton-and-dupont-cotton/"
+  },
+  {
+    "id": "textile-emulsion-hxhd-927e",
+    "slug": "textile-emulsion-hxhd-927e",
+    "name": "Textile Emulsion HXHD-927E",
+    "code": "HXHD-927E",
+    "category": "Textile Emulsion",
+    "categorySlug": "textile-emulsion",
+    "summary": "Textile emulsion, grade HXHD-927E. Contact the technical team for the datasheet and application guidance.",
+    "keywords": [
+      "HXHD-927E",
+      "Textile emulsion",
+      "Acrylic emulsion",
+      "Textile coating",
+      "Fabric treatment"
+    ],
+    "image": "/images/catalog/acf16bb4f39a.jpg",
+    "images": [
+      "/images/catalog/acf16bb4f39a.jpg"
+    ],
+    "rating": null,
+    "highlights": [],
+    "body": [],
+    "specs": [],
+    "sourceUrl": ""
+  },
+  {
+    "id": "textile-emulsion-hxhd-706k",
+    "slug": "textile-emulsion-hxhd-706k",
+    "name": "Textile Emulsion HXHD-706K",
+    "code": "HXHD-706K",
+    "category": "Textile Emulsion",
+    "categorySlug": "textile-emulsion",
+    "summary": "Textile emulsion, grade HXHD-706K. Contact the technical team for the datasheet and application guidance.",
+    "keywords": [
+      "HXHD-706K",
+      "Textile emulsion",
+      "Acrylic emulsion",
+      "Textile coating",
+      "Fabric treatment"
+    ],
+    "image": "/images/catalog/acf16bb4f39a.jpg",
+    "images": [
+      "/images/catalog/acf16bb4f39a.jpg"
+    ],
+    "rating": null,
+    "highlights": [],
+    "body": [],
+    "specs": [],
+    "sourceUrl": ""
+  },
+  {
+    "id": "textile-emulsion-hxhd-403",
+    "slug": "textile-emulsion-hxhd-403",
+    "name": "Textile Emulsion HXHD-403",
+    "code": "HXHD-403",
+    "category": "Textile Emulsion",
+    "categorySlug": "textile-emulsion",
+    "summary": "Textile emulsion, grade HXHD-403. Contact the technical team for the datasheet and application guidance.",
+    "keywords": [
+      "HXHD-403",
+      "Textile emulsion",
+      "Acrylic emulsion",
+      "Textile coating",
+      "Fabric treatment"
+    ],
+    "image": "/images/catalog/acf16bb4f39a.jpg",
+    "images": [
+      "/images/catalog/acf16bb4f39a.jpg"
+    ],
+    "rating": null,
+    "highlights": [],
+    "body": [],
+    "specs": [],
+    "sourceUrl": ""
+  },
+  {
+    "id": "textile-emulsion-hxhd-60",
+    "slug": "textile-emulsion-hxhd-60",
+    "name": "Textile Emulsion HXHD-60",
+    "code": "HXHD-60",
+    "category": "Textile Emulsion",
+    "categorySlug": "textile-emulsion",
+    "summary": "Textile emulsion, grade HXHD-60. Contact the technical team for the datasheet and application guidance.",
+    "keywords": [
+      "HXHD-60",
+      "Textile emulsion",
+      "Acrylic emulsion",
+      "Textile coating",
+      "Fabric treatment"
+    ],
+    "image": "/images/catalog/acf16bb4f39a.jpg",
+    "images": [
+      "/images/catalog/acf16bb4f39a.jpg"
+    ],
+    "rating": null,
+    "highlights": [],
+    "body": [],
+    "specs": [],
+    "sourceUrl": ""
+  },
+  {
+    "id": "textile-emulsion-hd-701",
+    "slug": "textile-emulsion-hd-701",
+    "name": "Textile Emulsion HD-701",
+    "code": "HD-701",
+    "category": "Textile Emulsion",
+    "categorySlug": "textile-emulsion",
+    "summary": "Textile emulsion, grade HD-701. Contact the technical team for the datasheet and application guidance.",
+    "keywords": [
+      "HD-701",
+      "Textile emulsion",
+      "Acrylic emulsion",
+      "Textile coating",
+      "Fabric treatment"
+    ],
+    "image": "/images/catalog/acf16bb4f39a.jpg",
+    "images": [
+      "/images/catalog/acf16bb4f39a.jpg"
+    ],
+    "rating": null,
+    "highlights": [],
+    "body": [],
+    "specs": [],
+    "sourceUrl": ""
+  },
+  {
+    "id": "textile-emulsion-hxhd-601",
+    "slug": "textile-emulsion-hxhd-601",
+    "name": "Textile Emulsion HXHD-601",
+    "code": "HXHD-601",
+    "category": "Textile Emulsion",
+    "categorySlug": "textile-emulsion",
+    "summary": "Textile emulsion, grade HXHD-601. Contact the technical team for the datasheet and application guidance.",
+    "keywords": [
+      "HXHD-601",
+      "Textile emulsion",
+      "Acrylic emulsion",
+      "Textile coating",
+      "Fabric treatment"
+    ],
+    "image": "/images/catalog/acf16bb4f39a.jpg",
+    "images": [
+      "/images/catalog/acf16bb4f39a.jpg"
+    ],
+    "rating": null,
+    "highlights": [],
+    "body": [],
+    "specs": [],
+    "sourceUrl": ""
+  },
+  {
+    "id": "textile-emulsion-hxhd-604",
+    "slug": "textile-emulsion-hxhd-604",
+    "name": "Textile Emulsion HXHD-604",
+    "code": "HXHD-604",
+    "category": "Textile Emulsion",
+    "categorySlug": "textile-emulsion",
+    "summary": "Textile emulsion, grade HXHD-604. Contact the technical team for the datasheet and application guidance.",
+    "keywords": [
+      "HXHD-604",
+      "Textile emulsion",
+      "Acrylic emulsion",
+      "Textile coating",
+      "Fabric treatment"
+    ],
+    "image": "/images/catalog/acf16bb4f39a.jpg",
+    "images": [
+      "/images/catalog/acf16bb4f39a.jpg"
+    ],
+    "rating": null,
+    "highlights": [],
+    "body": [],
+    "specs": [],
+    "sourceUrl": ""
   },
   {
     "id": "waterproof-emulsion-hx470-for-anionic-cationic-and-non-ionic-emulsified-bitumen",
@@ -2577,14 +2752,14 @@ export const PRODUCT_MODELS: ModelGroup[] = [
     categorySlug: 'textile-emulsion',
     title: 'Textile emulsion',
     models: [
-      { code: 'HXHD-927E' },
-      { code: 'HXHD-706K' },
+      { code: 'HXHD-927E', productSlug: 'textile-emulsion-hxhd-927e' },
+      { code: 'HXHD-706K', productSlug: 'textile-emulsion-hxhd-706k' },
       { code: 'HXHD-929', productSlug: 'pure-acrylic-textile-emulsion-hx929-for-high-grade-silk-cotton-and-dupont-cotton' },
-      { code: 'HXHD-403' },
-      { code: 'HXHD-60' },
-      { code: 'HD-701' },
-      { code: 'HXHD-601' },
-      { code: 'HXHD-604' },
+      { code: 'HXHD-403', productSlug: 'textile-emulsion-hxhd-403' },
+      { code: 'HXHD-60', productSlug: 'textile-emulsion-hxhd-60' },
+      { code: 'HD-701', productSlug: 'textile-emulsion-hd-701' },
+      { code: 'HXHD-601', productSlug: 'textile-emulsion-hxhd-601' },
+      { code: 'HXHD-604', productSlug: 'textile-emulsion-hxhd-604' },
     ],
   },
   {
