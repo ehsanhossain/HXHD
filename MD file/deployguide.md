@@ -1,4 +1,4 @@
-# deployguide.md — deploying hxhdbd.com
+![alt text](image.png)# deployguide.md — deploying hxhdbd.com
 
 The complete, working procedure. Follow it top to bottom and the site updates in
 about two minutes.

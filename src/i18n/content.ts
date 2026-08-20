@@ -356,7 +356,7 @@ const en = {
       'For more than 26 years, Hongxing Hongda (BD) Two Win Technology Co., Ltd. has specialized in the R&D, advanced synthesis, and large-scale manufacturing of high-performance polymer emulsions, waterproofing systems, and functional chemical additives.',
     leadStory:
       'Founded in 2000, HXHD has expanded from an R&D-focused enterprise into an international chemical manufacturing group with multiple production campuses across China and a flagship USD 76.41 million facility in Bangladesh. We provide consistent, export-grade materials and direct technical formulation support to manufacturers worldwide.',
-    missionTitle: 'Our Mission & Vision',
+    missionTitle: 'Our Mission',
     mission: 'To deliver stable, high-performance, and eco-friendly polymer solutions with unwavering batch-to-batch consistency and resilient local supply.',
     vision: 'To be Asia’s premier manufacturing partner for advanced architectural, waterproofing, and industrial polymer emulsions.',
     valuesTitle: 'Core Values',
@@ -865,7 +865,7 @@ const zh: PageContent = {
       '26年来，湖北宏星宏达新材料有限公司始终专注于高分子聚合物乳液、防水材料及功能性涂料助剂的研发、精密合成与规模化制造。',
     leadStory:
       '公司成立于2000年，历经二十余年发展，已从以研发为核心的企业成长为拥有中国多地生产基地及孟加拉国7641万美元重大投资项目的跨国化工制造集团。我们为全球制造业客户提供性能一致、品质稳定且具备出口标准的材料与配方技术支持。',
-    missionTitle: '企业使命与愿景',
+    missionTitle: '企业使命',
     mission: '以卓越的批次稳定性与本地化供应保障，为客户提供高性能、环保型的聚合物解决方案。',
     vision: '成为亚洲领先的建筑、防水及工业特种高分子乳液制造与技术合作伙伴。',
     valuesTitle: '核心价值观',
@@ -1357,7 +1357,7 @@ const bn: PageContent = {
       '২৬ বছরেরও বেশি সময় ধরে হুবেই হংসিং হংদা নিউ মেটেরিয়ালস কোং লিমিটেড পলিমার ইমালশন, ওয়াটারপ্রুফিং সিস্টেম এবং কার্যকরী রাসায়নিকের গবেষণা, উন্নত সংশ্লেষণ এবং বৃহৎ উৎপাদনে অগ্রণী ভূমিকা পালন করছে।',
     leadStory:
       '২০০০ সালে প্রতিষ্ঠিত, এইচএক্সএইচডি একটি গবেষণাভিত্তিক উদ্যোগ থেকে চীনজুড়ে একাধিক উৎপাদন ক্যাম্পাস এবং বাংলাদেশে ৭৬.৪১ মিলিয়ন মার্কিন ডলারের ফ্ল্যাগশিপ সুবিধাসহ একটি আন্তর্জাতিক রাসায়নিক প্রস্তুতকারক গ্রুপে পরিণত হয়েছে। আমরা বিশ্বব্যাপী প্রস্তুতকারকদের সুনির্দিষ্ট, রপ্তানি-মানের কাঁচামাল এবং সরাসরি ফর্মুলেশন সহায়তা সরবরাহ করি।',
-    missionTitle: 'আমাদের লক্ষ্য ও দর্শন',
+    missionTitle: 'আমাদের লক্ষ্য',
     mission: 'অবিচল ব্যাচ-টু-ব্যাচ ধারাবাহিকতা এবং নির্ভরযোগ্য স্থানীয় সরবরাহের মাধ্যমে উন্নত ও পরিবেশবান্ধব পলিমার সমাধান পৌঁছে দেওয়া।',
     vision: 'স্থাপত্য, ওয়াটারপ্রুফিং ও শিল্পক্ষেত্রে উচ্চমানের পলিমার ইমালশনের জন্য এশিয়ার শীর্ষস্থানীয় উৎপাদন অংশীদার হওয়া।',
     valuesTitle: 'মূল মূল্যবোধ',

@@ -75,7 +75,7 @@ export function mailtoHref(subject: string, body: string): string {
 export const PRODUCTION_BASES: ProductionBase[] = [
   {
     entity: 'Hongxing Hongda (BD) Two Win Technology Co., Ltd.',
-    city: 'BEPZA Economic Zone, Mirsharai, Chattogram',
+    city: 'House-51, Road No.-07, Nikunja-1, Dhaka-1229',
     country: 'Bangladesh',
     note: 'USD 76.41 million investment · 500+ local jobs',
     primary: true,
