@@ -110,18 +110,30 @@ export function ProductDetail({ product, related }: { product: Product; related:
           </Reveal>
         </div>
 
-        {/* Description */}
+        {/* Description.
+            These are the source site's marketing paragraphs — 325 words on
+            average, and up to 25 paragraphs on one product. Stacked in a
+            single column they read as a wall, so the opening paragraph leads
+            at a larger size and the remainder flows into two balanced
+            columns, which halves the distance the eye travels per line. */}
         {product.body.length > 0 && (
-          <Reveal className="mt-20 max-w-4xl scroll-mt-28" id="description">
+          <Reveal className="mt-20 scroll-mt-28" id="description">
             <h2 className="text-step-2 mb-2">{t('detail.description')}</h2>
             <div className="w-16 h-[5px] bg-[var(--brand-red)] mb-8" />
-            <div className="space-y-4">
-              {product.body.map((p, i) => (
-                <p key={i} className="text-[var(--ink-3)] leading-[1.8]">
-                  {p}
-                </p>
-              ))}
-            </div>
+
+            <p className="text-step-1 text-[var(--ink-2)] leading-[1.65] max-w-3xl mb-9">
+              {product.body[0]}
+            </p>
+
+            {product.body.length > 1 && (
+              <div className="max-w-5xl lg:columns-2 lg:gap-14 [&>p]:mb-5 [&>p]:break-inside-avoid">
+                {product.body.slice(1).map((para, i) => (
+                  <p key={i} className="text-[var(--ink-3)] leading-[1.8]">
+                    {para}
+                  </p>
+                ))}
+              </div>
+            )}
           </Reveal>
         )}
 
