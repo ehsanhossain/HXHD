@@ -118,7 +118,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={spaceGrotesk.variable}>
-      <body>
+      {/* Extensions write to <body> before React hydrates — Grammarly adds
+          data-gr-ext-installed and data-new-gr-c-s-check-loaded, password
+          managers add their own — and React counts that as a mismatch on
+          every page. suppressHydrationWarning applies to this element only,
+          so attributes injected here are ignored while a genuine mismatch
+          anywhere inside still reports. */}
+      <body suppressHydrationWarning>
         <LanguageProvider>
           <SmoothScrollProvider>
             <a

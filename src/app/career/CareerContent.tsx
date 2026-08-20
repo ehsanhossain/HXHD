@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { COMPANY_ARTICLES } from '@/data/knowledge';
 import {
   Briefcase,
   MapPin,
@@ -27,7 +28,7 @@ import { COMPANY } from '@/data/company';
 const PERK_ICONS = [Building, Globe, GraduationCap, Award];
 
 export function CareerContent() {
-  const { t, c } = useI18n();
+  const { t, c, locale, article: localized } = useI18n();
   const [selectedDept, setSelectedDept] = useState<string>('all');
   const [selectedLocation, setSelectedLocation] = useState<string>('all');
   const [expandedId, setExpandedId] = useState<string | null>('chemist');
@@ -302,6 +303,59 @@ export function CareerContent() {
               })
             )}
           </div>
+        </div>
+      </section>
+
+      {/* ── Company updates ────────────────────────────────────
+          The group's own news, already mirrored on the knowledge pages.
+          It sits under the openings on purpose: someone deciding whether to
+          apply wants to know the company is building something. */}
+      <section className="section bg-white border-t border-[var(--line)]">
+        <div className="shell">
+          <Reveal className="flex flex-wrap justify-between items-end gap-6 mb-12">
+            <div className="max-w-2xl">
+              <p className="eyebrow mb-5">{c.career.newsEyebrow}</p>
+              <h2 className="text-step-3 mb-4">{c.career.newsTitle}</h2>
+              <p className="text-sm text-[var(--steel)] leading-relaxed">{c.career.newsLead}</p>
+            </div>
+            <Link
+              href="/knowledge"
+              className="link-sweep text-[var(--teal-on-light)] font-bold text-sm uppercase tracking-[0.1em]"
+            >
+              {c.career.newsCta} <ArrowRight className="w-4 h-4" />
+            </Link>
+          </Reveal>
+
+          <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {COMPANY_ARTICLES.slice(0, 3).map((a, i) => {
+              const copy = localized(a.slug, { title: a.title, summary: a.summary });
+              return (
+                <StaggerItem key={a.slug}>
+                  <Link
+                    href={`/knowledge/${a.slug}`}
+                    className="group flex flex-col h-full bg-[var(--paper-2)] border border-[var(--line)] cut-br p-7 hover:border-[var(--brand-teal)] hover:bg-white transition-all duration-300 hover:-translate-y-1"
+                  >
+                    <time
+                      dateTime={a.iso}
+                      className="text-[0.7rem] font-bold uppercase tracking-[0.1em] text-[var(--steel)] mb-3 tnum"
+                    >
+                      {new Intl.DateTimeFormat(
+                        locale === 'zh' ? 'zh-CN' : locale === 'bn' ? 'bn-BD' : 'en-GB',
+                        { day: 'numeric', month: 'short', year: 'numeric' },
+                      ).format(new Date(a.iso))}
+                    </time>
+                    <h3 className="text-step-1 font-bold leading-snug mb-3 transition-colors group-hover:text-[var(--brand-red)]">
+                      {copy.title}
+                    </h3>
+                    <p className="text-sm text-[var(--steel)] leading-relaxed line-clamp-3">
+                      {copy.summary}
+                    </p>
+                    <ArrowRight className="w-4 h-4 text-[var(--brand-teal)] mt-auto pt-6 box-content transition-transform duration-300 group-hover:translate-x-1" />
+                  </Link>
+                </StaggerItem>
+              );
+            })}
+          </Stagger>
         </div>
       </section>
 

@@ -122,32 +122,34 @@ export function ResourcesAndInsights() {
             </div>
           </Reveal>
 
-          {/* Two tiles beside a tall form left a dead half-column, so on wide
-              screens they stack and share the form's full height instead of
-              sitting as a pair of squares at the top. */}
+          {/* Sized to their content and pinned to the top. Stretching them to
+              the form's height was tried and made two mostly-empty panels —
+              a short card that says what it is beats a tall one that does
+              not. */}
           <Stagger
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 lg:grid-rows-2 gap-5 self-stretch"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 self-start"
             delay={0.1}
           >
             {QUICK_LINKS.map((link) => (
-              <StaggerItem key={link.label} className="h-full">
+              <StaggerItem key={link.label}>
                 <Link
                   href={link.href}
-                  className="group relative flex flex-col h-full p-7 sm:p-8 bg-white border border-[var(--line)] cut-br hover:border-[var(--brand-red)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_-14px_rgba(13,20,24,0.28)]"
+                  className="group relative flex gap-4 p-5 bg-white border border-[var(--line)] cut-br hover:border-[var(--brand-red)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_22px_-14px_rgba(13,20,24,0.3)]"
                 >
-                  <span className="grid place-items-center w-12 h-12 shrink-0 bg-[var(--paper-2)] border border-[var(--line)] text-[var(--teal-on-light)] mb-6 transition-colors duration-300 group-hover:bg-[var(--brand-red)] group-hover:border-[var(--brand-red)] group-hover:text-white">
-                    <link.icon className="w-5 h-5" />
+                  <span className="grid place-items-center w-10 h-10 shrink-0 bg-[var(--paper-2)] border border-[var(--line)] text-[var(--teal-on-light)] transition-colors duration-300 group-hover:bg-[var(--brand-red)] group-hover:border-[var(--brand-red)] group-hover:text-white">
+                    <link.icon className="w-[18px] h-[18px]" />
                   </span>
 
-                  <h3 className="text-step-1 font-bold text-[var(--ink)] leading-snug mb-2.5 transition-colors group-hover:text-[var(--brand-red)]">
-                    {link.label}
-                  </h3>
-                  <p className="text-sm text-[var(--steel)] leading-relaxed">{link.note}</p>
-
-                  <span className="mt-auto pt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-[var(--teal-on-light)]">
-                    {t('cta.view')}
-                    <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  <span className="min-w-0">
+                    <span className="block font-bold text-[var(--ink)] leading-snug transition-colors group-hover:text-[var(--brand-red)]">
+                      {link.label}
+                    </span>
+                    <span className="block text-sm text-[var(--steel)] leading-relaxed mt-1">
+                      {link.note}
+                    </span>
                   </span>
+
+                  <ArrowUpRight className="w-4 h-4 shrink-0 text-[var(--steel)] transition-all duration-300 group-hover:text-[var(--brand-red)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
               </StaggerItem>
             ))}
