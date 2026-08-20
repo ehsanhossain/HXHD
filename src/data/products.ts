@@ -878,7 +878,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": "steel-iron-oxidation-resistant-and-rust-fixing-agent-900a-900b",
     "slug": "steel-iron-oxidation-resistant-and-rust-fixing-agent-900a-900b",
-    "name": "Steel Iron Oxidation Resistant and Rust Fixing Agent 900A/900B",
+    "name": "Rust Fixing Agent 900A/900B",
     "code": "900A/900B",
     "category": "Rust Stabilizer",
     "categorySlug": "rust-stabilizer",
