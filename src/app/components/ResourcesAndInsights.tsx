@@ -20,7 +20,7 @@ const FIELD =
 export function ResourcesAndInsights() {
   const { t, c, article: localized } = useI18n();
   const [sent, setSent] = useState(false);
-  const QUICK_LINKS = [c.home.findTds, c.home.findSds, c.home.downloadCenter, c.home.technicalLibrary]
+  const QUICK_LINKS = [c.home.findTds, c.home.findCoa, c.home.downloadCenter, c.home.technicalLibrary]
     .map((label, i) => ({ label, icon: QUICK_LINK_ICONS[i], href: QUICK_LINK_HREFS[i] }));
 
 
@@ -54,7 +54,7 @@ export function ResourcesAndInsights() {
                       Email: get('email'),
                       Country: get('country'),
                       Role: get('role'),
-                      Request: 'Access to technical documentation (TDS / SDS / download centre)',
+                      Request: 'Access to technical documentation (TDS / download centre)',
                     },
                   });
                   setSent(true);

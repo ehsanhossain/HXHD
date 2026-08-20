@@ -79,7 +79,7 @@ export function KnowledgeContent() {
   const { c, fill } = useI18n();
   const QUICK_LINKS = [
     c.home.findTds,
-    c.home.findSds,
+    c.home.findCoa,
     c.home.downloadCenter,
     c.home.technicalLibrary,
   ].map((label, i) => ({

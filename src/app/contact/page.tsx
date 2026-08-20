@@ -8,7 +8,7 @@ import { NewsletterStrip } from '../components/contact/NewsletterStrip';
 export const metadata: Metadata = {
   title: 'Contact & Schedule Consultation | HXHD Bangladesh',
   description:
-    'Contact the HXHD technical and sales team or book an appointment for sample requests, custom emulsion formulation, documentation (TDS/SDS), and supply inquiries.',
+    'Contact the HXHD technical and sales team or book an appointment for sample requests, custom emulsion formulation, documentation (TDS), and supply inquiries.',
   openGraph: {
     title: 'Contact HXHD | Technical Consultation & Sample Requests',
     description:
