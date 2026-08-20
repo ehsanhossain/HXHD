@@ -28,9 +28,10 @@ export function WhyChooseHXHD() {
     <section className="section bg-white relative overflow-hidden border-y border-[var(--line)]">
       <div className="absolute inset-0 bg-grid opacity-60" aria-hidden />
       {/* A hatched wedge behind the statement column, so the eye lands there
-          first rather than on eight equal boxes. */}
+          first rather than on eight equal boxes. Neutral, not red: on white
+          the red hatch read as pink cross-hatching rather than texture. */}
       <div
-        className="absolute -left-32 -top-20 w-[36rem] h-[36rem] bg-hatch-red opacity-[0.45] rotate-12 hidden lg:block"
+        className="absolute -left-32 -top-20 w-[36rem] h-[36rem] bg-hatch opacity-70 rotate-12 hidden lg:block"
         aria-hidden
       />
       <div className="absolute left-0 top-0 h-full w-[3px] bg-[var(--brand-red)]" aria-hidden />
@@ -59,11 +60,12 @@ export function WhyChooseHXHD() {
               const Icon = ICONS[i] ?? Repeat;
               return (
                 <StaggerItem key={p.title}>
-                  <article className="group relative h-full bg-[var(--paper-2)] border border-[var(--line)] cut-br overflow-hidden transition-all duration-300 hover:border-[var(--brand-teal)] hover:-translate-y-1">
-                    {/* Hatch fills in on hover — motion that suggests the
-                        machined surface the rest of the site uses. */}
+                  <article className="group relative h-full bg-[var(--paper-2)] border border-[var(--line)] cut-br overflow-hidden transition-all duration-300 hover:bg-white hover:border-[var(--brand-teal)] hover:-translate-y-1 hover:shadow-[0_10px_30px_-12px_rgba(13,20,24,0.25)]">
+                    {/* A single sheen crossing the panel. The hatch that was
+                        here read as red cross-hatching over the copy — this
+                        moves without competing with the text. */}
                     <span
-                      className="absolute inset-0 bg-hatch-red opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                      className="pointer-events-none absolute top-0 -left-[60%] h-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-[var(--brand-teal)]/12 to-transparent transition-all duration-[900ms] ease-out group-hover:left-[130%]"
                       aria-hidden
                     />
 
@@ -89,9 +91,10 @@ export function WhyChooseHXHD() {
                       </p>
                     </div>
 
-                    {/* Red rule that draws itself across the foot on hover. */}
+                    {/* Red rule down the leading edge, drawn top to bottom —
+                        the same registration mark the dark sections use. */}
                     <span
-                      className="absolute bottom-0 left-0 h-[3px] w-full bg-[var(--brand-red)] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"
+                      className="absolute top-0 left-0 w-[3px] h-full bg-[var(--brand-red)] origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-out"
                       aria-hidden
                     />
                   </article>
