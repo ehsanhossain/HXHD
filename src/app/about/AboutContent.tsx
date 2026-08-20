@@ -28,7 +28,6 @@ import {
   CAPACITY,
   PRODUCTION_BASES,
   MILESTONES,
-  GROUP_COMPANIES,
 } from '@/data/company';
 import { PRODUCTS, CATEGORIES } from '@/data/products';
 
@@ -330,50 +329,6 @@ export function AboutContent() {
           </div>
         </div>
       </section>
-
-      {/* ── The group ──────────────────────────────────────────────
-          Names come from the corporate plaque and are reproduced exactly, so
-          they are not translated — only the heading and labels around them. */}
-      <section className="section bg-[var(--ink)] text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-dark opacity-60" aria-hidden />
-
-        <div className="shell relative max-w-5xl">
-          <Reveal className="mb-12 max-w-2xl">
-            <p className="eyebrow mb-5">{c.about.groupTitle}</p>
-            <h2 className="text-step-3 mb-5 leading-tight">{c.about.groupLead}</h2>
-            <div className="w-20 h-[6px] bg-[var(--brand-red)]" />
-          </Reveal>
-
-          <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 border border-white/10">
-            {GROUP_COMPANIES.map((g) => (
-              <StaggerItem key={g.name}>
-                <div
-                  className={`h-full p-6 flex flex-col gap-2 transition-colors ${
-                    g.isThisSite ? 'bg-[var(--brand-red)]' : 'bg-[var(--ink)] hover:bg-[var(--ink-2)]'
-                  }`}
-                >
-                  <div className="flex items-start justify-between gap-3">
-                    <p className="font-bold leading-snug">{g.name}</p>
-                    {g.isThisSite && (
-                      <span className="shrink-0 bg-white/20 px-2 py-1 text-[0.6rem] font-bold uppercase tracking-[0.12em] whitespace-nowrap">
-                        {c.about.groupThisSite}
-                      </span>
-                    )}
-                  </div>
-                  <p
-                    className={`text-xs font-medium uppercase tracking-[0.12em] ${
-                      g.isThisSite ? 'text-white/70' : 'text-[var(--teal-on-dark)]'
-                    }`}
-                  >
-                    {g.country}
-                  </p>
-                </div>
-              </StaggerItem>
-            ))}
-          </Stagger>
-        </div>
-      </section>
-
       {/* ── Section 5: R&D and Quality Control ─────────────────── */}
       <section className="section bg-[var(--paper-2)] border-t border-[var(--line)]">
         <div className="shell">

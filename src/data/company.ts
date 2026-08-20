@@ -17,7 +17,7 @@ export const COMPANY = {
   /**
    * This site belongs to the Bangladesh entity, so `legalName` is the
    * Bangladesh company — not the Hubei one, which is a separate member of the
-   * group and appears in GROUP_COMPANIES below.
+   * group and appears under PRODUCTION_BASES as the Chinese plant.
    */
   legalName: 'Hongxing Hongda (BD) Two Win Technology Co., Ltd.',
   founded: 2000,
@@ -147,32 +147,4 @@ export const MILESTONES = [
     source:
       'https://www.hxhdchemical.com/news/the-three-day-china-coating-show-2025-came-to-a-successful-conclusion/',
   },
-];
-
-/**
- * The companies that make up the group, as listed on the corporate plaque.
- *
- * Names are reproduced exactly as written there, including the spacing of
- * "(BD) Two Win" — they are legal entity names, so they are not translated or
- * tidied. `country` is ours, added so the list can be grouped or filtered.
- */
-export interface GroupCompany {
-  name: string;
-  country: string;
-  /** The entity this website belongs to. */
-  isThisSite?: boolean;
-}
-
-export const GROUP_COMPANIES: GroupCompany[] = [
-  { name: 'Beijing Xinda Shiji New Materials Co., Ltd', country: 'China' },
-  { name: 'Weixian Shuangying Chemical Industry Co., Ltd', country: 'China' },
-  { name: 'Hubei Hongxing Hongda New Materials Co., Ltd', country: 'China' },
-  {
-    name: 'Hongxing Hongda (BD) Two Win Technology Co., Ltd',
-    country: 'Bangladesh',
-    isThisSite: true,
-  },
-  { name: 'Hongxing Hongda (Cambodia) Co., Ltd', country: 'Cambodia' },
-  { name: 'Golden Coast Opus Ltd (Ghana)', country: 'Ghana' },
-  { name: 'Hongxing Hongda (Nigeria) Co., Ltd', country: 'Nigeria' },
 ];
