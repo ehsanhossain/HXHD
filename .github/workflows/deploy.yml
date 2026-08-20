@@ -112,6 +112,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
+      - uses: actions/checkout@v4
+
       - name: Wait for Passenger to come back
         run: sleep 45
 
@@ -128,8 +130,16 @@ jobs:
 
       - name: Check a product detail page
         run: |
-          url="https://hxhdbd.com/products/waterproof-emulsion-hx470-for-anionic-cationic-and-non-ionic-emulsified-bitumen"
-          code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 45 "$url" || echo 000)
+          # Read the slug from the catalogue instead of pinning one. A pinned
+          # slug turns into a false failure the moment that product is renamed
+          # or dropped -- which is what happened when the waterproof range was
+          # reconciled against the model sheet.
+          # Scoped to PRODUCTS: the categories array sits first in the file
+          # and its slugs are not valid /products/<slug> URLs.
+          slug=$(sed -n '/export const PRODUCTS/,$p' src/data/products.ts | grep -o '"slug": "[^"]*"' | head -1 | cut -d'"' -f4)
+          if [ -z "$slug" ]; then echo "could not read a product slug"; exit 1; fi
+          echo "checking slug: $slug"
+          code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 45 "https://hxhdbd.com/products/$slug" || echo 000)
           echo "detail -> $code"
           [ "$code" = "200" ]
 
