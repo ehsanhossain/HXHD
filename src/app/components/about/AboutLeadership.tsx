@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { Maximize2 } from 'lucide-react';
+import { Lightbox } from '@/components/ui/Lightbox';
 import { Quote } from 'lucide-react';
 import { LEADERSHIP, type Leader } from '@/data/company';
 import { Reveal, Stagger, StaggerItem } from '@/components/motion/Reveal';
@@ -17,7 +19,16 @@ function monogram(name: string): string {
     .toUpperCase();
 }
 
-function LeaderCard({ leader, role }: { leader: Leader; role: string }) {
+function LeaderCard({
+  leader,
+  role,
+  onOpen,
+}: {
+  leader: Leader;
+  role: string;
+  /** Opens the portrait full size; omitted when there is no photo to show. */
+  onOpen?: () => void;
+}) {
   // A missing portrait must not leave a broken frame on a live page, so the
   // card falls back to a monogram both when no path is set and when the file
   // is not there yet.
@@ -28,14 +39,26 @@ function LeaderCard({ leader, role }: { leader: Leader; role: string }) {
     <div className="group bg-white border border-[var(--line)] overflow-hidden hover:border-[var(--brand-teal)] transition-colors duration-300">
       <div className="relative aspect-[3/4] bg-[var(--paper-2)] overflow-hidden">
         {showPhoto ? (
-          <Image
-            src={leader.photo!}
-            alt={`${leader.name} — ${role}`}
-            fill
-            sizes="(max-width: 768px) 100vw, 320px"
-            className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
-            onError={() => setFailed(true)}
-          />
+          <button
+            type="button"
+            onClick={onOpen}
+            aria-label={`${leader.name} — ${role}`}
+            className="absolute inset-0 cursor-pointer"
+          >
+            <Image
+              src={leader.photo!}
+              alt={`${leader.name} — ${role}`}
+              fill
+              sizes="(max-width: 768px) 100vw, 320px"
+              className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+              onError={() => setFailed(true)}
+            />
+            {/* A hint that the portrait opens, rather than leaving it to be
+                discovered by chance. */}
+            <span className="absolute top-3 right-3 grid place-items-center w-9 h-9 bg-[var(--ink)]/70 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <Maximize2 className="w-4 h-4" />
+            </span>
+          </button>
         ) : (
           <div className="absolute inset-0 grid place-items-center bg-hatch">
             <span
@@ -60,6 +83,7 @@ function LeaderCard({ leader, role }: { leader: Leader; role: string }) {
 
 export function AboutLeadership() {
   const { c } = useI18n();
+  const [open, setOpen] = useState<number | null>(null);
 
   const roleFor = (key: Leader['roleKey']) =>
     key === 'chairman' ? c.about.roleChairman : c.about.roleGeneralManager;
@@ -75,9 +99,13 @@ export function AboutLeadership() {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           {/* Portraits */}
           <Stagger className="lg:col-span-6 grid grid-cols-2 gap-5 sm:gap-6">
-            {LEADERSHIP.map((l) => (
+            {LEADERSHIP.map((l, i) => (
               <StaggerItem key={l.name}>
-                <LeaderCard leader={l} role={roleFor(l.roleKey)} />
+                <LeaderCard
+                  leader={l}
+                  role={roleFor(l.roleKey)}
+                  onOpen={l.photo ? () => setOpen(i) : undefined}
+                />
               </StaggerItem>
             ))}
           </Stagger>
@@ -104,6 +132,17 @@ export function AboutLeadership() {
           </Reveal>
         </div>
       </div>
+
+      <Lightbox
+        items={LEADERSHIP.filter((l) => l.photo).map((l) => ({
+          src: l.photo!,
+          alt: `${l.name} — ${roleFor(l.roleKey)}`,
+          caption: `${l.name} · ${roleFor(l.roleKey)}`,
+        }))}
+        index={open}
+        onClose={() => setOpen(null)}
+        onIndexChange={setOpen}
+      />
     </section>
   );
 }
