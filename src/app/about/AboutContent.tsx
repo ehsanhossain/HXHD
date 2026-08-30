@@ -53,8 +53,20 @@ export function AboutContent() {
         titleKey="page.about.title"
         intro={c.about.intro}
         crumbs={[{ labelKey: 'nav.about' }]}
-        image="/images/page/about.webp"
-        imageAlt="Chemist checking an emulsion batch in the HXHD plant laboratory"
+        image={[
+          '/images/about/covers/cover-4.webp',
+          '/images/about/covers/cover-2.webp',
+          '/images/about/covers/cover-1.webp',
+          '/images/about/covers/cover-3.webp',
+          '/images/about/covers/cover-5.webp',
+        ]}
+        imageAlt={[
+          'Chemist checking an emulsion batch in the HXHD plant laboratory',
+          'Applicator rolling waterproof coating across a roof above the Dhaka skyline',
+          'Tiler bedding a large-format tile with ceramic tile back adhesive',
+          'Transparent waterproof coating brushed along an exterior window reveal',
+          'Operator checking coated fabric coming off the textile line',
+        ]}
       />
 
       {/* ── Section 1: Lead Story & Heritage ────────────────────── */}

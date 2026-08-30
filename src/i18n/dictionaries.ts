@@ -174,6 +174,7 @@ const en = {
   'page.knowledge.title': 'Guidance that supports better formulation decisions',
   'page.about.eyebrow': 'About HXHD',
   'sec.videos': 'Inside HXHD',
+  'detail.videos': 'Product videos',
   'sec.videosTitle': 'See the plant at work',
   'sec.videosLead':
     'Footage from our plant — the bulk store, the dispatch bay and loading for delivery.',
@@ -330,6 +331,7 @@ const zh: Dict = {
   'page.knowledge.title': '助力更优配方决策的技术指南',
   'page.about.eyebrow': '关于宏星宏达',
   'sec.videos': '走进宏星宏达',
+  'detail.videos': '产品视频',
   'sec.videosTitle': '看看工厂如何运转',
   'sec.videosLead': '工厂实拍——成品仓库、发货区与装车发运。',
   'sec.videoDispatch': '发货区',
@@ -487,6 +489,7 @@ const bn: Dict = {
   'page.knowledge.title': 'উন্নত ফর্মুলেশন সিদ্ধান্তে সহায়ক নির্দেশনা',
   'page.about.eyebrow': 'এইচএক্সএইচডি সম্পর্কে',
   'sec.videos': 'এইচএক্সএইচডির ভেতরে',
+  'detail.videos': 'পণ্যের ভিডিও',
   'sec.videosTitle': 'কারখানার কাজ দেখুন',
   'sec.videosLead':
     'আমাদের কারখানার ভিডিও — বাল্ক স্টোর, ডিসপ্যাচ বে ও ডেলিভারির জন্য লোডিং।',

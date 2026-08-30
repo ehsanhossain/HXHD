@@ -6,6 +6,7 @@ import { ArrowLeft, ArrowRight, Check, Star, FileText } from 'lucide-react';
 import type { Product } from '@/data/products';
 import { ProductGallery } from '../../components/products/ProductGallery';
 import { ProductNewsletter } from '../../components/products/ProductNewsletter';
+import { ProductVideos } from '../../components/products/ProductVideos';
 import { Reveal, Stagger, StaggerItem } from '@/components/motion/Reveal';
 import { useI18n } from '@/i18n/LanguageProvider';
 
@@ -226,6 +227,8 @@ export function ProductDetail({ product, related }: { product: Product; related:
             </div>
           </Reveal>
         )}
+
+        <ProductVideos slug={product.slug} productName={product.name} />
 
         {/* Related */}
         {related.length > 0 && (

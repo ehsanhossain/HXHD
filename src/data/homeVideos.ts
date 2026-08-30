@@ -45,8 +45,14 @@ export const HOME_VIDEOS: HomeVideo[] = [
   },
 ];
 
-/** The muted landscape loop behind the homepage headline. */
-export const HERO_LOOP = {
-  src: '/videos/hero-loop.mp4',
-  poster: '/videos/hero-loop.jpg',
-} as const;
+/**
+ * The muted landscape clips behind the homepage headline, played in sequence:
+ * each one advances to the next when it ends, and the third returns to the
+ * first. Same footage as the cards above, cropped from 9:16 to a 16:9 centre
+ * band and stripped of audio.
+ */
+export const HERO_CLIPS = [
+  { src: '/videos/hero-1.mp4', poster: '/videos/hero-1.jpg' },
+  { src: '/videos/hero-2.mp4', poster: '/videos/hero-2.jpg' },
+  { src: '/videos/hero-3.mp4', poster: '/videos/hero-3.jpg' },
+] as const;

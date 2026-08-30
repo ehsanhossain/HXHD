@@ -2,7 +2,8 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion, useReducedMotion } from 'motion/react';
+import { useEffect, useState } from 'react';
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { useT } from '@/i18n/LanguageProvider';
 import type { Dict } from '@/i18n/dictionaries';
 
@@ -16,10 +17,16 @@ interface PageHeroProps {
   intro?: string;
   /** Breadcrumb trail after Home. Pass `labelKey` to translate. */
   crumbs?: { label?: string; labelKey?: keyof Dict; href?: string }[];
-  /** Cover photograph under the banner, e.g. "/images/page/services.webp". */
-  image?: string;
-  /** Required whenever `image` is set — it carries meaning, not decoration. */
-  imageAlt?: string;
+  /**
+   * Cover photograph under the banner, e.g. "/images/page/services.webp".
+   * Pass several and the hero cross-fades between them every five seconds.
+   */
+  image?: string | string[];
+  /**
+   * Required whenever `image` is set — it carries meaning, not decoration.
+   * Give an array matching `image` when several are passed.
+   */
+  imageAlt?: string | string[];
   /**
    * Tailwind object-position classes for the cover. Defaults to a 70% crop on
    * phones, which suits a subject right of centre; pass `object-center` for a
@@ -53,8 +60,25 @@ export function PageHero({
   imageTone = 'balanced',
 }: PageHeroProps) {
   const quiet = imageTone === 'quiet';
+
   const reduced = useReducedMotion();
   const t = useT();
+
+  const covers = image ? (Array.isArray(image) ? image : [image]) : [];
+  const alts = imageAlt ? (Array.isArray(imageAlt) ? imageAlt : [imageAlt]) : [];
+
+  /**
+   * Which cover is showing. Only ever advances when there is more than one
+   * and the visitor has not asked for less motion; a five-second hold is long
+   * enough to take a picture in without it becoming a distraction behind the
+   * heading.
+   */
+  const [cover, setCover] = useState(0);
+  useEffect(() => {
+    if (covers.length < 2 || reduced) return;
+    const id = setInterval(() => setCover((c) => (c + 1) % covers.length), 5000);
+    return () => clearInterval(id);
+  }, [covers.length, reduced]);
 
   const eyebrowText = eyebrowKey ? t(eyebrowKey) : eyebrow ?? '';
   const titleText = titleKey ? t(titleKey) : title ?? '';
@@ -91,16 +115,27 @@ export function PageHero({
       </div>
 
       <div className="relative bg-[var(--ink)] text-white overflow-hidden">
-        {image ? (
+        {covers.length ? (
           <>
-            <Image
-              src={image}
-              alt={imageAlt ?? ''}
-              fill
-              priority
-              sizes="100vw"
-              className={`object-cover ${imagePosition}`}
-            />
+            <AnimatePresence initial={false}>
+              <motion.div
+                key={covers[cover]}
+                className="absolute inset-0"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: reduced ? 0 : 1.1, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <Image
+                  src={covers[cover]}
+                  alt={alts[cover] ?? alts[0] ?? ''}
+                  fill
+                  priority={cover === 0}
+                  sizes="100vw"
+                  className={`object-cover ${imagePosition}`}
+                />
+              </motion.div>
+            </AnimatePresence>
             {/* Two scrims rather than one flat tint: a horizontal ramp keeps
                 the left side dark enough for the heading while the right of
                 the picture stays legible, and a light vertical wash stops the

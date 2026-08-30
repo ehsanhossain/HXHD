@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { PRODUCTS, getProductsByCategory } from '@/data/products';
-import { HERO_LOOP } from '@/data/homeVideos';
+import { HERO_CLIPS } from '@/data/homeVideos';
 import { useT } from '@/i18n/LanguageProvider';
 
 /** How long each headline slide holds, in milliseconds. */
@@ -87,6 +87,13 @@ export function Hero() {
    * matters on a Bangladeshi mobile connection.
    */
   const [showVideo, setShowVideo] = useState(false);
+
+  /**
+   * Which clip is on screen. It advances when the current one ends rather
+   * than on a timer, so a clip is never cut off mid-shot -- the three run
+   * 15, 24 and 13 seconds and no single interval would suit all of them.
+   */
+  const [clip, setClip] = useState(0);
   useEffect(() => {
     if (reduced) return;
     const conn = (
@@ -189,18 +196,23 @@ export function Hero() {
       <div className="absolute inset-0" aria-hidden>
         {showVideo ? (
           <video
+            // Keyed on the source so the element remounts and autoplays the
+            // next clip; without it the browser keeps the first one loaded.
+            key={HERO_CLIPS[clip].src}
             className="absolute inset-0 w-full h-full object-cover object-center"
-            src={HERO_LOOP.src}
-            poster={HERO_LOOP.poster}
+            src={HERO_CLIPS[clip].src}
+            poster={HERO_CLIPS[clip].poster}
             autoPlay
             muted
-            loop
             playsInline
             preload="metadata"
+            onEnded={() => setClip((c) => (c + 1) % HERO_CLIPS.length)}
+            // A clip that fails to load must not stall the sequence.
+            onError={() => setClip((c) => (c + 1) % HERO_CLIPS.length)}
           />
         ) : (
           <Image
-            src={HERO_LOOP.poster}
+            src={HERO_CLIPS[0].poster}
             alt=""
             fill
             priority

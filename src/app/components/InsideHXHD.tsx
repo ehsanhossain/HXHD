@@ -1,9 +1,10 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
-import { Play, X } from 'lucide-react';
+import { Play } from 'lucide-react';
 import { Reveal, Stagger, StaggerItem } from '@/components/motion/Reveal';
+import { VideoLightbox } from '@/components/ui/VideoLightbox';
 import { HOME_VIDEOS, type HomeVideo } from '@/data/homeVideos';
 import { useT } from '@/i18n/LanguageProvider';
 
@@ -65,76 +66,11 @@ export function InsideHXHD() {
         </Stagger>
       </div>
 
-      <VideoPlayer video={open} onClose={() => setOpen(null)} label={t('sec.closeVideo')} />
-    </section>
-  );
-}
-
-/**
- * Full-screen player. Mirrors the image Lightbox's rules so the two feel like
- * one thing: Escape closes, the backdrop closes, the page behind is locked.
- */
-function VideoPlayer({
-  video,
-  onClose,
-  label,
-}: {
-  video: HomeVideo | null;
-  onClose: () => void;
-  label: string;
-}) {
-  const closeRef = useRef<HTMLButtonElement>(null);
-
-  const onKey = useCallback(
-    (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
-    },
-    [onClose],
-  );
-
-  useEffect(() => {
-    if (!video) return;
-    document.addEventListener('keydown', onKey);
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    closeRef.current?.focus();
-    return () => {
-      document.removeEventListener('keydown', onKey);
-      document.body.style.overflow = prev;
-    };
-  }, [video, onKey]);
-
-  if (!video) return null;
-
-  return (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-label={video.description}
-      className="fixed inset-0 z-[100] bg-black/92 flex items-center justify-center p-4 sm:p-8"
-      onClick={onClose}
-    >
-      <button
-        ref={closeRef}
-        type="button"
-        onClick={onClose}
-        aria-label={label}
-        className="absolute top-4 right-4 sm:top-6 sm:right-6 grid place-items-center w-11 h-11 bg-white/10 hover:bg-white/20 text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-teal)]"
-      >
-        <X className="w-5 h-5" />
-      </button>
-
-      {/* Stop the click on the video itself from closing the dialog. */}
-      <video
-        key={video.src}
-        src={video.src}
-        poster={video.poster}
-        controls
-        autoPlay
-        playsInline
-        onClick={(e) => e.stopPropagation()}
-        className="max-h-full max-w-full w-auto h-auto"
+      <VideoLightbox
+        item={open ? { src: open.src, poster: open.poster, description: open.description } : null}
+        onClose={() => setOpen(null)}
+        closeLabel={t('sec.closeVideo')}
       />
-    </div>
+    </section>
   );
 }
