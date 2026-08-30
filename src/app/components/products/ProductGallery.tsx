@@ -2,7 +2,10 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { Maximize2 } from 'lucide-react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
+import { Lightbox } from '@/components/ui/Lightbox';
+import { useT } from '@/i18n/LanguageProvider';
 
 interface ProductGalleryProps {
   images: string[];
@@ -11,7 +14,10 @@ interface ProductGalleryProps {
 
 export function ProductGallery({ images, name }: ProductGalleryProps) {
   const [active, setActive] = useState(0);
+  /** Index being shown full size, or null when the overlay is closed. */
+  const [zoomed, setZoomed] = useState<number | null>(null);
   const reduced = useReducedMotion();
+  const t = useT();
 
   if (!images.length) {
     return (
@@ -27,7 +33,12 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
 
   return (
     <div>
-      <div className="relative aspect-square w-full bg-white border border-[var(--line)] overflow-hidden ticks">
+      <button
+        type="button"
+        onClick={() => setZoomed(index)}
+        aria-label={t('detail.viewFullSize')}
+        className="group relative aspect-square w-full bg-white border border-[var(--line)] overflow-hidden ticks cursor-zoom-in block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-teal)]"
+      >
         <div className="absolute inset-0 bg-hatch opacity-35" aria-hidden />
         <AnimatePresence mode="wait">
           <motion.div
@@ -48,7 +59,15 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
             />
           </motion.div>
         </AnimatePresence>
-      </div>
+
+        {/* Only a hint that the picture opens — the whole stage is the target. */}
+        <span
+          className="absolute bottom-4 right-4 grid place-items-center w-10 h-10 bg-[var(--ink)]/80 text-white opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-300"
+          aria-hidden
+        >
+          <Maximize2 className="w-4 h-4" />
+        </span>
+      </button>
 
       {images.length > 1 && (
         <div className="mt-4 grid grid-cols-5 gap-3">
@@ -75,6 +94,17 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
           ))}
         </div>
       )}
+
+      <Lightbox
+        items={images.map((img) => ({ src: img, alt: name }))}
+        index={zoomed}
+        onClose={() => setZoomed(null)}
+        onIndexChange={(next) => {
+          setZoomed(next);
+          // Keep the stage in step, so closing leaves the picture just viewed.
+          setActive(next);
+        }}
+      />
     </div>
   );
 }

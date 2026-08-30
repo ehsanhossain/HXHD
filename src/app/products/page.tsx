@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ProductCatalog } from '../components/products/ProductCatalog';
 import { ProductModelRange } from '../components/products/ProductModelRange';
 import { ProductNewsletter } from '../components/products/ProductNewsletter';
+import { AllProductVideos } from '../components/products/AllProductVideos';
 import { PRODUCTS } from '@/data/products';
 
 export const metadata: Metadata = {
@@ -40,6 +41,8 @@ export default function ProductsPage() {
       </Suspense>
 
       <ProductModelRange />
+
+      <AllProductVideos />
 
       <ProductNewsletter />
     </div>

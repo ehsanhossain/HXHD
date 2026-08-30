@@ -1,12 +1,16 @@
 "use client";
 
 import { useCallback, useEffect, useRef } from 'react';
+import Link from 'next/link';
 
 export interface VideoItem {
   src: string;
   poster: string;
   /** Spoken description of the footage, used as the dialog's accessible name. */
   description: string;
+  /** Optional link out of the player, e.g. to the product being demonstrated. */
+  href?: string;
+  linkLabel?: string;
 }
 
 /**
@@ -72,6 +76,19 @@ export function VideoLightbox({
           <path d="M18 6 6 18M6 6l12 12" />
         </svg>
       </button>
+
+      {item.href && item.linkLabel ? (
+        <Link
+          href={item.href}
+          onClick={(e) => e.stopPropagation()}
+          className="absolute left-1/2 -translate-x-1/2 bottom-6 z-10 inline-flex items-center gap-2 bg-[var(--brand-red)] text-white px-5 py-3 text-sm font-bold tracking-wide hover:brightness-110 transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        >
+          {item.linkLabel}
+          <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
+        </Link>
+      ) : null}
 
       {/* Clicking the video itself must not close the dialog. */}
       <video

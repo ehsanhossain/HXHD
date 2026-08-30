@@ -175,6 +175,11 @@ const en = {
   'page.about.eyebrow': 'About HXHD',
   'sec.videos': 'Inside HXHD',
   'detail.videos': 'Product videos',
+  'detail.viewFullSize': 'View full size',
+  'sec.allVideos': 'Product videos',
+  'sec.allVideosTitle': 'Every product on film',
+  'sec.allVideosLead':
+    'Application and demonstration footage across the range. Play any clip, or follow it through to the product.',
   'sec.videosTitle': 'See the plant at work',
   'sec.videosLead':
     'Footage from our plant — the bulk store, the dispatch bay and loading for delivery.',
@@ -332,6 +337,10 @@ const zh: Dict = {
   'page.about.eyebrow': '关于宏星宏达',
   'sec.videos': '走进宏星宏达',
   'detail.videos': '产品视频',
+  'detail.viewFullSize': '查看大图',
+  'sec.allVideos': '产品视频',
+  'sec.allVideosTitle': '全系列产品实拍',
+  'sec.allVideosLead': '各产品的施工与演示视频。点击播放，也可直接进入产品页面。',
   'sec.videosTitle': '看看工厂如何运转',
   'sec.videosLead': '工厂实拍——成品仓库、发货区与装车发运。',
   'sec.videoDispatch': '发货区',
@@ -490,6 +499,11 @@ const bn: Dict = {
   'page.about.eyebrow': 'এইচএক্সএইচডি সম্পর্কে',
   'sec.videos': 'এইচএক্সএইচডির ভেতরে',
   'detail.videos': 'পণ্যের ভিডিও',
+  'detail.viewFullSize': 'পূর্ণ আকারে দেখুন',
+  'sec.allVideos': 'পণ্যের ভিডিও',
+  'sec.allVideosTitle': 'ফিল্মে সব পণ্য',
+  'sec.allVideosLead':
+    'পুরো রেঞ্জের প্রয়োগ ও ডেমো ভিডিও। যেকোনো ক্লিপ চালান, অথবা সেখান থেকেই পণ্যের পাতায় যান।',
   'sec.videosTitle': 'কারখানার কাজ দেখুন',
   'sec.videosLead':
     'আমাদের কারখানার ভিডিও — বাল্ক স্টোর, ডিসপ্যাচ বে ও ডেলিভারির জন্য লোডিং।',
