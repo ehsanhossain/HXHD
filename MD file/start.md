@@ -1,7 +1,7 @@
 # start.md — running the site on your machine
 
-Verified working on 13 August 2026: dev server on port 4310, all pages
-returning 200.
+Verified working on 20 August 2026: dev server on port 4310, all pages
+returning 200, CSS applied and every cover image loading.
 
 ---
 
@@ -36,17 +36,27 @@ Plain `npm install` **will** appear to succeed and then break the build.
 
 ## 3. Start the dev server
 
-Default port 3000:
-
 ```bash
-npm run dev
+cd "f:/Claude Projects/HXHDBD"
+NODE_ENV=development npx next dev -p 4310
 ```
 
-**On a specific port** (use this if 3000 is busy):
+**`NODE_ENV=development` is required, not optional.** This machine exports
+`NODE_ENV=production` from the shell profile and `next dev` inherits it. The
+server then starts, and answers `200`, while serving every page with **no CSS at
+all**, logging:
 
-```bash
-npx next dev -p 4310
 ```
+⚠ You are using a non-standard "NODE_ENV" value in your environment.
+⨯ ./src/app/globals.css
+Module parse failed: Unexpected character '@' (1:0)
+> @import 'tailwindcss' source(none);
+```
+
+Tailwind never runs, so the whole site renders unstyled. Plain `npm run dev`
+hits this too — the flag is what avoids it, not the port.
+
+Check with `echo $NODE_ENV`. If it prints `production`, prefix the command.
 
 Expected output:
 
@@ -75,14 +85,19 @@ and 8080 are all fine.
 ## 4. Check it works
 
 ```bash
-for u in / /products /services /industries /knowledge /contact; do
+for u in / /products /services /industries /knowledge /contact /about /career; do
   printf "%-14s " "$u"
-  curl -s -o /dev/null -w "%{http_code}\n" -m 90 "http://localhost:4310$u"
+  curl -s -o /dev/null -w "%{http_code}\n" -m 180 "http://localhost:4310$u"
 done
 ```
 
-All six should print `200`. Verified on 13 August 2026, plus
-`/knowledge/how-is-acrylic-emulsion-produced` → 200.
+All eight should print `200`. Verified on 20 August 2026, along with
+`/knowledge/how-is-acrylic-emulsion-produced` and a product detail page.
+
+**A 200 is not proof the page is right.** An unstyled page still returns 200 —
+see section 3. The quickest check is the header's left edge: it should sit at
+`x: 0`. At `x: 8` you are seeing the browser's default body margin, which means
+no CSS loaded at all.
 
 Switch languages with the **EN · 中文 · বাংলা** control in the top-right of the
 header. The choice is stored in `localStorage`; there are no `/en` or `/bn` URLs.
@@ -92,12 +107,15 @@ header. The choice is stored in `localStorage`; there are no `/en` or `/bn` URLs
 ## 5. Production build locally
 
 ```bash
+rm -rf .next      # never build on top of a dev server's .next -- see section 6
 npm run build     # compiles and prerenders every page
-npm start         # serves the built output on :3000
+PORT=4310 npm start
 ```
 
-`npm run build` should end with a route table listing 45 routes, including
-`● /knowledge/[slug]` with 11 paths and `● /products/[slug]` with 28.
+`npm run build` should end with `✓ Generating static pages (58/58)`, including
+`● /knowledge/[slug]` with 11 paths and `● /products/[slug]` with 35.
+
+`npm start` needs no `NODE_ENV` override — production is what it wants.
 
 ---
 
@@ -124,6 +142,23 @@ npm run dev
 
 This has cost time more than once. Stop the dev server *first*, every time.
 
+### The same trap in reverse: a dead server still answers
+
+If something already holds the port, the new server dies with `EADDRINUSE` —
+but launched in the background you see nothing, and `curl` still returns **200**
+from the *old* process. You then test the previous build believing it is the new
+one.
+
+Read the log after starting, and confirm what owns a port before killing it.
+Port 3000 once belonged to an entirely different project:
+
+```bash
+netstat -ano | grep -E "TCP.*:4310\s.*LISTENING"
+powershell -NoProfile -Command "Get-CimInstance Win32_Process -Filter \"Name='node.exe'\" | Where-Object { $_.CommandLine -like '*HXHDBD*' } | ForEach-Object { '{0}  {1}' -f $_.ProcessId, $_.CommandLine }"
+```
+
+Only kill what shows `HXHDBD` in its command line.
+
 ---
 
 ## 7. Other useful commands
@@ -149,7 +184,7 @@ src/
     components/                  Header, Footer, Hero, section blocks
     globals.css                  design tokens, shapes, script-aware type
   data/
-    products.ts                  28 products, 21 categories
+    products.ts                  35 products, 21 categories
     company.ts                   company facts, addresses, contact details
     knowledge.ts                 11 articles with full body text
   i18n/
