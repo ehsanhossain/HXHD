@@ -108,7 +108,7 @@ export function PageHero({
             <div
               className={
                 quiet
-                  ? 'absolute inset-0 bg-gradient-to-r from-[var(--ink)] via-[var(--ink)]/90 to-[var(--ink)]/75'
+                  ? 'absolute inset-0 bg-gradient-to-r from-[var(--ink)] via-[var(--ink)]/88 to-[var(--ink)]/45'
                   : 'absolute inset-0 bg-gradient-to-r from-[var(--ink)] via-[var(--ink)]/85 to-[var(--ink)]/45'
               }
               aria-hidden
@@ -120,7 +120,7 @@ export function PageHero({
             {/* On a phone the copy spans the full width, so the horizontal ramp
                 no longer protects it — a flat tint does. */}
             <div
-              className={`absolute inset-0 bg-[var(--ink)]/40 ${quiet ? '' : 'sm:hidden'}`}
+              className={`absolute inset-0 ${quiet ? 'bg-[var(--ink)]/25' : 'bg-[var(--ink)]/40 sm:hidden'}`}
               aria-hidden
             />
           </>

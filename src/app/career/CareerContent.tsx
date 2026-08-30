@@ -67,7 +67,7 @@ export function CareerContent() {
         intro={c.career.intro}
         crumbs={[{ labelKey: 'nav.career' }]}
         image="/images/page/career.webp"
-        imagePosition="object-center"
+        imagePosition="object-[82%_center] sm:object-right"
         imageTone="quiet"
         imageAlt="Team joining hands beside a word cloud of career and recruitment terms"
       />
