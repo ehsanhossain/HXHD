@@ -20,6 +20,21 @@ interface PageHeroProps {
   image?: string;
   /** Required whenever `image` is set — it carries meaning, not decoration. */
   imageAlt?: string;
+  /**
+   * Tailwind object-position classes for the cover. Defaults to a 70% crop on
+   * phones, which suits a subject right of centre; pass `object-center` for a
+   * picture whose subject sits in the middle.
+   */
+  imagePosition?: string;
+  /**
+   * How hard the cover is veiled.
+   *
+   * `balanced` suits a photograph with a clear subject. `quiet` is for a busy
+   * or typographic picture that would otherwise compete with the heading - it
+   * veils the whole frame evenly so the picture reads as texture rather than
+   * as a second thing to read.
+   */
+  imageTone?: 'balanced' | 'quiet';
 }
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -34,7 +49,10 @@ export function PageHero({
   crumbs = [],
   image,
   imageAlt,
+  imagePosition = 'object-[70%_center] sm:object-center',
+  imageTone = 'balanced',
 }: PageHeroProps) {
+  const quiet = imageTone === 'quiet';
   const reduced = useReducedMotion();
   const t = useT();
 
@@ -81,16 +99,18 @@ export function PageHero({
               fill
               priority
               sizes="100vw"
-              // Every one of the five covers puts its subject right of centre, so a
-              // phone-width crop on the middle loses the person entirely.
-              className="object-cover object-[70%_center] sm:object-center"
+              className={`object-cover ${imagePosition}`}
             />
             {/* Two scrims rather than one flat tint: a horizontal ramp keeps
                 the left side dark enough for the heading while the right of
                 the picture stays legible, and a light vertical wash stops the
                 bottom edge from glowing against the section below. */}
             <div
-              className="absolute inset-0 bg-gradient-to-r from-[var(--ink)] via-[var(--ink)]/85 to-[var(--ink)]/45"
+              className={
+                quiet
+                  ? 'absolute inset-0 bg-gradient-to-r from-[var(--ink)] via-[var(--ink)]/90 to-[var(--ink)]/75'
+                  : 'absolute inset-0 bg-gradient-to-r from-[var(--ink)] via-[var(--ink)]/85 to-[var(--ink)]/45'
+              }
               aria-hidden
             />
             <div
@@ -99,7 +119,10 @@ export function PageHero({
             />
             {/* On a phone the copy spans the full width, so the horizontal ramp
                 no longer protects it — a flat tint does. */}
-            <div className="absolute inset-0 bg-[var(--ink)]/40 sm:hidden" aria-hidden />
+            <div
+              className={`absolute inset-0 bg-[var(--ink)]/40 ${quiet ? '' : 'sm:hidden'}`}
+              aria-hidden
+            />
           </>
         ) : (
           <>
