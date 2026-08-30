@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { PRODUCTS, getProductsByCategory } from '@/data/products';
+import { HERO_LOOP } from '@/data/homeVideos';
 import { useT } from '@/i18n/LanguageProvider';
 
 /** How long each headline slide holds, in milliseconds. */
@@ -31,24 +32,16 @@ const SLIDES = [
     k: 's1',
     accentLine: 1,
     cats: [] as string[],
-    // Slide 1 speaks to capability rather than a category, so it gets the
-    // plant/QC frame. Each other slide gets the application its copy names.
-    image: '/images/hero/lab-qc.webp',
-    imageAlt: 'HXHD chemist checking an emulsion batch against spec on the production floor',
   },
   {
     k: 's2',
     accentLine: 1,
     cats: ['waterproof-emulsion'],
-    image: '/images/hero/roof-waterproofing.webp',
-    imageAlt: 'Applicator rolling waterproof emulsion across a rooftop deck above the Dhaka skyline',
   },
   {
     k: 's3',
     accentLine: 1,
     cats: ['architectural-emulsion'],
-    image: '/images/hero/window-sealant.webp',
-    imageAlt: 'Transparent waterproof coating being brushed along an exterior window reveal',
   },
   {
     k: 's4',
@@ -58,8 +51,6 @@ const SLIDES = [
       'transparent-waterproof-adhesive',
       'wall-curing-agent-adhesive',
     ],
-    image: '/images/hero/tile-adhesive.webp',
-    imageAlt: 'Tiler bedding a large-format tile with HXHD ceramic tile back adhesive',
   },
 ] as const;
 
@@ -88,6 +79,23 @@ export function Hero() {
   const [index, setIndex] = useState(0);
   const [productIndex, setProductIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+
+  /**
+   * Starts false so the server renders the poster and the first paint costs
+   * nothing extra; the client upgrades to video only when it is both wanted
+   * and affordable. Data Saver and anything below 4g keep the still, which
+   * matters on a Bangladeshi mobile connection.
+   */
+  const [showVideo, setShowVideo] = useState(false);
+  useEffect(() => {
+    if (reduced) return;
+    const conn = (
+      navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }
+    ).connection;
+    if (conn?.saveData) return;
+    if (conn?.effectiveType && !conn.effectiveType.includes('4g')) return;
+    setShowVideo(true);
+  }, [reduced]);
 
   // Track elapsed time so pause/resume continues rather than restarting
   const startedAt = useRef<number>(0);
@@ -174,29 +182,32 @@ export function Hero() {
       onFocusCapture={() => autoRotating && setPaused(true)}
       onBlurCapture={() => autoRotating && setPaused(false)}
     >
-      {/* Application imagery. Decorative here — the headline already carries
-          the message — so alt stays empty and the descriptive alt travels
-          with the spec card below instead of being read twice. */}
+      {/* Plant footage. Decorative — the headline carries the message — so the
+          whole layer is aria-hidden and the video has no accessible name. The
+          poster is what renders until the gate above opens, and stays put for
+          reduced motion, Data Saver and slow connections. */}
       <div className="absolute inset-0" aria-hidden>
-        <AnimatePresence initial={false}>
-          <motion.div
-            key={slide.k}
-            className="absolute inset-0"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: reduced ? 0 : 0.9, ease: EASE }}
-          >
-            <Image
-              src={slide.image}
-              alt=""
-              fill
-              priority={index === 0}
-              sizes="100vw"
-              className="object-cover object-right"
-            />
-          </motion.div>
-        </AnimatePresence>
+        {showVideo ? (
+          <video
+            className="absolute inset-0 w-full h-full object-cover object-center"
+            src={HERO_LOOP.src}
+            poster={HERO_LOOP.poster}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+          />
+        ) : (
+          <Image
+            src={HERO_LOOP.poster}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        )}
       </div>
 
       {/* Scrim. Held to ~20% across the picture itself, which is where the

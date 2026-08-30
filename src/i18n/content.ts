@@ -376,6 +376,10 @@ const en = {
       { title: 'Export-ready documentation', desc: 'TDS, certificates of analysis and compliance files prepared for customs and for your own QA file.' },
       { title: 'Technical people, locally', desc: 'Questions about substrate, dosage or film performance go to engineers who know the products, not a call centre.' },
     ],
+    galleryEyebrow: 'In the field',
+    galleryTitle: 'Our products at work',
+    galleryLead:
+      'Production and application photography from our plants and project sites. Select any frame to view it full size.',
     certsEyebrow: 'Certifications',
     certsTitle: 'Patents and certifications',
     certsLead:
@@ -842,6 +846,9 @@ const zh: PageContent = {
       { title: '出口就绪的技术文件', desc: '技术数据表、质量分析证书与合规文件，既可用于清关，也可归入您的质量档案。' },
       { title: '技术支持在本地', desc: '关于基材、用量或成膜性能的问题，由熟悉产品的工程师解答，而非客服中心。' },
     ],
+    galleryEyebrow: '应用现场',
+    galleryTitle: '产品实际应用',
+    galleryLead: '来自工厂与项目现场的生产及施工实拍。点击任一图片可查看大图。',
     certsEyebrow: '资质认证',
     certsTitle: '专利与资质证书',
     certsLead:
@@ -1292,6 +1299,10 @@ const bn: PageContent = {
       { title: 'রপ্তানি-প্রস্তুত ডকুমেন্টেশন', desc: 'TDS, বিশ্লেষণ সনদ ও কমপ্লায়েন্স ফাইল — কাস্টমসের জন্যও, আপনার নিজস্ব QA ফাইলের জন্যও।' },
       { title: 'কারিগরি সহায়তা কাছেই', desc: 'সাবস্ট্রেট, ডোজ বা ফিল্ম পারফরম্যান্সের প্রশ্ন যায় পণ্য-জানা প্রকৌশলীদের কাছে, কল সেন্টারে নয়।' },
     ],
+    galleryEyebrow: 'কাজের মাঠে',
+    galleryTitle: 'আমাদের পণ্য কাজে',
+    galleryLead:
+      'আমাদের কারখানা ও প্রকল্প সাইটের উৎপাদন ও প্রয়োগের ছবি। পুরো আকারে দেখতে যেকোনো ছবিতে ক্লিক করুন।',
     certsEyebrow: 'সনদপত্র',
     certsTitle: 'পেটেন্ট ও সনদপত্র',
     certsLead:

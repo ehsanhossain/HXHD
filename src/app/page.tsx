@@ -3,6 +3,7 @@ import { Hero } from './components/Hero';
 import { SearchStrip } from './components/SearchStrip';
 import { SolutionsAndProducts } from './components/SolutionsAndProducts';
 import { CredibilityAndCTA } from './components/CredibilityAndCTA';
+import { InsideHXHD } from './components/InsideHXHD';
 import { ResourcesAndInsights } from './components/ResourcesAndInsights';
 
 export const metadata: Metadata = {
@@ -31,6 +32,7 @@ export default function HomePage() {
       <Hero />
       <SearchStrip />
       <SolutionsAndProducts />
+      <InsideHXHD />
       <CredibilityAndCTA />
       <ResourcesAndInsights />
     </>

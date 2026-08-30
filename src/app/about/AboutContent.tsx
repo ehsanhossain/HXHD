@@ -19,6 +19,7 @@ import { NewsletterStrip } from '../components/contact/NewsletterStrip';
 import { AboutLeadership } from '../components/about/AboutLeadership';
 import { WhyChooseHXHD } from '../components/about/WhyChooseHXHD';
 import { AboutCertificates } from '../components/about/AboutCertificates';
+import { AboutGallery } from '../components/about/AboutGallery';
 import { Reveal, Stagger, StaggerItem } from '@/components/motion/Reveal';
 import { Counter } from '@/components/motion/Counter';
 import { useI18n } from '@/i18n/LanguageProvider';
@@ -300,6 +301,7 @@ export function AboutContent() {
         </div>
       </section>
 
+      <AboutGallery />
       <AboutCertificates />
 
       {/* ── Section 4: Interactive Timeline / Milestones ────────── */}
