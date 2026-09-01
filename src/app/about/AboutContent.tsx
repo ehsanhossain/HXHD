@@ -53,6 +53,7 @@ export function AboutContent() {
         titleKey="page.about.title"
         intro={c.about.intro}
         crumbs={[{ labelKey: 'nav.about' }]}
+        imageAspect="lg:aspect-video"
         image={[
           '/images/about/covers/beijing.webp',
           '/images/about/covers/hebei.webp',

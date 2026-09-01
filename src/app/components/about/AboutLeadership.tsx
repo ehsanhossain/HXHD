@@ -85,6 +85,10 @@ export function AboutLeadership() {
   const { c } = useI18n();
   const [open, setOpen] = useState<number | null>(null);
 
+  // Two portraits split the row evenly; one is too narrow to hold half of it,
+  // so the message takes the space instead of a gap doing nothing.
+  const single = LEADERSHIP.length === 1;
+
   const roleFor = (key: Leader['roleKey']) =>
     key === 'chairman' ? c.about.roleChairman : c.about.roleGeneralManager;
 
@@ -96,11 +100,11 @@ export function AboutLeadership() {
           <h2 className="text-step-3">{c.about.leadershipTitle}</h2>
         </Reveal>
 
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
           {/* Portraits */}
           <Stagger
-            className={`lg:col-span-6 grid gap-5 sm:gap-6 ${
-              LEADERSHIP.length > 1 ? 'grid-cols-2' : 'grid-cols-1 max-w-sm'
+            className={`grid gap-5 sm:gap-6 ${
+              single ? 'lg:col-span-4 grid-cols-1' : 'lg:col-span-6 grid-cols-2'
             }`}
           >
             {LEADERSHIP.map((l, i) => (
@@ -115,18 +119,24 @@ export function AboutLeadership() {
           </Stagger>
 
           {/* Chairman's message */}
-          <Reveal direction="left" delay={0.1} className="lg:col-span-6">
-            <div className="relative bg-white border border-[var(--line)] p-7 sm:p-9 cut-br h-full">
+          <Reveal
+            direction="left"
+            delay={0.1}
+            className={single ? 'lg:col-span-8' : 'lg:col-span-6'}
+          >
+            <div className="relative bg-white border border-[var(--line)] p-7 sm:p-9 cut-br h-full flex flex-col">
               <Quote
-                className="w-9 h-9 text-[var(--brand-red)]/20 absolute top-6 right-6"
+                className="w-12 h-12 text-[var(--brand-red)]/15 absolute top-6 right-7"
                 aria-hidden
               />
               <h3 className="text-step-2 mb-5 leading-tight">{c.about.chairmanMessageTitle}</h3>
               <div className="w-16 h-1 bg-[var(--brand-red)] mb-6" />
-              <p className="text-[var(--steel)] leading-[1.85] text-sm sm:text-base">
+              {/* Wider column, so the message can carry the size a chairman's
+                  statement deserves and fill the card rather than float in it. */}
+              <p className="text-[var(--steel)] leading-[1.9] text-sm sm:text-base lg:text-[1.0625rem]">
                 {c.about.chairmanMessage}
               </p>
-              <p className="mt-7 pt-5 border-t border-[var(--line)] font-bold text-[var(--ink)]">
+              <p className="mt-auto pt-7 border-t border-[var(--line)] font-bold text-[var(--ink)]">
                 {LEADERSHIP[0].name}
                 <span className="block text-xs font-bold uppercase tracking-[0.12em] text-[var(--steel-2)] mt-1">
                   {c.about.roleChairman}

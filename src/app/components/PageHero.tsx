@@ -42,6 +42,18 @@ interface PageHeroProps {
    * as a second thing to read.
    */
   imageTone?: 'balanced' | 'quiet';
+  /**
+   * Aspect class for the banner itself, e.g. "lg:aspect-video".
+   *
+   * `cover` only crops when the box and the picture disagree about shape, so
+   * matching the box to a 16:9 cover shows the whole photograph. Left off, the
+   * banner is as tall as its copy and the picture is cropped to fit -- which
+   * is what a banner normally wants.
+   *
+   * Applied from `lg` upward by the caller: on a phone the copy needs more
+   * height than a wide picture would give it.
+   */
+  imageAspect?: string;
 }
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -58,6 +70,7 @@ export function PageHero({
   imageAlt,
   imagePosition = 'object-[70%_center] sm:object-center',
   imageTone = 'balanced',
+  imageAspect,
 }: PageHeroProps) {
   const quiet = imageTone === 'quiet';
 
@@ -114,7 +127,9 @@ export function PageHero({
         </div>
       </div>
 
-      <div className="relative bg-[var(--ink)] text-white overflow-hidden">
+      <div
+        className={`relative bg-[var(--ink)] text-white overflow-hidden ${imageAspect ?? ''}`}
+      >
         {covers.length ? (
           <>
             <AnimatePresence initial={false}>
@@ -171,7 +186,7 @@ export function PageHero({
         )}
         <div className="absolute left-0 top-0 h-full w-[3px] bg-[var(--brand-red)] z-10" aria-hidden />
 
-        <div className="shell relative z-10 py-16 lg:py-20 min-h-[19rem] flex flex-col justify-center">
+        <div className="shell relative z-10 h-full py-16 lg:py-20 min-h-[19rem] flex flex-col justify-center">
           <motion.p className="eyebrow eyebrow-on-dark mb-5" {...rise(0)}>
             {eyebrowText}
           </motion.p>
