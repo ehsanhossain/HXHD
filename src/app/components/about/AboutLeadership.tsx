@@ -98,7 +98,11 @@ export function AboutLeadership() {
 
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           {/* Portraits */}
-          <Stagger className="lg:col-span-6 grid grid-cols-2 gap-5 sm:gap-6">
+          <Stagger
+            className={`lg:col-span-6 grid gap-5 sm:gap-6 ${
+              LEADERSHIP.length > 1 ? 'grid-cols-2' : 'grid-cols-1 max-w-sm'
+            }`}
+          >
             {LEADERSHIP.map((l, i) => (
               <StaggerItem key={l.name}>
                 <LeaderCard

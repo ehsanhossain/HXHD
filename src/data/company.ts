@@ -159,7 +159,7 @@ export const MILESTONES = [
 export interface Leader {
   name: string;
   /** i18n key for the job title, so the role translates but the name does not. */
-  roleKey: 'chairman' | 'generalManager';
+  roleKey: 'chairman';
   /** Path under /public, e.g. "/images/about/huang-shangwen.jpg". */
   photo?: string;
 }
@@ -169,10 +169,5 @@ export const LEADERSHIP: Leader[] = [
     name: 'Huang Shangwen',
     roleKey: 'chairman',
     photo: '/images/about/huang-shangwen.jpg',
-  },
-  {
-    name: 'Hu Jinling',
-    roleKey: 'generalManager',
-    photo: '/images/about/hu-jinling.jpg',
   },
 ];

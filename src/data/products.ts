@@ -53,38 +53,18 @@ export interface Category {
 
 export const CATEGORIES: Category[] = [
   {
-    "slug": "wall-curing-agent-adhesive",
-    "name": "Wall Curing Agent Adhesive",
-    "count": 1
-  },
-  {
-    "slug": "stone-like-paint",
-    "name": "Stone-like Paint",
-    "count": 1
-  },
-  {
-    "slug": "interior-wall-paint",
-    "name": "Interior Wall Paint",
-    "count": 1
-  },
-  {
-    "slug": "colorful-paint",
-    "name": "Colorful Paint",
-    "count": 0
-  },
-  {
-    "slug": "latex-paint-for-exterior-wall",
-    "name": "Latex Paint for Exterior Wall",
-    "count": 0
-  },
-  {
-    "slug": "sbs-liquid-coil-polyurethane-waterproof-coating",
-    "name": "SBS Liquid Coil Polyurethane Waterproof Coating",
-    "count": 1
+    "slug": "waterproof-emulsion",
+    "name": "Waterproof Emulsion",
+    "count": 6
   },
   {
     "slug": "rg-waterproof-coating",
     "name": "RG Waterproof Coating",
+    "count": 1
+  },
+  {
+    "slug": "sbs-liquid-coil-polyurethane-waterproof-coating",
+    "name": "SBS Liquid Coil Polyurethane Waterproof Coating",
     "count": 1
   },
   {
@@ -93,14 +73,64 @@ export const CATEGORIES: Category[] = [
     "count": 0
   },
   {
-    "slug": "ceramic-tile-adhesive",
-    "name": "Ceramic Tile Adhesive",
-    "count": 2
-  },
-  {
     "slug": "transparent-waterproof-adhesive",
     "name": "Transparent Waterproof Adhesive",
     "count": 2
+  },
+  {
+    "slug": "textile-emulsion",
+    "name": "Textile Emulsion",
+    "count": 8
+  },
+  {
+    "slug": "sand-fixing-agent",
+    "name": "Sand Fixing Agent",
+    "count": 2
+  },
+  {
+    "slug": "rust-converter",
+    "name": "Rust Converter",
+    "count": 2
+  },
+  {
+    "slug": "rust-stabilizer",
+    "name": "Rust Stabilizer",
+    "count": 1
+  },
+  {
+    "slug": "ceramic-tile-adhesive",
+    "name": "Ceramic Tile Adhesive",
+    "count": 1
+  },
+  {
+    "slug": "architectural-emulsion",
+    "name": "Architectural Emulsion",
+    "count": 7
+  },
+  {
+    "slug": "wall-curing-agent-adhesive",
+    "name": "Wall Curing Agent Adhesive",
+    "count": 1
+  },
+  {
+    "slug": "interior-wall-paint",
+    "name": "Interior Wall Paint",
+    "count": 1
+  },
+  {
+    "slug": "latex-paint-for-exterior-wall",
+    "name": "Latex Paint for Exterior Wall",
+    "count": 0
+  },
+  {
+    "slug": "stone-like-paint",
+    "name": "Stone-like Paint",
+    "count": 1
+  },
+  {
+    "slug": "colorful-paint",
+    "name": "Colorful Paint",
+    "count": 0
   },
   {
     "slug": "compound-adhesive",
@@ -118,21 +148,6 @@ export const CATEGORIES: Category[] = [
     "count": 0
   },
   {
-    "slug": "rust-converter",
-    "name": "Rust Converter",
-    "count": 1
-  },
-  {
-    "slug": "rust-stabilizer",
-    "name": "Rust Stabilizer",
-    "count": 2
-  },
-  {
-    "slug": "sand-fixing-agent",
-    "name": "Sand Fixing Agent",
-    "count": 2
-  },
-  {
     "slug": "pressure-sensitive-adhesive",
     "name": "Pressure-sensitive Adhesive",
     "count": 0
@@ -142,21 +157,6 @@ export const CATEGORIES: Category[] = [
     "name": "VAE Emulsion",
     "count": 0
   },
-  {
-    "slug": "textile-emulsion",
-    "name": "Textile Emulsion",
-    "count": 8
-  },
-  {
-    "slug": "waterproof-emulsion",
-    "name": "Waterproof Emulsion",
-    "count": 6
-  },
-  {
-    "slug": "architectural-emulsion",
-    "name": "Architectural Emulsion",
-    "count": 7
-  }
 ];
 
 export const PRODUCTS: Product[] = [
@@ -463,14 +463,17 @@ export const PRODUCTS: Product[] = [
       "high performance tile adhesive",
       "tile installation adhesive"
     ],
-    "image": "/images/catalog/c0cadbdf5aca.jpeg",
+    "image": "/images/catalog/c6b0eaa31ae0.jpg",
     "images": [
-      "/images/catalog/c0cadbdf5aca.jpeg",
-      "/images/catalog/c6b1a4003467.jpg",
       "/images/catalog/c6b0eaa31ae0.jpg",
+      "/images/catalog/c6b1a4003467.jpg",
+      "/images/catalog/c0cadbdf5aca.jpeg",
       "/images/catalog/6a55572ad81f.jpg",
       "/images/catalog/52845c4a91ae.jpg",
-      "/images/catalog/908a03190d1c.png"
+      "/images/catalog/908a03190d1c.png",
+      "/images/catalog/fc13a3879c64.jpg",
+      "/images/catalog/1da81b7710d4.jpg",
+      "/images/catalog/6925dd502c12.png"
     ],
     "rating": {
       "value": 5,
@@ -539,99 +542,6 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "sourceUrl": "https://www.hxhdchemical.com/strong-and-reliable-ceramic-tile-adhesive-hx3086/"
-  },
-  {
-    "id": "ceramic-tile-adhesive-hx-3086-product",
-    "slug": "ceramic-tile-adhesive-hx-3086-product",
-    "name": "Ceramic Tile Adhesive HX-3086",
-    "code": "HX-3086",
-    "category": "Ceramic Tile Adhesive",
-    "categorySlug": "ceramic-tile-adhesive",
-    "summary": "Looking for a high-quality ceramic tile adhesive? Check out HX-3086 for a strong and durable bond. Perfect for your tiling needs",
-    "keywords": [
-      "Ceramic tile adhesive",
-      "HX-3086 adhesive",
-      "Tile adhesive for ceramics",
-      "Adhesive for ceramic tile installation",
-      "Waterproof ceramic tile adhesive",
-      "Fast-drying ceramic tile adhesive",
-      "High-strength ceramic tile adhesive",
-      "Ceramic tile adhesive for floor and wall installation"
-    ],
-    "image": "/images/catalog/c6b0eaa31ae0.jpg",
-    "images": [
-      "/images/catalog/c6b0eaa31ae0.jpg",
-      "/images/catalog/c0cadbdf5aca.jpeg",
-      "/images/catalog/fc13a3879c64.jpg",
-      "/images/catalog/52845c4a91ae.jpg",
-      "/images/catalog/6a55572ad81f.jpg",
-      "/images/catalog/c6b1a4003467.jpg",
-      "/images/catalog/1da81b7710d4.jpg",
-      "/images/catalog/6925dd502c12.png"
-    ],
-    "rating": {
-      "value": 5,
-      "count": 120
-    },
-    "highlights": [],
-    "body": [
-      "Ceramic tile back adhesive is an acrylate copolymer, with good elasticity, strong adhesion, excellent water resistance and alkali resistance, mainly used in wet paste a variety of natural stone, ceramic tile, granite, marble, artificial stone, and a variety of large wall and floor tile, improve the bonding strength and waterproof performance,it can also be used to form adhesive back warp net for easily broken stone in order to enhance the damage resistance and permeability resistance of the stone, the bond strength of the ceramic tile and the base is greatly improved by the adhesive, and the problems such as stone hollow drum and falling off caused by temperature stress are overcome. At the same time, it has the function of waterproof and impermeability, which can significantly improve the anti-alkali ability of the base surface.",
-      "Direction for Use Construction tool: rolling brush or brush.",
-      "Preparatory work before coating: clean the surface dust and sundries, remove the loose parts and sharp points, make the base surface flat and firm, the product cannot be used if there is greasy dirt or batik on the base surface.",
-      "Waiting time: Stick the ceramic after the tile adhesive gets transparent.",
-      "Storage: Store in a dry and cool place, the environment is around 5~40℃",
-      "Construction condition: Construction is prohibited outdoor in rainy,snowy and windy weather, the environment temperature should be around 5~35℃.",
-      "Shelf life: 6 months.If it exceeds the shelf life, it can still be used after inspection.",
-      "HX-3086A ceramic tile back glue is an acrylate copolymer with good elasticity, strong adhesion, excellent water resistance and alkali resistance. It is mainly used for wet pasting of various natural stone materials, ceramic tiles, granite, marble, artificial stone, and various large specifications of wall and floor tiles to improve the bonding strength and waterproof performance of the bonding surface. It can also be used for bonding back warp mesh of easily cracked stone materials, In order to enhance the ability of stone to resist damage and penetration, the bonding strength between ceramic tile and base course will be greatly improved after use, and the problems of stone hollowing and falling off caused by temperature stress will be overcome. At the same time, it has the function of waterproof and impermeability, which can significantly improve the ability of base surface to resist alkali."
-    ],
-    "specs": [
-      {
-        "headers": [
-          "Test Item",
-          "Performance Index"
-        ],
-        "rows": [
-          [
-            "Appearance",
-            "Uniform milky liquid"
-          ],
-          [
-            "mPa·S",
-            "500-1000"
-          ],
-          [
-            "Solid content, %",
-            "54±1"
-          ],
-          [
-            "PH Value",
-            "7-9"
-          ],
-          [
-            "Glass transition temperature,（Tg）℃",
-            "-38℃"
-          ],
-          [
-            "Tensile bond strength Mpa",
-            "Standard curing 0.5",
-            "0.7"
-          ],
-          [
-            "After immersion 0.5",
-            "0.55"
-          ],
-          [
-            "After freeze-thaw cycle 0.5",
-            "0.75"
-          ],
-          [
-            "Permeability resistance",
-            "500mm water spout，24h no-leakage"
-          ]
-        ]
-      }
-    ],
-    "sourceUrl": "https://www.hxhdchemical.com/ceramic-tile-adhesive-hx-3086-product/"
   },
   {
     "id": "transparent-waterproof-adhesive-hx-3088a-product",
@@ -954,8 +864,8 @@ export const PRODUCTS: Product[] = [
     "slug": "rust-conversion-agent-hxhd-800d",
     "name": "Rust Conversion Agent HXHD-800D",
     "code": "HXHD-800D",
-    "category": "Rust Stabilizer",
-    "categorySlug": "rust-stabilizer",
+    "category": "Rust Converter",
+    "categorySlug": "rust-converter",
     "summary": "Rust conversion agent, grade HXHD-800D. Contact the technical team for the datasheet and application guidance.",
     "keywords": [
       "HXHD-800D",
@@ -2446,7 +2356,7 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "sourceUrl": "https://www.hxhdchemical.com/architectural-emulsion-hx-303ha-product/"
-  }
+  },
 ];
 
 export function getProductBySlug(slug: string): Product | undefined {
