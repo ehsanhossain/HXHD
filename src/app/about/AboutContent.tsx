@@ -54,18 +54,12 @@ export function AboutContent() {
         intro={c.about.intro}
         crumbs={[{ labelKey: 'nav.about' }]}
         image={[
-          '/images/about/covers/cover-4.webp',
-          '/images/about/covers/cover-2.webp',
-          '/images/about/covers/cover-1.webp',
-          '/images/about/covers/cover-3.webp',
-          '/images/about/covers/cover-5.webp',
+          '/images/about/covers/beijing.webp',
+          '/images/about/covers/hebei.webp',
         ]}
         imageAlt={[
-          'Chemist checking an emulsion batch in the HXHD plant laboratory',
-          'Applicator rolling waterproof coating across a roof above the Dhaka skyline',
-          'Tiler bedding a large-format tile with ceramic tile back adhesive',
-          'Transparent waterproof coating brushed along an exterior window reveal',
-          'Operator checking coated fabric coming off the textile line',
+          'HXHD head office in Beijing, glass-fronted and carrying the company sign',
+          'Weixian Shuangying Chemical Industry works in Hebei, with the site seen from above',
         ]}
       />
 
