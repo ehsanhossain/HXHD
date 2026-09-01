@@ -12,7 +12,13 @@ interface ProductsMegaMenuProps {
 
 export function ProductsMegaMenu({ onClose }: ProductsMegaMenuProps) {
   const { t, categoryName } = useI18n();
-  const featured = PRODUCTS.find((p) => p.code === 'HX-470') ?? PRODUCTS[0];
+  // Lead with the first product of the leading category rather than a pinned
+  // code. This used to name HX-470, which the model-sheet reconciliation
+  // removed; the lookup then failed silently and the panel fell through to
+  // PRODUCTS[0], showing a photograph of a floor. Following the category order
+  // cannot go stale, and keeps the panel on whatever the client ranks first.
+  const featured =
+    PRODUCTS.find((p) => p.categorySlug === CATEGORIES[0]?.slug) ?? PRODUCTS[0];
 
   return (
     <div 
