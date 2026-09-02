@@ -50,6 +50,12 @@ interface PageHeroProps {
    * banner is as tall as its copy and the picture is cropped to fit -- which
    * is what a banner normally wants.
    *
+   * Pair the aspect with a cap -- "lg:aspect-video lg:max-h-[30rem]" -- on a
+   * full-bleed banner. Unclamped, 16:9 makes the band as tall as the viewport
+   * is wide (810px at 1440, 1080px at 1920), which pushes the heading far down
+   * the page and leaves a dead field of scrim above it. A photograph that has
+   * to be seen whole belongs in a section that can hold it, not behind copy.
+   *
    * Applied from `lg` upward by the caller: on a phone the copy needs more
    * height than a wide picture would give it.
    */
@@ -155,16 +161,22 @@ export function PageHero({
                 the left side dark enough for the heading while the right of
                 the picture stays legible, and a light vertical wash stops the
                 bottom edge from glowing against the section below. */}
+            {/* The ramp is weighted to the copy rather than spread evenly: it
+                holds its darkness across the column the heading occupies, then
+                falls away quickly so the right of the photograph is close to
+                unveiled. Spread evenly it was still at 45% out at the edge,
+                which greyed the whole picture to protect text that had already
+                ended. */}
             <div
               className={
                 quiet
-                  ? 'absolute inset-0 bg-gradient-to-r from-[var(--ink)] via-[var(--ink)]/88 to-[var(--ink)]/45'
-                  : 'absolute inset-0 bg-gradient-to-r from-[var(--ink)] via-[var(--ink)]/85 to-[var(--ink)]/45'
+                  ? 'absolute inset-0 bg-gradient-to-r from-[var(--ink)]/95 from-0% via-[var(--ink)]/78 via-55% to-[var(--ink)]/35'
+                  : 'absolute inset-0 bg-gradient-to-r from-[var(--ink)]/92 from-0% via-[var(--ink)]/58 via-62% to-[var(--ink)]/8'
               }
               aria-hidden
             />
             <div
-              className="absolute inset-0 bg-gradient-to-t from-[var(--ink)]/70 via-transparent to-transparent"
+              className="absolute inset-0 bg-gradient-to-t from-[var(--ink)]/45 via-transparent to-transparent"
               aria-hidden
             />
             {/* On a phone the copy spans the full width, so the horizontal ramp
