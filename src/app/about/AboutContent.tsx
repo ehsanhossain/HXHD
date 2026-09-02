@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
@@ -20,6 +21,7 @@ import { AboutLeadership } from '../components/about/AboutLeadership';
 import { WhyChooseHXHD } from '../components/about/WhyChooseHXHD';
 import { AboutCertificates } from '../components/about/AboutCertificates';
 import { AboutGallery } from '../components/about/AboutGallery';
+import { Lightbox } from '@/components/ui/Lightbox';
 import { Reveal, Stagger, StaggerItem } from '@/components/motion/Reveal';
 import { Counter } from '@/components/motion/Counter';
 import { useI18n } from '@/i18n/LanguageProvider';
@@ -35,9 +37,27 @@ import { PRODUCTS, CATEGORIES } from '@/data/products';
 
 const VALUE_ICONS = [FlaskConical, Layers, Globe, Leaf];
 
+/**
+ * The Weixian works as the client supplied it: one sheet carrying the gate and
+ * office block alongside four aerial frames of the site.
+ *
+ * The banner crops it to a letterbox and veils it under a headline, so this is
+ * where the sheet is actually legible: full width, no scrim, and it opens full
+ * size the same way the certificates and portraits do.
+ */
+const HEBEI_WORKS = {
+  src: '/images/about/hebei-works.webp',
+  alt:
+    'Five views of the Weixian Shuangying Chemical Industry works in Hebei: the ' +
+    'signed gatehouse and office block, and four aerial frames of the production ' +
+    'halls, yards and approach roads',
+  caption: 'Weixian Shuangying Chemical Industry Co., Ltd. — Xingtai, Hebei Province',
+};
+
 export function AboutContent() {
   const { t, c, fill } = useI18n();
   const bdBase = PRODUCTION_BASES.find((b) => b.country === 'Bangladesh')!;
+  const [worksOpen, setWorksOpen] = useState<number | null>(null);
 
   const STATS = [
     { to: 26, suffix: '+', label: c.home.statYears, note: c.home.statYearsNote },
@@ -53,14 +73,18 @@ export function AboutContent() {
         titleKey="page.about.title"
         intro={c.about.intro}
         crumbs={[{ labelKey: 'nav.about' }]}
-        imageAspect="lg:aspect-video"
+        /* 8:3 keeps the band to about 720px on a 1900px screen -- the size the
+           client marked up. Both covers are taller than that shape, so both
+           lose top and bottom to it; the Weixian sheet is shown whole further
+           down the page, where nothing has to crop it. */
+        imageAspect="lg:aspect-[8/3]"
         image={[
           '/images/about/covers/beijing.webp',
-          '/images/about/covers/hebei.webp',
+          '/images/about/hebei-works.webp',
         ]}
         imageAlt={[
           'HXHD head office in Beijing, glass-fronted and carrying the company sign',
-          'Weixian Shuangying Chemical Industry works in Hebei, with the site seen from above',
+          HEBEI_WORKS.alt,
         ]}
       />
 
@@ -305,8 +329,46 @@ export function AboutContent() {
               </div>
             </div>
           </div>
+
+          {/* The works, whole. The banner above can only carry a 16:9 crop of
+              the left frame, so the client's full sheet lives here where there
+              is room for it -- and opens full size, like the certificates. */}
+          <Reveal>
+            <figure>
+              <button
+                type="button"
+                onClick={() => setWorksOpen(0)}
+                aria-label={`${HEBEI_WORKS.caption} — open full size`}
+                className="group relative block w-full overflow-hidden border border-white/10 transition-colors hover:border-[var(--brand-teal)] cursor-zoom-in"
+              >
+                <Image
+                  src={HEBEI_WORKS.src}
+                  alt={HEBEI_WORKS.alt}
+                  width={2400}
+                  height={1187}
+                  className="w-full h-auto"
+                  sizes="(max-width: 1024px) 100vw, 1140px"
+                />
+                <span
+                  className="absolute inset-0 transition-colors group-hover:bg-[var(--ink)]/10"
+                  aria-hidden
+                />
+              </button>
+              <figcaption className="mt-3 flex items-center gap-2 text-xs text-white/55">
+                <MapPin className="w-3.5 h-3.5 text-[var(--brand-teal)]" />
+                {HEBEI_WORKS.caption}
+              </figcaption>
+            </figure>
+          </Reveal>
         </div>
       </section>
+
+      <Lightbox
+        items={[HEBEI_WORKS]}
+        index={worksOpen}
+        onClose={() => setWorksOpen(null)}
+        onIndexChange={setWorksOpen}
+      />
 
       <AboutGallery />
       <AboutCertificates />
