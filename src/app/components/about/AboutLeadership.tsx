@@ -100,11 +100,20 @@ export function AboutLeadership() {
           <h2 className="text-step-3">{c.about.leadershipTitle}</h2>
         </Reveal>
 
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
+        {/* Top-aligned, not stretched. Stretching matched the card to the
+            portrait and left the difference as a hole between the message and
+            the signature; letting each column end where its content ends puts
+            that space in the section background, where it reads as layout. */}
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           {/* Portraits */}
           <Stagger
             className={`grid gap-5 sm:gap-6 ${
-              single ? 'lg:col-span-4 grid-cols-1' : 'lg:col-span-6 grid-cols-2'
+              single
+                ? // A lone portrait at the full column width is a 650px tower
+                  // next to a 430px message. Capped, the two columns end close
+                  // enough together to read as a pair.
+                  'lg:col-span-4 grid-cols-1 lg:max-w-[20rem]'
+                : 'lg:col-span-6 grid-cols-2'
             }`}
           >
             {LEADERSHIP.map((l, i) => (
@@ -124,7 +133,7 @@ export function AboutLeadership() {
             delay={0.1}
             className={single ? 'lg:col-span-8' : 'lg:col-span-6'}
           >
-            <div className="relative bg-white border border-[var(--line)] p-7 sm:p-9 cut-br h-full flex flex-col">
+            <div className="relative bg-white border border-[var(--line)] p-7 sm:p-9 cut-br">
               <Quote
                 className="w-12 h-12 text-[var(--brand-red)]/15 absolute top-6 right-7"
                 aria-hidden
@@ -132,11 +141,13 @@ export function AboutLeadership() {
               <h3 className="text-step-2 mb-5 leading-tight">{c.about.chairmanMessageTitle}</h3>
               <div className="w-16 h-1 bg-[var(--brand-red)] mb-6" />
               {/* Wider column, so the message can carry the size a chairman's
-                  statement deserves and fill the card rather than float in it. */}
+                  statement deserves. */}
               <p className="text-[var(--steel)] leading-[1.9] text-sm sm:text-base lg:text-[1.0625rem]">
                 {c.about.chairmanMessage}
               </p>
-              <p className="mt-auto pt-7 border-t border-[var(--line)] font-bold text-[var(--ink)]">
+              {/* Sits directly under the message. `mt-auto` used to push it to
+                  the foot of a stretched card, opening the gap above it. */}
+              <p className="mt-8 pt-7 border-t border-[var(--line)] font-bold text-[var(--ink)]">
                 {LEADERSHIP[0].name}
                 <span className="block text-xs font-bold uppercase tracking-[0.12em] text-[var(--steel-2)] mt-1">
                   {c.about.roleChairman}
