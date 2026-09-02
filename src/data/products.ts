@@ -273,7 +273,7 @@ export const PRODUCTS: Product[] = [
       "long-lasting wall paint",
       "washable wall paint"
     ],
-    "image": "/images/catalog/f1fc82418445.jpg",
+    "image": "/images/catalog/64f6b6386920.jpg",
     "images": [
       "/images/catalog/f1fc82418445.jpg"
     ],
@@ -315,7 +315,7 @@ export const PRODUCTS: Product[] = [
       "waterproofing solution",
       "durable waterproof coating"
     ],
-    "image": "/images/catalog/63534fe94fc7.jpg",
+    "image": "/images/catalog/f0849ea6d0d9.jpg",
     "images": [
       "/images/catalog/63534fe94fc7.jpg",
       "/images/catalog/a44a8b858121.jpg",
@@ -463,7 +463,7 @@ export const PRODUCTS: Product[] = [
       "high performance tile adhesive",
       "tile installation adhesive"
     ],
-    "image": "/images/catalog/c6b0eaa31ae0.jpg",
+    "image": "/images/catalog/91250c60a2d9.jpg",
     "images": [
       "/images/catalog/c6b0eaa31ae0.jpg",
       "/images/catalog/c6b1a4003467.jpg",
@@ -2242,7 +2242,7 @@ export const PRODUCTS: Product[] = [
       "construction materials",
       "industrial coatings"
     ],
-    "image": "/images/catalog/b1850b395bc2.jpg",
+    "image": "/images/catalog/f119e6a0e569.jpg",
     "images": [
       "/images/catalog/b1850b395bc2.jpg",
       "/images/catalog/1a8d3a648afc.jpg",
