@@ -4,7 +4,7 @@
     {
       "name": "hxhd-dev",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev", "--", "-p", "40000"],
+      "runtimeArgs": ["run", "dev", "--", "-H", "127.0.0.1", "-p", "40000"],
       "port": 40000
     }
   ]
