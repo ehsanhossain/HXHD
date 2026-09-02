@@ -178,7 +178,7 @@ export const PRODUCTS: Product[] = [
       "benefits",
       "purchase options"
     ],
-    "image": "/images/catalog/1b7ba5b09763.jpg",
+    "image": "/images/catalog/acf16bb4f39a.jpg",
     "images": [
       "/images/catalog/1b7ba5b09763.jpg"
     ],
@@ -222,7 +222,7 @@ export const PRODUCTS: Product[] = [
       "Stone style paint",
       "Stone inspired paint"
     ],
-    "image": "/images/catalog/137c9c3c329f.jpg",
+    "image": "/images/catalog/95f2dcd701fb.jpg",
     "images": [
       "/images/catalog/137c9c3c329f.jpg",
       "/images/catalog/0e560f397469.jpg",
@@ -367,7 +367,7 @@ export const PRODUCTS: Product[] = [
       "Waterproof paint",
       "Waterproof sealant"
     ],
-    "image": "/images/catalog/ca013cc2e27a.jpg",
+    "image": "/images/catalog/41013192da33.jpg",
     "images": [
       "/images/catalog/ca013cc2e27a.jpg",
       "/images/catalog/a476357af5eb.jpg"
@@ -561,7 +561,7 @@ export const PRODUCTS: Product[] = [
       "Transparent water resistant glue",
       "Underwater adhesive solution"
     ],
-    "image": "/images/catalog/b0f96af77fb5.jpeg",
+    "image": "/images/catalog/c842dda81b72.jpg",
     "images": [
       "/images/catalog/b0f96af77fb5.jpeg"
     ],
@@ -633,7 +633,7 @@ export const PRODUCTS: Product[] = [
       "Waterproof adhesive for construction",
       "Industrial waterproof adhesive HX-3088"
     ],
-    "image": "/images/catalog/b0f96af77fb5.jpeg",
+    "image": "/images/catalog/c842dda81b72.jpg",
     "images": [
       "/images/catalog/b0f96af77fb5.jpeg"
     ],
@@ -713,7 +713,7 @@ export const PRODUCTS: Product[] = [
       "Metal Surface Rust Treatment",
       "Rust Converter Paint"
     ],
-    "image": "/images/catalog/9d99f9143e8a.jpg",
+    "image": "/images/catalog/4dbc872fbc04.jpg",
     "images": [
       "/images/catalog/9d99f9143e8a.jpg",
       "/images/catalog/5ff93de8cb29.jpg"
@@ -803,7 +803,7 @@ export const PRODUCTS: Product[] = [
       "rust preventive coating",
       "metal surface protection"
     ],
-    "image": "/images/catalog/902254bd984c.jpg",
+    "image": "/images/catalog/4dbc872fbc04.jpg",
     "images": [
       "/images/catalog/902254bd984c.jpg",
       "/images/catalog/5de75af9108f.jpg",
@@ -874,7 +874,7 @@ export const PRODUCTS: Product[] = [
       "Metal surface treatment",
       "Anti-corrosion"
     ],
-    "image": "/images/catalog/9d99f9143e8a.jpg",
+    "image": "/images/catalog/4dbc872fbc04.jpg",
     "images": [
       "/images/catalog/9d99f9143e8a.jpg"
     ],
@@ -902,7 +902,7 @@ export const PRODUCTS: Product[] = [
       "ground improvement",
       "road construction additives"
     ],
-    "image": "/images/catalog/ca013cc2e27a.jpg",
+    "image": "/images/catalog/95f2dcd701fb.jpg",
     "images": [
       "/images/catalog/ca013cc2e27a.jpg",
       "/images/catalog/a476357af5eb.jpg"
@@ -978,7 +978,7 @@ export const PRODUCTS: Product[] = [
       "ground improvement",
       "road construction additives"
     ],
-    "image": "/images/catalog/a476357af5eb.jpg",
+    "image": "/images/catalog/95f2dcd701fb.jpg",
     "images": [
       "/images/catalog/a476357af5eb.jpg",
       "/images/catalog/ca013cc2e27a.jpg"
@@ -1356,7 +1356,7 @@ export const PRODUCTS: Product[] = [
       "concrete sealer",
       "industrial waterproofing"
     ],
-    "image": "/images/catalog/d9a42ce89343.jpg",
+    "image": "/images/catalog/41013192da33.jpg",
     "images": [
       "/images/catalog/d9a42ce89343.jpg",
       "/images/catalog/0e183c008e6b.jpg"
@@ -1756,7 +1756,7 @@ export const PRODUCTS: Product[] = [
       "Double component",
       "Cement waterproof coating"
     ],
-    "image": "/images/catalog/902254bd984c.jpg",
+    "image": "/images/catalog/acf16bb4f39a.jpg",
     "images": [
       "/images/catalog/902254bd984c.jpg"
     ],
@@ -1786,7 +1786,7 @@ export const PRODUCTS: Product[] = [
       "industrial application",
       "building material"
     ],
-    "image": "/images/catalog/f36f7eee9434.jpg",
+    "image": "/images/catalog/f0849ea6d0d9.jpg",
     "images": [
       "/images/catalog/f36f7eee9434.jpg"
     ],
@@ -2112,7 +2112,7 @@ export const PRODUCTS: Product[] = [
       "Washable wall paint",
       "Durable emulsion paint"
     ],
-    "image": "/images/catalog/1a2238c9fef2.jpg",
+    "image": "/images/catalog/85bda0e68854.jpg",
     "images": [
       "/images/catalog/1a2238c9fef2.jpg",
       "/images/catalog/7d1850a30c8f.jpg"
@@ -2177,7 +2177,7 @@ export const PRODUCTS: Product[] = [
       "Eco-friendly wall paint",
       "Long-lasting architectural paint"
     ],
-    "image": "/images/catalog/958b6ed7880b.jpg",
+    "image": "/images/catalog/85bda0e68854.jpg",
     "images": [
       "/images/catalog/958b6ed7880b.jpg",
       "/images/catalog/85bda0e68854.jpg"
@@ -2313,7 +2313,7 @@ export const PRODUCTS: Product[] = [
       "Architectural paint supplier",
       "HX-303HA distributor"
     ],
-    "image": "/images/catalog/ccd930ed02d8.jpg",
+    "image": "/images/catalog/98a5b4484ec4.jpg",
     "images": [
       "/images/catalog/ccd930ed02d8.jpg",
       "/images/catalog/98a5b4484ec4.jpg",
