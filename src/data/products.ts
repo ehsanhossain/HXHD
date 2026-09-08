@@ -96,900 +96,6 @@ export const CATEGORIES: Category[] = [
 
 export const PRODUCTS: Product[] = [
   {
-    "id": "strong-and-reliable-ceramic-tile-adhesive-hx3086",
-    "slug": "strong-and-reliable-ceramic-tile-adhesive-hx3086",
-    "name": "Strong and Reliable Ceramic Tile Adhesive HX-3086",
-    "code": "HX-3086",
-    "category": "Tiles Back Glue",
-    "categorySlug": "tiles-back-glue",
-    "summary": "Looking for high-quality ceramic tile adhesive HX-3086A? Our product offers superior strength and durability for all your tiling needs. Order now!",
-    "keywords": [
-      "ceramic tile adhesive",
-      "HX-3086A",
-      "tile glue",
-      "adhesive for ceramic tiles",
-      "waterproof tile adhesive",
-      "strong tile adhesive",
-      "high performance tile adhesive",
-      "tile installation adhesive"
-    ],
-    "image": "/images/catalog/91250c60a2d9.jpg",
-    "images": [
-      "/images/catalog/c6b0eaa31ae0.jpg",
-      "/images/catalog/c6b1a4003467.jpg",
-      "/images/catalog/c0cadbdf5aca.jpeg",
-      "/images/catalog/6a55572ad81f.jpg",
-      "/images/catalog/52845c4a91ae.jpg",
-      "/images/catalog/908a03190d1c.png",
-      "/images/catalog/fc13a3879c64.jpg",
-      "/images/catalog/1da81b7710d4.jpg",
-      "/images/catalog/6925dd502c12.png"
-    ],
-    "rating": {
-      "value": 5,
-      "count": 74
-    },
-    "highlights": [
-      "Good flexibility, suitable for alpine regions in three northeastern provinces of China."
-    ],
-    "body": [
-      "Wall tile,floor tile, mosaic, marble and other natural stones.",
-      "2.High bonding strength,strong impact resistance ability, prevent the tile falling off.",
-      "3.Good adaptability,it is waterproof, moisture-proof and mildew proof,good performance of heat and frost resistance",
-      "Direction for Use Construction tool: rolling brush or brush.",
-      "Preparatory work before coating: clean the surface dust and sundries, remove the loose parts and sharp points, make the base surface flat and firm, the product cannot be used if there is greasy dirt or batik on the base surface.",
-      "Waiting time: Stick the ceramic after the tile adhesive gets transparent.",
-      "Storage: Store in a dry and cool place, the environment is around 5~40℃",
-      "Construction condition: Construction is prohibited outdoor in rainy,snowy and windy weather, the environment temperature should be around 5~35℃.",
-      "Shelf life: 6 months.If it exceeds the shelf life, it can still be used after inspection.",
-      "With good elasticity, excellent water resistance and alkali resistance, it is suitable for bonding various stones:"
-    ],
-    "specs": [
-      {
-        "headers": [
-          "Test Item",
-          "Performance Index"
-        ],
-        "rows": [
-          [
-            "Appearance",
-            "Uniform milky liquid"
-          ],
-          [
-            "Solid content, %",
-            "54±1"
-          ],
-          [
-            "pH Value",
-            "7-9"
-          ],
-          [
-            "Viscocity cps/25℃",
-            "500-1000"
-          ],
-          [
-            "Tg℃",
-            "-20"
-          ],
-          [
-            "Tensile bond strength Mpa",
-            "Standard curing",
-            "≥ 1.0"
-          ],
-          [
-            "After immersion",
-            "≥ 1.0"
-          ],
-          [
-            "After freeze-thaw cycle",
-            "≥ 1.0"
-          ],
-          [
-            "Permeability resistance",
-            "500mm spout，24h no-leakage"
-          ]
-        ]
-      }
-    ],
-    "sourceUrl": "https://www.hxhdchemical.com/strong-and-reliable-ceramic-tile-adhesive-hx3086/"
-  },
-  {
-    "id": "transparent-waterproof-adhesive-hx-3088a-product",
-    "slug": "transparent-waterproof-adhesive-hx-3088a-product",
-    "name": "Transparent Waterproof Adhesive HX-3088A",
-    "code": "HX-3088A",
-    "category": "Tiles Back Glue",
-    "categorySlug": "tiles-back-glue",
-    "summary": "Shop for the best transparent waterproof adhesive HX-3088A. Strong, reliable and long-lasting for all your bonding needs. Buy now!",
-    "keywords": [
-      "Transparent waterproof adhesive",
-      "HX-3088A adhesive",
-      "Waterproof glue",
-      "Adhesive for outdoor use",
-      "Clear waterproof sealant",
-      "Marine grade adhesive",
-      "Transparent water resistant glue",
-      "Underwater adhesive solution"
-    ],
-    "image": "/images/catalog/c842dda81b72.jpg",
-    "images": [
-      "/images/catalog/b0f96af77fb5.jpeg"
-    ],
-    "rating": {
-      "value": 5,
-      "count": 136
-    },
-    "highlights": [],
-    "body": [
-      "1.Colorless, transparent, the coating will not destroy the original wall decoration.",
-      "2.Good heat resistance, pollution resistance,water resistance,ultraviolet resistance, acid and alkali resistance, wide adaptability to climate.",
-      "3.The film has good film forming effect,it is tough with a certain degree of flexibility and can resist the stress caused by micro-cracking at the base.",
-      "4.No need of fire during construction, simple operation, can be directly painted,brushed and scraped on the wall or surface of other material.",
-      "Waterproof, moisture-proof and anti-seepage of various interior and exterior wall decorative materials(ceramic tile, paint, Natural stone paint).",
-      "Direction for Use Construction tool: rolling brush or brush.",
-      "Preparatory work before coating: clean the surface dust and sundries, remove the loose parts and sharp points, make the base surface flat and firm, the product cannot be used if the base surface efflorescence degree is high or there is obvious water. If the crack or leakage is large,use the lost circulation additive to repair.",
-      "Storage: Store in a dry and cool place, the environment is around 5~40℃",
-      "Construction condition: Construction is prohibited outdoor in rainy,snowy and windy weather, the environment temperature should be around 5~35℃.",
-      "Shelf life: 12 months. If it exceeds the shelf life, it can still be used after inspection.",
-      "DETAIL Waterproof emulsion is formulated to prevent water from penetrating the painted surface, thus helping to prevent issues such as dampness, mold, and mildew.",
-      "A special emulsion copolymerized with silicon and acrylic,white milky or transparent paste.",
-      "1.Waterproof and leakage repair of decorated tile, Mosaic, marble, glass curtain wall, reservoir, kitchen and bathroom, all kinds of building external wall.",
-      "2. Waterproof treatment at the interface of various finishing materials.",
-      "3. Waterproof, moisture-proof and antiseep of various interior and exterior decorative materials"
-    ],
-    "specs": [
-      {
-        "headers": [
-          "Product",
-          "Tg℃",
-          "Solid content",
-          "Viscosity",
-          "MFFT ℃",
-          "PH",
-          "Drying time",
-          "Applicant area"
-        ],
-        "rows": [
-          [
-            "HX-3088A",
-            "8",
-            "35±1",
-            "30000-40000",
-            "15",
-            "6-7",
-            "Surface dry ≤ 4h，totally drying ≤12h",
-            "Waterproof, moisture-proof and anti-seepage of various interior and exterior wall decorative materials(ceramic tile, paint, Natural stone paint)."
-          ]
-        ]
-      }
-    ],
-    "sourceUrl": "https://www.hxhdchemical.com/transparent-waterproof-adhesive-hx-3088a-product/"
-  },
-  {
-    "id": "transparent-waterproof-adhesive-hx-3088-product",
-    "slug": "transparent-waterproof-adhesive-hx-3088-product",
-    "name": "Transparent Waterproof Adhesive HX-3088",
-    "code": "HX-3088",
-    "category": "Tiles Back Glue",
-    "categorySlug": "tiles-back-glue",
-    "summary": "Discover the ultimate solution for transparent, waterproof adhesive with HX-308Perfect for all your bonding and sealing needs. Order now!",
-    "keywords": [
-      "Transparent waterproof adhesive",
-      "Waterproof adhesive HX-3088",
-      "Transparent HX-3088 adhesive",
-      "Waterproof glue HX-3088",
-      "Transparent waterproof sealant",
-      "Waterproof glue for outdoor use",
-      "Waterproof adhesive for construction",
-      "Industrial waterproof adhesive HX-3088"
-    ],
-    "image": "/images/catalog/c842dda81b72.jpg",
-    "images": [
-      "/images/catalog/b0f96af77fb5.jpeg"
-    ],
-    "rating": {
-      "value": 5,
-      "count": 33
-    },
-    "highlights": [],
-    "body": [
-      "1.Colorless, transparent, the coating will not destroy the original wall decoration.",
-      "2.Good heat resistance, pollution resistance,water resistance,ultraviolet resistance, acid and alkali resistance, wide adaptability to climate.",
-      "3.The film has good film forming effect,it is tough with a certain degree of flexibility and can resist the stress caused by micro-cracking at the base.",
-      "4.No need of fire during construction, simple operation, can be directly painted,brushed and scraped on the wall or surface of other material.",
-      "proof and anti-seepage of various interior and exterior wall decorative materials(ceramic tile, paint, Natural stone paint).",
-      "Direction for Use Construction tool: rolling brush or brush.",
-      "Preparatory work before coating: clean the surface dust and sundries, remove the loose parts and sharp points, make the base surface flat and firm, the product cannot be used if the base surface efflorescence degree is high or there is obvious water. If the crack or leakage is large,use the lost circulation additive to repair.",
-      "Storage: Store in a dry and cool place, the environment is around 5~40℃",
-      "Construction condition: Construction is prohibited outdoor in rainy,snowy and windy weather, the environment temperature should be around 5~35℃.",
-      "Shelf life: 12 months.If it exceeds the shelf life, it can still be used after inspection.",
-      "Reminder 1. Clean all tools promptly with water after coating work is finished or stopped.",
-      "2. The ventilation conditions should be good at the construction site after the adhesive is solidified.",
-      "3. The lid of the bucket must be tightly closed, keep it out of the reach of children. In case of eye contact, wash with water immediately.",
-      "4. The product does not contain toxic gases and mercury.",
-      "5. Do not pour the remaining unused product down the drain or exhaust pipe.",
-      "6. If the adhesive is frozen because of too low temperature,heat it in hot water and then use.",
-      "HX-3088 Transparent Waterproof Adhesive is a versatile and effective adhesive designed to provide strong bonds while offering excellent transparency and resistance to water. This adhesive is well-suited for a wide range of applications, including but not limited to, bonding glass, plastic, metal, and other materials where a waterproof and transparent bond is critical.",
-      "One of the most notable features of the HX-3088 adhesive is its transparency. This characteristic makes it ideal for applications where aesthetics are important, as it allows for a clear, unobstructed view of the bonded materials. In addition to its transparency, the adhesive is also known for its superior waterproof properties, making it an excellent choice for outdoor and marine applications, as well as for items that may be exposed to moisture or water.",
-      "The HX-3088 adhesive offers high strength and durability, ensuring that bonded materials remain securely attached even under challenging conditions. Its reliable bonding capabilities make it a popular choice in various industries, including automotive, marine, electronics, and construction.",
-      "This adhesive is easy to apply and can be used in conjunction with standard dispensing equipment, making it convenient for large-scale manufacturing processes. Its quick curing time further enhances its efficiency in production environments.",
-      "Overall, the Transparent Waterproof Adhesive HX-3088 is a reliable and high-performance adhesive that offers excellent transparency, waterproof properties, and strong bonding capabilities, making it a valuable solution for a wide range of industrial and commercial applications.",
-      "A special emulsion copolymerized with silicon and acrylic,white milky or transparent paste.",
-      "1.Waterproof and leakage repair of decorated tile, Mosaic, marble, glass curtain wall, reservoir, kitchen and bathroom, all kinds of building external wall.",
-      "2. Waterproof treatment at the interface of various finishing materials.",
-      "3. Waterproof, moisture-proof and antiseep of various interior and exterior decorative materials"
-    ],
-    "specs": [
-      {
-        "headers": [
-          "Product",
-          "Tg℃",
-          "Solid content",
-          "Viscosity",
-          "PH",
-          "Drying time",
-          "Applicant area"
-        ],
-        "rows": [
-          [
-            "HX-3088",
-            "8",
-            "30±1",
-            "30000-40000",
-            "6-7",
-            "Surface dry ≤ 4h， totally drying ≤12h",
-            "Waterproof, moisture- proof and anti-seepage of various interior and exterior wall decorative materials(ceramic tile, paint, Natural stone paint)."
-          ]
-        ]
-      }
-    ],
-    "sourceUrl": "https://www.hxhdchemical.com/transparent-waterproof-adhesive-hx-3088-product/"
-  },
-  {
-    "id": "anti-oxidation-rust-converting-agent-800ab-to-convert-rust-into-primer-for-metal-surface",
-    "slug": "anti-oxidation-rust-converting-agent-800ab-to-convert-rust-into-primer-for-metal-surface",
-    "name": "Anti-oxidation Rust Converting Agent 800AB to Convert Rust into Primer for Metal Surface",
-    "code": "800AB",
-    "category": "Rust Converter",
-    "categorySlug": "rust-converter",
-    "summary": "Shop the best Rust Converter 800AB for effective rust treatment. Save time and money with this high-quality, easy-to-use product. Order now!",
-    "keywords": [
-      "Rust Converter 800AB",
-      "Metal Rust Treatment",
-      "Rust Removal Solution",
-      "Anti-Corrosion Coating",
-      "Industrial Rust Protection",
-      "Rust Converter Spray",
-      "Metal Surface Rust Treatment",
-      "Rust Converter Paint"
-    ],
-    "image": "/images/catalog/4dbc872fbc04.jpg",
-    "images": [
-      "/images/catalog/9d99f9143e8a.jpg",
-      "/images/catalog/5ff93de8cb29.jpg"
-    ],
-    "rating": {
-      "value": 5,
-      "count": 52
-    },
-    "highlights": [],
-    "body": [
-      "Our emulsion is specially formulated to remove rust and convert loose rust powder particles into black and dense complexes in just one minute. The unique composition of our product allows for the black complexes to be tightly fixed on the metal surface, preventing oxygen, water, and carbon dioxide from further corroding the metal components. This results in a long-lasting rust fixation and anti-rust effect.",
-      "One of the key features of our product is its versatility. It can be used as a standalone treatment for rusted surfaces or as a base coat for steel, to be followed by a layer of topcoat after curing. Its easy application and fast-acting formula make it a convenient and efficient solution for a wide range of rust treatment applications.",
-      "The product is composed of two components, A and B, which work together to provide a comprehensive rust treatment solution. When applied according to our instructions, the emulsion provides a durable and protective coating that helps to extend the lifespan of metal components and structures.",
-      "Whether you are a professional contractor, industrial manufacturer, or DIY enthusiast, our acrylic emulsion with rust conversion materials offers a reliable and effective solution for rust treatment. Say goodbye to the hassle and expense of traditional rust removal methods and welcome a new era of rust protection with our innovative product. Try it today and experience the difference it can make for your metal surfaces."
-    ],
-    "specs": [
-      {
-        "headers": [
-          "Test Item",
-          "Performance Index"
-        ],
-        "rows": [
-          [
-            "Appearance",
-            "Milky White Liquid"
-          ],
-          [
-            "PH Value",
-            "1-3"
-          ],
-          [
-            "Viscocity",
-            "≤ 500 Mpa. S(No. 2 rotor 12 RPM 25 degrees)"
-          ],
-          [
-            "Solid content,wt%",
-            "40±1%"
-          ],
-          [
-            "Minimum film forming temperature(MFFT)",
-            "12-17℃"
-          ],
-          [
-            "Glass transition temperature",
-            "25℃"
-          ],
-          [
-            "Surface drying time (25 degrees)",
-            "25-35 minutes"
-          ],
-          [
-            "Adhesion",
-            "Level 1"
-          ],
-          [
-            "Storage temperature",
-            "5-35℃"
-          ],
-          [
-            "Storage time",
-            "Half a year"
-          ],
-          [
-            "Packing",
-            "50 kg plastic bucket"
-          ]
-        ]
-      }
-    ],
-    "sourceUrl": "https://www.hxhdchemical.com/anti-oxidation-rust-converting-agent-800ab-to-convert-rust-into-primer-for-metal-surface/"
-  },
-  {
-    "id": "steel-iron-oxidation-resistant-and-rust-fixing-agent-900a-900b",
-    "slug": "steel-iron-oxidation-resistant-and-rust-fixing-agent-900a-900b",
-    "name": "Rust Fixing Agent 900A/900B",
-    "code": "900A/900B",
-    "category": "Rust Fixing Agent",
-    "categorySlug": "rust-fixing-agent",
-    "summary": "Looking for a reliable rust stabilizer? Check out our 900A/900B rust stabilizer for effective rust prevention. Order now for long-lasting protection!",
-    "keywords": [
-      "Rust stabilizer 900A",
-      "rust stabilizer 900B",
-      "corrosion protection",
-      "metal treatment",
-      "rust inhibitor",
-      "industrial rust prevention",
-      "rust preventive coating",
-      "metal surface protection"
-    ],
-    "image": "/images/catalog/4dbc872fbc04.jpg",
-    "images": [
-      "/images/catalog/902254bd984c.jpg",
-      "/images/catalog/5de75af9108f.jpg",
-      "/images/catalog/ce5126f955de.jpg"
-    ],
-    "rating": {
-      "value": 5,
-      "count": 57
-    },
-    "highlights": [],
-    "body": [
-      "Once applied, our emulsions form a hard attachment with the rust powder particles on the base surface, providing long-lasting anti-rust and rust-fixing effects. This not only improves the overall appearance of the surfaces but also extends their lifespan by protecting them from further rust damage.",
-      "What sets our rust-fixing emulsions apart is their ability to greatly reduce the labor intensity of cleaning and rust removal before construction. This not only saves time and effort but also improves construction progress, making it a highly efficient and cost-effective solution for any project.",
-      "After our rust-fixing agent dries and solidifies, a topcoat can be sprayed on to further enhance the protective benefits. This two-step process ensures that surfaces are not only free from rust but also have a durable and attractive finish.",
-      "Say goodbye to labor-intensive rust removal and hello to a more efficient and effective solution with our 900A and 900B rust-fixing emulsions. Experience the difference for yourself and elevate the way you approach rust prevention and treatment.",
-      "When using waterproof emulsion, it is important to follow the manufacturer's application instructions to ensure proper adhesion and effectiveness."
-    ],
-    "specs": [
-      {
-        "headers": [
-          "Test Item",
-          "900A performance index",
-          "900B performance index"
-        ],
-        "rows": [
-          [
-            "Appearance",
-            "Uniform milky white liquid",
-            "Uniform milky white liquid"
-          ],
-          [
-            "Solid content %",
-            "40±1%",
-            "40±1%"
-          ],
-          [
-            "Viscocity cps/25℃",
-            "＜ 200Mpa.s",
-            "＜ 200Mpa.s"
-          ],
-          [
-            "PH value",
-            "4 － 6",
-            "4 － 6"
-          ],
-          [
-            "Tg℃",
-            "15℃",
-            "15℃"
-          ]
-        ]
-      }
-    ],
-    "sourceUrl": "https://www.hxhdchemical.com/steel-iron-oxidation-resistant-and-rust-fixing-agent-900a-900b/"
-  },
-  {
-    "id": "rust-conversion-agent-hxhd-800d",
-    "slug": "rust-conversion-agent-hxhd-800d",
-    "name": "Rust Conversion Agent HXHD-800D",
-    "code": "HXHD-800D",
-    "category": "Rust Converter",
-    "categorySlug": "rust-converter",
-    "summary": "Rust conversion agent, grade HXHD-800D. Contact the technical team for the datasheet and application guidance.",
-    "keywords": [
-      "HXHD-800D",
-      "Rust conversion agent",
-      "Rust converter",
-      "Metal surface treatment",
-      "Anti-corrosion"
-    ],
-    "image": "/images/catalog/4dbc872fbc04.jpg",
-    "images": [
-      "/images/catalog/9d99f9143e8a.jpg"
-    ],
-    "rating": null,
-    "highlights": [],
-    "body": [],
-    "specs": [],
-    "sourceUrl": ""
-  },
-  {
-    "id": "anti-alkali-anti-cracking-and-anti-mould-waterproof-sand-fixing-agent-500a-500b",
-    "slug": "anti-alkali-anti-cracking-and-anti-mould-waterproof-sand-fixing-agent-500a-500b",
-    "name": "Sand Fixing Agent 500A",
-    "code": "HXHD-500A",
-    "category": "Sand Fixing Agent",
-    "categorySlug": "sand-fixing-agent",
-    "summary": "Looking for a reliable sand fixing agent? Check out Sand Fixing Agent 500A/500B for effective and long-lasting results. Purchase now!",
-    "keywords": [
-      "sand fixing agent 500A",
-      "sand fixing agent 500B",
-      "soil stabilization",
-      "soil improvement",
-      "construction materials",
-      "soil strengthening",
-      "ground improvement",
-      "road construction additives"
-    ],
-    "image": "/images/catalog/hxhd-500a.webp",
-    "images": [
-      "/images/catalog/hxhd-500a.webp",
-      "/images/catalog/ca013cc2e27a.jpg",
-      "/images/catalog/a476357af5eb.jpg"
-    ],
-    "rating": {
-      "value": 5,
-      "count": 207
-    },
-    "highlights": [],
-    "body": [
-      "This cutting-edge system is designed to offer comprehensive protection, including waterproofing, alkali resistance, mildew prevention, sand fixation, and resistance to cracking. It is the ideal solution for a range of applications, including roofs, exterior walls, bathrooms, basements, and garage back surfaces. These are areas prone to alkali return, sanding, and the need for wall-penetrating waterproofing and anti-seepage reinforcement.",
-      "In addition, this system can be used for the preliminary treatment of waterproof construction base surfaces. By applying a layer of 500A waterproof sand-fixing agent to the sandy base surface, followed by regular waterproofing operations, the waterproof layer becomes firmly attached to the substrate. This process greatly enhances the effectiveness of the waterproofing, eliminating the need to remove sand from the base surface before construction.",
-      "Our one-component waterproofing system offers a convenient, cost-effective, and reliable solution for a wide range of construction and waterproofing needs. With its exceptional adhesion and protective properties, it is sure to improve the durability and longevity of any structure. Try it today and experience the difference!",
-      "1.Improving the physical strength of concrete base gradually with the passage of time.",
-      "2.Improving the chemical-resistance, weathering resistance and waterproofing.",
-      "3.Replacing other waterproof material, it can be used on roofs or exterior walls with waterproofing, moisture resistance and mould resistance.",
-      "Waterproof and impermeable reinforcement of roof, exterior wall, toilet parts prone to alkali return and sand rising, basement and garage back surface. It can also be used for the preliminary treatment of waterproof construction foundation surface. A layer of 500A waterproof sand consolidation agent is sprayed on the foundation surface with sand particles. After drying, conventional waterproof operations are carried out to ensure that the waterproof layer is fastened to the foundation surface, greatly improving the waterproof effect, and eliminating the process of removing sand particles from the foundation surface before construction."
-    ],
-    "specs": [
-      {
-        "headers": [
-          "Test Item",
-          "500A performance index",
-          "500B performance index"
-        ],
-        "rows": [
-          [
-            "Appearance",
-            "Uniform milky white liquid",
-            "Uniform milky white liquid"
-          ],
-          [
-            "Solid content %",
-            "40±1%",
-            "40±1%"
-          ],
-          [
-            "Viscocity cps/25℃",
-            "300 － 600Mpa.s",
-            "300 － 600Mpa.s"
-          ],
-          [
-            "PH value",
-            "4 － 6",
-            "6 － 7"
-          ],
-          [
-            "Tg℃",
-            "15℃",
-            "15℃"
-          ]
-        ]
-      }
-    ],
-    "sourceUrl": "https://www.hxhdchemical.com/anti-alkali-anti-cracking-and-anti-mould-waterproof-sand-fixing-agent-500a-500b/",
-    "sourceCode": "500A/500B"
-  },
-  {
-    "id": "sand-fixing-agent-500b",
-    "slug": "sand-fixing-agent-500b",
-    "name": "Sand Fixing Agent 500B",
-    "code": "HXHD-500B",
-    "category": "Sand Fixing Agent",
-    "categorySlug": "sand-fixing-agent",
-    "summary": "Looking for a reliable sand fixing agent? Check out Sand Fixing Agent 500A/500B for effective and long-lasting results. Purchase now!",
-    "keywords": [
-      "sand fixing agent 500A",
-      "sand fixing agent 500B",
-      "soil stabilization",
-      "soil improvement",
-      "construction materials",
-      "soil strengthening",
-      "ground improvement",
-      "road construction additives"
-    ],
-    "image": "/images/catalog/hxhd-500b.webp",
-    "images": [
-      "/images/catalog/hxhd-500b.webp",
-      "/images/catalog/a476357af5eb.jpg",
-      "/images/catalog/ca013cc2e27a.jpg"
-    ],
-    "rating": null,
-    "highlights": [],
-    "body": [
-      "This cutting-edge system is designed to offer comprehensive protection, including waterproofing, alkali resistance, mildew prevention, sand fixation, and resistance to cracking. It is the ideal solution for a range of applications, including roofs, exterior walls, bathrooms, basements, and garage back surfaces. These are areas prone to alkali return, sanding, and the need for wall-penetrating waterproofing and anti-seepage reinforcement.",
-      "In addition, this system can be used for the preliminary treatment of waterproof construction base surfaces. By applying a layer of 500A waterproof sand-fixing agent to the sandy base surface, followed by regular waterproofing operations, the waterproof layer becomes firmly attached to the substrate. This process greatly enhances the effectiveness of the waterproofing, eliminating the need to remove sand from the base surface before construction.",
-      "Our one-component waterproofing system offers a convenient, cost-effective, and reliable solution for a wide range of construction and waterproofing needs. With its exceptional adhesion and protective properties, it is sure to improve the durability and longevity of any structure. Try it today and experience the difference!",
-      "1.Improving the physical strength of concrete base gradually with the passage of time.",
-      "2.Improving the chemical-resistance, weathering resistance and waterproofing.",
-      "3.Replacing other waterproof material, it can be used on roofs or exterior walls with waterproofing, moisture resistance and mould resistance.",
-      "Waterproof and impermeable reinforcement of roof, exterior wall, toilet parts prone to alkali return and sand rising, basement and garage back surface. It can also be used for the preliminary treatment of waterproof construction foundation surface. A layer of 500A waterproof sand consolidation agent is sprayed on the foundation surface with sand particles. After drying, conventional waterproof operations are carried out to ensure that the waterproof layer is fastened to the foundation surface, greatly improving the waterproof effect, and eliminating the process of removing sand particles from the foundation surface before construction."
-    ],
-    "specs": [
-      {
-        "headers": [
-          "Test Item",
-          "500A performance index",
-          "500B performance index"
-        ],
-        "rows": [
-          [
-            "Appearance",
-            "Uniform milky white liquid",
-            "Uniform milky white liquid"
-          ],
-          [
-            "Solid content %",
-            "40±1%",
-            "40±1%"
-          ],
-          [
-            "Viscocity cps/25℃",
-            "300 － 600Mpa.s",
-            "300 － 600Mpa.s"
-          ],
-          [
-            "PH value",
-            "4 － 6",
-            "6 － 7"
-          ],
-          [
-            "Tg℃",
-            "15℃",
-            "15℃"
-          ]
-        ]
-      }
-    ],
-    "sourceUrl": "https://www.hxhdchemical.com/anti-alkali-anti-cracking-and-anti-mould-waterproof-sand-fixing-agent-500a-500b/",
-    "sourceCode": "500A/500B"
-  },
-  {
-    "id": "pure-acrylic-textile-emulsion-hx929-for-high-grade-silk-cotton-and-dupont-cotton",
-    "slug": "pure-acrylic-textile-emulsion-hx929-for-high-grade-silk-cotton-and-dupont-cotton",
-    "name": "Textile Emulsion HXHD-929",
-    "code": "HXHD-929",
-    "sourceCode": "HX-929",
-    "category": "Textile Emulsion",
-    "categorySlug": "textile-emulsion",
-    "summary": "Looking for a high-quality textile emulsion? Check out HX-929 for your textile printing needs. Superior quality and performance for your fabric designs",
-    "keywords": [
-      "Textile Emulsion HX-929",
-      "screen printing",
-      "textile printing",
-      "emulsion for silk screen",
-      "textile ink",
-      "fabric printing",
-      "screen printing supply",
-      "textile screen printing",
-      "textile design"
-    ],
-    "image": "/images/catalog/acf16bb4f39a.jpg",
-    "images": [
-      "/images/catalog/acf16bb4f39a.jpg",
-      "/images/catalog/819649bee994.png"
-    ],
-    "rating": {
-      "value": 5,
-      "count": 282
-    },
-    "highlights": [],
-    "body": [
-      "The silk-like wadding treated by HX-929 can replace eiderdown and cotton stuffed into clothing as thermal material. After calendering and ironing, the silk wadding treated by HX-929 has smooth and flat surface, moreover the wadding has silk-shinning, Soft texture, good thermal insulation effect and excellent water resistance. It won’t deform. It feels totally like eiderdown, soft, smooth and very light. The surface of this wadding seems like silk with good tensile strength and softness. After being washed many times, the wadding won’t deform at all. It can be used as wadding of high grade winter clothes, quilts, padded mattress an so on.",
-      "Water resistant, Heat resistant, Stable quality, High tensile strength, Soft texture",
-      "Heated surface of silk-like wadding treated by HX-929 is quite soft, smooth, shiny, and environment-friendly.",
-      "Textile Emulsion HX-929 is a versatile and high-quality product that plays a critical role in the textile industry. This emulsion is specifically developed to meet the demands of various textile printing and coating applications. With its exceptional adhesion and durability, Textile Emulsion HX-929 is well-suited for use on a wide range of textile substrates, making it a popular choice among textile manufacturers and printers.",
-      "One of the key features of Textile Emulsion HX-929 is its ability to provide strong adhesion to textile surfaces, ensuring that the emulsion bonds securely to the fabric. This is essential for achieving high-quality and long-lasting results in textile printing and coating processes.",
-      "Furthermore, Textile Emulsion HX-929 is known for its excellent resistance to environmental factors such as moisture, heat, and chemicals, making it suitable for use in diverse industrial settings. Its robust nature ensures that the printed or coated textiles maintain their integrity and appearance even under challenging conditions.",
-      "Additionally, Textile Emulsion HX-929 offers ease of application, allowing for smooth and efficient processing in textile production facilities. Its formulation is designed to facilitate uniform spreading and drying, contributing to improved productivity and consistent results.",
-      "In summary, Textile Emulsion HX-929 is a reliable and high-performance emulsion that fulfills the stringent requirements of the textile industry. Its superior adhesion, durability, and resilience make it an indispensable component in the production of high-quality printed and coated textiles. Whether used for screen printing, fabric coatings, or other textile applications, Textile Emulsion HX-929 consistently delivers exceptional performance, making it a preferred choice for textile professionals worldwide."
-    ],
-    "specs": [
-      {
-        "headers": [
-          "Product",
-          "Tg℃",
-          "Solid content %",
-          "Viscosity cps/25℃",
-          "PH",
-          "MFFT℃"
-        ],
-        "rows": [
-          [
-            "HX-929",
-            "2",
-            "55±1",
-            "<100",
-            "2-4",
-            "2"
-          ]
-        ]
-      }
-    ],
-    "sourceUrl": "https://www.hxhdchemical.com/pure-acrylic-textile-emulsion-hx929-for-high-grade-silk-cotton-and-dupont-cotton/"
-  },
-  {
-    "id": "textile-emulsion-hxhd-927e",
-    "slug": "textile-emulsion-hxhd-927e",
-    "name": "Textile Emulsion HXHD-927E",
-    "code": "HXHD-927E",
-    "category": "Textile Emulsion",
-    "categorySlug": "textile-emulsion",
-    "summary": "Textile emulsion, grade HXHD-927E. Contact the technical team for the datasheet and application guidance.",
-    "keywords": [
-      "HXHD-927E",
-      "Textile emulsion",
-      "Acrylic emulsion",
-      "Textile coating",
-      "Fabric treatment"
-    ],
-    "image": "/images/catalog/acf16bb4f39a.jpg",
-    "images": [
-      "/images/catalog/acf16bb4f39a.jpg"
-    ],
-    "rating": null,
-    "highlights": [],
-    "body": [],
-    "specs": [],
-    "sourceUrl": ""
-  },
-  {
-    "id": "textile-emulsion-hxhd-706k",
-    "slug": "textile-emulsion-hxhd-706k",
-    "name": "Textile Emulsion HXHD-706K",
-    "code": "HXHD-706K",
-    "category": "Textile Emulsion",
-    "categorySlug": "textile-emulsion",
-    "summary": "Textile emulsion, grade HXHD-706K. Contact the technical team for the datasheet and application guidance.",
-    "keywords": [
-      "HXHD-706K",
-      "Textile emulsion",
-      "Acrylic emulsion",
-      "Textile coating",
-      "Fabric treatment"
-    ],
-    "image": "/images/catalog/acf16bb4f39a.jpg",
-    "images": [
-      "/images/catalog/acf16bb4f39a.jpg"
-    ],
-    "rating": null,
-    "highlights": [],
-    "body": [],
-    "specs": [],
-    "sourceUrl": ""
-  },
-  {
-    "id": "textile-emulsion-hxhd-403",
-    "slug": "textile-emulsion-hxhd-403",
-    "name": "Textile Emulsion HXHD-403",
-    "code": "HXHD-403",
-    "category": "Textile Emulsion",
-    "categorySlug": "textile-emulsion",
-    "summary": "Textile emulsion, grade HXHD-403. Contact the technical team for the datasheet and application guidance.",
-    "keywords": [
-      "HXHD-403",
-      "Textile emulsion",
-      "Acrylic emulsion",
-      "Textile coating",
-      "Fabric treatment"
-    ],
-    "image": "/images/catalog/acf16bb4f39a.jpg",
-    "images": [
-      "/images/catalog/acf16bb4f39a.jpg"
-    ],
-    "rating": null,
-    "highlights": [],
-    "body": [],
-    "specs": [],
-    "sourceUrl": ""
-  },
-  {
-    "id": "textile-emulsion-hxhd-60",
-    "slug": "textile-emulsion-hxhd-60",
-    "name": "Textile Emulsion HXHD-60",
-    "code": "HXHD-60",
-    "category": "Textile Emulsion",
-    "categorySlug": "textile-emulsion",
-    "summary": "Textile emulsion, grade HXHD-60. Contact the technical team for the datasheet and application guidance.",
-    "keywords": [
-      "HXHD-60",
-      "Textile emulsion",
-      "Acrylic emulsion",
-      "Textile coating",
-      "Fabric treatment"
-    ],
-    "image": "/images/catalog/acf16bb4f39a.jpg",
-    "images": [
-      "/images/catalog/acf16bb4f39a.jpg"
-    ],
-    "rating": null,
-    "highlights": [],
-    "body": [],
-    "specs": [],
-    "sourceUrl": ""
-  },
-  {
-    "id": "textile-emulsion-hd-701",
-    "slug": "textile-emulsion-hd-701",
-    "name": "Textile Emulsion HD-701",
-    "code": "HD-701",
-    "category": "Textile Emulsion",
-    "categorySlug": "textile-emulsion",
-    "summary": "Textile emulsion, grade HD-701. Contact the technical team for the datasheet and application guidance.",
-    "keywords": [
-      "HD-701",
-      "Textile emulsion",
-      "Acrylic emulsion",
-      "Textile coating",
-      "Fabric treatment"
-    ],
-    "image": "/images/catalog/acf16bb4f39a.jpg",
-    "images": [
-      "/images/catalog/acf16bb4f39a.jpg"
-    ],
-    "rating": null,
-    "highlights": [],
-    "body": [],
-    "specs": [],
-    "sourceUrl": ""
-  },
-  {
-    "id": "textile-emulsion-hxhd-601",
-    "slug": "textile-emulsion-hxhd-601",
-    "name": "Textile Emulsion HXHD-601",
-    "code": "HXHD-601",
-    "category": "Textile Emulsion",
-    "categorySlug": "textile-emulsion",
-    "summary": "Textile emulsion, grade HXHD-601. Contact the technical team for the datasheet and application guidance.",
-    "keywords": [
-      "HXHD-601",
-      "Textile emulsion",
-      "Acrylic emulsion",
-      "Textile coating",
-      "Fabric treatment"
-    ],
-    "image": "/images/catalog/acf16bb4f39a.jpg",
-    "images": [
-      "/images/catalog/acf16bb4f39a.jpg"
-    ],
-    "rating": null,
-    "highlights": [],
-    "body": [],
-    "specs": [],
-    "sourceUrl": ""
-  },
-  {
-    "id": "textile-emulsion-hxhd-604",
-    "slug": "textile-emulsion-hxhd-604",
-    "name": "Textile Emulsion HXHD-604",
-    "code": "HXHD-604",
-    "category": "Textile Emulsion",
-    "categorySlug": "textile-emulsion",
-    "summary": "Textile emulsion, grade HXHD-604. Contact the technical team for the datasheet and application guidance.",
-    "keywords": [
-      "HXHD-604",
-      "Textile emulsion",
-      "Acrylic emulsion",
-      "Textile coating",
-      "Fabric treatment"
-    ],
-    "image": "/images/catalog/acf16bb4f39a.jpg",
-    "images": [
-      "/images/catalog/acf16bb4f39a.jpg"
-    ],
-    "rating": null,
-    "highlights": [],
-    "body": [],
-    "specs": [],
-    "sourceUrl": ""
-  },
-  {
-    "id": "waterproof-emulsion-hx-416-1-product",
-    "slug": "waterproof-emulsion-hx-416-1-product",
-    "name": "Waterproof Emulsion HXHD-416A",
-    "code": "HXHD-416A",
-    "sourceCode": "HX-416",
-    "category": "Waterproof Emulsion",
-    "categorySlug": "waterproof-emulsion",
-    "summary": "Looking for a reliable waterproof emulsion? Try HX-416 for all your waterproofing needs. Durable and long-lasting protection for any surface",
-    "keywords": [
-      "Waterproof emulsion HX-416",
-      "emulsion paint",
-      "waterproof coating",
-      "building materials",
-      "construction supplies",
-      "waterproofing solution",
-      "moisture-resistant emulsion",
-      "durable emulsion",
-      "waterproofing agent"
-    ],
-    "image": "/images/catalog/hx-416a.webp",
-    "images": [
-      "/images/catalog/hx-416a.webp",
-      "/images/catalog/b33bc39f5c11.jpg"
-    ],
-    "rating": {
-      "value": 5,
-      "count": 165
-    },
-    "highlights": [],
-    "body": [
-      "But that's not all – our emulsion can also be applied in slurry and thermal insulation mortar for buildings, providing versatility and convenience for your construction needs.",
-      "With its high-quality formulation, the HX-416 offers superior performance, durability, and long-lasting protection against water damage. Its flexible nature allows for easy application and ensures a seamless and watertight finish.",
-      "The HX-416 is ideal for use in a range of industries, including construction, architecture, and building maintenance. Its reliability and effectiveness make it the perfect choice for waterproofing projects of all sizes.",
-      "When you choose the HX-416, you can trust that you're getting a product that is not only reliable and durable, but also environmentally friendly. Our emulsion is made with sustainability in mind, ensuring that you can protect your building while also protecting the planet.",
-      "This emulsion is cracking resistant and has excellent flexibility in cold weather. It is able to be used in EPS products for building decoration.",
-      "It’s highly elastic and adhesive. It is suitable for production of high elastic waterproof coatings. It has good compatibility with powders so that it can be used not only for single component acrylic waterproof coating but also JS( acrylic polymer and cement) waterproof coating.",
-      "Moreover the emulsion is widely used to improve the strength of concrete in slurry, mortar and putty.",
-      "Anti cracking performance, plasticizer free, flexible and elastic in low temperature, compatible with powders, and strong adhesion.",
-      "HX-416 is acrylate styrene copolymer emulsion.This specially formulated emulsion is designed for flexible waterproof coating, making it an excellent choice for a variety of applications. Whether you're in need of a single component acrylic waterproof coating or a two-component cement-based waterproof coating, the HX-416 has got you covered."
-    ],
-    "specs": [
-      {
-        "headers": [
-          "Product",
-          "Tg ℃",
-          "Solid content %",
-          "Viscosity cps/25℃",
-          "PH",
-          "MFFT ℃"
-        ],
-        "rows": [
-          [
-            "HX-416",
-            "-8",
-            "50±1",
-            "700-1000",
-            "7-8",
-            "0"
-          ]
-        ]
-      }
-    ],
-    "sourceUrl": "https://www.hxhdchemical.com/waterproof-emulsion-hx-416-1-product/"
-  },
-  {
     "id": "toilet-and-roof-acrylic-and-styrene-waterproof-emulsion-hx400-for-thermal-insulation-mortar-and-two-component-cement-waterproof-coating",
     "slug": "toilet-and-roof-acrylic-and-styrene-waterproof-emulsion-hx400-for-thermal-insulation-mortar-and-two-component-cement-waterproof-coating",
     "name": "Waterproof Emulsion HXHD-400",
@@ -1219,121 +325,6 @@ export const PRODUCTS: Product[] = [
     "sourceUrl": "https://www.hxhdchemical.com/toilet-and-roof-acrylic-and-styrene-waterproof-emulsion-hx400-for-thermal-insulation-mortar-and-two-component-cement-waterproof-coating/"
   },
   {
-    "id": "acrylic-and-styrene-waterproof-emulsion-hx416-for-thermal-insulation-mortar-and-two-component-cement-waterproof-coating",
-    "slug": "acrylic-and-styrene-waterproof-emulsion-hx416-for-thermal-insulation-mortar-and-two-component-cement-waterproof-coating",
-    "name": "Waterproof Emulsion HXHD-416",
-    "code": "HXHD-416",
-    "sourceCode": "HX-416",
-    "category": "Waterproof Emulsion",
-    "categorySlug": "waterproof-emulsion",
-    "summary": "Looking for a high-quality waterproof emulsion? Check out HX-406A for the best waterproofing and protection for your surfaces. Purchase now!",
-    "keywords": [
-      "Waterproof emulsion HX-406A",
-      "Waterproof coating",
-      "Waterproof paint",
-      "Waterproof emulsion supplier",
-      "Waterproof emulsion manufacturer",
-      "Waterproof emulsion price",
-      "Waterproof emulsion properties",
-      "Waterproof emulsion application"
-    ],
-    "image": "/images/catalog/hx-416.webp",
-    "images": [
-      "/images/catalog/hx-416.webp",
-      "/images/catalog/fead47cfbcb6.jpg",
-      "/images/catalog/2cc7ff4c9212.jpg",
-      "/images/catalog/9274a731ac43.jpg"
-    ],
-    "rating": {
-      "value": 5,
-      "count": 131
-    },
-    "highlights": [],
-    "body": [
-      "The emulsion without plasticizer can meet the requirements of high flexibility and good tensile strength for waterproof coatings .",
-      "The emulsion has good compatibility with powders. With fomula recomended low, the cost is quite low to produce two component waterproof coatings.",
-      "The emulsion perfectly balance flexibility and tensile strength. The waterproof coatings made from his emulsion can cover slight seam of base surface.",
-      "It is widely used in many formulas as one kind of premium raw material.",
-      "406A27 JS- Ⅱ (1:1.5) Type re commended formula",
-      "High elasticity, excellent flexibility, high tensile strength, good wrapping power of powders and compatibility with pigments and powders.",
-      "Designed for versatility, HX-406A27 is a valuable tool for producing a wide range of coatings and mortars. Its superior performance makes it the perfect choice for two-component JS coatings, single-component coatings, slurry, and thermal insulation mortar.",
-      "One of the key benefits of HX-406A27 is its eco-friendly composition. As environmental concerns continue to grow, the demand for sustainable products has never been higher. With HX-406A27, you can meet the needs of your customers while also reducing your environmental impact.",
-      "In addition to being environmentally friendly, HX-406A27 offers exceptional performance. Its styrene acrylic polymer emulsion base provides excellent adhesion, durability, and weather resistance, making it suitable for a wide range of applications. Whether you are working on residential, commercial, or industrial projects, HX-406A27 delivers reliable results every time.",
-      "The versatility of HX-406A27 also sets it apart from other polymer emulsions on the market. Its compatibility with various substrates and coatings systems makes it a valuable asset for professionals in the construction and coatings industries. Plus, its easy application and handling ensure a smooth and efficient workflow.",
-      "HX-416 is acrylate styrene copolymer emulsion.This specially formulated emulsion is designed for flexible waterproof coating, making it an excellent choice for a variety of applications. Whether you're in need of a single component acrylic waterproof coating or a two-component cement-based waterproof coating, the HX-416 has got you covered."
-    ],
-    "specs": [
-      {
-        "headers": [
-          "Product",
-          "Tg℃",
-          "Solid content %",
-          "Viscosity cps/25℃",
-          "PH",
-          "MFFT℃"
-        ],
-        "rows": [
-          [
-            "HX-406A27",
-            "-8",
-            "55±1",
-            "1000-1800",
-            "7-8",
-            "0"
-          ]
-        ]
-      },
-      {
-        "headers": [
-          "406A27 JS- Ⅱ (1:1.5) Type re commended formula"
-        ],
-        "rows": [
-          [
-            "Material name",
-            "Mixture ratio"
-          ],
-          [
-            "406A27",
-            "328"
-          ],
-          [
-            "Water",
-            "72"
-          ],
-          [
-            "Bactericide",
-            "2"
-          ],
-          [
-            "Defoamer",
-            "3"
-          ],
-          [
-            "TT-935",
-            "0"
-          ],
-          [
-            "42.5PO cement",
-            "300"
-          ],
-          [
-            "400 meshes coarse whiting",
-            "180"
-          ],
-          [
-            "80-120 Sand",
-            "120"
-          ],
-          [
-            "dispersed",
-            "0"
-          ]
-        ]
-      }
-    ],
-    "sourceUrl": "https://www.hxhdchemical.com/acrylic-and-styrene-waterproof-emulsion-hx416-for-thermal-insulation-mortar-and-two-component-cement-waterproof-coating/"
-  },
-  {
     "id": "waterproof-emulsion-hx-406-product",
     "slug": "waterproof-emulsion-hx-406-product",
     "name": "Waterproof Emulsion HXHD-406A",
@@ -1419,6 +410,71 @@ export const PRODUCTS: Product[] = [
     "body": [],
     "specs": [],
     "sourceUrl": ""
+  },
+  {
+    "id": "waterproof-emulsion-hx-416-1-product",
+    "slug": "waterproof-emulsion-hx-416-1-product",
+    "name": "Waterproof Emulsion HXHD-416A",
+    "code": "HXHD-416A",
+    "sourceCode": "HX-416",
+    "category": "Waterproof Emulsion",
+    "categorySlug": "waterproof-emulsion",
+    "summary": "Looking for a reliable waterproof emulsion? Try HX-416 for all your waterproofing needs. Durable and long-lasting protection for any surface",
+    "keywords": [
+      "Waterproof emulsion HX-416",
+      "emulsion paint",
+      "waterproof coating",
+      "building materials",
+      "construction supplies",
+      "waterproofing solution",
+      "moisture-resistant emulsion",
+      "durable emulsion",
+      "waterproofing agent"
+    ],
+    "image": "/images/catalog/hx-416a.webp",
+    "images": [
+      "/images/catalog/hx-416a.webp",
+      "/images/catalog/b33bc39f5c11.jpg"
+    ],
+    "rating": {
+      "value": 5,
+      "count": 165
+    },
+    "highlights": [],
+    "body": [
+      "But that's not all – our emulsion can also be applied in slurry and thermal insulation mortar for buildings, providing versatility and convenience for your construction needs.",
+      "With its high-quality formulation, the HX-416 offers superior performance, durability, and long-lasting protection against water damage. Its flexible nature allows for easy application and ensures a seamless and watertight finish.",
+      "The HX-416 is ideal for use in a range of industries, including construction, architecture, and building maintenance. Its reliability and effectiveness make it the perfect choice for waterproofing projects of all sizes.",
+      "When you choose the HX-416, you can trust that you're getting a product that is not only reliable and durable, but also environmentally friendly. Our emulsion is made with sustainability in mind, ensuring that you can protect your building while also protecting the planet.",
+      "This emulsion is cracking resistant and has excellent flexibility in cold weather. It is able to be used in EPS products for building decoration.",
+      "It’s highly elastic and adhesive. It is suitable for production of high elastic waterproof coatings. It has good compatibility with powders so that it can be used not only for single component acrylic waterproof coating but also JS( acrylic polymer and cement) waterproof coating.",
+      "Moreover the emulsion is widely used to improve the strength of concrete in slurry, mortar and putty.",
+      "Anti cracking performance, plasticizer free, flexible and elastic in low temperature, compatible with powders, and strong adhesion.",
+      "HX-416 is acrylate styrene copolymer emulsion.This specially formulated emulsion is designed for flexible waterproof coating, making it an excellent choice for a variety of applications. Whether you're in need of a single component acrylic waterproof coating or a two-component cement-based waterproof coating, the HX-416 has got you covered."
+    ],
+    "specs": [
+      {
+        "headers": [
+          "Product",
+          "Tg ℃",
+          "Solid content %",
+          "Viscosity cps/25℃",
+          "PH",
+          "MFFT ℃"
+        ],
+        "rows": [
+          [
+            "HX-416",
+            "-8",
+            "50±1",
+            "700-1000",
+            "7-8",
+            "0"
+          ]
+        ]
+      }
+    ],
+    "sourceUrl": "https://www.hxhdchemical.com/waterproof-emulsion-hx-416-1-product/"
   },
   {
     "id": "low-temperature-elastic-acrylic-and-styrene-waterproof-emulsion-hx416-for-thermal-insulation-mortar-and-cement-waterproof-coating",
@@ -1554,200 +610,948 @@ export const PRODUCTS: Product[] = [
     "sourceUrl": "https://www.hxhdchemical.com/low-temperature-elastic-acrylic-and-styrene-waterproof-emulsion-hx416-for-thermal-insulation-mortar-and-cement-waterproof-coating/"
   },
   {
-    "id": "architectural-emulsion-hx-305-product",
-    "slug": "architectural-emulsion-hx-305-product",
-    "name": "Architectural Emulsion HX-305",
-    "code": "HX-305",
-    "category": "Building Paint Emulsion",
-    "categorySlug": "building-paint-emulsion",
-    "summary": "Looking for Architectural Emulsion HX-305? Explore our high-quality paint product for your architectural needs. Order now for a durable and aesthetic finish",
+    "id": "acrylic-and-styrene-waterproof-emulsion-hx416-for-thermal-insulation-mortar-and-two-component-cement-waterproof-coating",
+    "slug": "acrylic-and-styrene-waterproof-emulsion-hx416-for-thermal-insulation-mortar-and-two-component-cement-waterproof-coating",
+    "name": "Waterproof Emulsion HXHD-416",
+    "code": "HXHD-416",
+    "sourceCode": "HX-416",
+    "category": "Waterproof Emulsion",
+    "categorySlug": "waterproof-emulsion",
+    "summary": "Looking for a high-quality waterproof emulsion? Check out HX-406A for the best waterproofing and protection for your surfaces. Purchase now!",
     "keywords": [
-      "Architectural Emulsion HX-305",
-      "Emulsion paint",
-      "Interior paint",
-      "Wall coating",
-      "Architectural coatings",
-      "Decorative paint",
-      "HX-305 paint",
-      "Water-based paint"
+      "Waterproof emulsion HX-406A",
+      "Waterproof coating",
+      "Waterproof paint",
+      "Waterproof emulsion supplier",
+      "Waterproof emulsion manufacturer",
+      "Waterproof emulsion price",
+      "Waterproof emulsion properties",
+      "Waterproof emulsion application"
     ],
-    "image": "/images/catalog/64f6b6386920.jpg",
+    "image": "/images/catalog/hx-416.webp",
     "images": [
-      "/images/catalog/64f6b6386920.jpg"
+      "/images/catalog/hx-416.webp",
+      "/images/catalog/fead47cfbcb6.jpg",
+      "/images/catalog/2cc7ff4c9212.jpg",
+      "/images/catalog/9274a731ac43.jpg"
     ],
     "rating": {
       "value": 5,
-      "count": 72
+      "count": 131
     },
     "highlights": [],
     "body": [
-      "One of the standout features of the HX-305 pure acrylic emulsion is its remarkable water whitening resistance. In low temperature and high humidity environments, Stone like paint often struggles with whitening issues. However, with the use of HX-305 emulsion, this problem is significantly improved, providing a durable and long-lasting finish that maintains its appearance over time.",
-      "The coating film created with HX-305 emulsion exhibits outstanding dry and wet adhesion, ensuring a strong and reliable bond to the painted surface. This results in a coating that resists loss of gloss, powdering, and peeling, maintaining its pristine appearance for an extended period. With high mechanical stability, calcium ion stability, and storage stability, HX-305 emulsion offers a dependable solution for various painting applications.",
-      "Additionally, the HX-305 emulsion boasts oil-repellent and corrosion-resistant properties, providing added protection to the painted surface. Its good self-cleaning ability further enhances its durability and longevity, making it a versatile choice for a wide range of painting projects.",
-      "HX-305 emulsion features a high glass transition temperature (Tg), creating a hard coating with excellent gloss. This results in a visually appealing finish that enhances the overall aesthetic of the painted surface, making it an ideal choice for high-end applications where quality and appearance are paramount.",
-      "High grade interior and exterior wall paint, high grade stone like paint, textured paint and colorful continuous phase emulsion.",
-      "Excellent water resistance, alkali resistance. Chemical stability, freeze-thaw stability, excellent resistance to UV and contamination.",
-      "Packing and storage The package is 50kg 160kg or 1000kg plastic drum. Storage tanks should be corrosion resistant. This product should be stored in unopened container in a ventilated cool and dry place, avoid exposing to direct sunlight.The proper environment temperature for its transportation and storage is between 5 and 35℃. Storage at higher temperature or high humidity may reduce shelf life.",
-      "This innovative emulsion boasts small particle size, moderate viscosity, and a hard coating film, making it an ideal choice for a wide range of applications.",
-      "It incorporates the most advanced wetting and late-stage reaction technology with powders. This innovative formula allows the emulsion and various powders to be seamlessly integrated into one, forming a denser film that provides superior protection and longevity.",
-      "This revolutionary product has been designed and engineered to deliver superior dry and wet adhesion of the coating film, making it an absolute game-changer in the industry.",
-      "HX-66 is anti-alkali emulsion,copolymerized by acrylates and functional monomers,modified acrylic polymer,single component. With small particle size and good penetrating performance, after film formation, it is water resistant, alkali resistant, with good adhesion and sealing capacity.",
-      "This product is suitable for producing various exterior and interior wall sealing primer, and interface adhesion agent for extruded board for wall thermal insulation etc."
+      "The emulsion without plasticizer can meet the requirements of high flexibility and good tensile strength for waterproof coatings .",
+      "The emulsion has good compatibility with powders. With fomula recomended low, the cost is quite low to produce two component waterproof coatings.",
+      "The emulsion perfectly balance flexibility and tensile strength. The waterproof coatings made from his emulsion can cover slight seam of base surface.",
+      "It is widely used in many formulas as one kind of premium raw material.",
+      "406A27 JS- Ⅱ (1:1.5) Type re commended formula",
+      "High elasticity, excellent flexibility, high tensile strength, good wrapping power of powders and compatibility with pigments and powders.",
+      "Designed for versatility, HX-406A27 is a valuable tool for producing a wide range of coatings and mortars. Its superior performance makes it the perfect choice for two-component JS coatings, single-component coatings, slurry, and thermal insulation mortar.",
+      "One of the key benefits of HX-406A27 is its eco-friendly composition. As environmental concerns continue to grow, the demand for sustainable products has never been higher. With HX-406A27, you can meet the needs of your customers while also reducing your environmental impact.",
+      "In addition to being environmentally friendly, HX-406A27 offers exceptional performance. Its styrene acrylic polymer emulsion base provides excellent adhesion, durability, and weather resistance, making it suitable for a wide range of applications. Whether you are working on residential, commercial, or industrial projects, HX-406A27 delivers reliable results every time.",
+      "The versatility of HX-406A27 also sets it apart from other polymer emulsions on the market. Its compatibility with various substrates and coatings systems makes it a valuable asset for professionals in the construction and coatings industries. Plus, its easy application and handling ensure a smooth and efficient workflow.",
+      "HX-416 is acrylate styrene copolymer emulsion.This specially formulated emulsion is designed for flexible waterproof coating, making it an excellent choice for a variety of applications. Whether you're in need of a single component acrylic waterproof coating or a two-component cement-based waterproof coating, the HX-416 has got you covered."
     ],
     "specs": [
       {
         "headers": [
           "Product",
-          "MFFT℃",
-          "Solid content",
-          "Viscocity cps/25℃",
+          "Tg℃",
+          "Solid content %",
+          "Viscosity cps/25℃",
           "PH",
-          "Applicant area"
+          "MFFT℃"
         ],
         "rows": [
           [
-            "HX-305",
-            "21",
-            "48±1",
-            "100-500",
-            "7-9",
-            "High grade interior and exterior wall paint, high grade stone like paint, textured paint and colorful continuous phase emulsion."
+            "HX-406A27",
+            "-8",
+            "55±1",
+            "1000-1800",
+            "7-8",
+            "0"
+          ]
+        ]
+      },
+      {
+        "headers": [
+          "406A27 JS- Ⅱ (1:1.5) Type re commended formula"
+        ],
+        "rows": [
+          [
+            "Material name",
+            "Mixture ratio"
+          ],
+          [
+            "406A27",
+            "328"
+          ],
+          [
+            "Water",
+            "72"
+          ],
+          [
+            "Bactericide",
+            "2"
+          ],
+          [
+            "Defoamer",
+            "3"
+          ],
+          [
+            "TT-935",
+            "0"
+          ],
+          [
+            "42.5PO cement",
+            "300"
+          ],
+          [
+            "400 meshes coarse whiting",
+            "180"
+          ],
+          [
+            "80-120 Sand",
+            "120"
+          ],
+          [
+            "dispersed",
+            "0"
           ]
         ]
       }
     ],
-    "sourceUrl": "https://www.hxhdchemical.com/architectural-emulsion-hx-305-product/"
+    "sourceUrl": "https://www.hxhdchemical.com/acrylic-and-styrene-waterproof-emulsion-hx416-for-thermal-insulation-mortar-and-two-component-cement-waterproof-coating/"
   },
   {
-    "id": "modified-acrylic-and-styrene-architectural-emulsion-hx303-for-middle-and-top-grade-exterior-and-interior-wall-coating",
-    "slug": "modified-acrylic-and-styrene-architectural-emulsion-hx303-for-middle-and-top-grade-exterior-and-interior-wall-coating",
-    "name": "Modified Acrylic and Styrene Architectural Emulsion HX-303 for Middle and Top Grade Exterior and Interior Wall Coating",
-    "code": "HX-303",
-    "category": "Building Paint Emulsion",
-    "categorySlug": "building-paint-emulsion",
-    "summary": "Shop our premium Architectural Emulsion HX-303 for beautiful and durable paint finishes. Perfect for interior and exterior use. Order now!",
+    "id": "pure-acrylic-textile-emulsion-hx929-for-high-grade-silk-cotton-and-dupont-cotton",
+    "slug": "pure-acrylic-textile-emulsion-hx929-for-high-grade-silk-cotton-and-dupont-cotton",
+    "name": "Textile Emulsion HXHD-929",
+    "code": "HXHD-929",
+    "sourceCode": "HX-929",
+    "category": "Textile Emulsion",
+    "categorySlug": "textile-emulsion",
+    "summary": "Looking for a high-quality textile emulsion? Check out HX-929 for your textile printing needs. Superior quality and performance for your fabric designs",
     "keywords": [
-      "Architectural Emulsion HX-303",
-      "Emulsion paint for interior walls",
-      "Water-based architectural paint",
-      "High-quality emulsion paint",
-      "HX-303 emulsion paint supplier",
-      "Buy architectural paint online",
-      "Interior wall emulsion coating",
-      "Durable and washable emulsion paint"
+      "Textile Emulsion HX-929",
+      "screen printing",
+      "textile printing",
+      "emulsion for silk screen",
+      "textile ink",
+      "fabric printing",
+      "screen printing supply",
+      "textile screen printing",
+      "textile design"
+    ],
+    "image": "/images/catalog/acf16bb4f39a.jpg",
+    "images": [
+      "/images/catalog/acf16bb4f39a.jpg",
+      "/images/catalog/819649bee994.png"
+    ],
+    "rating": {
+      "value": 5,
+      "count": 282
+    },
+    "highlights": [],
+    "body": [
+      "The silk-like wadding treated by HX-929 can replace eiderdown and cotton stuffed into clothing as thermal material. After calendering and ironing, the silk wadding treated by HX-929 has smooth and flat surface, moreover the wadding has silk-shinning, Soft texture, good thermal insulation effect and excellent water resistance. It won’t deform. It feels totally like eiderdown, soft, smooth and very light. The surface of this wadding seems like silk with good tensile strength and softness. After being washed many times, the wadding won’t deform at all. It can be used as wadding of high grade winter clothes, quilts, padded mattress an so on.",
+      "Water resistant, Heat resistant, Stable quality, High tensile strength, Soft texture",
+      "Heated surface of silk-like wadding treated by HX-929 is quite soft, smooth, shiny, and environment-friendly.",
+      "Textile Emulsion HX-929 is a versatile and high-quality product that plays a critical role in the textile industry. This emulsion is specifically developed to meet the demands of various textile printing and coating applications. With its exceptional adhesion and durability, Textile Emulsion HX-929 is well-suited for use on a wide range of textile substrates, making it a popular choice among textile manufacturers and printers.",
+      "One of the key features of Textile Emulsion HX-929 is its ability to provide strong adhesion to textile surfaces, ensuring that the emulsion bonds securely to the fabric. This is essential for achieving high-quality and long-lasting results in textile printing and coating processes.",
+      "Furthermore, Textile Emulsion HX-929 is known for its excellent resistance to environmental factors such as moisture, heat, and chemicals, making it suitable for use in diverse industrial settings. Its robust nature ensures that the printed or coated textiles maintain their integrity and appearance even under challenging conditions.",
+      "Additionally, Textile Emulsion HX-929 offers ease of application, allowing for smooth and efficient processing in textile production facilities. Its formulation is designed to facilitate uniform spreading and drying, contributing to improved productivity and consistent results.",
+      "In summary, Textile Emulsion HX-929 is a reliable and high-performance emulsion that fulfills the stringent requirements of the textile industry. Its superior adhesion, durability, and resilience make it an indispensable component in the production of high-quality printed and coated textiles. Whether used for screen printing, fabric coatings, or other textile applications, Textile Emulsion HX-929 consistently delivers exceptional performance, making it a preferred choice for textile professionals worldwide."
+    ],
+    "specs": [
+      {
+        "headers": [
+          "Product",
+          "Tg℃",
+          "Solid content %",
+          "Viscosity cps/25℃",
+          "PH",
+          "MFFT℃"
+        ],
+        "rows": [
+          [
+            "HX-929",
+            "2",
+            "55±1",
+            "<100",
+            "2-4",
+            "2"
+          ]
+        ]
+      }
+    ],
+    "sourceUrl": "https://www.hxhdchemical.com/pure-acrylic-textile-emulsion-hx929-for-high-grade-silk-cotton-and-dupont-cotton/"
+  },
+  {
+    "id": "textile-emulsion-hxhd-927e",
+    "slug": "textile-emulsion-hxhd-927e",
+    "name": "Textile Emulsion HXHD-927E",
+    "code": "HXHD-927E",
+    "category": "Textile Emulsion",
+    "categorySlug": "textile-emulsion",
+    "summary": "Textile emulsion, grade HXHD-927E. Contact the technical team for the datasheet and application guidance.",
+    "keywords": [
+      "HXHD-927E",
+      "Textile emulsion",
+      "Acrylic emulsion",
+      "Textile coating",
+      "Fabric treatment"
+    ],
+    "image": "/images/catalog/acf16bb4f39a.jpg",
+    "images": [
+      "/images/catalog/acf16bb4f39a.jpg"
+    ],
+    "rating": null,
+    "highlights": [],
+    "body": [],
+    "specs": [],
+    "sourceUrl": ""
+  },
+  {
+    "id": "textile-emulsion-hxhd-601",
+    "slug": "textile-emulsion-hxhd-601",
+    "name": "Textile Emulsion HXHD-601",
+    "code": "HXHD-601",
+    "category": "Textile Emulsion",
+    "categorySlug": "textile-emulsion",
+    "summary": "Textile emulsion, grade HXHD-601. Contact the technical team for the datasheet and application guidance.",
+    "keywords": [
+      "HXHD-601",
+      "Textile emulsion",
+      "Acrylic emulsion",
+      "Textile coating",
+      "Fabric treatment"
+    ],
+    "image": "/images/catalog/acf16bb4f39a.jpg",
+    "images": [
+      "/images/catalog/acf16bb4f39a.jpg"
+    ],
+    "rating": null,
+    "highlights": [],
+    "body": [],
+    "specs": [],
+    "sourceUrl": ""
+  },
+  {
+    "id": "textile-emulsion-hxhd-604",
+    "slug": "textile-emulsion-hxhd-604",
+    "name": "Textile Emulsion HXHD-604",
+    "code": "HXHD-604",
+    "category": "Textile Emulsion",
+    "categorySlug": "textile-emulsion",
+    "summary": "Textile emulsion, grade HXHD-604. Contact the technical team for the datasheet and application guidance.",
+    "keywords": [
+      "HXHD-604",
+      "Textile emulsion",
+      "Acrylic emulsion",
+      "Textile coating",
+      "Fabric treatment"
+    ],
+    "image": "/images/catalog/acf16bb4f39a.jpg",
+    "images": [
+      "/images/catalog/acf16bb4f39a.jpg"
+    ],
+    "rating": null,
+    "highlights": [],
+    "body": [],
+    "specs": [],
+    "sourceUrl": ""
+  },
+  {
+    "id": "textile-emulsion-hd-701",
+    "slug": "textile-emulsion-hd-701",
+    "name": "Textile Emulsion HD-701",
+    "code": "HD-701",
+    "category": "Textile Emulsion",
+    "categorySlug": "textile-emulsion",
+    "summary": "Textile emulsion, grade HD-701. Contact the technical team for the datasheet and application guidance.",
+    "keywords": [
+      "HD-701",
+      "Textile emulsion",
+      "Acrylic emulsion",
+      "Textile coating",
+      "Fabric treatment"
+    ],
+    "image": "/images/catalog/acf16bb4f39a.jpg",
+    "images": [
+      "/images/catalog/acf16bb4f39a.jpg"
+    ],
+    "rating": null,
+    "highlights": [],
+    "body": [],
+    "specs": [],
+    "sourceUrl": ""
+  },
+  {
+    "id": "textile-emulsion-hxhd-706k",
+    "slug": "textile-emulsion-hxhd-706k",
+    "name": "Textile Emulsion HXHD-706K",
+    "code": "HXHD-706K",
+    "category": "Textile Emulsion",
+    "categorySlug": "textile-emulsion",
+    "summary": "Textile emulsion, grade HXHD-706K. Contact the technical team for the datasheet and application guidance.",
+    "keywords": [
+      "HXHD-706K",
+      "Textile emulsion",
+      "Acrylic emulsion",
+      "Textile coating",
+      "Fabric treatment"
+    ],
+    "image": "/images/catalog/acf16bb4f39a.jpg",
+    "images": [
+      "/images/catalog/acf16bb4f39a.jpg"
+    ],
+    "rating": null,
+    "highlights": [],
+    "body": [],
+    "specs": [],
+    "sourceUrl": ""
+  },
+  {
+    "id": "textile-emulsion-hxhd-403",
+    "slug": "textile-emulsion-hxhd-403",
+    "name": "Textile Emulsion HXHD-403",
+    "code": "HXHD-403",
+    "category": "Textile Emulsion",
+    "categorySlug": "textile-emulsion",
+    "summary": "Textile emulsion, grade HXHD-403. Contact the technical team for the datasheet and application guidance.",
+    "keywords": [
+      "HXHD-403",
+      "Textile emulsion",
+      "Acrylic emulsion",
+      "Textile coating",
+      "Fabric treatment"
+    ],
+    "image": "/images/catalog/acf16bb4f39a.jpg",
+    "images": [
+      "/images/catalog/acf16bb4f39a.jpg"
+    ],
+    "rating": null,
+    "highlights": [],
+    "body": [],
+    "specs": [],
+    "sourceUrl": ""
+  },
+  {
+    "id": "textile-emulsion-hxhd-60",
+    "slug": "textile-emulsion-hxhd-60",
+    "name": "Textile Emulsion HXHD-60",
+    "code": "HXHD-60",
+    "category": "Textile Emulsion",
+    "categorySlug": "textile-emulsion",
+    "summary": "Textile emulsion, grade HXHD-60. Contact the technical team for the datasheet and application guidance.",
+    "keywords": [
+      "HXHD-60",
+      "Textile emulsion",
+      "Acrylic emulsion",
+      "Textile coating",
+      "Fabric treatment"
+    ],
+    "image": "/images/catalog/acf16bb4f39a.jpg",
+    "images": [
+      "/images/catalog/acf16bb4f39a.jpg"
+    ],
+    "rating": null,
+    "highlights": [],
+    "body": [],
+    "specs": [],
+    "sourceUrl": ""
+  },
+  {
+    "id": "anti-alkali-anti-cracking-and-anti-mould-waterproof-sand-fixing-agent-500a-500b",
+    "slug": "anti-alkali-anti-cracking-and-anti-mould-waterproof-sand-fixing-agent-500a-500b",
+    "name": "Sand Fixing Agent 500A",
+    "code": "HXHD-500A",
+    "category": "Sand Fixing Agent",
+    "categorySlug": "sand-fixing-agent",
+    "summary": "Looking for a reliable sand fixing agent? Check out Sand Fixing Agent 500A/500B for effective and long-lasting results. Purchase now!",
+    "keywords": [
+      "sand fixing agent 500A",
+      "sand fixing agent 500B",
+      "soil stabilization",
+      "soil improvement",
+      "construction materials",
+      "soil strengthening",
+      "ground improvement",
+      "road construction additives"
+    ],
+    "image": "/images/catalog/hxhd-500a.webp",
+    "images": [
+      "/images/catalog/hxhd-500a.webp",
+      "/images/catalog/ca013cc2e27a.jpg",
+      "/images/catalog/a476357af5eb.jpg"
+    ],
+    "rating": {
+      "value": 5,
+      "count": 207
+    },
+    "highlights": [],
+    "body": [
+      "This cutting-edge system is designed to offer comprehensive protection, including waterproofing, alkali resistance, mildew prevention, sand fixation, and resistance to cracking. It is the ideal solution for a range of applications, including roofs, exterior walls, bathrooms, basements, and garage back surfaces. These are areas prone to alkali return, sanding, and the need for wall-penetrating waterproofing and anti-seepage reinforcement.",
+      "In addition, this system can be used for the preliminary treatment of waterproof construction base surfaces. By applying a layer of 500A waterproof sand-fixing agent to the sandy base surface, followed by regular waterproofing operations, the waterproof layer becomes firmly attached to the substrate. This process greatly enhances the effectiveness of the waterproofing, eliminating the need to remove sand from the base surface before construction.",
+      "Our one-component waterproofing system offers a convenient, cost-effective, and reliable solution for a wide range of construction and waterproofing needs. With its exceptional adhesion and protective properties, it is sure to improve the durability and longevity of any structure. Try it today and experience the difference!",
+      "1.Improving the physical strength of concrete base gradually with the passage of time.",
+      "2.Improving the chemical-resistance, weathering resistance and waterproofing.",
+      "3.Replacing other waterproof material, it can be used on roofs or exterior walls with waterproofing, moisture resistance and mould resistance.",
+      "Waterproof and impermeable reinforcement of roof, exterior wall, toilet parts prone to alkali return and sand rising, basement and garage back surface. It can also be used for the preliminary treatment of waterproof construction foundation surface. A layer of 500A waterproof sand consolidation agent is sprayed on the foundation surface with sand particles. After drying, conventional waterproof operations are carried out to ensure that the waterproof layer is fastened to the foundation surface, greatly improving the waterproof effect, and eliminating the process of removing sand particles from the foundation surface before construction."
+    ],
+    "specs": [
+      {
+        "headers": [
+          "Test Item",
+          "500A performance index",
+          "500B performance index"
+        ],
+        "rows": [
+          [
+            "Appearance",
+            "Uniform milky white liquid",
+            "Uniform milky white liquid"
+          ],
+          [
+            "Solid content %",
+            "40±1%",
+            "40±1%"
+          ],
+          [
+            "Viscocity cps/25℃",
+            "300 － 600Mpa.s",
+            "300 － 600Mpa.s"
+          ],
+          [
+            "PH value",
+            "4 － 6",
+            "6 － 7"
+          ],
+          [
+            "Tg℃",
+            "15℃",
+            "15℃"
+          ]
+        ]
+      }
+    ],
+    "sourceUrl": "https://www.hxhdchemical.com/anti-alkali-anti-cracking-and-anti-mould-waterproof-sand-fixing-agent-500a-500b/",
+    "sourceCode": "500A/500B"
+  },
+  {
+    "id": "sand-fixing-agent-500b",
+    "slug": "sand-fixing-agent-500b",
+    "name": "Sand Fixing Agent 500B",
+    "code": "HXHD-500B",
+    "category": "Sand Fixing Agent",
+    "categorySlug": "sand-fixing-agent",
+    "summary": "Looking for a reliable sand fixing agent? Check out Sand Fixing Agent 500A/500B for effective and long-lasting results. Purchase now!",
+    "keywords": [
+      "sand fixing agent 500A",
+      "sand fixing agent 500B",
+      "soil stabilization",
+      "soil improvement",
+      "construction materials",
+      "soil strengthening",
+      "ground improvement",
+      "road construction additives"
+    ],
+    "image": "/images/catalog/hxhd-500b.webp",
+    "images": [
+      "/images/catalog/hxhd-500b.webp",
+      "/images/catalog/a476357af5eb.jpg",
+      "/images/catalog/ca013cc2e27a.jpg"
+    ],
+    "rating": null,
+    "highlights": [],
+    "body": [
+      "This cutting-edge system is designed to offer comprehensive protection, including waterproofing, alkali resistance, mildew prevention, sand fixation, and resistance to cracking. It is the ideal solution for a range of applications, including roofs, exterior walls, bathrooms, basements, and garage back surfaces. These are areas prone to alkali return, sanding, and the need for wall-penetrating waterproofing and anti-seepage reinforcement.",
+      "In addition, this system can be used for the preliminary treatment of waterproof construction base surfaces. By applying a layer of 500A waterproof sand-fixing agent to the sandy base surface, followed by regular waterproofing operations, the waterproof layer becomes firmly attached to the substrate. This process greatly enhances the effectiveness of the waterproofing, eliminating the need to remove sand from the base surface before construction.",
+      "Our one-component waterproofing system offers a convenient, cost-effective, and reliable solution for a wide range of construction and waterproofing needs. With its exceptional adhesion and protective properties, it is sure to improve the durability and longevity of any structure. Try it today and experience the difference!",
+      "1.Improving the physical strength of concrete base gradually with the passage of time.",
+      "2.Improving the chemical-resistance, weathering resistance and waterproofing.",
+      "3.Replacing other waterproof material, it can be used on roofs or exterior walls with waterproofing, moisture resistance and mould resistance.",
+      "Waterproof and impermeable reinforcement of roof, exterior wall, toilet parts prone to alkali return and sand rising, basement and garage back surface. It can also be used for the preliminary treatment of waterproof construction foundation surface. A layer of 500A waterproof sand consolidation agent is sprayed on the foundation surface with sand particles. After drying, conventional waterproof operations are carried out to ensure that the waterproof layer is fastened to the foundation surface, greatly improving the waterproof effect, and eliminating the process of removing sand particles from the foundation surface before construction."
+    ],
+    "specs": [
+      {
+        "headers": [
+          "Test Item",
+          "500A performance index",
+          "500B performance index"
+        ],
+        "rows": [
+          [
+            "Appearance",
+            "Uniform milky white liquid",
+            "Uniform milky white liquid"
+          ],
+          [
+            "Solid content %",
+            "40±1%",
+            "40±1%"
+          ],
+          [
+            "Viscocity cps/25℃",
+            "300 － 600Mpa.s",
+            "300 － 600Mpa.s"
+          ],
+          [
+            "PH value",
+            "4 － 6",
+            "6 － 7"
+          ],
+          [
+            "Tg℃",
+            "15℃",
+            "15℃"
+          ]
+        ]
+      }
+    ],
+    "sourceUrl": "https://www.hxhdchemical.com/anti-alkali-anti-cracking-and-anti-mould-waterproof-sand-fixing-agent-500a-500b/",
+    "sourceCode": "500A/500B"
+  },
+  {
+    "id": "anti-oxidation-rust-converting-agent-800ab-to-convert-rust-into-primer-for-metal-surface",
+    "slug": "anti-oxidation-rust-converting-agent-800ab-to-convert-rust-into-primer-for-metal-surface",
+    "name": "Anti-oxidation Rust Converting Agent 800AB to Convert Rust into Primer for Metal Surface",
+    "code": "800AB",
+    "category": "Rust Converter",
+    "categorySlug": "rust-converter",
+    "summary": "Shop the best Rust Converter 800AB for effective rust treatment. Save time and money with this high-quality, easy-to-use product. Order now!",
+    "keywords": [
+      "Rust Converter 800AB",
+      "Metal Rust Treatment",
+      "Rust Removal Solution",
+      "Anti-Corrosion Coating",
+      "Industrial Rust Protection",
+      "Rust Converter Spray",
+      "Metal Surface Rust Treatment",
+      "Rust Converter Paint"
+    ],
+    "image": "/images/catalog/4dbc872fbc04.jpg",
+    "images": [
+      "/images/catalog/9d99f9143e8a.jpg",
+      "/images/catalog/5ff93de8cb29.jpg"
+    ],
+    "rating": {
+      "value": 5,
+      "count": 52
+    },
+    "highlights": [],
+    "body": [
+      "Our emulsion is specially formulated to remove rust and convert loose rust powder particles into black and dense complexes in just one minute. The unique composition of our product allows for the black complexes to be tightly fixed on the metal surface, preventing oxygen, water, and carbon dioxide from further corroding the metal components. This results in a long-lasting rust fixation and anti-rust effect.",
+      "One of the key features of our product is its versatility. It can be used as a standalone treatment for rusted surfaces or as a base coat for steel, to be followed by a layer of topcoat after curing. Its easy application and fast-acting formula make it a convenient and efficient solution for a wide range of rust treatment applications.",
+      "The product is composed of two components, A and B, which work together to provide a comprehensive rust treatment solution. When applied according to our instructions, the emulsion provides a durable and protective coating that helps to extend the lifespan of metal components and structures.",
+      "Whether you are a professional contractor, industrial manufacturer, or DIY enthusiast, our acrylic emulsion with rust conversion materials offers a reliable and effective solution for rust treatment. Say goodbye to the hassle and expense of traditional rust removal methods and welcome a new era of rust protection with our innovative product. Try it today and experience the difference it can make for your metal surfaces."
+    ],
+    "specs": [
+      {
+        "headers": [
+          "Test Item",
+          "Performance Index"
+        ],
+        "rows": [
+          [
+            "Appearance",
+            "Milky White Liquid"
+          ],
+          [
+            "PH Value",
+            "1-3"
+          ],
+          [
+            "Viscocity",
+            "≤ 500 Mpa. S(No. 2 rotor 12 RPM 25 degrees)"
+          ],
+          [
+            "Solid content,wt%",
+            "40±1%"
+          ],
+          [
+            "Minimum film forming temperature(MFFT)",
+            "12-17℃"
+          ],
+          [
+            "Glass transition temperature",
+            "25℃"
+          ],
+          [
+            "Surface drying time (25 degrees)",
+            "25-35 minutes"
+          ],
+          [
+            "Adhesion",
+            "Level 1"
+          ],
+          [
+            "Storage temperature",
+            "5-35℃"
+          ],
+          [
+            "Storage time",
+            "Half a year"
+          ],
+          [
+            "Packing",
+            "50 kg plastic bucket"
+          ]
+        ]
+      }
+    ],
+    "sourceUrl": "https://www.hxhdchemical.com/anti-oxidation-rust-converting-agent-800ab-to-convert-rust-into-primer-for-metal-surface/"
+  },
+  {
+    "id": "rust-conversion-agent-hxhd-800d",
+    "slug": "rust-conversion-agent-hxhd-800d",
+    "name": "Rust Conversion Agent HXHD-800D",
+    "code": "HXHD-800D",
+    "category": "Rust Converter",
+    "categorySlug": "rust-converter",
+    "summary": "Rust conversion agent, grade HXHD-800D. Contact the technical team for the datasheet and application guidance.",
+    "keywords": [
+      "HXHD-800D",
+      "Rust conversion agent",
+      "Rust converter",
+      "Metal surface treatment",
+      "Anti-corrosion"
+    ],
+    "image": "/images/catalog/4dbc872fbc04.jpg",
+    "images": [
+      "/images/catalog/9d99f9143e8a.jpg"
+    ],
+    "rating": null,
+    "highlights": [],
+    "body": [],
+    "specs": [],
+    "sourceUrl": ""
+  },
+  {
+    "id": "steel-iron-oxidation-resistant-and-rust-fixing-agent-900a-900b",
+    "slug": "steel-iron-oxidation-resistant-and-rust-fixing-agent-900a-900b",
+    "name": "Rust Fixing Agent 900A/900B",
+    "code": "900A/900B",
+    "category": "Rust Fixing Agent",
+    "categorySlug": "rust-fixing-agent",
+    "summary": "Looking for a reliable rust stabilizer? Check out our 900A/900B rust stabilizer for effective rust prevention. Order now for long-lasting protection!",
+    "keywords": [
+      "Rust stabilizer 900A",
+      "rust stabilizer 900B",
+      "corrosion protection",
+      "metal treatment",
+      "rust inhibitor",
+      "industrial rust prevention",
+      "rust preventive coating",
+      "metal surface protection"
+    ],
+    "image": "/images/catalog/4dbc872fbc04.jpg",
+    "images": [
+      "/images/catalog/902254bd984c.jpg",
+      "/images/catalog/5de75af9108f.jpg",
+      "/images/catalog/ce5126f955de.jpg"
+    ],
+    "rating": {
+      "value": 5,
+      "count": 57
+    },
+    "highlights": [],
+    "body": [
+      "Once applied, our emulsions form a hard attachment with the rust powder particles on the base surface, providing long-lasting anti-rust and rust-fixing effects. This not only improves the overall appearance of the surfaces but also extends their lifespan by protecting them from further rust damage.",
+      "What sets our rust-fixing emulsions apart is their ability to greatly reduce the labor intensity of cleaning and rust removal before construction. This not only saves time and effort but also improves construction progress, making it a highly efficient and cost-effective solution for any project.",
+      "After our rust-fixing agent dries and solidifies, a topcoat can be sprayed on to further enhance the protective benefits. This two-step process ensures that surfaces are not only free from rust but also have a durable and attractive finish.",
+      "Say goodbye to labor-intensive rust removal and hello to a more efficient and effective solution with our 900A and 900B rust-fixing emulsions. Experience the difference for yourself and elevate the way you approach rust prevention and treatment.",
+      "When using waterproof emulsion, it is important to follow the manufacturer's application instructions to ensure proper adhesion and effectiveness."
+    ],
+    "specs": [
+      {
+        "headers": [
+          "Test Item",
+          "900A performance index",
+          "900B performance index"
+        ],
+        "rows": [
+          [
+            "Appearance",
+            "Uniform milky white liquid",
+            "Uniform milky white liquid"
+          ],
+          [
+            "Solid content %",
+            "40±1%",
+            "40±1%"
+          ],
+          [
+            "Viscocity cps/25℃",
+            "＜ 200Mpa.s",
+            "＜ 200Mpa.s"
+          ],
+          [
+            "PH value",
+            "4 － 6",
+            "4 － 6"
+          ],
+          [
+            "Tg℃",
+            "15℃",
+            "15℃"
+          ]
+        ]
+      }
+    ],
+    "sourceUrl": "https://www.hxhdchemical.com/steel-iron-oxidation-resistant-and-rust-fixing-agent-900a-900b/"
+  },
+  {
+    "id": "strong-and-reliable-ceramic-tile-adhesive-hx3086",
+    "slug": "strong-and-reliable-ceramic-tile-adhesive-hx3086",
+    "name": "Strong and Reliable Ceramic Tile Adhesive HX-3086",
+    "code": "HX-3086",
+    "category": "Tiles Back Glue",
+    "categorySlug": "tiles-back-glue",
+    "summary": "Looking for high-quality ceramic tile adhesive HX-3086A? Our product offers superior strength and durability for all your tiling needs. Order now!",
+    "keywords": [
+      "ceramic tile adhesive",
+      "HX-3086A",
+      "tile glue",
+      "adhesive for ceramic tiles",
+      "waterproof tile adhesive",
+      "strong tile adhesive",
+      "high performance tile adhesive",
+      "tile installation adhesive"
     ],
     "image": "/images/catalog/91250c60a2d9.jpg",
     "images": [
-      "/images/catalog/91250c60a2d9.jpg"
+      "/images/catalog/c6b0eaa31ae0.jpg",
+      "/images/catalog/c6b1a4003467.jpg",
+      "/images/catalog/c0cadbdf5aca.jpeg",
+      "/images/catalog/6a55572ad81f.jpg",
+      "/images/catalog/52845c4a91ae.jpg",
+      "/images/catalog/908a03190d1c.png",
+      "/images/catalog/fc13a3879c64.jpg",
+      "/images/catalog/1da81b7710d4.jpg",
+      "/images/catalog/6925dd502c12.png"
     ],
     "rating": {
       "value": 5,
-      "count": 86
+      "count": 74
     },
-    "highlights": [],
+    "highlights": [
+      "Good flexibility, suitable for alpine regions in three northeastern provinces of China."
+    ],
     "body": [
-      "One of the key benefits of the HX-303 emulsion is its exceptional feel and leveling performance. When compared to traditional styrene-acrylic emulsions, the HX-303 delivers greatly improved results, even when the same amount of emulsion is applied. This means that not only does the HX-303 offer superior durability, it also provides a smoother and more visually appealing finish.",
-      "HX-303 emulsion is designed to meet the demanding needs of both interior and exterior wall surfaces. Whether it's a high-traffic hallway or a weather-exposed exterior wall, the HX-303 is up to the task. Its resistance to scrubbing ensures that it can withstand frequent cleaning and maintenance, while its resistance to wet and dry discoloration means that it will maintain its appearance even in challenging environmental conditions.",
-      "In addition to its exceptional durability and performance, HX-303 emulsion is also easy to apply, making it suitable for both professional painters and DIY enthusiasts. Its advanced formula ensures that it goes on smoothly and evenly, with minimal effort required to achieve a flawless result.",
-      "When you choose the HX-303 emulsion for your interior or exterior wall painting project, you can have confidence in the quality and longevity of the finish. Its innovative technology and superior performance make it the ideal choice for high-traffic areas and challenging environmental conditions.",
-      "Economical interior and exterior paint( middle and high grade)",
-      "Low VOC, excellent water and alkali resistance, high scrubbing resistance, strong bearing capacity for the pigments and fillers, strong color development.",
-      "This revolutionary product has been designed and engineered to deliver superior dry and wet adhesion of the coating film, making it an absolute game-changer in the industry.",
-      "This innovative emulsion boasts small particle size, moderate viscosity, and a hard coating film, making it an ideal choice for a wide range of applications.",
-      "HX-66 is anti-alkali emulsion,copolymerized by acrylates and functional monomers,modified acrylic polymer,single component. With small particle size and good penetrating performance, after film formation, it is water resistant, alkali resistant, with good adhesion and sealing capacity.",
-      "This product is suitable for producing various exterior and interior wall sealing primer, and interface adhesion agent for extruded board for wall thermal insulation etc.",
-      "It is a high-performance coating solution designed for high-end Stone like paints, colorful paints, and finishes. This innovative emulsion offers exceptional aging resistance and yellowing resistance, making it a top choice for premium quality paint projects."
+      "Wall tile,floor tile, mosaic, marble and other natural stones.",
+      "2.High bonding strength,strong impact resistance ability, prevent the tile falling off.",
+      "3.Good adaptability,it is waterproof, moisture-proof and mildew proof,good performance of heat and frost resistance",
+      "Direction for Use Construction tool: rolling brush or brush.",
+      "Preparatory work before coating: clean the surface dust and sundries, remove the loose parts and sharp points, make the base surface flat and firm, the product cannot be used if there is greasy dirt or batik on the base surface.",
+      "Waiting time: Stick the ceramic after the tile adhesive gets transparent.",
+      "Storage: Store in a dry and cool place, the environment is around 5~40℃",
+      "Construction condition: Construction is prohibited outdoor in rainy,snowy and windy weather, the environment temperature should be around 5~35℃.",
+      "Shelf life: 6 months.If it exceeds the shelf life, it can still be used after inspection.",
+      "With good elasticity, excellent water resistance and alkali resistance, it is suitable for bonding various stones:"
     ],
     "specs": [
       {
         "headers": [
-          "Product Model",
-          "Solid Content %",
-          "Viscosity cps/25℃",
-          "PH",
-          "Tg℃",
-          "MFFT (Reference)℃",
-          "Application"
+          "Test Item",
+          "Performance Index"
         ],
         "rows": [
           [
-            "HX-303",
-            "48±1",
-            "2000-6000",
-            "7-9",
-            "20",
-            "20",
-            "Economical interior and exterior paint( middle and high grade)"
+            "Appearance",
+            "Uniform milky liquid"
+          ],
+          [
+            "Solid content, %",
+            "54±1"
+          ],
+          [
+            "pH Value",
+            "7-9"
+          ],
+          [
+            "Viscocity cps/25℃",
+            "500-1000"
+          ],
+          [
+            "Tg℃",
+            "-20"
+          ],
+          [
+            "Tensile bond strength Mpa",
+            "Standard curing",
+            "≥ 1.0"
+          ],
+          [
+            "After immersion",
+            "≥ 1.0"
+          ],
+          [
+            "After freeze-thaw cycle",
+            "≥ 1.0"
+          ],
+          [
+            "Permeability resistance",
+            "500mm spout，24h no-leakage"
           ]
         ]
       }
     ],
-    "sourceUrl": "https://www.hxhdchemical.com/modified-acrylic-and-styrene-architectural-emulsion-hx303-for-middle-and-top-grade-exterior-and-interior-wall-coating/"
+    "sourceUrl": "https://www.hxhdchemical.com/strong-and-reliable-ceramic-tile-adhesive-hx3086/"
   },
   {
-    "id": "architectural-emulsion-hx-302g-product",
-    "slug": "architectural-emulsion-hx-302g-product",
-    "name": "Architectural Emulsion HX-302G",
-    "code": "HX-302G",
-    "category": "Building Paint Emulsion",
-    "categorySlug": "building-paint-emulsion",
-    "summary": "Discover the high-quality Architectural Emulsion HX-302G for superior coverage and long-lasting durability. Perfect for all your painting needs.",
+    "id": "transparent-waterproof-adhesive-hx-3088-product",
+    "slug": "transparent-waterproof-adhesive-hx-3088-product",
+    "name": "Transparent Waterproof Adhesive HX-3088",
+    "code": "HX-3088",
+    "category": "Tiles Back Glue",
+    "categorySlug": "tiles-back-glue",
+    "summary": "Discover the ultimate solution for transparent, waterproof adhesive with HX-308Perfect for all your bonding and sealing needs. Order now!",
     "keywords": [
-      "Architectural Emulsion HX-302G",
-      "HX-302G paint",
-      "Emulsion paint for architecture",
-      "HX-302G specifications",
-      "HX-302G cost",
-      "Architectural paint HX-302G",
-      "Where to buy HX-302G",
-      "HX-302G distributor"
+      "Transparent waterproof adhesive",
+      "Waterproof adhesive HX-3088",
+      "Transparent HX-3088 adhesive",
+      "Waterproof glue HX-3088",
+      "Transparent waterproof sealant",
+      "Waterproof glue for outdoor use",
+      "Waterproof adhesive for construction",
+      "Industrial waterproof adhesive HX-3088"
     ],
-    "image": "/images/catalog/f119e6a0e569.jpg",
+    "image": "/images/catalog/c842dda81b72.jpg",
     "images": [
-      "/images/catalog/f119e6a0e569.jpg"
+      "/images/catalog/b0f96af77fb5.jpeg"
     ],
     "rating": {
       "value": 5,
-      "count": 149
+      "count": 33
     },
     "highlights": [],
     "body": [
-      "Performance and characteristics One of the standout features of HX-302G is its low VOC and water-based environmental protection. This makes it an ideal choice for environmentally conscious consumers and businesses looking to reduce their carbon footprint. In addition, this product offers excellent water resistance, acid and alkali resistance, and aging resistance. This ensures long-lasting durability and protection for surfaces exposed to harsh weather conditions and other environmental factors.",
-      "Another key benefit of HX-302G is its strong adhesion and scrub resistance. This allows for a reliable and durable finish that can withstand the test of time, even in high-traffic areas. Additionally, this product offers a strong carrying capacity of pigments and fillers, resulting in good color exhibition and high gloss. This ensures that the final product not only looks great but also stands up to the rigors of everyday use.",
-      "Overall, HX-302G is a versatile and high-performance product that is suitable for a wide range of applications. Its environmentally friendly composition, combined with its excellent resistance and adhesion properties, make it a top choice for those looking for a reliable and long-lasting solution for their painting and coating needs. Whether you're in need of high gloss waterborne paint, exterior wall paint, or a coating for SBS asphalt coiled material, HX-302G is the perfect option to meet your needs.",
-      "Packing and storage The package is 50kg 160kg or 1000kg plastic drum. Storage tanks should be corrosion resistant. This product should be stored in unopened container in a ventilated cool and dry place, avoid exposing to direct sunlight.The proper environment temperature for its transportation and storage is between 5 and 35℃. Storage at higher temperature or high humidity may reduce shelf life.",
-      "This innovative emulsion boasts small particle size, moderate viscosity, and a hard coating film, making it an ideal choice for a wide range of applications.",
-      "HX-66 is anti-alkali emulsion,copolymerized by acrylates and functional monomers,modified acrylic polymer,single component. With small particle size and good penetrating performance, after film formation, it is water resistant, alkali resistant, with good adhesion and sealing capacity.",
-      "This product is suitable for producing various exterior and interior wall sealing primer, and interface adhesion agent for extruded board for wall thermal insulation etc.",
-      "HX-302 is styrene acrylic copolymer emulsion,single component.",
-      "This revolutionary product has been designed and engineered to deliver superior dry and wet adhesion of the coating film, making it an absolute game-changer in the industry.",
-      "One of the key features of HX-302 is its unmatched scrub resistance, which is significantly higher than that of ordinary styrene acrylic emulsion.",
-      "It is a high-performance coating solution designed for high-end Stone like paints, colorful paints, and finishes. This innovative emulsion offers exceptional aging resistance and yellowing resistance, making it a top choice for premium quality paint projects.",
-      "It incorporates the most advanced wetting and late-stage reaction technology with powders. This innovative formula allows the emulsion and various powders to be seamlessly integrated into one, forming a denser film that provides superior protection and longevity."
+      "1.Colorless, transparent, the coating will not destroy the original wall decoration.",
+      "2.Good heat resistance, pollution resistance,water resistance,ultraviolet resistance, acid and alkali resistance, wide adaptability to climate.",
+      "3.The film has good film forming effect,it is tough with a certain degree of flexibility and can resist the stress caused by micro-cracking at the base.",
+      "4.No need of fire during construction, simple operation, can be directly painted,brushed and scraped on the wall or surface of other material.",
+      "proof and anti-seepage of various interior and exterior wall decorative materials(ceramic tile, paint, Natural stone paint).",
+      "Direction for Use Construction tool: rolling brush or brush.",
+      "Preparatory work before coating: clean the surface dust and sundries, remove the loose parts and sharp points, make the base surface flat and firm, the product cannot be used if the base surface efflorescence degree is high or there is obvious water. If the crack or leakage is large,use the lost circulation additive to repair.",
+      "Storage: Store in a dry and cool place, the environment is around 5~40℃",
+      "Construction condition: Construction is prohibited outdoor in rainy,snowy and windy weather, the environment temperature should be around 5~35℃.",
+      "Shelf life: 12 months.If it exceeds the shelf life, it can still be used after inspection.",
+      "Reminder 1. Clean all tools promptly with water after coating work is finished or stopped.",
+      "2. The ventilation conditions should be good at the construction site after the adhesive is solidified.",
+      "3. The lid of the bucket must be tightly closed, keep it out of the reach of children. In case of eye contact, wash with water immediately.",
+      "4. The product does not contain toxic gases and mercury.",
+      "5. Do not pour the remaining unused product down the drain or exhaust pipe.",
+      "6. If the adhesive is frozen because of too low temperature,heat it in hot water and then use.",
+      "HX-3088 Transparent Waterproof Adhesive is a versatile and effective adhesive designed to provide strong bonds while offering excellent transparency and resistance to water. This adhesive is well-suited for a wide range of applications, including but not limited to, bonding glass, plastic, metal, and other materials where a waterproof and transparent bond is critical.",
+      "One of the most notable features of the HX-3088 adhesive is its transparency. This characteristic makes it ideal for applications where aesthetics are important, as it allows for a clear, unobstructed view of the bonded materials. In addition to its transparency, the adhesive is also known for its superior waterproof properties, making it an excellent choice for outdoor and marine applications, as well as for items that may be exposed to moisture or water.",
+      "The HX-3088 adhesive offers high strength and durability, ensuring that bonded materials remain securely attached even under challenging conditions. Its reliable bonding capabilities make it a popular choice in various industries, including automotive, marine, electronics, and construction.",
+      "This adhesive is easy to apply and can be used in conjunction with standard dispensing equipment, making it convenient for large-scale manufacturing processes. Its quick curing time further enhances its efficiency in production environments.",
+      "Overall, the Transparent Waterproof Adhesive HX-3088 is a reliable and high-performance adhesive that offers excellent transparency, waterproof properties, and strong bonding capabilities, making it a valuable solution for a wide range of industrial and commercial applications.",
+      "A special emulsion copolymerized with silicon and acrylic,white milky or transparent paste.",
+      "1.Waterproof and leakage repair of decorated tile, Mosaic, marble, glass curtain wall, reservoir, kitchen and bathroom, all kinds of building external wall.",
+      "2. Waterproof treatment at the interface of various finishing materials.",
+      "3. Waterproof, moisture-proof and antiseep of various interior and exterior decorative materials"
     ],
     "specs": [
       {
         "headers": [
           "Product",
-          "MFFT℃",
+          "Tg℃",
           "Solid content",
-          "Viscocity cps/25℃",
+          "Viscosity",
           "PH",
+          "Drying time",
           "Applicant area"
         ],
         "rows": [
           [
-            "HX-302 G",
-            "20",
-            "46±1",
-            "500-1500",
-            "7-8",
-            "Asphalt coiled material coating, high gloss water- based paint, etc"
+            "HX-3088",
+            "8",
+            "30±1",
+            "30000-40000",
+            "6-7",
+            "Surface dry ≤ 4h， totally drying ≤12h",
+            "Waterproof, moisture- proof and anti-seepage of various interior and exterior wall decorative materials(ceramic tile, paint, Natural stone paint)."
           ]
         ]
       }
     ],
-    "sourceUrl": "https://www.hxhdchemical.com/architectural-emulsion-hx-302g-product/"
+    "sourceUrl": "https://www.hxhdchemical.com/transparent-waterproof-adhesive-hx-3088-product/"
+  },
+  {
+    "id": "transparent-waterproof-adhesive-hx-3088a-product",
+    "slug": "transparent-waterproof-adhesive-hx-3088a-product",
+    "name": "Transparent Waterproof Adhesive HX-3088A",
+    "code": "HX-3088A",
+    "category": "Tiles Back Glue",
+    "categorySlug": "tiles-back-glue",
+    "summary": "Shop for the best transparent waterproof adhesive HX-3088A. Strong, reliable and long-lasting for all your bonding needs. Buy now!",
+    "keywords": [
+      "Transparent waterproof adhesive",
+      "HX-3088A adhesive",
+      "Waterproof glue",
+      "Adhesive for outdoor use",
+      "Clear waterproof sealant",
+      "Marine grade adhesive",
+      "Transparent water resistant glue",
+      "Underwater adhesive solution"
+    ],
+    "image": "/images/catalog/c842dda81b72.jpg",
+    "images": [
+      "/images/catalog/b0f96af77fb5.jpeg"
+    ],
+    "rating": {
+      "value": 5,
+      "count": 136
+    },
+    "highlights": [],
+    "body": [
+      "1.Colorless, transparent, the coating will not destroy the original wall decoration.",
+      "2.Good heat resistance, pollution resistance,water resistance,ultraviolet resistance, acid and alkali resistance, wide adaptability to climate.",
+      "3.The film has good film forming effect,it is tough with a certain degree of flexibility and can resist the stress caused by micro-cracking at the base.",
+      "4.No need of fire during construction, simple operation, can be directly painted,brushed and scraped on the wall or surface of other material.",
+      "Waterproof, moisture-proof and anti-seepage of various interior and exterior wall decorative materials(ceramic tile, paint, Natural stone paint).",
+      "Direction for Use Construction tool: rolling brush or brush.",
+      "Preparatory work before coating: clean the surface dust and sundries, remove the loose parts and sharp points, make the base surface flat and firm, the product cannot be used if the base surface efflorescence degree is high or there is obvious water. If the crack or leakage is large,use the lost circulation additive to repair.",
+      "Storage: Store in a dry and cool place, the environment is around 5~40℃",
+      "Construction condition: Construction is prohibited outdoor in rainy,snowy and windy weather, the environment temperature should be around 5~35℃.",
+      "Shelf life: 12 months. If it exceeds the shelf life, it can still be used after inspection.",
+      "DETAIL Waterproof emulsion is formulated to prevent water from penetrating the painted surface, thus helping to prevent issues such as dampness, mold, and mildew.",
+      "A special emulsion copolymerized with silicon and acrylic,white milky or transparent paste.",
+      "1.Waterproof and leakage repair of decorated tile, Mosaic, marble, glass curtain wall, reservoir, kitchen and bathroom, all kinds of building external wall.",
+      "2. Waterproof treatment at the interface of various finishing materials.",
+      "3. Waterproof, moisture-proof and antiseep of various interior and exterior decorative materials"
+    ],
+    "specs": [
+      {
+        "headers": [
+          "Product",
+          "Tg℃",
+          "Solid content",
+          "Viscosity",
+          "MFFT ℃",
+          "PH",
+          "Drying time",
+          "Applicant area"
+        ],
+        "rows": [
+          [
+            "HX-3088A",
+            "8",
+            "35±1",
+            "30000-40000",
+            "15",
+            "6-7",
+            "Surface dry ≤ 4h，totally drying ≤12h",
+            "Waterproof, moisture-proof and anti-seepage of various interior and exterior wall decorative materials(ceramic tile, paint, Natural stone paint)."
+          ]
+        ]
+      }
+    ],
+    "sourceUrl": "https://www.hxhdchemical.com/transparent-waterproof-adhesive-hx-3088a-product/"
   },
   {
     "id": "acrylic-and-styrene-architectural-emulsion-hx302-for-exterior-and-interior-wall-coating",
@@ -1880,6 +1684,264 @@ export const PRODUCTS: Product[] = [
     "sourceUrl": "https://www.hxhdchemical.com/acrylic-and-styrene-architectural-emulsion-hx302-for-fast-drying-exterior-and-interior-wall-coating/"
   },
   {
+    "id": "architectural-emulsion-hx-302g-product",
+    "slug": "architectural-emulsion-hx-302g-product",
+    "name": "Architectural Emulsion HX-302G",
+    "code": "HX-302G",
+    "category": "Building Paint Emulsion",
+    "categorySlug": "building-paint-emulsion",
+    "summary": "Discover the high-quality Architectural Emulsion HX-302G for superior coverage and long-lasting durability. Perfect for all your painting needs.",
+    "keywords": [
+      "Architectural Emulsion HX-302G",
+      "HX-302G paint",
+      "Emulsion paint for architecture",
+      "HX-302G specifications",
+      "HX-302G cost",
+      "Architectural paint HX-302G",
+      "Where to buy HX-302G",
+      "HX-302G distributor"
+    ],
+    "image": "/images/catalog/f119e6a0e569.jpg",
+    "images": [
+      "/images/catalog/f119e6a0e569.jpg"
+    ],
+    "rating": {
+      "value": 5,
+      "count": 149
+    },
+    "highlights": [],
+    "body": [
+      "Performance and characteristics One of the standout features of HX-302G is its low VOC and water-based environmental protection. This makes it an ideal choice for environmentally conscious consumers and businesses looking to reduce their carbon footprint. In addition, this product offers excellent water resistance, acid and alkali resistance, and aging resistance. This ensures long-lasting durability and protection for surfaces exposed to harsh weather conditions and other environmental factors.",
+      "Another key benefit of HX-302G is its strong adhesion and scrub resistance. This allows for a reliable and durable finish that can withstand the test of time, even in high-traffic areas. Additionally, this product offers a strong carrying capacity of pigments and fillers, resulting in good color exhibition and high gloss. This ensures that the final product not only looks great but also stands up to the rigors of everyday use.",
+      "Overall, HX-302G is a versatile and high-performance product that is suitable for a wide range of applications. Its environmentally friendly composition, combined with its excellent resistance and adhesion properties, make it a top choice for those looking for a reliable and long-lasting solution for their painting and coating needs. Whether you're in need of high gloss waterborne paint, exterior wall paint, or a coating for SBS asphalt coiled material, HX-302G is the perfect option to meet your needs.",
+      "Packing and storage The package is 50kg 160kg or 1000kg plastic drum. Storage tanks should be corrosion resistant. This product should be stored in unopened container in a ventilated cool and dry place, avoid exposing to direct sunlight.The proper environment temperature for its transportation and storage is between 5 and 35℃. Storage at higher temperature or high humidity may reduce shelf life.",
+      "This innovative emulsion boasts small particle size, moderate viscosity, and a hard coating film, making it an ideal choice for a wide range of applications.",
+      "HX-66 is anti-alkali emulsion,copolymerized by acrylates and functional monomers,modified acrylic polymer,single component. With small particle size and good penetrating performance, after film formation, it is water resistant, alkali resistant, with good adhesion and sealing capacity.",
+      "This product is suitable for producing various exterior and interior wall sealing primer, and interface adhesion agent for extruded board for wall thermal insulation etc.",
+      "HX-302 is styrene acrylic copolymer emulsion,single component.",
+      "This revolutionary product has been designed and engineered to deliver superior dry and wet adhesion of the coating film, making it an absolute game-changer in the industry.",
+      "One of the key features of HX-302 is its unmatched scrub resistance, which is significantly higher than that of ordinary styrene acrylic emulsion.",
+      "It is a high-performance coating solution designed for high-end Stone like paints, colorful paints, and finishes. This innovative emulsion offers exceptional aging resistance and yellowing resistance, making it a top choice for premium quality paint projects.",
+      "It incorporates the most advanced wetting and late-stage reaction technology with powders. This innovative formula allows the emulsion and various powders to be seamlessly integrated into one, forming a denser film that provides superior protection and longevity."
+    ],
+    "specs": [
+      {
+        "headers": [
+          "Product",
+          "MFFT℃",
+          "Solid content",
+          "Viscocity cps/25℃",
+          "PH",
+          "Applicant area"
+        ],
+        "rows": [
+          [
+            "HX-302 G",
+            "20",
+            "46±1",
+            "500-1500",
+            "7-8",
+            "Asphalt coiled material coating, high gloss water- based paint, etc"
+          ]
+        ]
+      }
+    ],
+    "sourceUrl": "https://www.hxhdchemical.com/architectural-emulsion-hx-302g-product/"
+  },
+  {
+    "id": "modified-acrylic-and-styrene-architectural-emulsion-hx303-for-middle-and-top-grade-exterior-and-interior-wall-coating",
+    "slug": "modified-acrylic-and-styrene-architectural-emulsion-hx303-for-middle-and-top-grade-exterior-and-interior-wall-coating",
+    "name": "Modified Acrylic and Styrene Architectural Emulsion HX-303 for Middle and Top Grade Exterior and Interior Wall Coating",
+    "code": "HX-303",
+    "category": "Building Paint Emulsion",
+    "categorySlug": "building-paint-emulsion",
+    "summary": "Shop our premium Architectural Emulsion HX-303 for beautiful and durable paint finishes. Perfect for interior and exterior use. Order now!",
+    "keywords": [
+      "Architectural Emulsion HX-303",
+      "Emulsion paint for interior walls",
+      "Water-based architectural paint",
+      "High-quality emulsion paint",
+      "HX-303 emulsion paint supplier",
+      "Buy architectural paint online",
+      "Interior wall emulsion coating",
+      "Durable and washable emulsion paint"
+    ],
+    "image": "/images/catalog/91250c60a2d9.jpg",
+    "images": [
+      "/images/catalog/91250c60a2d9.jpg"
+    ],
+    "rating": {
+      "value": 5,
+      "count": 86
+    },
+    "highlights": [],
+    "body": [
+      "One of the key benefits of the HX-303 emulsion is its exceptional feel and leveling performance. When compared to traditional styrene-acrylic emulsions, the HX-303 delivers greatly improved results, even when the same amount of emulsion is applied. This means that not only does the HX-303 offer superior durability, it also provides a smoother and more visually appealing finish.",
+      "HX-303 emulsion is designed to meet the demanding needs of both interior and exterior wall surfaces. Whether it's a high-traffic hallway or a weather-exposed exterior wall, the HX-303 is up to the task. Its resistance to scrubbing ensures that it can withstand frequent cleaning and maintenance, while its resistance to wet and dry discoloration means that it will maintain its appearance even in challenging environmental conditions.",
+      "In addition to its exceptional durability and performance, HX-303 emulsion is also easy to apply, making it suitable for both professional painters and DIY enthusiasts. Its advanced formula ensures that it goes on smoothly and evenly, with minimal effort required to achieve a flawless result.",
+      "When you choose the HX-303 emulsion for your interior or exterior wall painting project, you can have confidence in the quality and longevity of the finish. Its innovative technology and superior performance make it the ideal choice for high-traffic areas and challenging environmental conditions.",
+      "Economical interior and exterior paint( middle and high grade)",
+      "Low VOC, excellent water and alkali resistance, high scrubbing resistance, strong bearing capacity for the pigments and fillers, strong color development.",
+      "This revolutionary product has been designed and engineered to deliver superior dry and wet adhesion of the coating film, making it an absolute game-changer in the industry.",
+      "This innovative emulsion boasts small particle size, moderate viscosity, and a hard coating film, making it an ideal choice for a wide range of applications.",
+      "HX-66 is anti-alkali emulsion,copolymerized by acrylates and functional monomers,modified acrylic polymer,single component. With small particle size and good penetrating performance, after film formation, it is water resistant, alkali resistant, with good adhesion and sealing capacity.",
+      "This product is suitable for producing various exterior and interior wall sealing primer, and interface adhesion agent for extruded board for wall thermal insulation etc.",
+      "It is a high-performance coating solution designed for high-end Stone like paints, colorful paints, and finishes. This innovative emulsion offers exceptional aging resistance and yellowing resistance, making it a top choice for premium quality paint projects."
+    ],
+    "specs": [
+      {
+        "headers": [
+          "Product Model",
+          "Solid Content %",
+          "Viscosity cps/25℃",
+          "PH",
+          "Tg℃",
+          "MFFT (Reference)℃",
+          "Application"
+        ],
+        "rows": [
+          [
+            "HX-303",
+            "48±1",
+            "2000-6000",
+            "7-9",
+            "20",
+            "20",
+            "Economical interior and exterior paint( middle and high grade)"
+          ]
+        ]
+      }
+    ],
+    "sourceUrl": "https://www.hxhdchemical.com/modified-acrylic-and-styrene-architectural-emulsion-hx303-for-middle-and-top-grade-exterior-and-interior-wall-coating/"
+  },
+  {
+    "id": "architectural-emulsion-hx-303ha-product",
+    "slug": "architectural-emulsion-hx-303ha-product",
+    "name": "Architectural Emulsion HX-303HA",
+    "code": "HX-303HA",
+    "category": "Building Paint Emulsion",
+    "categorySlug": "building-paint-emulsion",
+    "summary": "Discover the high-quality architectural emulsion HX-303HA for your painting needs. Get durable, smooth finishes with excellent coverage.",
+    "keywords": [
+      "Architectural Emulsion HX-303HA",
+      "HX-303HA paint",
+      "Emulsion paint for architecture",
+      "HX-303HA specifications",
+      "Where to buy HX-303HA paint",
+      "HX-303HA price",
+      "Architectural paint supplier",
+      "HX-303HA distributor"
+    ],
+    "image": "/images/catalog/98a5b4484ec4.jpg",
+    "images": [
+      "/images/catalog/ccd930ed02d8.jpg",
+      "/images/catalog/98a5b4484ec4.jpg",
+      "/images/catalog/1a61d813b450.jpg",
+      "/images/catalog/adbb9bf8445f.jpg"
+    ],
+    "rating": {
+      "value": 5,
+      "count": 119
+    },
+    "highlights": [],
+    "body": [
+      "HX-303HA is core/shell type acrylic polymer emulsion for extra value engineering stone-like paint newly developed by our company, which balances the common problems of ordinary stone-like paint emulsion,such as viscosity rise in the production process,sand blasting and cracking during construction,not to mention the case that the paint film turns white and soft when exposed to water,and poor adhesion in the construction process.",
+      "However, with HX-303HA, these issues are a thing of the past. Our formula balances all these problems and delivers outstanding performance.",
+      "And the comprehensive performance is high and reliable. The use of hydrophobic monomers and other latest highly active excipients greatly reduces the free components in the emulsion, significantly reducing the water-resistant white of the paint film, and reducing the risk of easy white in the construction of stone-like paint under low temperature and high humidity environment.",
+      "High Tg makes the film hard and stain resistant. The low MFFT makes the construction more tolerant to environmental changes. Ultra-fine particle size improves the coating power of the emulsion, resulting in a brightly colored and dense, even paint film that is resistant to sanding in both wet and dry conditions.",
+      "In addition, our product uses more UV-resistant raw materials, making it more resistant to yellowing compared to the general styrene-acrylic emulsion available in the market. This ensures that your paint will stand the test of time, maintaining its vibrant color and quality for years to come.",
+      "Low VOC, excellent water and alkaline resistance, good adhesion, good color development, good weather resistance."
+    ],
+    "specs": [
+      {
+        "headers": [
+          "Product",
+          "MFFT℃",
+          "Solid content",
+          "Viscocity cps/25℃",
+          "PH",
+          "Applicant area"
+        ],
+        "rows": [
+          [
+            "HX-303HA",
+            "28",
+            "45±1",
+            "500-2000",
+            "7-9",
+            "Exterior wall, stone-like coating"
+          ]
+        ]
+      }
+    ],
+    "sourceUrl": "https://www.hxhdchemical.com/architectural-emulsion-hx-303ha-product/"
+  },
+  {
+    "id": "architectural-emulsion-hx-305-product",
+    "slug": "architectural-emulsion-hx-305-product",
+    "name": "Architectural Emulsion HX-305",
+    "code": "HX-305",
+    "category": "Building Paint Emulsion",
+    "categorySlug": "building-paint-emulsion",
+    "summary": "Looking for Architectural Emulsion HX-305? Explore our high-quality paint product for your architectural needs. Order now for a durable and aesthetic finish",
+    "keywords": [
+      "Architectural Emulsion HX-305",
+      "Emulsion paint",
+      "Interior paint",
+      "Wall coating",
+      "Architectural coatings",
+      "Decorative paint",
+      "HX-305 paint",
+      "Water-based paint"
+    ],
+    "image": "/images/catalog/64f6b6386920.jpg",
+    "images": [
+      "/images/catalog/64f6b6386920.jpg"
+    ],
+    "rating": {
+      "value": 5,
+      "count": 72
+    },
+    "highlights": [],
+    "body": [
+      "One of the standout features of the HX-305 pure acrylic emulsion is its remarkable water whitening resistance. In low temperature and high humidity environments, Stone like paint often struggles with whitening issues. However, with the use of HX-305 emulsion, this problem is significantly improved, providing a durable and long-lasting finish that maintains its appearance over time.",
+      "The coating film created with HX-305 emulsion exhibits outstanding dry and wet adhesion, ensuring a strong and reliable bond to the painted surface. This results in a coating that resists loss of gloss, powdering, and peeling, maintaining its pristine appearance for an extended period. With high mechanical stability, calcium ion stability, and storage stability, HX-305 emulsion offers a dependable solution for various painting applications.",
+      "Additionally, the HX-305 emulsion boasts oil-repellent and corrosion-resistant properties, providing added protection to the painted surface. Its good self-cleaning ability further enhances its durability and longevity, making it a versatile choice for a wide range of painting projects.",
+      "HX-305 emulsion features a high glass transition temperature (Tg), creating a hard coating with excellent gloss. This results in a visually appealing finish that enhances the overall aesthetic of the painted surface, making it an ideal choice for high-end applications where quality and appearance are paramount.",
+      "High grade interior and exterior wall paint, high grade stone like paint, textured paint and colorful continuous phase emulsion.",
+      "Excellent water resistance, alkali resistance. Chemical stability, freeze-thaw stability, excellent resistance to UV and contamination.",
+      "Packing and storage The package is 50kg 160kg or 1000kg plastic drum. Storage tanks should be corrosion resistant. This product should be stored in unopened container in a ventilated cool and dry place, avoid exposing to direct sunlight.The proper environment temperature for its transportation and storage is between 5 and 35℃. Storage at higher temperature or high humidity may reduce shelf life.",
+      "This innovative emulsion boasts small particle size, moderate viscosity, and a hard coating film, making it an ideal choice for a wide range of applications.",
+      "It incorporates the most advanced wetting and late-stage reaction technology with powders. This innovative formula allows the emulsion and various powders to be seamlessly integrated into one, forming a denser film that provides superior protection and longevity.",
+      "This revolutionary product has been designed and engineered to deliver superior dry and wet adhesion of the coating film, making it an absolute game-changer in the industry.",
+      "HX-66 is anti-alkali emulsion,copolymerized by acrylates and functional monomers,modified acrylic polymer,single component. With small particle size and good penetrating performance, after film formation, it is water resistant, alkali resistant, with good adhesion and sealing capacity.",
+      "This product is suitable for producing various exterior and interior wall sealing primer, and interface adhesion agent for extruded board for wall thermal insulation etc."
+    ],
+    "specs": [
+      {
+        "headers": [
+          "Product",
+          "MFFT℃",
+          "Solid content",
+          "Viscocity cps/25℃",
+          "PH",
+          "Applicant area"
+        ],
+        "rows": [
+          [
+            "HX-305",
+            "21",
+            "48±1",
+            "100-500",
+            "7-9",
+            "High grade interior and exterior wall paint, high grade stone like paint, textured paint and colorful continuous phase emulsion."
+          ]
+        ]
+      }
+    ],
+    "sourceUrl": "https://www.hxhdchemical.com/architectural-emulsion-hx-305-product/"
+  },
+  {
     "id": "architectural-emulsion-hx-300-product",
     "slug": "architectural-emulsion-hx-300-product",
     "name": "Alkali-resistant Primer HX-K66",
@@ -1949,68 +2011,6 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "sourceUrl": "https://www.hxhdchemical.com/architectural-emulsion-hx-300-product/"
-  },
-  {
-    "id": "architectural-emulsion-hx-303ha-product",
-    "slug": "architectural-emulsion-hx-303ha-product",
-    "name": "Architectural Emulsion HX-303HA",
-    "code": "HX-303HA",
-    "category": "Building Paint Emulsion",
-    "categorySlug": "building-paint-emulsion",
-    "summary": "Discover the high-quality architectural emulsion HX-303HA for your painting needs. Get durable, smooth finishes with excellent coverage.",
-    "keywords": [
-      "Architectural Emulsion HX-303HA",
-      "HX-303HA paint",
-      "Emulsion paint for architecture",
-      "HX-303HA specifications",
-      "Where to buy HX-303HA paint",
-      "HX-303HA price",
-      "Architectural paint supplier",
-      "HX-303HA distributor"
-    ],
-    "image": "/images/catalog/98a5b4484ec4.jpg",
-    "images": [
-      "/images/catalog/ccd930ed02d8.jpg",
-      "/images/catalog/98a5b4484ec4.jpg",
-      "/images/catalog/1a61d813b450.jpg",
-      "/images/catalog/adbb9bf8445f.jpg"
-    ],
-    "rating": {
-      "value": 5,
-      "count": 119
-    },
-    "highlights": [],
-    "body": [
-      "HX-303HA is core/shell type acrylic polymer emulsion for extra value engineering stone-like paint newly developed by our company, which balances the common problems of ordinary stone-like paint emulsion,such as viscosity rise in the production process,sand blasting and cracking during construction,not to mention the case that the paint film turns white and soft when exposed to water,and poor adhesion in the construction process.",
-      "However, with HX-303HA, these issues are a thing of the past. Our formula balances all these problems and delivers outstanding performance.",
-      "And the comprehensive performance is high and reliable. The use of hydrophobic monomers and other latest highly active excipients greatly reduces the free components in the emulsion, significantly reducing the water-resistant white of the paint film, and reducing the risk of easy white in the construction of stone-like paint under low temperature and high humidity environment.",
-      "High Tg makes the film hard and stain resistant. The low MFFT makes the construction more tolerant to environmental changes. Ultra-fine particle size improves the coating power of the emulsion, resulting in a brightly colored and dense, even paint film that is resistant to sanding in both wet and dry conditions.",
-      "In addition, our product uses more UV-resistant raw materials, making it more resistant to yellowing compared to the general styrene-acrylic emulsion available in the market. This ensures that your paint will stand the test of time, maintaining its vibrant color and quality for years to come.",
-      "Low VOC, excellent water and alkaline resistance, good adhesion, good color development, good weather resistance."
-    ],
-    "specs": [
-      {
-        "headers": [
-          "Product",
-          "MFFT℃",
-          "Solid content",
-          "Viscocity cps/25℃",
-          "PH",
-          "Applicant area"
-        ],
-        "rows": [
-          [
-            "HX-303HA",
-            "28",
-            "45±1",
-            "500-2000",
-            "7-9",
-            "Exterior wall, stone-like coating"
-          ]
-        ]
-      }
-    ],
-    "sourceUrl": "https://www.hxhdchemical.com/architectural-emulsion-hx-303ha-product/"
   }
 ];
 
