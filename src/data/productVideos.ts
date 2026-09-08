@@ -32,12 +32,6 @@ export const PRODUCT_VIDEOS: Record<string, ProductVideo[]> = {
     [{ id: '800ab' }],
   'pure-acrylic-textile-emulsion-hx929-for-high-grade-silk-cotton-and-dupont-cotton':
     [{ id: '929' }],
-  'rg-waterproof-coating-hey-100-rg-product': [{ id: 'hey100-1' }, { id: 'hey100-2' }],
-  'sbs-liquid-coil-polyurethane-waterproof-coating-product': [
-    { id: 'sbs-1' },
-    { id: 'sbs-2' },
-    { id: 'sbs-3' },
-  ],
   'steel-iron-oxidation-resistant-and-rust-fixing-agent-900a-900b': [{ id: '900ab' }],
   'strong-and-reliable-ceramic-tile-adhesive-hx3086': [{ id: '3086' }],
   'transparent-waterproof-adhesive-hx-3088a-product': [{ id: '3088a' }],

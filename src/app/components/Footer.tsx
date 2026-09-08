@@ -94,7 +94,10 @@ export function Footer() {
               {t('footer.categories')}
             </h3>
             <ul className="space-y-2.5">
-              {CATEGORIES.slice(0, 7).map((cat) => (
+              {/* The whole list, not a sample. The slice here took 7 of 21 back
+                  when the catalogue carried every category the source site had;
+                  against the client's curated eight it only hid the last one. */}
+              {CATEGORIES.map((cat) => (
                 <li key={cat.slug}>
                   <Link
                     href={`/products?category=${cat.slug}`}

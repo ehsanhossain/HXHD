@@ -58,26 +58,6 @@ export const CATEGORIES: Category[] = [
     "count": 6
   },
   {
-    "slug": "rg-waterproof-coating",
-    "name": "RG Waterproof Coating",
-    "count": 1
-  },
-  {
-    "slug": "sbs-liquid-coil-polyurethane-waterproof-coating",
-    "name": "SBS Liquid Coil Polyurethane Waterproof Coating",
-    "count": 1
-  },
-  {
-    "slug": "waterborne-polyurethane-coating",
-    "name": "Waterborne Polyurethane Coating",
-    "count": 0
-  },
-  {
-    "slug": "transparent-waterproof-adhesive",
-    "name": "Transparent Waterproof Adhesive",
-    "count": 2
-  },
-  {
     "slug": "textile-emulsion",
     "name": "Textile Emulsion",
     "count": 8
@@ -93,365 +73,35 @@ export const CATEGORIES: Category[] = [
     "count": 2
   },
   {
-    "slug": "rust-stabilizer",
-    "name": "Rust Stabilizer",
+    "slug": "rust-fixing-agent",
+    "name": "Rust Fixing Agent",
     "count": 1
   },
   {
-    "slug": "ceramic-tile-adhesive",
-    "name": "Ceramic Tile Adhesive",
-    "count": 1
+    "slug": "additives",
+    "name": "Additives",
+    "count": 0
   },
   {
-    "slug": "architectural-emulsion",
-    "name": "Architectural Emulsion",
+    "slug": "tiles-back-glue",
+    "name": "Tiles Back Glue",
+    "count": 3
+  },
+  {
+    "slug": "building-paint-emulsion",
+    "name": "Building Paint Emulsion",
     "count": 7
-  },
-  {
-    "slug": "wall-curing-agent-adhesive",
-    "name": "Wall Curing Agent Adhesive",
-    "count": 1
-  },
-  {
-    "slug": "interior-wall-paint",
-    "name": "Interior Wall Paint",
-    "count": 1
-  },
-  {
-    "slug": "latex-paint-for-exterior-wall",
-    "name": "Latex Paint for Exterior Wall",
-    "count": 0
-  },
-  {
-    "slug": "stone-like-paint",
-    "name": "Stone-like Paint",
-    "count": 1
-  },
-  {
-    "slug": "colorful-paint",
-    "name": "Colorful Paint",
-    "count": 0
-  },
-  {
-    "slug": "compound-adhesive",
-    "name": "Compound Adhesive",
-    "count": 0
-  },
-  {
-    "slug": "waterborne-industrial-paint-emulsion",
-    "name": "Waterborne Industrial Paint Emulsion",
-    "count": 0
-  },
-  {
-    "slug": "coating-additive",
-    "name": "Coating Additive",
-    "count": 0
-  },
-  {
-    "slug": "pressure-sensitive-adhesive",
-    "name": "Pressure-sensitive Adhesive",
-    "count": 0
-  },
-  {
-    "slug": "foot-emulsion",
-    "name": "VAE Emulsion",
-    "count": 0
-  },
+  }
 ];
 
 export const PRODUCTS: Product[] = [
-  {
-    "id": "environment-friendly-cement-wall-interface-treating-agent-wall-curing-agent-adhesive",
-    "slug": "environment-friendly-cement-wall-interface-treating-agent-wall-curing-agent-adhesive",
-    "name": "Environment-friendly Cement Wall Interface Treating Agent Wall Curing Agent Adhesive",
-    "code": "",
-    "category": "Wall Curing Agent Adhesive",
-    "categorySlug": "wall-curing-agent-adhesive",
-    "summary": "Discover the amazing features of our top-quality product. Perfect for all your needs. Buy now and enjoy its benefits!",
-    "keywords": [
-      "Product features",
-      "customer reviews",
-      "best price",
-      "top-rated",
-      "quality analysis",
-      "comparison chart",
-      "benefits",
-      "purchase options"
-    ],
-    "image": "/images/catalog/acf16bb4f39a.jpg",
-    "images": [
-      "/images/catalog/1b7ba5b09763.jpg"
-    ],
-    "rating": {
-      "value": 5,
-      "count": 211
-    },
-    "highlights": [],
-    "body": [
-      "Our wall curing agent is single component product made from copolymer emulsion through many processes, which has good water resistance, alkali resistance, heat resistance, moisture resistance and resistance to freezing and thawing. It’s eco-friendly, odourless and safe.It is the substitute of traditional 108 glue and interface adhesion agent.",
-      "With excellent permeability,it help to improve the interface adhesion, improve the adhesion strength of mortar or putty and wall surface, prevent hollow and crack. It is suitable for wall plastering or scraping putty before the base compaction treatment. It greatly improve the bonding strength of putty, latex paint, wallpaper, mortar,etc. with cement.",
-      "Direction for use The base surface should be clean without dust and oil before painting.Mixed with some water, the agent could be painted on the base surface with a roller, brush or spray gun once or two times.",
-      "The base surface should be flat. The temperature should be over 5 and it is not raining while painting. The agent should be mixed with water completely.",
-      "Storage : Store in a dry and cool place, the environment is around 5~40℃",
-      "Shelf life : 6 months.If it exceeds the shelf life, it can still be used after inspection.",
-      "Reminder 1.Clean all tools promptly with water after coating work is finished or stopped.",
-      "2.The ventilation conditions should be good at the construction site.",
-      "3.The lid of the bucket must be tightly closed, keep it out of the reach of children. In case of eye contact, wash with water immediately.",
-      "4.The product does not contain toxic gases and mercury.",
-      "5.Do not pour the remaining unused product down the drain or exhaust pipe.",
-      "6. The temperature should be over 0℃ in the winter in case of being frozen."
-    ],
-    "specs": [],
-    "sourceUrl": "https://www.hxhdchemical.com/environment-friendly-cement-wall-interface-treating-agent-wall-curing-agent-adhesive/"
-  },
-  {
-    "id": "create-natural-stone-effects-with-our-innovative-paint-solution",
-    "slug": "create-natural-stone-effects-with-our-innovative-paint-solution",
-    "name": "Create Natural Stone Effects with Our Innovative Paint Solution",
-    "code": "",
-    "category": "Stone-like Paint",
-    "categorySlug": "stone-like-paint",
-    "summary": "Transform your walls with our stone-like paint. Create a rustic and natural look for your home or business. Buy now!",
-    "keywords": [
-      "Stone effect paint",
-      "Stone texture paint",
-      "Stone finish paint",
-      "Faux stone paint",
-      "Stone look paint",
-      "Natural stone paint",
-      "Stone style paint",
-      "Stone inspired paint"
-    ],
-    "image": "/images/catalog/95f2dcd701fb.jpg",
-    "images": [
-      "/images/catalog/137c9c3c329f.jpg",
-      "/images/catalog/0e560f397469.jpg",
-      "/images/catalog/69afe34d4504.jpg",
-      "/images/catalog/8fa49bcd76f0.jpg"
-    ],
-    "rating": {
-      "value": 5,
-      "count": 61
-    },
-    "highlights": [],
-    "body": [
-      "The buildings after the decoration of stone like paint have a natural and true natural color, giving people an elegant, harmonious and solemn sense of beauty, which is suitable for indoor and outdoor decoration of all kinds of buildings. Especially on the curved building decoration, vivid and lifelike, there is a return to nature effect. Stone like paint offers resistance to fire, waterproof, acid,alkali, and pollution . It is characterized non-toxic, tasteless, strong adhesion, never fade etc.effectively preventing the external harsh environment on the building erosion, and extending the life of the building. Because the stone like paint has good adhesion and freeze-thaw resistance,it is suitable for use in cold areas.",
-      "Water in water: It simulates the feeling of stone, the surface is smooth and flat, high-grade and generous, and is widely used in high-grade houses.",
-      "Sand in water: imitation granite texture, with concave convex feeling and good three-dimensional feeling compared with water in water.",
-      "Suitable for decorating upscale European style or classic building walls, for example, villa, high rise building, hotel and school.",
-      "About the product Painting tool: Spraying gun machine or rolling brush for stone like paint",
-      "1.Primer: Roll coating matching alkali resistant primer",
-      "2.Marking: Make a reference point and snap a line",
-      "3.Stick line tape: Stick a straight line first then a horizontal line",
-      "4.Roll coating: Evenly roll coat 1-2 times of intermediate coating",
-      "5.Main material: Uniform spraying with special spray gun",
-      "6.Spray for the second time at an interval of 24 hours",
-      "7.Tear paper: The marking paper shall be carefully removed immediately after spraying",
-      "Painting condition: The environment temperature is over 5℃ and the humidity is below 90%",
-      "Drying time: 2 hours for surface drying and 48 hours for totally drying.The interval time between two paintings should be more than 24 hours( At Temperature 25℃ and humidity 50).",
-      "Storage: Store in a dry and cool place, the environment is around 5~40℃",
-      "Shelf life: 6 months.If it exceeds the shelf life, it can still be used after inspection."
-    ],
-    "specs": [],
-    "sourceUrl": "https://www.hxhdchemical.com/create-natural-stone-effects-with-our-innovative-paint-solution/"
-  },
-  {
-    "id": "environment-friendly-anti-mould-and-anti-bacteria-interior-wall-paint",
-    "slug": "environment-friendly-anti-mould-and-anti-bacteria-interior-wall-paint",
-    "name": "Environment-friendly Anti-mould and Anti-bacteria Interior Wall Paint",
-    "code": "",
-    "category": "Interior Wall Paint",
-    "categorySlug": "interior-wall-paint",
-    "summary": "Shop a wide selection of high-quality interior wall paint for your home. Choose from a variety of colors and finishes to suit your style and budget",
-    "keywords": [
-      "Interior wall paint",
-      "best wall paint brand",
-      "durable wall paint",
-      "eco-friendly wall paint",
-      "easy to apply wall paint",
-      "low odor wall paint",
-      "long-lasting wall paint",
-      "washable wall paint"
-    ],
-    "image": "/images/catalog/64f6b6386920.jpg",
-    "images": [
-      "/images/catalog/f1fc82418445.jpg"
-    ],
-    "rating": {
-      "value": 5,
-      "count": 252
-    },
-    "highlights": [],
-    "body": [
-      "Indoor wall decoration of house, school,hospital,factory, and entertainment venues, especially engineering decoration with large area.",
-      "Treatment before painting and painting conditions:",
-      "1.The wall with fresh concrete should be painted 14 days later at normal temperature. The moisture of concrete base should be less than 10% and value of PH should be less than 9. The old surface of wall should be clean without dirt, oil, peeling coating and dust.",
-      "2.The surface should be treated with putty to make sure it is tight , firm and flat without cracking gap, hole and pit.",
-      "3.Before painting, the wall is brushed with putty. Removing the extra putty after the wall is dry. Polishing the wall with sand paper until it is flat and smooth. Then brushing the wall with putty again. Polishing the wall again after it is dry until it is flat and smooth without scrape.",
-      "4.Cleaning the wall without dust. Paint the wall with primer. To get better coating effect, the waterproof putty is suggested to be used.",
-      "Painting method and tool Painting two times with painting roller,brush or spraying machine. The interval time between two paintings should be 1 hour.",
-      "Storage Store in a dry and cool place, the environment is around 5~40℃",
-      "Shelf life 18 months.If it exceeds the shelf life, it can still be used after inspection."
-    ],
-    "specs": [],
-    "sourceUrl": "https://www.hxhdchemical.com/environment-friendly-anti-mould-and-anti-bacteria-interior-wall-paint/"
-  },
-  {
-    "id": "sbs-liquid-coil-polyurethane-waterproof-coating-product",
-    "slug": "sbs-liquid-coil-polyurethane-waterproof-coating-product",
-    "name": "SBS Liquid Coil Polyurethane Waterproof Coating",
-    "code": "",
-    "category": "SBS Liquid Coil Polyurethane Waterproof Coating",
-    "categorySlug": "sbs-liquid-coil-polyurethane-waterproof-coating",
-    "summary": "Protect your surfaces with SBS Liquid Coil Polyurethane Waterproof Coating. Durable and long-lasting solution for waterproofing needs. Order now",
-    "keywords": [
-      "SBS Liquid Coil Polyurethane Waterproof Coating",
-      "waterproof coating",
-      "polyurethane coating",
-      "liquid polyurethane",
-      "SBS waterproof",
-      "construction waterproofing",
-      "roof waterproofing",
-      "waterproofing solution",
-      "durable waterproof coating"
-    ],
-    "image": "/images/catalog/f0849ea6d0d9.jpg",
-    "images": [
-      "/images/catalog/63534fe94fc7.jpg",
-      "/images/catalog/a44a8b858121.jpg",
-      "/images/catalog/2696c7344ab3.jpg",
-      "/images/catalog/4d11a28e6ba8.webp"
-    ],
-    "rating": {
-      "value": 5,
-      "count": 267
-    },
-    "highlights": [],
-    "body": [
-      "It is applicable to the waterproofing work of surface and facade for various buildings made of cement, brick,stone and metal etc.",
-      "1.It is easy and safe to use, no need of heat source,low odor without coal tar.",
-      "2.It is environment-friendly, low odor without coal tar.",
-      "3.With aging resistance and high elasticity, it can self-repair,especially suitable for the waterproof of the structure easy to crack and deform. It can form an integral jointless sealing layer, even if there is damage to the waterproof layer in the future, you can have it repaired without destroy the waterproofing effect of the whole waterproof layer.",
-      "Direction for Use Construction tool: rolling brush or brush.",
-      "Open the package of the bucket, if there is a floating layer,mix and stir it evenly, then ready for use.",
-      "Preparatory work before coating: clean the surface dust and sundries, remove the loose parts and sharp points, make the base surface flat and firm, the product cannot be used if the base surface efflorescence degree is high or there is obvious water.",
-      "Number of brushes: Generally 2 or 3 times, brush again if the previous coating is dry enough and not stick to hand.",
-      "Usage amount: Theoretically 1.5-2kg/㎡,the actual amount will vary depending on the method of use and the roughness of the surface.",
-      "Storage: Store in a dry and cool place, the environment is around 5~40℃",
-      "Construction condition: Construction is prohibited outdoor in rainy,snowy and windy weather, the environment temperature should be around 5~35℃.",
-      "Shelf life: 12 months.If it exceeds the shelf life, it can still be used after inspection.",
-      "1.Clean all tools promptly with water after coating work is finished or stopped.",
-      "2.The ventilation conditions should be good at the construction site.",
-      "3.The lid of the bucket must be tightly closed, keep it out of the reach of children. In case of eye contact, wash with water immediately.",
-      "4.The product does not contain toxic gases and mercury.",
-      "5.Do not pour the remaining unused product down the drain or exhaust pipe."
-    ],
-    "specs": [],
-    "sourceUrl": "https://www.hxhdchemical.com/sbs-liquid-coil-polyurethane-waterproof-coating-product/"
-  },
-  {
-    "id": "rg-waterproof-coating-hey-100-rg-product",
-    "slug": "rg-waterproof-coating-hey-100-rg-product",
-    "name": "RG Waterproof Coating HEY- 100 RG",
-    "code": "HEY-100 RG",
-    "category": "RG Waterproof Coating",
-    "categorySlug": "rg-waterproof-coating",
-    "summary": "Looking for a reliable waterproof coating? Discover RG Waterproof Coating HEY- 100 RG for superior protection against water damage. Get it now!",
-    "keywords": [
-      "Waterproof coating",
-      "HEY-100 RG",
-      "Water resistant sealer",
-      "Protective coating",
-      "Moisture barrier",
-      "Waterproofing solution",
-      "Waterproof paint",
-      "Waterproof sealant"
-    ],
-    "image": "/images/catalog/41013192da33.jpg",
-    "images": [
-      "/images/catalog/ca013cc2e27a.jpg",
-      "/images/catalog/a476357af5eb.jpg"
-    ],
-    "rating": {
-      "value": 5,
-      "count": 233
-    },
-    "highlights": [],
-    "body": [
-      "It can be used in the waterproofing project for wall and roof of concrete, old coil, color steel, inclined tile, sun room and so on. It can be used openly without any protective layer.",
-      "Elongation at break after exposed to UV and aged , %",
-      "1.The emulsion and powder offer double adhesion. It could be stuck firmly to common building material.",
-      "2.It is weather-resistant, freeze thawing resistant and UV-resistant(800h UV testing). Exposed to the sunshine, the coating layer can stay adhensive and soft for very long time.",
-      "3. Strongly elastic , soft in cold weather, good flexibility adapting to cracking of surface of base and deformation caused by heat-expansion and cold-contraction.",
-      "4.The coating layer can cover and connect cracking gap with 3mm.",
-      "5. No heating source is needed during construction. The construction is friendly to workers. So it can improve effect of construction and save labor.",
-      "Construction Method Cleaning the surface of base→Mixing emulsion and powder→Dealing with some special position→Fully spread the special reinforcement cloth for RGWF-90 polymer cement RG waterproof coating→Brush the middle waterproof layer→Brush the surface waterproof layer→ Closed water test of waterproof coating layer"
-    ],
-    "specs": [
-      {
-        "headers": [
-          "Item",
-          "Specification",
-          "Test result"
-        ],
-        "rows": [
-          [
-            "Solid content %",
-            "≥70",
-            "78.8"
-          ],
-          [
-            "Tensile Strength,MPa",
-            "≥1.2",
-            "1.52"
-          ],
-          [
-            "Elongation at break, %",
-            "≥200",
-            "265"
-          ],
-          [
-            "Bonding strength, MPa",
-            "≥0.5",
-            "0.7"
-          ],
-          [
-            "Water-tightness (0.3MPa 30min)",
-            "Water-tight",
-            "Water-tight"
-          ],
-          [
-            "Flexibility at low temperature, %",
-            "-10℃, no crack",
-            "No crack"
-          ],
-          [
-            "Aging strength after exposed to UV, MPa",
-            "≥80",
-            "89"
-          ],
-          [
-            "Elongation at break after exposed to UV and aged , %",
-            "≥150",
-            "170"
-          ],
-          [
-            "Adhesion on wet surface of base, MPa",
-            "≥0.5",
-            "≥0.6"
-          ]
-        ]
-      }
-    ],
-    "sourceUrl": "https://www.hxhdchemical.com/rg-waterproof-coating-hey-100-rg-product/"
-  },
   {
     "id": "strong-and-reliable-ceramic-tile-adhesive-hx3086",
     "slug": "strong-and-reliable-ceramic-tile-adhesive-hx3086",
     "name": "Strong and Reliable Ceramic Tile Adhesive HX-3086",
     "code": "HX-3086",
-    "category": "Ceramic Tile Adhesive",
-    "categorySlug": "ceramic-tile-adhesive",
+    "category": "Tiles Back Glue",
+    "categorySlug": "tiles-back-glue",
     "summary": "Looking for high-quality ceramic tile adhesive HX-3086A? Our product offers superior strength and durability for all your tiling needs. Order now!",
     "keywords": [
       "ceramic tile adhesive",
@@ -548,8 +198,8 @@ export const PRODUCTS: Product[] = [
     "slug": "transparent-waterproof-adhesive-hx-3088a-product",
     "name": "Transparent Waterproof Adhesive HX-3088A",
     "code": "HX-3088A",
-    "category": "Transparent Waterproof Adhesive",
-    "categorySlug": "transparent-waterproof-adhesive",
+    "category": "Tiles Back Glue",
+    "categorySlug": "tiles-back-glue",
     "summary": "Shop for the best transparent waterproof adhesive HX-3088A. Strong, reliable and long-lasting for all your bonding needs. Buy now!",
     "keywords": [
       "Transparent waterproof adhesive",
@@ -620,8 +270,8 @@ export const PRODUCTS: Product[] = [
     "slug": "transparent-waterproof-adhesive-hx-3088-product",
     "name": "Transparent Waterproof Adhesive HX-3088",
     "code": "HX-3088",
-    "category": "Transparent Waterproof Adhesive",
-    "categorySlug": "transparent-waterproof-adhesive",
+    "category": "Tiles Back Glue",
+    "categorySlug": "tiles-back-glue",
     "summary": "Discover the ultimate solution for transparent, waterproof adhesive with HX-308Perfect for all your bonding and sealing needs. Order now!",
     "keywords": [
       "Transparent waterproof adhesive",
@@ -790,8 +440,8 @@ export const PRODUCTS: Product[] = [
     "slug": "steel-iron-oxidation-resistant-and-rust-fixing-agent-900a-900b",
     "name": "Rust Fixing Agent 900A/900B",
     "code": "900A/900B",
-    "category": "Rust Stabilizer",
-    "categorySlug": "rust-stabilizer",
+    "category": "Rust Fixing Agent",
+    "categorySlug": "rust-fixing-agent",
     "summary": "Looking for a reliable rust stabilizer? Check out our 900A/900B rust stabilizer for effective rust prevention. Order now for long-lasting protection!",
     "keywords": [
       "Rust stabilizer 900A",
@@ -1903,8 +1553,8 @@ export const PRODUCTS: Product[] = [
     "slug": "architectural-emulsion-hx-305-product",
     "name": "Architectural Emulsion HX-305",
     "code": "HX-305",
-    "category": "Architectural Emulsion",
-    "categorySlug": "architectural-emulsion",
+    "category": "Building Paint Emulsion",
+    "categorySlug": "building-paint-emulsion",
     "summary": "Looking for Architectural Emulsion HX-305? Explore our high-quality paint product for your architectural needs. Order now for a durable and aesthetic finish",
     "keywords": [
       "Architectural Emulsion HX-305",
@@ -1968,8 +1618,8 @@ export const PRODUCTS: Product[] = [
     "slug": "modified-acrylic-and-styrene-architectural-emulsion-hx303-for-middle-and-top-grade-exterior-and-interior-wall-coating",
     "name": "Modified Acrylic and Styrene Architectural Emulsion HX-303 for Middle and Top Grade Exterior and Interior Wall Coating",
     "code": "HX-303",
-    "category": "Architectural Emulsion",
-    "categorySlug": "architectural-emulsion",
+    "category": "Building Paint Emulsion",
+    "categorySlug": "building-paint-emulsion",
     "summary": "Shop our premium Architectural Emulsion HX-303 for beautiful and durable paint finishes. Perfect for interior and exterior use. Order now!",
     "keywords": [
       "Architectural Emulsion HX-303",
@@ -2034,8 +1684,8 @@ export const PRODUCTS: Product[] = [
     "slug": "architectural-emulsion-hx-302g-product",
     "name": "Architectural Emulsion HX-302G",
     "code": "HX-302G",
-    "category": "Architectural Emulsion",
-    "categorySlug": "architectural-emulsion",
+    "category": "Building Paint Emulsion",
+    "categorySlug": "building-paint-emulsion",
     "summary": "Discover the high-quality Architectural Emulsion HX-302G for superior coverage and long-lasting durability. Perfect for all your painting needs.",
     "keywords": [
       "Architectural Emulsion HX-302G",
@@ -2099,8 +1749,8 @@ export const PRODUCTS: Product[] = [
     "slug": "acrylic-and-styrene-architectural-emulsion-hx302-for-exterior-and-interior-wall-coating",
     "name": "Acrylic and Styrene Architectural Emulsion HX-302 for Exterior and Interior Wall Coating",
     "code": "HX-302",
-    "category": "Architectural Emulsion",
-    "categorySlug": "architectural-emulsion",
+    "category": "Building Paint Emulsion",
+    "categorySlug": "building-paint-emulsion",
     "summary": "Get the best quality Architectural Emulsion HX-302 for your painting needs. Durable, eco-friendly, and easy to use. Order now for a professional finish!",
     "keywords": [
       "Architectural Emulsion HX-302",
@@ -2164,8 +1814,8 @@ export const PRODUCTS: Product[] = [
     "slug": "acrylic-and-styrene-architectural-emulsion-hx302-for-fast-drying-exterior-and-interior-wall-coating",
     "name": "Acrylic and Styrene Architectural Emulsion HX-302 for Fast Drying Exterior and Interior Wall Coating",
     "code": "HX-302",
-    "category": "Architectural Emulsion",
-    "categorySlug": "architectural-emulsion",
+    "category": "Building Paint Emulsion",
+    "categorySlug": "building-paint-emulsion",
     "summary": "Discover the benefits of Architectural Emulsion HX-300 for your next project. High-quality, durable, and long-lasting paint for architectural surfaces.",
     "keywords": [
       "Architectural Emulsion HX-300",
@@ -2229,8 +1879,8 @@ export const PRODUCTS: Product[] = [
     "slug": "architectural-emulsion-hx-300-product",
     "name": "Alkali-resistant Primer HX-K66",
     "code": "HX-K66",
-    "category": "Architectural Emulsion",
-    "categorySlug": "architectural-emulsion",
+    "category": "Building Paint Emulsion",
+    "categorySlug": "building-paint-emulsion",
     "summary": "Looking for an alkali-resistant primer? Check out HX-K66 for a durable, long-lasting solution. Perfect for a variety of surfaces. Order now!",
     "keywords": [
       "Alkali-resistant primer",
@@ -2300,8 +1950,8 @@ export const PRODUCTS: Product[] = [
     "slug": "architectural-emulsion-hx-303ha-product",
     "name": "Architectural Emulsion HX-303HA",
     "code": "HX-303HA",
-    "category": "Architectural Emulsion",
-    "categorySlug": "architectural-emulsion",
+    "category": "Building Paint Emulsion",
+    "categorySlug": "building-paint-emulsion",
     "summary": "Discover the high-quality architectural emulsion HX-303HA for your painting needs. Get durable, smooth finishes with excellent coverage.",
     "keywords": [
       "Architectural Emulsion HX-303HA",
@@ -2356,7 +2006,7 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "sourceUrl": "https://www.hxhdchemical.com/architectural-emulsion-hx-303ha-product/"
-  },
+  }
 ];
 
 export function getProductBySlug(slug: string): Product | undefined {
