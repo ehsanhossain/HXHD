@@ -13,9 +13,9 @@ import { useI18n } from '@/i18n/LanguageProvider';
 const APPLICATIONS = [
   { title: 'Cement-Based Waterproof Coatings', icon: Droplets, desc: 'Single & two-component', cat: 'waterproof-emulsion' },
   { title: 'Thermal Insulation Mortar', icon: Layers, desc: 'Energy-efficient bonding', cat: 'waterproof-emulsion' },
-  { title: 'Exterior Wall Coatings', icon: Building2, desc: 'Weather resistance & durability', cat: 'architectural-emulsion' },
-  { title: 'Interior Wall Coatings', icon: Home, desc: 'Eco-friendly, low-VOC systems', cat: 'interior-wall-paint' },
-  { title: 'Tile Bonding Systems', icon: Briefcase, desc: 'Strong adhesion promoters', cat: 'ceramic-tile-adhesive' },
+  { title: 'Exterior Wall Coatings', icon: Building2, desc: 'Weather resistance & durability', cat: 'building-paint-emulsion' },
+  { title: 'Interior Wall Coatings', icon: Home, desc: 'Eco-friendly, low-VOC systems', cat: 'building-paint-emulsion' },
+  { title: 'Tile Bonding Systems', icon: Briefcase, desc: 'Strong adhesion promoters', cat: 'tiles-back-glue' },
   { title: 'Protective & Anti-Corrosion', icon: PaintBucket, desc: 'Rust conversion & stabilising', cat: 'rust-converter' },
   { title: 'Asphalt & Infrastructure', icon: Zap, desc: 'Roads & bridge-deck waterproofing', cat: 'waterproof-emulsion' },
 ];

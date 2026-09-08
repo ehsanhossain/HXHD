@@ -30,7 +30,7 @@ const INDUSTRIES = [
     name: 'Construction & Real Estate',
     lead: 'Dhaka and Chattogram development',
     body: 'Waterproof emulsions for cement-based coatings, thermal insulation mortar and two-component systems — plus architectural emulsions for exterior and interior wall finishes.',
-    categories: ['waterproof-emulsion', 'architectural-emulsion'],
+    categories: ['waterproof-emulsion', 'building-paint-emulsion'],
   },
   {
     icon: Route,
@@ -44,21 +44,21 @@ const INDUSTRIES = [
     name: 'Paint & Coatings Manufacturing',
     lead: 'Local formulators and brands',
     body: 'Binder emulsions supplied to paint manufacturers, with grade selection support, starting formulations and batch-consistent supply for continuous production.',
-    categories: ['architectural-emulsion', 'interior-wall-paint', 'stone-like-paint'],
+    categories: ['building-paint-emulsion'],
   },
   {
     icon: Layers,
     name: 'Tile, Adhesives & Bonding',
     lead: 'Fit-out and finishing trades',
     body: 'Ceramic tile adhesives, transparent waterproof adhesives and wall curing agents for interface treatment — engineered for adhesion on demanding construction substrates.',
-    categories: ['ceramic-tile-adhesive', 'transparent-waterproof-adhesive', 'wall-curing-agent-adhesive'],
+    categories: ['tiles-back-glue'],
   },
   {
     icon: ShieldCheck,
     name: 'Metal & Anti-Corrosion',
     lead: 'Coastal and industrial assets',
     body: 'Rust converters that turn existing corrosion into a primer layer, and rust stabilising agents for steel and iron exposed to humid, saline coastal conditions.',
-    categories: ['rust-converter', 'rust-stabilizer', 'sand-fixing-agent'],
+    categories: ['rust-converter', 'rust-fixing-agent', 'sand-fixing-agent'],
   },
 ];
 

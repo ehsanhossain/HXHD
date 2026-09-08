@@ -2092,7 +2092,7 @@ export const PRODUCT_MODELS: ModelGroup[] = [
     ],
   },
   {
-    categorySlug: 'rust-stabilizer',
+    categorySlug: 'rust-fixing-agent',
     title: 'Rust fixing / conversion agent',
     models: [
       { code: 'HXHD-900A', label: 'Rust fixing agent', productSlug: 'steel-iron-oxidation-resistant-and-rust-fixing-agent-900a-900b' },

@@ -39,7 +39,11 @@ export function ProductsMegaMenu({ onClose }: ProductsMegaMenuProps) {
         </div>
 
         {/* Column 2 & 3: Product Categories */}
-        <div className="col-span-12 md:col-span-6 grid grid-cols-2 gap-x-8 gap-y-4">
+        {/* `content-start` keeps the rows at their own spacing. Grid items
+            stretch to the tallest cell by default, and the featured product
+            beside this column is tall — with 21 categories the rows filled that
+            height anyway, but eight of them got spread down the panel. */}
+        <div className="col-span-12 md:col-span-6 grid grid-cols-2 content-start gap-x-8 gap-y-4">
             {CATEGORIES.map((category) => (
               <Link
                 key={category.slug}

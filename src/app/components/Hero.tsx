@@ -41,16 +41,12 @@ const SLIDES = [
   {
     k: 's3',
     accentLine: 1,
-    cats: ['architectural-emulsion'],
+    cats: ['building-paint-emulsion'],
   },
   {
     k: 's4',
     accentLine: 1,
-    cats: [
-      'ceramic-tile-adhesive',
-      'transparent-waterproof-adhesive',
-      'wall-curing-agent-adhesive',
-    ],
+    cats: ['tiles-back-glue'],
   },
 ] as const;
 
