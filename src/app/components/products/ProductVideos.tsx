@@ -31,7 +31,15 @@ export function ProductVideos({ slug, productName }: { slug: string; productName
         <div className="w-16 h-[5px] bg-[var(--brand-red)] mb-8" />
       </Reveal>
 
-      <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {/* Pick a column count the films actually fill: a fixed three strands the
+          fourth beside two empty slots, and leaves a gap next to a pair. Four
+          go two-by-two, and fewer than three take a column each. */}
+      <Stagger
+        className={`grid grid-cols-1 sm:grid-cols-2 gap-5 ${
+          { 1: 'lg:grid-cols-1', 2: 'lg:grid-cols-2', 4: 'lg:grid-cols-2' }[videos.length] ??
+          'lg:grid-cols-3'
+        }`}
+      >
         {videos.map((v, i) => {
           const item: VideoItem = {
             src: videoSrc(v.id),
