@@ -47,11 +47,15 @@ HQ Website/
 /deploy/
 hxhdbd-deploy.tar.gz
 
-# The operations docs are committed; only the raw access token is withheld,
-# because GitHub push protection rejects any commit containing one.
-/MD file/token.txt
+# The operations docs stay out of the repository. This one is public, and
+# between them info.md, deployguide.md and workflow.md carried the cPanel and
+# FTP passwords, the mailbox password and a live GitHub token in plain text.
+# Only token.txt was withheld before, because push protection rejects a commit
+# containing a raw token — the passwords it does not scan for went up freely.
+/MD file/
 
 # Source video masters: 50 Mbps phone footage, well past GitHub's 100 MB file
 # limit. Only the web encodes in public/videos/ are needed to build or deploy.
 Asset Drop/**/*.mp4
 Asset Drop/**/*.mov
+Asset Drop/**/*.mp3
