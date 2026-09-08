@@ -552,8 +552,9 @@ export const PRODUCTS: Product[] = [
       "ground improvement",
       "road construction additives"
     ],
-    "image": "/images/catalog/95f2dcd701fb.jpg",
+    "image": "/images/catalog/hxhd-500a.webp",
     "images": [
+      "/images/catalog/hxhd-500a.webp",
       "/images/catalog/ca013cc2e27a.jpg",
       "/images/catalog/a476357af5eb.jpg"
     ],
@@ -628,8 +629,9 @@ export const PRODUCTS: Product[] = [
       "ground improvement",
       "road construction additives"
     ],
-    "image": "/images/catalog/95f2dcd701fb.jpg",
+    "image": "/images/catalog/hxhd-500b.webp",
     "images": [
+      "/images/catalog/hxhd-500b.webp",
       "/images/catalog/a476357af5eb.jpg",
       "/images/catalog/ca013cc2e27a.jpg"
     ],
@@ -942,9 +944,9 @@ export const PRODUCTS: Product[] = [
       "durable emulsion",
       "waterproofing agent"
     ],
-    "image": "/images/catalog/64f6b6386920.jpg",
+    "image": "/images/catalog/hx-416a.webp",
     "images": [
-      "/images/catalog/64f6b6386920.jpg",
+      "/images/catalog/hx-416a.webp",
       "/images/catalog/b33bc39f5c11.jpg"
     ],
     "rating": {
@@ -1006,8 +1008,9 @@ export const PRODUCTS: Product[] = [
       "concrete sealer",
       "industrial waterproofing"
     ],
-    "image": "/images/catalog/41013192da33.jpg",
+    "image": "/images/catalog/hx-400.webp",
     "images": [
+      "/images/catalog/hx-400.webp",
       "/images/catalog/d9a42ce89343.jpg",
       "/images/catalog/0e183c008e6b.jpg"
     ],
@@ -1234,9 +1237,9 @@ export const PRODUCTS: Product[] = [
       "Waterproof emulsion properties",
       "Waterproof emulsion application"
     ],
-    "image": "/images/catalog/f0849ea6d0d9.jpg",
+    "image": "/images/catalog/hx-416.webp",
     "images": [
-      "/images/catalog/f0849ea6d0d9.jpg",
+      "/images/catalog/hx-416.webp",
       "/images/catalog/fead47cfbcb6.jpg",
       "/images/catalog/2cc7ff4c9212.jpg",
       "/images/catalog/9274a731ac43.jpg"
@@ -1349,9 +1352,9 @@ export const PRODUCTS: Product[] = [
       "water resistant paint",
       "industrial emulsion"
     ],
-    "image": "/images/catalog/4dbc872fbc04.jpg",
+    "image": "/images/catalog/hx-406a.webp",
     "images": [
-      "/images/catalog/4dbc872fbc04.jpg",
+      "/images/catalog/hx-406a.webp",
       "/images/catalog/8c7c920894ca.jpg"
     ],
     "rating": {
@@ -1406,8 +1409,9 @@ export const PRODUCTS: Product[] = [
       "Double component",
       "Cement waterproof coating"
     ],
-    "image": "/images/catalog/acf16bb4f39a.jpg",
+    "image": "/images/catalog/hx-511.webp",
     "images": [
+      "/images/catalog/hx-511.webp",
       "/images/catalog/902254bd984c.jpg"
     ],
     "rating": null,
@@ -1436,8 +1440,9 @@ export const PRODUCTS: Product[] = [
       "industrial application",
       "building material"
     ],
-    "image": "/images/catalog/f0849ea6d0d9.jpg",
+    "image": "/images/catalog/hx-416m.webp",
     "images": [
+      "/images/catalog/hx-416m.webp",
       "/images/catalog/f36f7eee9434.jpg"
     ],
     "rating": {
