@@ -42,14 +42,19 @@
   --paper-2: #f5f7f8;
   --paper-3: #eceff1;
 
-  /* --- Type scale (fluid) ----------------------------------- */
-  --step--1: clamp(0.8rem, 0.76rem + 0.18vw, 0.875rem);
-  --step-0: clamp(0.95rem, 0.91rem + 0.2vw, 1.0625rem);
-  --step-1: clamp(1.15rem, 1.05rem + 0.45vw, 1.4rem);
-  --step-2: clamp(1.45rem, 1.25rem + 0.9vw, 2rem);
-  --step-3: clamp(1.85rem, 1.45rem + 1.8vw, 2.9rem);
-  --step-4: clamp(2.3rem, 1.6rem + 3.1vw, 4.2rem);
-  --step-5: clamp(2.8rem, 1.7rem + 5vw, 6rem);
+  /* --- Type scale (fluid) -----------------------------------
+     Raised across the board on the client's note that the site read small.
+     The lift is graded, not uniform: reading sizes gain the most (step 0 and
+     the label size about 8%), and the display sizes least (step 4 about 3%),
+     because a headline already spanning three lines gains nothing from being
+     set larger and starts pushing the copy under it off the first screen. */
+  --step--1: clamp(0.86rem, 0.82rem + 0.19vw, 0.9375rem);
+  --step-0: clamp(1.025rem, 0.98rem + 0.22vw, 1.15rem);
+  --step-1: clamp(1.24rem, 1.13rem + 0.48vw, 1.5rem);
+  --step-2: clamp(1.55rem, 1.34rem + 0.95vw, 2.12rem);
+  --step-3: clamp(1.95rem, 1.53rem + 1.88vw, 3.04rem);
+  --step-4: clamp(2.38rem, 1.66rem + 3.2vw, 4.33rem);
+  --step-5: clamp(2.86rem, 1.74rem + 5.1vw, 6.12rem);
 
   /* --- Motion ----------------------------------------------- */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
